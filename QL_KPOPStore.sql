@@ -11,9 +11,9 @@ go
 CREATE TABLE TK
 (
 MaTK INT IDENTITY(1,1) PRIMARY KEY , 
-    MatKhau NVARCHAR(50) NULL, 
+    MatKhau VARCHAR(50) collate Latin1_General_CI_AS  NULL, 
    
-    Email NVARCHAR(50) NULL,
+    Email VARCHAR(50) collate Latin1_General_CI_AS NULL,
 	Quyen NVARCHAR(50) Null,
 )
 GO
@@ -21,7 +21,7 @@ GO
 
 create table Loai
 (
-	MaLoai varchar(10) not null,
+	MaLoai varchar(100) not null,
 	TenLoai varchar(50) not null,
 
 	constraint PK_Loai primary key (MaLoai),
@@ -29,46 +29,72 @@ create table Loai
 go
 create table Nhom
 (
-	MaNhom varchar(10) not null,
+	MaNhom varchar(100) not null,
 	TenNhom varchar(50) not null,
-	DuongDan varchar(100) not null,
+	DuongDan varchar(Max) not null,
 	AnhNhom varchar(100) null,
 	constraint PK_Size primary key (MaNhom),
 )
 go
+
+CREATE TABLE POB
+(	
+	MaPob varchar(50) NOT NULL,
+	TenPob nvarchar(50) NOT NULL,
+	MaSP varchar(50) NOT NULL,
+)
+GO
+
 CREATE TABLE SanPhamData
 (
-    MaSP varchar(10) NOT NULL,
-    DuongDan1 varchar(100) NULL,
-    DuongDan2 varchar(100) NULL,
-    DuongDan3 varchar(100) NULL,
-    DuongDan4 varchar(100) NULL,
-    DuongDan5 varchar(100) NULL,
-	AnhNote varchar(100) NULL
+    MaSP varchar(50) NOT NULL,
+    DuongDan1 varchar(Max) NULL,
+    DuongDan2 varchar(Max) NULL,
+    DuongDan3 varchar(Max) NULL,
+    DuongDan4 varchar(Max) NULL,
+    DuongDan5 varchar(Max) NULL,
+	AnhNote varchar(Max) NULL,
+	--Pop bit NOT NULL DEFAULT 0
+	Pob bit
+
+	
 );
+GO
+ALTER TABLE SanPhamData
+ADD IsPreOrder bit ; -- 0 là false, 1 là true
 GO
 
 CREATE TABLE SanPham
 (
-    MaSP varchar(10) NOT NULL,
+    MaSP varchar(50) NOT NULL,
     TenSP nvarchar(50) NOT NULL,
-    DuongDan varchar(100) NOT NULL,
+    DuongDan varchar(Max) NOT NULL,
     Gia float NOT NULL,
     MoTa nvarchar(255) NOT NULL,
-    MaLoai varchar(10) NOT NULL,
-    MaNhom varchar(10) NOT NULL,
+    MaLoai varchar(100) NOT NULL,
+    MaNhom varchar(100) NOT NULL,
     NgaySX datetime NULL,
+	NgayHH datetime NULL,
     NgayNhap datetime NULL,
     DoanhSo int NULL,
     SoLuongKho int NULL,
+	Ver varchar(50) NULL,
+	TenVer varchar(50) NULL,
+	NguonHang nvarchar(50) NULL,
+	--NguonHang nvarchar(50) NULL,
     CONSTRAINT PK_SANPHAM PRIMARY KEY (MaSP),
     CONSTRAINT FK_SanPham_Loai FOREIGN KEY (MaLoai) REFERENCES Loai(MaLoai),
     CONSTRAINT FK_SanPham_Size FOREIGN KEY (MaNhom) REFERENCES Nhom(MaNhom)
 );
 GO
+--ALTER TABLE SanPhamData
+--ADD CONSTRAINT FK_SanPhamData_SanPham PRIMARY KEY(MaSP)
 
+--ALTER TABLE SanPhamData
+--ADD CONSTRAINT FK_SanPhamData_SanPham FOREIGN KEY (MaSP) REFERENCES SanPham(MaSP);
 ALTER TABLE SanPhamData
-ADD CONSTRAINT FK_SanPhamData_SanPham FOREIGN KEY (MaSP) REFERENCES SanPham(MaSP);
+ADD CONSTRAINT FK_SanPhamData_SanPham FOREIGN KEY (MaSP) REFERENCES SanPham(MaSP) ON DELETE CASCADE;
+
 GO
 
 
@@ -82,8 +108,8 @@ create table KhachHang
     DienThoai NVARCHAR(13) NULL,
     GioiTinh NVARCHAR(10) NULL,
     DiaChi NVARCHAR(255) NULL,
-    Email VARCHAR(100) NULL,
-    MatKhau VARCHAR(50) NULL,
+    Email VARCHAR(100) collate Latin1_General_CI_AS  NULL,
+    MatKhau VARCHAR(50) collate Latin1_General_CI_AS  NULL,
 	Diem int null,
     CONSTRAINT PK_KhachHang PRIMARY KEY (MaKH),
     CONSTRAINT FK_KhachHang_TK FOREIGN KEY (MaTK) REFERENCES TK(MaTK)
@@ -95,6 +121,10 @@ create table DonHang
 	MaTK INT,
     MaDH VARCHAR(10) NOT NULL,
     KH INT,
+	HoTenNN NVARCHAR(255) NULL,
+	DiaChiNN NVARCHAR(255) NULL,
+	DienThoaiNN NVARCHAR(13) NULL,
+	PhuongThuc NVARCHAR(50) NULL,
     Ngay DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT PK_GioHang PRIMARY KEY (MaDH),
     CONSTRAINT FK_DonHang_TK FOREIGN KEY (MaTK) REFERENCES TK(MaTK),
@@ -102,17 +132,72 @@ create table DonHang
 
 )
 go
+CREATE TABLE DanhGia
+(
+	AvatarUser varchar(100) null,
+    MaDG int IDENTITY(1,1) NOT NULL, -- ID duy nhất cho mỗi bình luận
+    MaSP varchar(50) NOT NULL, -- Mã sản phẩm
+    TenKH nvarchar(50) NULL, -- Tên khách hàng
+	DienThoai NVARCHAR(13) NULL,
+    NoiDung nvarchar(Max) NULL, -- Nội dung bình luận
+    NgayDG datetime NULL, -- Ngày bình luận
+	RatingValue INT CHECK (RatingValue >= 1 AND RatingValue <= 5),
+	Anh1 varchar(Max) NULL,
+	Anh2 varchar(Max) NULL,
+	Anh3 varchar(Max) NULL,
+	Anh4 varchar(Max) NULL,
+	Anh5 varchar(Max) NULL,
+	Video varchar(Max) NULL,
+	Email VARCHAR(100) NULL,
+	LuotThich INT DEFAULT 0,
+    CONSTRAINT PK_DanhGia PRIMARY KEY (MaDG),
+    CONSTRAINT FK_DanhGia_SanPham FOREIGN KEY (MaSP) REFERENCES SanPham(MaSP)
+);
+GO
+ALTER TABLE DanhGia
+DROP CONSTRAINT FK_DanhGia_SanPham; -- Xóa constraint hiện tại
+
+ALTER TABLE DanhGia
+ADD CONSTRAINT FK_DanhGia_SanPham FOREIGN KEY (MaSP) REFERENCES SanPham(MaSP) ON DELETE CASCADE;
+GO
+
+CREATE TABLE ThichSP
+(
+    MaSP varchar(50) NOT NULL,
+    MaKH INT NOT NULL,
+	Email VARCHAR(100) NULL,
+	DienThoai NVARCHAR(13) NULL,
+    DaThich BIT NOT NULL DEFAULT 1,
+    CONSTRAINT PK_Thich PRIMARY KEY (MaSP, MaKH),
+    CONSTRAINT FK_Thich_SanPham FOREIGN KEY (MaSP) REFERENCES SanPham(MaSP) ON DELETE CASCADE,
+    CONSTRAINT FK_Thich_KhachHang FOREIGN KEY (MaKH) REFERENCES KhachHang(MaKH) ON DELETE CASCADE
+);
+
+
+--CREATE TABLE DanhGiaData
+--(
+--    MaDG int NOT NULL,
+--	Thich int null,
+--	MaKH INT,
+	
+--    CONSTRAINT PK_DanhGiaData PRIMARY KEY (MaDG),
+--    CONSTRAINT FK_DanhGiaData_DanhGia FOREIGN KEY (MaDG) REFERENCES DanhGia(MaDG) ON DELETE CASCADE,
+--    CONSTRAINT FK_MAKH_DanhGiaData_DanhGia FOREIGN KEY (MaKH) REFERENCES KhachHang(MaKH) ON DELETE CASCADE
+
+--);
+--GO
 
 create table ChiTietDonHang
 (
 	KH INT,
 	MaCTDH varchar(10) not null,
 	MaDH varchar(10) not null,
-	MaSP varchar(10) not null,
+	MaSP varchar(50) not null,
 	SoLuong integer not null,
 	TenSP nvarchar(50) not null,
-	DuongDan varchar(100) not null,
+	DuongDan varchar(Max) not null,
 	Gia float not null,
+	TenPob nvarchar(50) NULL,
 	ThanhTien float not null,
 	Ngay datetime not null default CURRENT_TIMESTAMP,
 	constraint PK_ChiTietDonHang primary key (MaCTDH),
@@ -128,6 +213,47 @@ CREATE TABLE ChiNhanh
     DiaChiCN nvarchar(255) NOT NULL
 )
 go
+
+CREATE TABLE TinTuc
+(
+    MaBV INT IDENTITY(1,1),
+    HinhAnhBV varchar(Max) NULL,
+    DuongDanBV varchar(Max) NULL,
+    TieuDe nvarchar(Max) NULL,
+    NoiDungBV nvarchar(Max) Null,
+	NgayDangBV DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+    
+);
+GO
+
+CREATE TABLE VideoThongTin
+(
+    MaV INT IDENTITY(1,1),  
+    DuongDanV varchar(Max) NULL,
+	NgayDangBV DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+    
+);
+GO
+CREATE TABLE Banner
+(
+    MaBanner INT IDENTITY(0,1),
+    DuongDan varchar(Max) NULL,
+	NgayDangBV DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+    
+);
+GO
+CREATE TABLE DoanhThu
+(	Ma INT IDENTITY(1,1),  
+	--MaDH varchar(10) null,
+	Ngay INT NOT NULL,
+    Thang INT NOT NULL,
+    Nam INT NOT NULL,
+    DoanhThuNgay FLOAT NOT NULL DEFAULT 0.0,
+	 PRIMARY KEY (Ma)
+    
+);
+go
+
 -- foreign key
 
 alter table SanPham 
@@ -136,10 +262,12 @@ go
 alter table SanPham 
 add constraint FK_SP_Size foreign key (MaNhom) references Nhom(MaNhom)
 go
+--alter table ChiTietDonHang
+--add constraint FK_GH_SP foreign key (MaSP) references SanPham(MaSP)
+--go
 alter table ChiTietDonHang
-add constraint FK_GH_SP foreign key (MaSP) references SanPham(MaSP)
+add constraint FK_GH_SP foreign key (MaSP) references SanPham(MaSP) ON DELETE NO ACTION;
 go
-
 alter table ChiTietDonHang
 add constraint FK_CTDH_DH foreign key (MaDH) references DonHang(MaDH)
 go
@@ -164,11 +292,12 @@ ADD GiaoDich bit;
 go
 insert into Loai
 values
-('1','ALB'),
-('2','SSG'),
-('3','Bluray&CD'),
-('4','MD'),
-('5','FM')
+('1','Album'),
+('2','Merch'),
+('3','Fankit'),
+('4','Light Stick'),
+('5','Seasons Greetings'),
+('6','DVD/Blu-ray/LP')
 go
 
 INSERT INTO Nhom VALUES
@@ -193,87 +322,29 @@ set dateformat dmy
 insert into SanPham
 values
 
-('ASPALB01',N'Aespa Album Bouquet Ver','Content/items/aespa/alb/BouquetVer_750x.png',300000,N'Album Bouquet Ver','1','AESPA','13/04/2004','13/04/2004',0,50),
-('ASPALB02',N'Aespa Album Karina Ver','Content/items/aespa/alb/KARINAVer_750x.png',300000,N'Album Bouquet Ver','1','AESPA','13/04/2004','13/04/2004',0,50),
-('ASPALB03',N'Aespa Album Winter Ver','Content/items/aespa/alb/WINTERVer_750x.png',300000,N'Album Bouquet Ver','1','AESPA','13/04/2004','13/04/2004',0,50),
-('ASPALB04',N'Aespa Album Ningning Ver','Content/items/aespa/alb/NINGNINGVer_750x.png',300000,N'Album Bouquet Ver','1','AESPA','13/04/2004','13/04/2004',0,50),
-('ASPALB05',N'Aespa Album Giselle Ver','Content/items/aespa/alb/GISELLEVer_750x.png',300000,N'Album Bouquet Ver','1','AESPA','13/04/2004','13/04/2004',0,50),
-('IUALBLP',N'IU Album Love Poem','Content/items/iu/alb/albLovePoem.png',200000,N'Album Love Poem','1','IU','13/04/2004','13/04/2004',0,50),
-('IU29Doc',N'IU Documentary Pieces','Content/items/iu/md/29th.png',1600000,N'Winter of 29th Year Old','4','IU','13/04/2004','13/04/2004',0,50),
-('BTSALBprf',N'BTS Album Proof','Content/items/bts/alb/proof.png',1200000,N'Album Proof','1','BTS','13/04/2004','13/04/2004',0,50),
-('ILITReal1',N'ILLIT Album Super Real','Content/items/illit/alb/spReal.png',420000,N'Album Super Real','1','ILLIT','13/04/2004','13/04/2004',0,50)
-
---('ASPALB01',N'Aespa Album Bouquet Ver','Content/items/aespa/alb/BouquetVer_750x.png',300000,N'Album Bouquet Ver','1','AESPA','13/04/2004','13/04/2004',0,50),
---('ASPALB02',N'Aespa Album Karina Ver','Content/items/aespa/alb/KARINAVer_750x.png',300000,N'Album Bouquet Ver','1','AESPA','13/04/2004','13/04/2004',0,50),
---('ASPALB03',N'Aespa Album Winter Ver','Content/items/aespa/alb/WINTERVer_750x.png',300000,N'Album Bouquet Ver','1','AESPA','13/04/2004','13/04/2004',0,50),
---('ASPALB04',N'Aespa Album Ningning Ver','Content/items/aespa/alb/NINGNINGVer_750x.png',300000,N'Album Bouquet Ver','1','AESPA','13/04/2004','13/04/2004',0,50),
---('ASPALB05',N'Aespa Album Giselle Ver','Content/items/aespa/alb/GISELLEVer_750x.png',300000,N'Album Bouquet Ver','1','AESPA','13/04/2004','13/04/2004',0,50),
---('IUALBLP',N'IU Album Love Poem','Content/items/iu/alb/albLovePoem.png',200000,N'Album Love Poem','1','IU','13/04/2004','13/04/2004',0,50),
---('IU29Doc',N'IU Documentary Pieces','Content/items/iu/md/29th.png',1600000,N'Winter of 29th Year Old','4','IU','13/04/2004','13/04/2004',0,50),
---('BTSALBprf',N'BTS Album Proof','Content/items/bts/alb/proof.png',500000,N'Album Proof','1','BTS','13/04/2004','13/04/2004',0,50),
---('ILITReal1',N'ILLIT Album Super Real','Content/items/illit/alb/spReal.png',420000,N'Album Super Real','1','ILLIT','13/04/2004','13/04/2004',0,50)
-
---('TSTCDH',N'Trà Sữa Trân Châu Đường Hổ','Content/img/TSTCDH.jpg',25000,N'Trân Châu Đường Hổ, Size M','1','1'),
---('TSPMT',N'Trà Sữa Phô Mai Tươi','Content/img/TSPMT.jpg',40000,N'Phô Mai Tươi, Size M','1','1'),
---('TSTCHG',N'Trà Sữa Trân Châu Hoàng Gia','Content/img/TSTCHG.jpg',25000,N'Trân Châu Hoàng Gia, Size M','1','1'),
---('TS3AE',N'Trà Sữa Ba Anh Em','Content/img/TS3AE.jpg',25000,N'Tình Anh Em Chí Cốt, Size M','1','1'),
---('TSTCS',N'Trà Sữa Trân Châu Sợi','Content/img/TSTCS.jpg',25000,N'Mới Lạ Mời Bạn Mua Nha, Size M','1','1'),
---('TSKCD',N'Trà Sữa Kim Cương Đen Okinawa','Content/img/TSKCD.jpg',25000,N'Kim Cương Thật Đó, Size M','1','1'),
---('TSSocola',N'Trà Sữa Socola','Content/img/TSSocola.jpg',25000,N'Trân Châu Hoàng Gia, Size M','1','1'),
---('TSOL',N'Trà Sữa Ô Long','Content/img/TSOL.jpg',25000,N'Trà Sữa Ô Long, Size M','1','1'),
---('TXSVN',N'Trà Xanh Sữa Vị Nhài','Content/img/TXSVN.jpg',25000,N'Trà Xanh Sữa Vị Nhài, Size M','1','1'),
---('HTKPM',N'Hồng Trà Kem Phô Mai','Content/img/HTKPM.jpg',25000,N'Hồng Trà Kem Phô Mai, Size M','3','1'),
---('TSDT',N'Trà Sữa Dâu Tây','Content/img/TSDT.jpg',25000,N'Trà Sữa Dâu Tây, Size M','1','1'),
---('TXKPM',N'Trà Xanh Kem Phô Mai','Content/img/TXKPM.jpg',25000,N'Trà Xanh Kem Phô Mai, Size M','3','1'),
---('DTKPM',N'Dâu Tầm Kem Phô Mai','Content/img/DTKPM.jpg',40000,N'Dâu Tầm Kem Phô Mai, Size M','3','1'),
---('OLKPM',N'Ô Long Kem Phô Mai','Content/img/OLKPM.jpg',25000,N'Ô Long Kem Phô Mai, Size M','3','1'),
---('OLMKPM',N'Ô Long Mận Kem Phô Mai','Content/img/OLMKPM.jpg',25000,N'Ô Long Mận Kem Phô Mai, Size M','3','1'),
---('BPlanS',N'Bánh Plan Socola','Content/img/BPlanS.jpg',5000,N'Làm Từ Socola Và Trứng','6','1'),
---('BPlanT',N'Bánh Plan','Content/img/BPlanT.jpg',5000,N'Làm Từ Trứng','6','1'),
---('TCDen',N'Trân Châu Đen','Content/img/TCDen.jpg',5000,N'Đen Huyền Bí','6','1'),
---('TCXanh',N'Trân Châu Xanh','Content/img/TCXanh.jpg',5000,N'Xanh Của Thiên Nhiên','6','1'),
---('TRCSocola',N'Thạch Rau Câu Socola','Content/img/TRCSocola.jpg',5000,N'Thạch Socola','6','1'),
---('TRCXanh',N'Thạch Rau Câu Xanh','Content/img/TRCXanh.jpg',5000,N'Thạch Xanh','6','1'),
---('CKTCHK',N'Cafe Kem Trân Châu Hoàng Kim','Content/img/CKTCHK.jpg',25000,N'Kem Cà Phê Trân Châu Hoàng Kim','4','1'),
---('KTCHK',N'Kem Trân Châu Hoàng Kim','Content/img/KTCHK.jpg',25000,N'Kem Trân Châu Hoàng Kim','4','1'),
---('KDS',N'Kem Ly Dâu Sữa','Content/img/KDS.jpg',25000,N'Ly Kem Dâu Sữa','4','1'),
---('KVD',N'Kem Ly Vani Dâu','Content/img/KVD.jpg',25000,N'Ly Kem Vani Dâu','4','1'),
---('CPDD',N'Cà Phê Đen Đá','Content/img/CPDD.jpg',18000,N'Cà Phê Đen Tỉnh Táo Ngày Dài','2','1'),
---('CPSD',N'Cà Phê Sữa Đá','Content/img/CPSD.jpg',18000,N'Cà Phê Sữa Thơm Ngon','2','1'),
---('JMC',N'Jelly Milk Coffee','Content/img/JMC.jpg',22000,N'Cà Phê Sữa Thạch','2','1'),
---('GJMC',N'Grass Jelly Milk Coffee','Content/img/GJMC.jpg',22000,N'Cà Phê Sữa Thạch Cỏ','2','1'),
-
---('TSNCL',N'Trà Sữa Ngũ Cốc','Content/img/TSNC.jpg',35000,N'Ô Long Sữa Trân Châu Ngũ Cốc, Size L','1','2'),
---('TSTCDHL',N'Trà Sữa Trân Châu Đường Hổ','Content/img/TSTCDH.jpg',35000,N'Trân Châu Đường Hổ, Size L','1','2'),
---('TSPMTL',N'Trà Sữa Phô Mai Tươi','Content/img/TSPMT.jpg',50000,N'Phô Mai Tươi, Size L','1','2'),
---('TSTCHGL',N'Trà Sữa Trân Châu Hoàng Gia','Content/img/TSTCHG.jpg',35000,N'Trân Châu Hoàng Gia, Size L','1','2'),
---('TS3AEL',N'Trà Sữa Ba Anh Em','Content/img/TS3AE.jpg',35000,N'Tình Anh Em Chí Cốt, Size L','1','2'),
---('TSTCSL',N'Trà Sữa Trân Châu Sợi','Content/img/TSTCS.jpg',35000,N'Mới Lạ Mời Bạn Mua Nha, Size L','1','2'),
---('TSKCDL',N'Trà Sữa Kim Cương Đen Okinawa','Content/img/TSKCD.jpg',35000,N'Kim Cương Thật Đó, Size L','1','2'),
---('TSSocolaL',N'Trà Sữa Socola','Content/img/TSSocola.jpg',35000,N'Trân Châu Hoàng Gia, Size L','1','2'),
---('TSOLL',N'Trà Sữa Ô Long','Content/img/TSOL.jpg',35000,N'Trà Sữa Ô Long, Size L','1','2'),
---('TXSVNL',N'Trà Xanh Sữa Vị Nhài','Content/img/TXSVN.jpg',35000,N'Trà Xanh Sữa Vị Nhài, Size L','1','2'),
---('HTKPML',N'Hồng Trà Kem Phô Mai','Content/img/HTKPM.jpg',35000,N'Hồng Trà Kem Phô Mai, Size L','3','2'),
---('TSDTL',N'Trà Sữa Dâu Tây','Content/img/TSDT.jpg',35000,N'Trà Sữa Dâu Tây, Size L','1','2'),
---('TXKPML',N'Trà Xanh Kem Phô Mai','Content/img/TXKPM.jpg',35000,N'Trà Xanh Kem Phô Mai, Size L','3','2'),
---('DTKPML',N'Dâu Tầm Kem Phô Mai','Content/img/DTKPM.jpg',50000,N'Dâu Tầm Kem Phô Mai, Size L','3','2'),
---('OLKPML',N'Ô Long Kem Phô Mai','Content/img/OLKPM.jpg',35000,N'Ô Long Kem Phô Mai, Size L','3','2'),
---('OLMKPML',N'Ô Long Mận Kem Phô Mai','Content/img/OLMKPM.jpg',35000,N'Ô Long Mận Kem Phô Mai, Size L','3','2')
-
+('ASPALBBTTBouquetVer',N'Aespa Album Bouquet Ver','Content/items/aespa/album/BouquetVer_750x.png',300000,N'Album Bouquet Ver','1','AESPA','13/04/2004',null,'13/04/2004',0,50,'ASPALBBTT','Bouquet Ver','Ktown4u'),
+('ASPALBBTTKarinaVer',N'Aespa Album Karina Ver','Content/items/aespa/album/KARINAVer_750x.png',300000,N'Album Bouquet Ver','1','AESPA','13/04/2004',null,'13/04/2004',0,50,'ASPALBBTT','Karina Ver','Ktown4u'),
+('ASPALBBTTWinterVer',N'Aespa Album Winter Ver','Content/items/aespa/album/WINTERVer_750x.png',300000,N'Album Bouquet Ver','1','AESPA','13/04/2004',null,'13/04/2004',0,50,'ASPALBBTT','Winter Ver','Ktown4u'),
+('ASPALBBTTNingningVer',N'Aespa Album Ningning Ver','Content/items/aespa/album/NINGNINGVer_750x.png',300000,N'Album Bouquet Ver','1','AESPA','13/04/2004',null,'13/04/2004',0,50,'ASPALBBTT','Ningning Ver','Ktown4u'),
+('ASPALBBTTGiselleVer',N'Aespa Album Giselle Ver','Content/items/aespa/album/GISELLEVer_750x.png',300000,N'Album Bouquet Ver','1','AESPA','13/04/2004',null,'13/04/2004',0,50,'ASPALBBTT','Giselle Ver','Ktown4u'),
+('IUALBLP',N'IU Album Love Poem','Content/items/iu/album/albLovePoem.png',200000,N'Album Love Poem','1','IU','13/04/2004',null,'13/04/2004',0,50,'IUALBLP',null,'Ktown4u'),
+('IU29Doc',N'IU Documentary Pieces','Content/items/iu/dvdbluraylp/29th.png',1600000,N'Winter of 29th Year Old','6','IU','13/04/2004',null,'13/04/2004',0,50,'IU29Doc',null,'Ktown4u'),
+('BTSALBprf',N'BTS Album Proof','Content/items/bts/album/proof.png',1200000,N'Album Proof','1','BTS','13/04/2004',null,'13/04/2004',0,50,'BTSALBprf',null,'Ktown4u'),
+('ILITReal1',N'ILLIT Album Super Real','Content/items/illit/album/spReal.png',420000,N'Album Super Real','1','ILLIT','13/04/2004',null,'13/04/2004',0,50,'ILITReal1',null,'Ktown4u')
 
 go
 
 insert into SanPhamData
 values
-('ASPALB01','Content/items/aespa/alb/BouquetVer_750x.png','','','','',''),
-('ASPALB02','Content/items/aespa/alb/KARINAVer_750x.png','','','','',''),
-('ASPALB03','Content/items/aespa/alb/WINTERVer_750x.png','','','','',''),
-('ASPALB04','Content/items/aespa/alb/NINGNINGVer_750x.png','','','','',''),
-('ASPALB05','Content/items/aespa/alb/GISELLEVer_750x.png','','','','',''),
-('IUALBLP','Content/items/iu/alb/albLovePoem.png','Content/items/iu/alb/albLovePoem1.png','','','','Content/items/iu/alb/albLovePoemNote2.png'),
-('IU29Doc','Content/items/iu/md/29th.png','Content/items/iu/md/29th1.png','Content/items/iu/md/29th2.png','Content/items/iu/md/29th3.png','',''),
-('BTSALBprf','Content/items/bts/alb/proof.png','Content/items/bts/alb/proof1.png','','','','Content/items/bts/alb/proofNote2.png'),
-('ILITReal1','Content/items/illit/alb/spReal.png','Content/items/illit/alb/spReal1.png','','','','')
+('ASPALBBTTBouquetVer','Content/items/aespa/album/BouquetVer_750x.png','','','','','',0,0),
+('ASPALBBTTKarinaVer','Content/items/aespa/album/KARINAVer_750x.png','','','','','',0,0),
+('ASPALBBTTWinterVer','Content/items/aespa/album/WINTERVer_750x.png','','','','','',0,0),
+('ASPALBBTTNingningVer','Content/items/aespa/album/NINGNINGVer_750x.png','','','','','',0,0),
+('ASPALBBTTGiselleVer','Content/items/aespa/album/GISELLEVer_750x.png','','','','','',0,0),
+('IUALBLP','Content/items/iu/album/albLovePoem.png','Content/items/iu/album/albLovePoem1.png','','','','Content/items/iu/album/AnhALBLovePoem.png',0,0),
+('IU29Doc','Content/items/iu/dvdbluraylp/29th.png','Content/items/iu/dvdbluraylp/29th1.png','Content/items/iu/dvdbluraylp/29th2.png','Content/items/iu/dvdbluraylp/29th3.png','','',0,0),
+('BTSALBprf','Content/items/bts/album/proof.png','Content/items/bts/album/proof1.png','','','','Content/items/bts/album/AnhALBProofNote.jpg',0,0),
+('ILITReal1','Content/items/illit/album/spReal.png','Content/items/illit/album/spReal1.png','','','','',0,0)
 
 go
 INSERT INTO ChiNhanh (MaCN, TenCN, DiaChiCN) 
@@ -284,23 +355,47 @@ VALUES
 go
 INSERT INTO TK(Email, MatKhau,TrangThai,Quyen) 
 VALUES 
-    (N'Admin', 'Admin', 0,'Admin');
+    ('Admin', 'Admin', 0,'Admin');
    
 
 go
 
+INSERT INTO TinTuc (HinhAnhBV, DuongDanBV, TieuDe, NoiDungBV)
+VALUES ('https://images2.thanhnien.vn/528068263637045248/2024/4/8/boadongthaigiainghe3-1712617508236587635258.jpg', 'https://thanhnien.vn/dong-thai-cua-nu-hoang-kpop-boa-sau-khi-up-mo-giai-nghe-som-185240409061553758.htm', N'Động thái của "nữ hoàng Kpop" BoA sau khi úp mở giải nghệ sớm', N'Trên trang cá nhân, BoA trấn an người hâm mộ sau khi chia sẻ những trạng thái úp mở sắp rời khỏi showbiz.'),
+		('https://media-cdn-v2.laodong.vn/storage/newsportal/2024/3/4/1311231/Hanni-Chaumet-8.jpg?w=800&h=420&crop=auto&scale=both', 'https://laodong.vn/thoi-trang/hanni-newjeans-gay-an-tuong-voi-bo-anh-hoa-bao-cung-trang-suc-xa-xi-1311231.ldo', N'Hanni (NewJeans) gây ấn tượng với bộ ảnh hoạ báo cùng trang sức xa xỉ', N'Hanni chưng diện bộ sưu tập Joséphine của thương hiệu trang sức xa xỉ Chaumet, thể hiện thần thái tự tin, quyến rũ và trưởng thành.'),
+		('https://kenh14cdn.com/203336854389633024/2024/6/5/mv5bnzqznzvizdctzguwzi00zme5ltk4zjgtzja1zjg5ymriogq4xkeyxkfqcgdeqxvyndy5mjmyntgv1-0917-17175554430311730617564.jpg', 'https://kenh14.vn/nhom-nhac-5-lan-7-luot-bi-dem-ra-lam-bia-do-dan-moi-khi-cong-ty-vuong-scandal-20240605094445235.chn', N'Nhóm nhạc 5 lần 7 lượt bị đem ra làm "bia đỡ đạn" mỗi khi công ty vướng scandal', N'Không biết vô tình hay cố ý mà mỗi lần nhóm nhạc này được thông báo comeback là lúc công ty đang xảy ra biến động.'),
+		('https://kenh14cdn.com/203336854389633024/2024/4/8/chrome-capture-2024-2-29-17125713432341764253845.gif', 'https://kenh14.vn/hybe-lai-ap-dung-cong-thuc-thao-tung-nhac-so-cua-newjeans-cho-nhom-nhac-dan-em-20240408171856713.chn', N'HYBE lại áp dụng công thức "thao túng" nhạc số của NewJeans cho nhóm nhạc đàn em?', N'Tranh cãi về thành tích nhạc số của tân binh HYBE hiện đang nổ ra trên các trang cộng đồng.');
+go
+
+INSERT INTO VideoThongTin (DuongDanV)
+VALUES	('https://www.youtube.com/embed/if0we38Hbyk?si=WNpzGXpbqMuT6kOH'),
+		('https://www.youtube.com/embed/nXzD9vXtscs?si=TDrhRrmd7wm6gbrT'),
+		('https://www.youtube.com/embed/VFm6ztzZ188?si=3V4l6e2bZX284Y9D');
+
+go
+INSERT INTO Banner(DuongDan)
+VALUES	('Content\image-banner\banner1.1.png'),
+		('Content\image-banner\banner2.png'),
+		('Content\image-banner\banner3.png'),
+		('Content\image-banner\banner4.png');
+
+go
 CREATE PROCEDURE Product_Add 
-    @MaSP varchar(10), 
+    @MaSP varchar(50), 
     @TenSP nvarchar(50), 
-    @DuongDan varchar(100), 
+    @DuongDan varchar(Max), 
     @Gia float, 
     @MoTa nvarchar(255), 
-    @MaLoai varchar(10),
-    @MaNhom varchar(10),
-    @NgaySX datetime, -- Thêm tham số này
+    @MaLoai varchar(100),
+    @MaNhom varchar(100),
+    @NgaySX datetime,
+	@NgayHH datetime,-- Thêm tham số này
     @NgayNhap datetime, -- Thêm tham số này
     @DoanhSo int, -- Thêm tham số này
-    @SoLuongKho int -- Thêm tham số này
+    @SoLuongKho int,
+	@Ver varchar(50),
+	@TenVer varchar(50),
+	@NguonHang nvarchar(50)
 AS
 BEGIN
     INSERT INTO [dbo].[SanPham]
@@ -311,10 +406,14 @@ BEGIN
                ,[MoTa]
                ,[MaLoai]
                ,[MaNhom]
-               ,[NgaySX] -- Thêm cột này vào INSERT
+               ,[NgaySX]
+			   ,[NgayHH]-- Thêm cột này vào INSERT
                ,[NgayNhap] -- Thêm cột này vào INSERT
                ,[DoanhSo] -- Thêm cột này vào INSERT
-               ,[SoLuongKho]) -- Thêm cột này vào INSERT
+               ,[SoLuongKho]
+			   ,[Ver]
+			   ,[TenVer]
+			   ,[NguonHang]) -- Thêm cột này vào INSERT
     VALUES 
      ( @MaSP,
       @TenSP,
@@ -323,22 +422,29 @@ BEGIN
       @MoTa,
       @MaLoai,
       @MaNhom,
-      @NgaySX, -- Thêm giá trị này vào VALUES
+      @NgaySX,
+	  @NgayHH,-- Thêm giá trị này vào VALUES
       @NgayNhap, -- Thêm giá trị này vào VALUES
       @DoanhSo, -- Thêm giá trị này vào VALUES
-      @SoLuongKho) -- Thêm giá trị này vào VALUES
+      @SoLuongKho,
+	  @Ver,
+	  @TenVer,
+	  @NguonHang) -- Thêm giá trị này vào VALUES
 END
 GO
 
 
 CREATE PROCEDURE ProductData_Add 
-    @MaSP varchar(10), 
-    @DuongDan1 varchar(100), 
-    @DuongDan2 varchar(100), 
-    @DuongDan3 varchar(100), 
-    @DuongDan4 varchar(100), 
-    @DuongDan5 varchar(100),
-    @AnhNote varchar(100)
+    @MaSP varchar(50), 
+    @DuongDan1 varchar(Max), 
+    @DuongDan2 varchar(Max), 
+    @DuongDan3 varchar(Max), 
+    @DuongDan4 varchar(Max), 
+    @DuongDan5 varchar(Max),
+    @AnhNote varchar(Max),
+	@Pob bit = 0,
+	
+	@IsPreOrder bit = 0
 AS
 BEGIN
     INSERT INTO [dbo].[SanPhamData]
@@ -348,7 +454,9 @@ BEGIN
            ,[DuongDan3]
            ,[DuongDan4]
            ,[DuongDan5]
-           ,[AnhNote])
+           ,[AnhNote]
+		   ,[Pob]
+		   ,[IsPreOrder])
     VALUES 
     ( @MaSP,
       @DuongDan1,
@@ -356,7 +464,9 @@ BEGIN
       @DuongDan3,
       @DuongDan4,
       @DuongDan5,
-      @AnhNote)
+      @AnhNote,
+	  @Pob,
+	  @IsPreOrder)
 END;
 GO
 
@@ -430,3 +540,42 @@ GROUP BY
     MONTH(Ngay)
 ORDER BY 
     MONTH(Ngay)
+
+go
+
+--CREATE PROCEDURE CapNhatDoanhThu
+--AS
+--BEGIN
+--    -- Tính tổng doanh thu của tháng hiện tại
+--    DECLARE @TongDoanhThu FLOAT;
+--    SELECT @TongDoanhThu = SUM(ThanhTien)
+--    FROM ChiTietDonHang
+--    WHERE GiaoDich = 1 AND MONTH(Ngay) = MONTH(GETDATE())
+--    GROUP BY MONTH(Ngay);
+
+--    -- Cập nhật tổng doanh thu của tháng hiện tại
+--    UPDATE DoanhThu
+--    SET TongDoanhThu = TongDoanhThu + @TongDoanhThu
+--    WHERE Thang = MONTH(GETDATE()) AND Nam = YEAR(GETDATE());
+
+--    -- Tính tổng doanh thu của năm hiện tại
+--    SELECT @TongDoanhThu = SUM(TongDoanhThu)
+--    FROM DoanhThu
+--    WHERE Nam = YEAR(GETDATE());
+
+--    -- Cập nhật tổng doanh thu của năm hiện tại
+--    UPDATE DoanhThu
+--    SET TongDoanhThu = TongDoanhThu + @TongDoanhThu
+--    WHERE Nam = YEAR(GETDATE());
+--END;
+
+--go
+--CREATE TRIGGER trg_ChiTietDonHang_Insert
+--ON ChiTietDonHang
+--AFTER INSERT
+--AS
+--BEGIN
+--    EXEC CapNhatDoanhThu;
+--END;
+
+
