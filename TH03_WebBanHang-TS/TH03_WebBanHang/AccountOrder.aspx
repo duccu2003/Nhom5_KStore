@@ -78,7 +78,7 @@
         }*/
         table th, table td {
            /*border-bottom:1px solid #242426;*/
-           border:1px solid #60536D;
+           /*border:1px solid #60536D;*/
         }
         
         table th:first-child, table td:first-child {
@@ -314,15 +314,15 @@
                 <table class="table" id="groupPlaceholderContainer" runat="server">
                     <thead>
                         <tr>
-                                                   <th class="justify-content-center align-content-center">Mã Đơn</th>
-                         <th class="justify-content-center align-content-center">Khách hàng</th>
- <th class="justify-content-center align-content-center">Địa chỉ</th>
- <th class="justify-content-center align-content-center">Thời Gian</th>
+                                                   <th scope="col" class="justify-content-center align-content-center text-center">Mã Đơn</th>
+                         <th scope="col" class="justify-content-center align-content-center text-center">Khách hàng</th>
+ <th scope="col" class="justify-content-center align-content-center text-center">Địa chỉ</th>
+ <th scope="col" class="justify-content-center align-content-center text-center">Thời Gian</th>
 
 <%-- <th class="justify-content-center align-content-center">Chi Tiết</th>--%>
-<th class="justify-content-center align-content-center">Số Sản Phẩm</th>
+<th scope="col" class="justify-content-center align-content-center text-center">Số Sản Phẩm</th>
 
- <th class="justify-content-center align-content-center">Tổng Tiền</th>
+ <th scope="col" class="justify-content-center align-content-center text-center">Tổng Tiền</th>
                       <%--  <th>Mã Đơn</th>
 
                         <th>Thời Gian</th>

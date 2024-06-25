@@ -12,7 +12,7 @@
         <style>
             *{
                 margin:0;
-                padding:0;font-family:Roboto;
+                padding:0;font-family:Roboto;transition:0.5s;
             }
             .alert{
     top:0;
@@ -35,7 +35,17 @@
          color: #721c24;
           border-color: #f5c6cb;
 }
-
+.btn-primary{
+    border-radius:5px;
+}
+.btn-primary:hover{
+    color:#FFF;
+    background:orangered !important;
+}
+.btnUpBV:hover{
+    color:#FFF;
+    background:black !important;
+}
             /* Tùy chỉnh scrollbar cho trình duyệt dựa trên WebKit */
 .div-updateInformation::-webkit-scrollbar {
     width: 8px; /* Chiều rộng của thanh cuộn */
@@ -190,11 +200,11 @@ $(function(){
                          }
                      </script>
 
-                     <tr><th style="text-align:center;">
+                     <tr><th scope="col" style="text-align:center;">
                          Thêm banner
                          </th></tr>
                      <tr>
-                         <th>
+                         <th scope="col">
                              <asp:FileUpload ID="fileUploadBanner" CssClass="div-add-input"  runat="server" onchange="previewImageBanner(event)" style=" /*border:1px solid #000;*/ outline:none;"/>
                                 <img id="preview" src="" alt="Banner" style="width:100%;"/>
                          </th>
@@ -213,7 +223,7 @@ $(function(){
 
                                 <table class="table" style="width:100%; text-align:center; overflow:auto;">
             <tr>
-                <th colspan="2" style="text-align:center;">Banner</th>
+                <th scope="col" colspan="2" style="text-align:center;">Banner</th>
             </tr>
            <%-- <tr>
                              <th colspan="2"><%#ddlMaSP.SelectedItem.Text.ToString() %></th>
@@ -229,7 +239,7 @@ $(function(){
                       <%--  <th><%#Item.MaSP %></th>
                                   </tr>--%>
                         <tr>
-                            <th>
+                            <th scope="col">
                                 <img style="width:100%;" src="<%#Item.DuongDan %>"/>
                                 </th>
                                        
@@ -260,11 +270,11 @@ $(function(){
         <div class="container px-5 px-lg-5" style="text-align:center !important; height:540px;  display:flex !important; padding:20px !important; margin:auto !important; gap:10px !important; width:max-content; ">
            <div  class="div-updateInformation col-sm-4" style="height:100%; display:grid; padding:0 10px; background:#FFFF">
            <table class="table">
-               <tr><th colspan="2" style="text-align:center;">
+               <tr><th scope="col" colspan="2" style="text-align:center;">
                    Thêm tin tức
                    </th></tr>
                <tr>
-                   <th>
+                   <th scope="col">
                                <asp:Label ID="lbHinhBV" runat="server" Text="Link hình ảnh:"></asp:Label>
 
                    </th>
@@ -274,16 +284,16 @@ $(function(){
                    </td>
                </tr>
                <tr>
-                   <th><asp:Label ID="lbLinkBV" runat="server" Text="Link bài viết:"></asp:Label></th>
+                   <th scope="col"><asp:Label ID="lbLinkBV" runat="server" Text="Link bài viết:"></asp:Label></th>
                    <td><asp:TextBox ID="txtLinkBV" TextMode="MultiLine" runat="server" CssClass="input"></asp:TextBox></td>
                </tr>
                  <tr>
-                   <th><asp:Label ID="lbTieuDeBV" runat="server" Text="Tiêu đề bài viết:"></asp:Label></th>
+                   <th scope="col"><asp:Label ID="lbTieuDeBV" runat="server" Text="Tiêu đề bài viết:"></asp:Label></th>
 
                   <td><asp:TextBox ID="txtTieuDeBV" TextMode="MultiLine" runat="server" CssClass="input"></asp:TextBox></td>
               </tr>
                <tr>
-                   <th><asp:Label ID="lbNoiDungBV" runat="server" Text="Tóm tắt nội dung bài viết:"></asp:Label></th>
+                   <th scope="col"><asp:Label ID="lbNoiDungBV" runat="server" Text="Tóm tắt nội dung bài viết:"></asp:Label></th>
                    <td>
                         <asp:TextBox ID="txtNoiDungBV" TextMode="MultiLine" runat="server" CssClass="input"></asp:TextBox>
 
@@ -297,11 +307,11 @@ $(function(){
                </tr>
            </table>
             <table class="table">
-                <tr><th colspan="2" style="text-align:center;">
+                <tr><th scope="col" colspan="2" style="text-align:center;">
                     Thêm video
                     </th></tr>
                 <tr>
-                    <th>
+                    <th scope="col">
                         <asp:Label ID="Label1" runat="server" Text="Link Video:"></asp:Label>
 
                     </th>
@@ -346,7 +356,8 @@ $(function(){
 
             }
             .table tr{
-                border-bottom:1px dashed #636363;
+                /*border-bottom:1px dashed #636363;*/
+                 box-shadow:0 1px 2px #242426;
             }
              .table tr th{
                  width:12rem
@@ -367,7 +378,7 @@ $(function(){
         <div  class="div-updateInformation col-sm-4" style="height:100%; display:grid; padding:0 10px; background:#FFFF;  overflow:auto;">
                 <table class="table" style="width:400px; text-align:center; overflow:auto;">
             <tr>
-                <th colspan="3" style="text-align:center;">Tin tức</th>
+                <th scope="col" colspan="3" style="text-align:center;">Tin tức</th>
             </tr>
            <%-- <tr>
                              <th colspan="2"><%#ddlMaSP.SelectedItem.Text.ToString() %></th>
@@ -383,7 +394,7 @@ $(function(){
                       <%--  <th><%#Item.MaSP %></th>
                                   </tr>--%>
                         <tr>
-                            <th>
+                            <th scope="col">
                                 <img style="width:100px;" src="<%#Item.HinhAnhBV %>"/>
                                 </th>
                                                     <th style="text-align:left;"><%#Item.TieuDe %></th>
@@ -395,7 +406,7 @@ $(function(){
                             <th colspan="2"><%#Item.NoiDungBV %></th>
                         </tr>--%>
                         <tr>
-                            <th><%#Item.NgayDangBV %></th>
+                            <th scope="col"><%#Item.NgayDangBV %></th>
                                                                                     <td>
 
 	                             <asp:Button ID="btnDelTinTuc" class="btnUpdate btn btn-default btn-color btn-w" runat="server" style="border:none; /*background-color:#0000;*/ /*background:linear-gradient(to right, #7c92ea,#4cff00);*/   /*font-size:14px;*/ /*width:max-content;*/ width: 6rem; background-color:#0000;" CommandArgument='<%# Eval("MaBV")%>' OnClick="btDelTinTuc_Click" Text="Xóa" CssClass="btn btn-primary" />
@@ -412,7 +423,7 @@ $(function(){
             <div class="div-updateInformation col-sm-4" style="height:100%; display:grid; padding:0 10px; background:#FFFF;  overflow:auto;">
                 <table class="table" style="width:400px; text-align:center; overflow:auto;">
             <tr>
-                <th colspan="3" style="text-align:center;">Video</th>
+                <th scope="col" colspan="3" style="text-align:center;">Video</th>
             </tr>
            <%-- <tr>
                              <th colspan="2"><%#ddlMaSP.SelectedItem.Text.ToString() %></th>
@@ -422,7 +433,7 @@ $(function(){
                     <ItemTemplate>
                     
                         <tr>
-                            <th colspan="2">
+                            <th scope="col" colspan="2">
                                 <div title="Video thông tin gần đây" class="col-6">
                                     <div  class="embed-responsive embed-responsive-16by9 mb-3 fade-in video-if">
                                         <iframe loading="lazy" class="embed-responsive-item" src="<%#: Item.DuongDanV %>" allowfullscreen></iframe>
@@ -434,7 +445,7 @@ $(function(){
                             <th colspan="2"><%#Item.NoiDungBV %></th>
                         </tr>--%>
                         <tr>
-                            <th><%#Item.NgayDangBV %></th>
+                            <th scope="col"><%#Item.NgayDangBV %></th>
                                                                                     <td>
 
 	                             <asp:Button ID="btnDelVideoThongTin" class="btnUpdate btn btn-default btn-color btn-w" runat="server" style="border:none; /*background-color:#0000;*/ /*background:linear-gradient(to right, #7c92ea,#4cff00);*/   /*font-size:14px;*/ /*width:max-content;*/ width: 6rem; background-color:#0000;" CommandArgument='<%# Eval("MaV")%>' OnClick="btDelVideoThongTin_Click" Text="Xóa" CssClass="btn btn-primary" />

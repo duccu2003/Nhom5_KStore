@@ -28,7 +28,7 @@
             color #000;                      
         }
         *{
-            color:#000;font-family:Roboto;
+            color:#000;font-family:Roboto;transition:0.5s;
         }
        /* Thay đổi kích thước cho NextPreviousPagerField và ImageButton */
         .pagerImage {
@@ -84,9 +84,13 @@
         }*/
         table th, table td {
            /*border-bottom:1px solid #242426;*/
-           border:1px solid #242426;
+          /* border:1px solid #242426;*/
+           box-shadow:0 1px 2px #242426;
         }
-        
+         .btn-default:hover{
+     color:#FFF !important;
+     background:#000 !important;
+ }
         table th:first-child, table td:first-child {
            
         }
@@ -439,11 +443,11 @@ text-align:center;
                 <table class="table" id="groupPlaceholderContainer" runat="server">
                     <thead>
                         <tr>
-                            <th class="justify-content-center align-content-center">Mã</th>
-                            <th class="justify-content-center align-content-center">Nghệ danh</th>
-                            <th class="justify-content-center align-content-center">Logo</th>
-                            <th class="justify-content-center align-content-center">Ảnh</th>
-                            <th class="justify-content-center align-content-center">Lượng sản phẩm</th>
+                            <th scope="col" class="justify-content-center align-content-center">Mã</th>
+                            <th scope="col" class="justify-content-center align-content-center">Nghệ danh</th>
+                            <th scope="col" class="justify-content-center align-content-center">Logo</th>
+                            <th scope="col" class="justify-content-center align-content-center">Ảnh</th>
+                            <th scope="col" class="justify-content-center align-content-center">Lượng sản phẩm</th>
                            
                            <%-- <th class="justify-content-center align-content-center"></th>--%>
                         </tr>

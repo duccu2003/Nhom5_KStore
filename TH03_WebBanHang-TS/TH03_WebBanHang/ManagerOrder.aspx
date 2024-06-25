@@ -28,7 +28,7 @@
             color #000;                      
         }
         *{
-            color:#000;font-family:Roboto;
+            color:#000;font-family:Roboto;transition:0.5s;
         }
        /* Thay đổi kích thước cho NextPreviousPagerField và ImageButton */
         .pagerImage {
@@ -78,13 +78,17 @@
             width:1260px !important;
 
         }
-
+         .btn-default:hover{
+     color:#FFF !important;
+     background:#000 !important;
+ }
        /* table th, table td {
             border: 1px solid #242426;
         }*/
         table th, table td {
            /*border-bottom:1px solid #242426;*/
-           border:1px solid #242426;
+           /*border:1px solid #242426;*/
+            box-shadow:0 1px 2px #242426;
         }
         
         table th:first-child, table td:first-child {
@@ -466,13 +470,13 @@ $(function(){
                 <table class="table" id="groupPlaceholderContainer" runat="server">
                     <thead>
                         <tr>
-                           <th class="justify-content-center align-content-center">Mã đơn</th>
-<th class="justify-content-center align-content-center">Khách hàng</th>
-<th class="justify-content-center align-content-center">Địa chỉ</th>
-<th class="justify-content-center align-content-center">Chi nhánh</th>
-<th class="justify-content-center align-content-center">Thời gian</th>
-<th class="justify-content-center align-content-center">Số lượng</th>
-<th class="justify-content-center align-content-center">Tổng tiền</th>
+                           <th scope="col" class="justify-content-center align-content-center">Mã đơn</th>
+<th scope="col" class="justify-content-center align-content-center">Khách hàng</th>
+<th scope="col" class="justify-content-center align-content-center">Địa chỉ</th>
+<th scope="col" class="justify-content-center align-content-center">Chi nhánh</th>
+<th scope="col" class="justify-content-center align-content-center">Thời gian</th>
+<th scope="col" class="justify-content-center align-content-center">Số lượng</th>
+<th scope="col" class="justify-content-center align-content-center">Tổng tiền</th>
                       <%--<th></th>--%>
                       
 

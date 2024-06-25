@@ -28,7 +28,7 @@
          color #000;                      
      }
      *{
-         color:#000;font-family:Roboto;
+         color:#000;font-family:Roboto;transition:0.5s;
      }
     /* Thay đổi kích thước cho NextPreviousPagerField và ImageButton */
      .pagerImage {
@@ -84,9 +84,13 @@
      }*/
      table th, table td {
         /*border-bottom:1px solid #242426;*/
-        border:1px solid #242426;
+       /* border:1px solid #242426;*/
+       box-shadow:0 1px 2px #242426;
      }
-     
+      .btn-default:hover{
+     color:#FFF !important;
+     background:#000 !important;
+ }
      table th:first-child, table td:first-child {
         
      }
@@ -441,16 +445,16 @@ $(function(){
                 <table class="table" id="groupPlaceholderContainer" runat="server">
                     <thead>
                         <tr>
-                           <th class="justify-content-center align-content-center">Ảnh</th>
-<th class="justify-content-center align-content-center">Họ Tên</th>
-<th class="justify-content-center align-content-center">Điện Thoại</th>
-<th class="justify-content-center align-content-center">Giới Tính</th>
-<th class="justify-content-center align-content-center">Địa Chỉ</th>
-<th class="justify-content-center align-content-center">Email</th>
+                           <th scope="col" class="justify-content-center align-content-center">Ảnh</th>
+<th scope="col" class="justify-content-center align-content-center">Họ Tên</th>
+<th scope="col" class="justify-content-center align-content-center">Điện Thoại</th>
+<th scope="col" class="justify-content-center align-content-center">Giới Tính</th>
+<th scope="col" class="justify-content-center align-content-center">Địa Chỉ</th>
+<th scope="col" class="justify-content-center align-content-center">Email</th>
 <%--<th class="justify-content-center align-content-center">Mật Khẩu</th>--%>
-									<th class="justify-content-center align-content-center">Điểm</th>
+									<th scope="col" class="justify-content-center align-content-center">Điểm</th>
 
-<th></th>
+<th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>

@@ -240,7 +240,7 @@ $(function(){
                 }
 
                 #btAdd {
-                    background-color: #9b51e0;
+                   
                 }
 
 
@@ -282,12 +282,14 @@ $(function(){
                     }
 
                 #btAdd, .btn-more {
-                    background-color: #000 !important;
+                   border:1px solid #000;
+                   color:#000;
+                   background-color: #fff;
                 }
 
                     #btAdd:hover, .btn-more:hover {
-                        background-color: #a49ccb !important;
-                        color: #636161;
+                        background-color: #000;
+                        color: #fff;
                     }
             </style>
              <style>

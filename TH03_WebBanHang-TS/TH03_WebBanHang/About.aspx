@@ -131,7 +131,7 @@
              .divAboutSP img{
                 
                 height:300px;
-                width:200px !important;
+                width:180px !important;
             }
               .col-sm-3,.col-sm-6{
                 
@@ -196,9 +196,9 @@
                 </div>
                
                    <div class="col-sm-6 divAboutSP d-flex" style="gap:15px;">
-                    <img class="fade-in" src="Content/image-data/alb.jpg"/>
-                     <img class="fade-out" src="Content/image-data/md.jpg"/>
-                     <img class="fade-right" src="Content/image-data/ls.jpg"/>
+                    <img style="width:180px" class="fade-in" src="Content/image-data/alb.jpg"/>
+                     <img style="width:180px" class="fade-out" src="Content/image-data/md.jpg"/>
+                     <img style="width:180px" class="fade-right" src="Content/image-data/ls.jpg"/>
               </div>
             </div>
     </section>

@@ -10,6 +10,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <style>
+        *{
+            transition:0.5s;
+        }
+        .table > :not(caption) > * > *, .datatable-table > :not(caption) > * > * {
+            
+            border-bottom-width: 2px !important;
+           
+        }
+
+
         ::-webkit-scrollbar {
             width: 5px;
         }
@@ -26,6 +36,14 @@
         }
     </style>
     <style>
+        .nav-link:hover, .dropdown-item:hover{
+            background:#000 !important;
+            color:#fff !important;
+        }
+        .nav-link:hover *,.dropdown-item:hover *{
+            color:#fff !important;
+        }
+
         #loader {
             position: fixed;
             top: 0;
@@ -134,7 +152,7 @@
     <img loading="lazy" style="filter: brightness(50%); height: 100%; width: 100%; position: fixed; z-index: 0;" src="Content/image-bg/bg-for-slide-gp.png" />
     <form id="form1" runat="server" class="d-flex"> 
         <section class="col-sm-2" style="">
-            <div style="text-align:center; position: fixed; left:30px; top:5%; border-radius: 10px !important; height: max-content; width:15rem; background:#FFFF !important; padding:10px 5px;">
+            <div style="text-align:center; position: fixed; left:30px; top:5%; border-radius: 6px !important; height: max-content; width:15rem; background:#FFFF !important; padding:10px 5px;">
                 <div style="width:100%; border-bottom:1px dashed #000; text-align:center">
                 <h4>KS Manager Panel</h4>
 
@@ -210,12 +228,12 @@
             </ul>
                       <div style="margin-top:10px;">
 
-                         <asp:Button ID="btnCPass" runat="server" Text="Đổi mật khẩu" OnClick="btnCPass_Click" CssClass="dropdown-item"  style="border:none; background:#FFFFFF;"/>
+                         <asp:Button ID="btnCPass" runat="server" Text="Đổi mật khẩu" OnClick="btnCPass_Click" CssClass="dropdown-item"  style="border:none; background:#FFFFFF; padding:5px 0;"/>
     <%--<a class="dropdown-item" href="#" style="color: #fff;"><i class="fa-solid fa-face-meh" style="margin-right: 5px; width: 35px;"></i>Quản lý khiếu nại</a>--%>
 
           
 
-       <asp:Button ID="btnSignOut" runat="server" Text="Đăng xuất" OnClick="btnSignOut_Click"  style="border:none; background:#FFFFFF;" />
+       <asp:Button ID="btnSignOut" runat="server" Text="Đăng xuất" OnClick="btnSignOut_Click" CssClass="dropdown-item"  style="border:none; background:#FFFFFF; padding:5px 0;" />
 </div>
                <%-- <asp:Label ID="lbTime" runat="server"></asp:Label>--%>
                 <script>
@@ -248,7 +266,7 @@
    
         <style>
             .table *{
-                border:none !important;
+               /* border:none !important;*/
             }
             .adminul li {
                     width: 100%;
@@ -353,7 +371,7 @@
                     }
 
                     td, tr, th {
-                        border: 2px solid #fff !important;
+                        /*border: 2px solid #fff !important;*/
                         text-align: center;
                     }
 
@@ -396,14 +414,14 @@
                     }
 
                     .table-card * {
-                        border: none !important;
+                        /*border: none !important;*/
                         text-align: left !important;
                         padding: 10px;
                         color:#000;
                     }
 
                     .table-card {
-                        border: none !important;
+                       /* border: none !important;*/
                     }
 
                     a {
@@ -433,7 +451,7 @@
                        
                         background:#FFFFFF;
                         width: 100%; height: max-content;
-                        border: 1px solid #636363; border-radius: 10px;
+                        border: 1px solid #636363; border-radius: 6px;
                     }
                     a{
                         text-decoration:none !important;
@@ -452,7 +470,7 @@
                 <section  style="max-width: 100%; margin: 2.5rem auto 2rem auto;">
                     <div class="container px-5 px-lg-5">
                         <div class="div-TotalText" style="">
-                            <table style="width: 100%;" class="table-card">                                        
+                            <table style="width: 100%;" class="table-card table">                                        
                                 <tr>
                                     <%--<th>
                                         <h5>Tài khoản đang truy cập:</h5>
@@ -460,34 +478,34 @@
                                     <th>
                                         <h5><asp:Label ID="lbAccountCheck" runat="server" CssClass="LabelTotalRevenue" Text="" Style="font-weight: bold;"></asp:Label></h5>
                                     </th>--%>
-                                    <th>
+                                    <th scope="col">
                                         <h5>Tổng doanh thu cửa hàng:</h5>
                                     </th>
-                                    <th>
+                                    <th scope="col">
                                         <h5><asp:Label ID="lbTotalRevenue" runat="server" CssClass="LabelTotalRevenue" Text="" Style="font-weight: bold;"></asp:Label></h5>
                                     </th>
-                                     <th>
+                                     <th scope="col">
                                         <h5>Số tiền trong tài khoản:</h5>
                                     </th>
-                                     <th>
+                                     <th scope="col"> 
                                          <h5><asp:Label ID="Label1" runat="server" CssClass="LabelTotalRevenue" Text="" Style="font-weight: bold;"></asp:Label></h5>
                                      </th>
                                 </tr>
                                
 
+                              
                                 <tr>
-                                <tr>
-                                    <th>
+                                    <th scope="col">
                                         <h5>Số đơn đã thanh toán:</h5>
                                     </th>
-                                     <th>
+                                     <th scope="col">
                                          <h5><asp:Label ID="lbSDDTT" runat="server" CssClass="LabelTotalRevenue" Text="" Style="font-weight: bold;"></asp:Label></h5>
                                      </th>
                                
-                                     <th>
+                                     <th scope="col">
                                          <h5>Số đơn chưa thanh toán:</h5>
                                      </th>
-                                      <th>
+                                      <th scope="col">
                                           <h5><asp:Label ID="lbSDCTT" runat="server" CssClass="LabelTotalRevenue" Text="" Style="font-weight: bold;"></asp:Label></h5>
                                       </th>
                                  </tr>
@@ -501,7 +519,7 @@
                             <div class="container-fuild px-5 px-lg-5" style="">
                                 <div class="row">
                                     <div class="col-lg-6" style="text-align: center; padding:0 10px;">
-                                        <div style="background:#fff; width:575px; height:max-content; justify-content:center; align-content:center; align-items:center; justify-items:center; border-radius:10px; padding-left:10px; padding-top:10px;">
+                                        <div style="background:#fff; width:575px; height:max-content; justify-content:center; align-content:center; align-items:center; justify-items:center; border-radius: 6px; padding-left:10px; padding-top:10px;">
                                         <asp:ListView ID="ListView1Branch" runat="server" ItemType="TH03_WebBanHang.Models.ChiNhanh"
 	                                        SelectMethod="GetDeparmentsBranch" OnSelectedIndexChanged="ListView1Branch_SelectedIndexChanged" class="text-center ListView1Branch">
 	                                        <EmptyDataTemplate>
@@ -535,10 +553,10 @@
 		                                        <div class="d-flex justify-content-center align-content-center "><table class="table" id="groupPlaceholderContainer" runat="server" style="">
 			                                        <thead>
 				                                        <tr>
-					                                        <th class="justify-content-center align-content-center">Mã</th>
-					                                        <th class="justify-content-center align-content-center">Khu vực</th>
-					                                        <th class="justify-content-center align-content-center">Địa chỉ</th>
-					                                        <th class="justify-content-center align-content-center">Lượng đơn</th>
+					                                        <th scope="col" class="justify-content-center align-content-center">Mã</th>
+					                                        <th scope="col" class="justify-content-center align-content-center">Khu vực</th>
+					                                        <th scope="col" class="justify-content-center align-content-center">Địa chỉ</th>
+					                                        <th scope="col" class="justify-content-center align-content-center">Lượng đơn</th>
 					
 					                                       <%-- <th></th>--%>
 				                                        </tr>

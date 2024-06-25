@@ -691,6 +691,11 @@ input::-webkit-inner-spin-button {
         text-decoration: underline;
     }
 
+
+    .btn-a-click:hover{
+        background:linear-gradient(to top, #c9d6ff88, #ffffff6d);
+    }
+
         </style>
 
 <%--<asp:DropDownList ID="ddlCity" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCity_SelectedIndexChanged" CssClass="" style="padding:  8px 5px; width:45%">
@@ -712,7 +717,7 @@ input::-webkit-inner-spin-button {
                      </a>
                     <h1>Chào mừng bạn đến với KStore!</h1>
                     <p>Đăng nhập thông tin cá nhân của bạn để sử dụng tất cả các tính năng của trang web</p>
-                    <a href="#" class="hidden button" id="login">Đăng nhập ngay!</a>
+                    <a href="#" class="hidden button btn-a-click" id="login">Đăng nhập ngay!</a>
                 </div>
                 <div class="toggle-panel toggle-right">
                       <a href="Default.aspx" style="text-decoration:none; color:#9b51e0;">
@@ -722,7 +727,7 @@ input::-webkit-inner-spin-button {
                     <p>
                         Đăng ký với thông tin cá nhân của bạn để sử dụng tất cả các tính năng của trang web
                     </p>
-                    <a href="#" class="hidden button" id="register">Đăng ký ngay!</a>
+                    <a href="#" class="hidden button btn-a-click" id="register">Đăng ký ngay!</a>
                 </div>
             </div>
         </div>

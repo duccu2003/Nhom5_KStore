@@ -13,7 +13,7 @@
             *{
                 margin:0;
                 padding:0;
-                font-family:Roboto;
+                font-family:Roboto;transition:0.5s;
             }
             .alert{
     top:0;
@@ -61,6 +61,19 @@
 }
 table tr th{
     border-bottom:1px solid #242426 !important;
+    /* box-shadow:0 1px 2px #242426;*/
+}
+.btn-primary{
+    border-radius:5px;
+    padding:10px;
+}
+.btn-primary:hover{
+    color:#FFF;
+    background:orangered !important;
+}
+.btnAddPop:hover{
+    color:#FFF !important;
+    background:black !important;
 }
 .input{
       border:1px solid #242426 !important;
@@ -265,7 +278,7 @@ $(function(){
                         <tr>
                             <th><a href="Item.aspx?sp=<%#Item.MaSP %>"><%#Item.MaSP %></a></th>
                                                     <th><%#Item.TenPob %></th>
-                                                        <td>
+                                                        <td style="height:100%;">
 
 	                             <asp:Button ID="btnDel" class="btnUpdate btn btn-default btn-color btn-w" runat="server" style="border:none; /*background-color:#0000;*/ /*background:linear-gradient(to right, #7c92ea,#4cff00);*/   /*font-size:14px;*/ /*width:max-content;*/ width: 6rem; background-color:#0000;" CommandArgument='<%# Eval("MaPob")+ ";" +Eval("MaSP")+ ";" +Eval("TenPob") %>' OnClick="btDel_Click" Text="Xóa" CssClass="btn btn-primary" />
 <%--	                            <a class="btn btn-default btn-color btn-w" href="EditProduct.aspx?Deptid=<%#:Item.MaSP%>">Chỉnh sửa</a>--%>

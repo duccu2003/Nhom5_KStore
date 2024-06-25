@@ -11,6 +11,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-y12XeLvPH5sAAfwm+4D/J2vPT3j9ky8/Sf1gXIS6Xr4F5ujP+0x2jE+8whv2G4N6" crossorigin="anonymous">
     <link href="Content/logo/K.png" rel="shortcut icon" type="image/x-icon" />
     <style>
+        *{
+            transition:0.5s;
+        }
          ::-webkit-scrollbar {
      width: 5px;
  }
@@ -84,7 +87,8 @@
         }*/
         table th, table td {
            /*border-bottom:1px solid #242426;*/
-           border:1px solid #242426;
+           /*border:1px solid #242426;*/
+            box-shadow:0 1px 2px #242426;
         }
         
         table th:first-child, table td:first-child {
@@ -124,7 +128,7 @@
         }
         .btn-w{
             width:100px !important;
-            height:30px !important;
+          
             background:#fff;
             border:1px solid #242426;
             border-radius:5px;
@@ -383,6 +387,14 @@ text-align:center;
             
                     }
                    
+
+                    .btn-w{
+                        height:30px !important;
+                    }
+                    .btn-default:hover{
+                        color:#FFF !important;
+                        background:#000 !important;
+                    }
                 </style>
     
 
@@ -469,15 +481,15 @@ text-align:center;
                 <table class="table" id="groupPlaceholderContainer" runat="server">
                     <thead>
                         <tr>
-                            <th class="justify-content-center align-content-center">Mã</th>
-                            <th class="justify-content-center align-content-center">Hình</th>
-                            <th class="justify-content-center align-content-center">Tên sản phẩm</th>
-                            <th class="justify-content-center align-content-center">Giá</th>
-                            <th class="justify-content-center align-content-center">Ngày sản xuất</th>
-                            <th class="justify-content-center align-content-center">Ngày nhập kho</th>
-                            <th class="justify-content-center align-content-center">Doanh Số</th>
-                            <th class="justify-content-center align-content-center">Còn trong kho</th>
-                            <th class="justify-content-center align-content-center"></th>
+                            <th scope="col" class="justify-content-center align-content-center">Mã</th>
+                            <th scope="col" class="justify-content-center align-content-center">Hình</th>
+                            <th scope="col" class="justify-content-center align-content-center">Tên sản phẩm</th>
+                            <th scope="col" class="justify-content-center align-content-center">Giá</th>
+                            <th scope="col" class="justify-content-center align-content-center">Ngày sản xuất</th>
+                            <th scope="col" class="justify-content-center align-content-center">Ngày nhập kho</th>
+                            <th scope="col" class="justify-content-center align-content-center">Doanh Số</th>
+                            <th scope="col" class="justify-content-center align-content-center">Còn trong kho</th>
+                            <th scope="col" class="justify-content-center align-content-center"></th>
                         </tr>
                     </thead>
                     <tbody>
