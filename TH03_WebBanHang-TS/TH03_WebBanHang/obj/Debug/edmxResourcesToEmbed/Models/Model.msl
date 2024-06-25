@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QL_KPOPStoreModelStoreContainer" CdmEntityContainer="QL_KPOPStoreEntities">
+    <EntitySetMapping Name="ChiNhanhs">
+      <EntityTypeMapping TypeName="QL_KPOPStoreModel.ChiNhanh">
+        <MappingFragment StoreEntitySet="ChiNhanh">
+          <ScalarProperty Name="MaCN" ColumnName="MaCN" />
+          <ScalarProperty Name="TenCN" ColumnName="TenCN" />
+          <ScalarProperty Name="DiaChiCN" ColumnName="DiaChiCN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietDonHangs">
+      <EntityTypeMapping TypeName="QL_KPOPStoreModel.ChiTietDonHang">
+        <MappingFragment StoreEntitySet="ChiTietDonHang">
+          <ScalarProperty Name="KH" ColumnName="KH" />
+          <ScalarProperty Name="MaCTDH" ColumnName="MaCTDH" />
+          <ScalarProperty Name="MaDH" ColumnName="MaDH" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="DuongDan" ColumnName="DuongDan" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="TenPob" ColumnName="TenPob" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+          <ScalarProperty Name="Ngay" ColumnName="Ngay" />
+          <ScalarProperty Name="GiaoDich" ColumnName="GiaoDich" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhGias">
+      <EntityTypeMapping TypeName="QL_KPOPStoreModel.DanhGia">
+        <MappingFragment StoreEntitySet="DanhGia">
+          <ScalarProperty Name="AvatarUser" ColumnName="AvatarUser" />
+          <ScalarProperty Name="MaDG" ColumnName="MaDG" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="NgayDG" ColumnName="NgayDG" />
+          <ScalarProperty Name="RatingValue" ColumnName="RatingValue" />
+          <ScalarProperty Name="Anh1" ColumnName="Anh1" />
+          <ScalarProperty Name="Anh2" ColumnName="Anh2" />
+          <ScalarProperty Name="Anh3" ColumnName="Anh3" />
+          <ScalarProperty Name="Anh4" ColumnName="Anh4" />
+          <ScalarProperty Name="Anh5" ColumnName="Anh5" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LuotThich" ColumnName="LuotThich" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoanhThus">
+      <EntityTypeMapping TypeName="QL_KPOPStoreModel.DoanhThu">
+        <MappingFragment StoreEntitySet="DoanhThu">
+          <ScalarProperty Name="Ma" ColumnName="Ma" />
+          <ScalarProperty Name="Ngay" ColumnName="Ngay" />
+          <ScalarProperty Name="Thang" ColumnName="Thang" />
+          <ScalarProperty Name="Nam" ColumnName="Nam" />
+          <ScalarProperty Name="DoanhThuNgay" ColumnName="DoanhThuNgay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonHangs">
+      <EntityTypeMapping TypeName="QL_KPOPStoreModel.DonHang">
+        <MappingFragment StoreEntitySet="DonHang">
+          <ScalarProperty Name="MaTK" ColumnName="MaTK" />
+          <ScalarProperty Name="MaDH" ColumnName="MaDH" />
+          <ScalarProperty Name="KH" ColumnName="KH" />
+          <ScalarProperty Name="HoTenNN" ColumnName="HoTenNN" />
+          <ScalarProperty Name="DiaChiNN" ColumnName="DiaChiNN" />
+          <ScalarProperty Name="DienThoaiNN" ColumnName="DienThoaiNN" />
+          <ScalarProperty Name="PhuongThuc" ColumnName="PhuongThuc" />
+          <ScalarProperty Name="Ngay" ColumnName="Ngay" />
+          <ScalarProperty Name="MaCN" ColumnName="MaCN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangs">
+      <EntityTypeMapping TypeName="QL_KPOPStoreModel.KhachHang">
+        <MappingFragment StoreEntitySet="KhachHang">
+          <ScalarProperty Name="MaTK" ColumnName="MaTK" />
+          <ScalarProperty Name="AvatarUser" ColumnName="AvatarUser" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="Diem" ColumnName="Diem" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Loais">
+      <EntityTypeMapping TypeName="QL_KPOPStoreModel.Loai">
+        <MappingFragment StoreEntitySet="Loai">
+          <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
+          <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nhoms">
+      <EntityTypeMapping TypeName="QL_KPOPStoreModel.Nhom">
+        <MappingFragment StoreEntitySet="Nhom">
+          <ScalarProperty Name="MaNhom" ColumnName="MaNhom" />
+          <ScalarProperty Name="TenNhom" ColumnName="TenNhom" />
+          <ScalarProperty Name="DuongDan" ColumnName="DuongDan" />
+          <ScalarProperty Name="AnhNhom" ColumnName="AnhNhom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhams">
+      <EntityTypeMapping TypeName="QL_KPOPStoreModel.SanPham">
+        <MappingFragment StoreEntitySet="SanPham">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="DuongDan" ColumnName="DuongDan" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
+          <ScalarProperty Name="MaNhom" ColumnName="MaNhom" />
+          <ScalarProperty Name="NgaySX" ColumnName="NgaySX" />
+          <ScalarProperty Name="NgayHH" ColumnName="NgayHH" />
+          <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
+          <ScalarProperty Name="DoanhSo" ColumnName="DoanhSo" />
+          <ScalarProperty Name="SoLuongKho" ColumnName="SoLuongKho" />
+          <ScalarProperty Name="Ver" ColumnName="Ver" />
+          <ScalarProperty Name="TenVer" ColumnName="TenVer" />
+          <ScalarProperty Name="NguonHang" ColumnName="NguonHang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThichSPs">
+      <EntityTypeMapping TypeName="QL_KPOPStoreModel.ThichSP">
+        <MappingFragment StoreEntitySet="ThichSP">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+          <ScalarProperty Name="DaThich" ColumnName="DaThich" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TKs">
+      <EntityTypeMapping TypeName="QL_KPOPStoreModel.TK">
+        <MappingFragment StoreEntitySet="TK">
+          <ScalarProperty Name="MaTK" ColumnName="MaTK" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Quyen" ColumnName="Quyen" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banners">
+      <EntityTypeMapping TypeName="QL_KPOPStoreModel.Banner">
+        <MappingFragment StoreEntitySet="Banner">
+          <ScalarProperty Name="MaBanner" ColumnName="MaBanner" />
+          <ScalarProperty Name="DuongDan" ColumnName="DuongDan" />
+          <ScalarProperty Name="NgayDangBV" ColumnName="NgayDangBV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POBs">
+      <EntityTypeMapping TypeName="QL_KPOPStoreModel.POB">
+        <MappingFragment StoreEntitySet="POB">
+          <ScalarProperty Name="MaPob" ColumnName="MaPob" />
+          <ScalarProperty Name="TenPob" ColumnName="TenPob" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SanPhamDatas">
+      <EntityTypeMapping TypeName="QL_KPOPStoreModel.SanPhamData">
+        <MappingFragment StoreEntitySet="SanPhamData">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="DuongDan1" ColumnName="DuongDan1" />
+          <ScalarProperty Name="DuongDan2" ColumnName="DuongDan2" />
+          <ScalarProperty Name="DuongDan3" ColumnName="DuongDan3" />
+          <ScalarProperty Name="DuongDan4" ColumnName="DuongDan4" />
+          <ScalarProperty Name="DuongDan5" ColumnName="DuongDan5" />
+          <ScalarProperty Name="AnhNote" ColumnName="AnhNote" />
+          <ScalarProperty Name="Pob" ColumnName="Pob" />
+          <ScalarProperty Name="IsPreOrder" ColumnName="IsPreOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TinTucs">
+      <EntityTypeMapping TypeName="QL_KPOPStoreModel.TinTuc">
+        <MappingFragment StoreEntitySet="TinTuc">
+          <ScalarProperty Name="MaBV" ColumnName="MaBV" />
+          <ScalarProperty Name="HinhAnhBV" ColumnName="HinhAnhBV" />
+          <ScalarProperty Name="DuongDanBV" ColumnName="DuongDanBV" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="NoiDungBV" ColumnName="NoiDungBV" />
+          <ScalarProperty Name="NgayDangBV" ColumnName="NgayDangBV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VideoThongTins">
+      <EntityTypeMapping TypeName="QL_KPOPStoreModel.VideoThongTin">
+        <MappingFragment StoreEntitySet="VideoThongTin">
+          <ScalarProperty Name="MaV" ColumnName="MaV" />
+          <ScalarProperty Name="DuongDanV" ColumnName="DuongDanV" />
+          <ScalarProperty Name="NgayDangBV" ColumnName="NgayDangBV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

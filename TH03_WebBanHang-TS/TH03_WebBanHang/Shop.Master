@@ -1,0 +1,1116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Shop.master.cs" Inherits="TH03_WebBanHang.Shop" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %></title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .alert{
+            z-index:9999;
+        }
+        .alert{
+            top:0;
+            position:absolute !important;
+            width:100%;
+            z-index:9999 !important;
+            padding:10px 0;
+            text-align:center;
+            color:#000;
+        }
+        .alert-success{
+            background:#d4edda;
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+
+        }
+        .alert-danger{
+                background:#f8d7da;
+                 color: #721c24;
+                  border-color: #f5c6cb;
+        }
+        img{
+           object-fit:cover;
+        }
+    </style>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Basic&display=swap" rel="stylesheet">
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <link href="Content/css/style.css" rel="stylesheet" />
+    <link href="Content/logo/K.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-y12XeLvPH5sAAfwm+4D/J2vPT3j9ky8/Sf1gXIS6Xr4F5ujP+0x2jE+8whv2G4N6" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.plugins.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/dkern/jquery.lazy@1.7.10/jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/dkern/jquery.lazy@1.7.10/jquery.lazy.plugins.min.js"></script>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.plugins.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+<%--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">--%>
+    
+<%--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>--%>
+
+
+
+
+</head>
+<body>
+    <style>
+        * img, * iframe{
+         transition: transform 0.5s;
+        }
+    
+        .navbar-toggler, .collapsed {
+            background-color: #7a29c4 !important;
+        }
+        .navbar-toggler-icon {
+            background-color: #7a29c4 !important;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-E2lxQP7D+gYt/6jkgAHiYYjVZf3fzuWjucHd7LGgRy5eTUsP2k4FjC7ERk5LN1Qi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-sYj5E1wQm9H6yvdiAU2iHXY3eULV6JkqPGBplIKKpLk2U72K/oDqd5VuMN4cm/Qp" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <!-- Navigation-->
+        <nav id="header" class="navbar navbar-expand-lg navbar-light" style="background-color: #000000; color: #fff; position: fixed; border-bottom:1px solid #636363; /*box-shadow:0px 10px 50px #fff;*/
+ top: 0;
+ width: 100%;
+ z-index: 1000;">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="/">
+                    <img loading="lazy" data-src="Content/logo/K-Photoroom.png" src="Content/logo/K-Photoroom.png" id="img-logo-header" />
+                     <script>
+     document.addEventListener('DOMContentLoaded', function () {
+         var lazyLoadElementsUp = document.querySelectorAll('.fade-in');
+         var lazyLoadElementsDown = document.querySelectorAll('.fade-out');
+
+         var lazyLoadElementsLf = document.querySelectorAll('.fade-left');
+         var lazyLoadElementsRg = document.querySelectorAll('.fade-right');
+
+         var lazyLoadThreshold = 200; // Số pixel từ trên cùng của trang để kích hoạt hiệu ứng
+
+         function checkLazyLoad() {
+             lazyLoadElementsUp.forEach(function (element) {
+                 var rect = element.getBoundingClientRect();
+                 if (rect.top <= window.innerHeight + lazyLoadThreshold) {
+                     element.classList.add('visible');
+                 }
+             });
+             lazyLoadElementsDown.forEach(function (element) {
+                 var rect = element.getBoundingClientRect();
+                 if (rect.top <= window.innerHeight + lazyLoadThreshold) {
+                     element.classList.add('visible');
+                 }
+             });
+             lazyLoadElementsLf.forEach(function (element) {
+                 var rect = element.getBoundingClientRect();
+                 if (rect.top <= window.innerHeight + lazyLoadThreshold) {
+                     element.classList.add('visible');
+                 }
+             });
+             lazyLoadElementsRg.forEach(function (element) {
+                 var rect = element.getBoundingClientRect();
+                 if (rect.top <= window.innerHeight + lazyLoadThreshold) {
+                     element.classList.add('visible');
+                 }
+             });
+         }
+
+         window.addEventListener('scroll', checkLazyLoad);
+         window.addEventListener('resize', checkLazyLoad);
+
+         // Kiểm tra lần đầu khi trang tải
+         checkLazyLoad();
+     });
+                     </script>
+                     <style>
+     /*.fade-in {
+         opacity: 0;
+         transform: translateY(30px);
+         transition: opacity 0.8s, transform 0.8s;
+     }
+
+     .fade-out {
+         opacity: 0;
+         transform: translateY(-50px);
+         transition: opacity 0.8s, transform 0.8s;
+     }
+
+     .fade-left {
+         opacity: 0;
+         transform: translateX(-30px);
+         transition: opacity 0.8s, transform 0.8s;
+     }
+
+     .fade-right {
+         opacity: 0;
+         transform: translateX(30px);
+         transition: opacity 0.8s, transform 0.8s;
+     }*/
+
+      .fade-in {
+     opacity: 0;
+     transform: translateY(100px);
+     transition: opacity 0.8s, transform 0.8s;
+     }
+
+     .fade-out {
+         opacity: 0;
+         transform: translateY(-100px);
+         transition: opacity 0.8s, transform 0.8s;
+     }
+
+     .fade-left {
+         opacity: 0;
+         transform: translateX(-150px);
+         transition: opacity 1.5s, transform 1.5s;
+     }
+
+     .fade-right {
+         opacity: 0;
+         transform: translateX(150px);
+         transition: opacity 1.5s, transform 1.5s;
+     }
+
+
+     .fade-in.visible {
+         opacity: 1;
+         transform: translateY(0);
+     }
+
+     .fade-out.visible {
+         opacity: 1;
+         transform: translateY(0);
+     }
+
+     .fade-left.visible {
+         opacity: 1;
+         transform: translateX(0);
+     }
+
+     .fade-right.visible {
+         opacity: 1;
+         transform: translateX(0);
+     }
+
+
+     /*#content-itens .container-sp {
+     width: 40%;
+     margin: 0 auto;
+     height: 600px;*/ /* Thiết lập chiều cao của bảng chứa sản phẩm là 600px */
+     /*}*/
+ </style>
+                    <style>
+                        .a-hadItems:hover{
+                            color:#000;
+                        }
+                        .card {
+                            background: linear-gradient(to right, #3b0d677b, #0000007a );
+                            background-color: #9b51e0;
+                            color: #fff;
+                        }
+
+                        .img-with-hover {
+                            transition: transform 0.5s;
+                            border-radius: 1.8rem;
+                        }
+                       
+                        .btn-mua:hover .img-with-hover {
+                            transform: scale(1.05);
+                        }
+
+                        .btn-outline-dark {
+                            --bs-btn-active-bg: #9b51e0;
+                            --bs-btn-disabled-color: #9b51e0;
+                        }
+
+                        .nav-link, .nav-item {
+                            color: #9b51e0 !important;
+                        }
+
+                            .nav-item:hover .nav-link {
+                                color: #fff !important;
+                            }
+                    </style>
+                    <style>
+                        .card-body h5 {
+                            font-size: 1.1rem;
+                        }
+
+                        .card-footer p {
+                            font-size: 1rem;
+                            font-family: Roboto;
+                        }
+
+                        .img-with-hover {
+                            width: 100%;
+                            height: auto;
+                        }
+
+
+                        .alert {
+                            text-align: center;
+                            top: 0;
+                            left: 0;
+                        }
+
+                        #img-logo-header {
+                            width: 16rem;
+                        }
+
+                        .dropdown-item {
+                            text-align: left;
+                        }
+
+                        div {
+                            unicode-bidi: isolate
+                        }
+
+                        .btn-w {
+                            color: #fff;
+                        }
+                             .footer-line, .footer-content *,.footer-bottom *{
+                            color:#fff;
+                        }
+                        .table {
+                            background: linear-gradient(to right, #7a29c4, #3b0d677b);
+                            border: none;
+                            
+                        }
+
+                        th, tr, td {
+                            border: 0.8px solid #b8b8b86d;
+                        }
+                      /*  .nav-link{
+                            background:red;
+                        }
+                        .nav-item{
+                            background:blue;
+                        }*/
+
+                        @media only screen and (min-width: 768px) {
+                            #navbarSupportedContent {
+                                display:grid !important; 
+                            }
+                        }
+                    </style>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-items:right; row-gap:10px">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+                  
+                    <div class="d-flex" style="width:max-content; gap:1.5rem; margin-top:1.5rem;">
+                        <div title="Tìm kiếm" class="justify-content-center align-content-center search-container container mt-2" style="border: 2px solid #9b51e0; width:18.75rem; font-size:18px; height:40px;">
+    
+                    
+                            <asp:TextBox ID="searchinput" ClientIDMode="Static" AutoPostBack="true" placeholder="Tìm kiếm" type="search" Text="" runat="server" Style="border: 0.1px solid #fff0; touch-action: none; " class="search-textbox searchinput" OnTextChanged="searchinput_TextChanged"></asp:TextBox>
+             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script type="text/javascript">
+
+    
+
+                $(document).ready(function () {
+                    // Lắng nghe sự kiện nhập vào
+                    $('.searchinput').on('input', function () {
+                        // Gọi __doPostback để thực hiện postback tự động
+                        __doPostBack(this.name, '');
+                    });
+                });
+
+            </script>
+                            
+
+                            
+                            <asp:Button runat="server" ID="btnSearch" CssClass="searchbutton justify-content-center align-content-center" OnClick="SearchButton_Click" Text="" />
+    <style>
+        .searchbutton {
+            background-image: url('Content/icon/search.png');
+            background-repeat: no-repeat;
+            background-size: contain; 
+            width: 18px; 
+            height: 18px; 
+            border: none; 
+            cursor: pointer; 
+            margin-top: 0.5rem;
+            margin-left: 2%;
+            background-color: #000000;
+        }
+        #div-search-Items{
+            
+        }
+    </style>
+    
+
+
+                           <%-- <script>
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    var searchInput = document.getElementsByClassName('searchinput');
+                                    var divSearch = document.getElementById('div-search-Items');
+
+                                    if (searchInput.value.trim() !== "") {
+                                        divSearch.style.display = "block";
+                                    } else {
+                                        divSearch.style.display = "none";
+                                    }
+                                }
+                            </script>--%>
+                           <%-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                            <script>
+                                $(document).ready(function () {
+                                    var searchInput = document.getElementsByClassName('searchinput');
+                                    var divSearch = document.getElementById('div-search-Items');
+                                    if ($("#searchinput").val().trim() !== "") {
+                                        divSearch.style.display = "block !important";
+                                    } else {
+                                        divSearch.style.display = "none";
+                                    }
+                                });
+                            </script>--%>
+
+    
+</div>
+    <asp:DropDownList ID="ddlBranches" runat="server" CssClass="container mt-2  form-select nav-link text-center branchList" title="Chọn chi nhánh" Style="height:40px; border-radius: 10px;width:10rem;font-size:18px;  background: #000; color: #fff !important; border: 2px solid #9b51e0" AutoPostBack="True" OnSelectedIndexChanged="ddlBranches_SelectedIndexChanged">
+        <asp:ListItem Value="" CssClass="text-center text-white" style="color:#fff !important;"></asp:ListItem>
+    </asp:DropDownList>
+                                           <div class="bordercol justify-content-center align-content-center mt-2"></div>
+                        <style>
+                            .bordercol {
+                                background-color: #7a29c4;
+                                height: 40px;
+                                width: 1px;
+                            }
+                        </style>
+                        <div class="justify-content-center align-content-center d-flex mt-2" style="width:max-content; gap:20px; /*border-bottom:2px solid #9b51e0; */">
+
+                        <a  title="Tài khoản"  class="btn btn-outline-dark btn-header-u-c btn-account justify-content-center align-content-center" href="/Account.aspx">
+      <i class="fa-solid fa-user"></i>
+     
+  </a>
+ <a title="Giỏ hàng" class="btn btn-outline-dark btn-header-u-c btn-cart justify-content-center align-content-center" href="/Cart.aspx">
+    <i class="fa-solid fa-cart-shopping"></i>
+     <asp:Label class="badge text-white ms-1 rounded-pill" ID="lbCart" runat="server" Text="0" Style="background-color: red; font-size:10px;"></asp:Label>
+ </a></div>
+
+                        <%--<style>
+                           #div-head-1-e-n a {
+                              border:2px solid #9b51e0;
+                                height:40px;
+                                padding:5px 15px;
+                                text-align:center;
+                                  align-items:center;
+                                align-content:center;
+                                border-radius:10px;
+                            }
+                            #div-head-1-e-n a p{
+                                
+                              align-items:center;
+                              align-content:center;
+                          }
+                        </style>
+                        <div id="div-head-1-e-n" class="d-flex justify-content-center align-content-center mt-2" style="gap:1.5rem;">
+                        <a href="#" style="font-size:18px;">
+                            <p class="" style="">Thông báo</p>
+                        </a>
+                        <a href="#" style="font-size:18px;">
+                            <p>Sự kiện</p>
+                        </a></div>--%>
+
+                        <%-- <a title="Tìm kiếm" class="btn btn-outline-dark btn-header-u-c justify-content-center align-content-center" href="#">
+     <i class="fas fa-search"></i>
+ </a>--%>
+                        
+                        <style>
+                            .search-container {
+                                position: relative;
+                                width: 8rem;
+                                display: inline-flex;
+                                border-radius: 10px;
+                                border: 2px solid #9b51e0;
+                                background: #000;
+                            }
+
+                            #MainContent_searchinputA {
+                                background: #000000;
+                            }
+
+                            .search-container-table {
+                                position: relative;
+                                width: max-content;
+                                display: inline-flex;
+                                border-radius: 10px;
+                                border: 2px solid #9b51e0;
+                                background: #000;
+                                max-width: 14.8rem !important;
+                                margin-left: 70%;
+                            }
+                            /* Style for the search input */
+                            #searchinput {
+                                width: 100%;
+                                padding: 0 5px;
+                                background: #000;
+                                color: aliceblue;
+                            }
+                            /* input {
+   
+      background-color:#000 !important;
+      color:aliceblue;
+  }*/
+                            * {
+                                color: #fff;
+                            }
+                            /* Style for the search button */
+                            #searchbutton {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                width: auto;
+                                height: 100%;
+                                background-color: #000000;
+                                border: none;
+                                border-radius: 0 5px 5px 0;
+                                cursor: pointer;
+                            }
+
+                            /* Style for the search icon */
+
+                            /*.search-icon {
+width: 16px;*/ /* Điều chỉnh kích thước của hình ảnh tìm kiếm */
+                            /*height: 16px;*/ /* Điều chỉnh kích thước của hình ảnh tìm kiếm */
+                            /*}*/
+                            .icon-header {
+                                width: 24px;
+                            }
+
+                            .btn-header-u-c {
+                                border: none !important;
+                                
+                                font-size:18px !important;
+                               
+                               
+                            }
+
+                                .btn-header-u-c:active {
+                                    border: none !important;
+                                    background: #fff !important;
+                                    box-shadow: none !important;
+                                }
+
+                            .btn-cart {
+                                width: max-content;
+                                /*padding-right:1.5rem;*/
+                            }
+
+                            .btn-account {
+                                width: max-content;
+                            }
+
+                            .dropdown-item:hover {
+                                background-color: #7a29c4;
+                            }
+
+                            .dropdown-item {
+                                color: #fff;
+                            }
+
+                            .dropdown-menu {
+                                background-color: #202020;
+                            }
+
+                            .dropdown-divider {
+                                border-top: 1px solid #9b51e0;
+                            }
+
+                            .btn-header-u-c:hover {
+                                background-color: #fff0 !important;
+                            }
+
+                            /* .nav-item:hover {
+                            background-color: #9b51e0;
+                        }*/
+
+                            .nav-item {
+                                width: max-content;
+                                text-align: center;
+                                border-radius: 0.5rem;
+                                font-size:18px;
+                                
+                            }
+
+                            .dropdown-menu {
+                                width: max-content !important;
+                            }
+
+                            #searchinput:focus {
+                                border: none; /* Loại bỏ viền */
+                                outline: none; /* Loại bỏ viền nổi khi nhấp vào */
+                                background: #000;
+                            }
+
+                            .nav-item:hover .nav-link {
+                                border-bottom-color: #9b51e0;
+                                transition: 0.25s ease-in;
+                                
+                            }
+
+                            .nav-item, .nav-link {
+                                border: 2px solid #fff0;
+                                color: #fff !important;
+                            }
+                            .nav-link.active{
+                                border-bottom-color: #9b51e0;
+                                transition: 0.25s ease-in;
+                            }
+                            .nav-item{
+                               
+                            }
+                        </style>
+                    </div>
+                   
+
+                    <style>
+                        #div-items-Search{
+                            max-height:500px;
+                            overflow:auto;
+                            
+                        }
+                    </style>
+                 <div id="div-items-Search" style=" position:absolute; left:46%; top:60%; border-radius:10px;  background:#000; border:1px solid #636363; z-index:9999; width:20rem; padding:5px 10px;">
+     <asp:PlaceHolder ID="PlaceHolderGioiThieu" runat="server">
+    <p>Sản phẩm gợi ý</p>
+</asp:PlaceHolder>
+     <asp:ListView ID="lvItemsSearch" runat="server" ItemType="TH03_WebBanHang.Models.SanPham">
+        
+         <EmptyDataTemplate>
+        <p>Không có sản phẩm liên quan.</p>
+    </EmptyDataTemplate>
+         <ItemTemplate>
+             <a style="" href="item.aspx?sp=<%#:Item.MaSP%>">
+                 <div class="d-flex" style="gap:1rem; margin:10px auto;">
+                     <img style="height:80px; border-radius:5px; " src="<%#:Item.DuongDan %>"/>
+                     <div class="d-grid">
+                         <p><%#:Item.TenSP %></p>
+                         <p class=""><%# string.Format("{0:N0}", Item.Gia) %>đ</p>
+                     </div>
+                 </div>
+             </a>
+         </ItemTemplate>
+     </asp:ListView>
+
+</div>     
+
+    
+
+                                            <div class="justify-content-center align-content-center d-flex" style="width:max-content; gap:20px;">
+<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" style="gap:10px;">
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="/" style="">Trang chủ</a></li>
+                        
+                        <li class="nav-item"><a class="nav-link" href="/Item.aspx">Sản phẩm</a></li>
+                        
+
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cửa hàng</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/Item.aspx">Tất cả sản phẩm</a></li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li><a class="dropdown-item" href="/Item.aspx?sp=popular">Sản phẩm yêu thích</a></li>
+                                <li><a class="dropdown-item" href="/Item.aspx?sp=new">Sản phẩm mới</a></li>
+                                <%--                                <li><a class="dropdown-item" id="li-admin" href="/Admin">Admin</a></li>--%>
+                            </ul>
+
+                        </li>
+                       <%-- <li class="nav-item dropdown" id="li-admin">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Điều khiển</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAdmin">
+                                <li id="f-a1"><a class="dropdown-item" href="/Admin.aspx">Quản lý</a></li>
+                                <li id="f-a2">
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li><a class="dropdown-item" href="/ManagerAccount.aspx">Quản lý tài khoản</a></li>
+                                <li><a class="dropdown-item" href="/ManagerProduct.aspx">Quản lý sản phẩm</a></li>
+                                <li><a class="dropdown-item" href="/ManagerRevenue.aspx">Quản lý doanh thu</a></li>
+                                <li><a id="aBrand" class="dropdown-item" href="/ManagerBranch.aspx">Quản lý chi nhánh</a></li>
+                                <li><a class="dropdown-item" href="/ManagerOrder.aspx">Quản lý đơn hàng</a></li>
+
+                            </ul>
+
+
+                            <%--<li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">SignIn</a>
+                        </li>--%>
+                           <%-- </li>--%>
+    <%--<li class="nav-item"><a class="nav-link" href="/Event.aspx">Sự kiện</a></li>--%>
+                       <%-- <li class="nav-item"><a class="nav-link" href="/Notice.aspx">Thông báo</a></li>--%>
+
+                        <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="navbarDropdown-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Thông báo</a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" href="/Notice.aspx">Tất cả sản phẩm</a></li>
+        <li>
+            <hr class="dropdown-divider" />
+        </li>
+        <li><a class="dropdown-item" href="/Notice.aspx?kq=event">Sự kiện</a></li>
+        <li><a class="dropdown-item" href="/Notice.aspx?kq=video">Video</a></li>
+        <%--                                <li><a class="dropdown-item" id="li-admin" href="/Admin">Admin</a></li>--%>
+    </ul>
+
+</li>
+    <li class="nav-item"><a class="nav-link" href="/About.aspx">Giới thiệu</a></li>
+    <li class="nav-item"><a class="nav-link" href="/Contact.aspx">Liên hệ</a></li>
+                    </ul>
+
+</div>
+
+                </div>
+            </div>
+
+        </nav>
+        
+        <style>
+            body {
+                background-size:cover;
+                background:#000000;
+                background-color:#000000;
+                color:#fff;
+                --wp--preset--color--black: #000000;
+                --wp--preset--color--cyan-bluish-gray: #abb8c3;
+                --wp--preset--color--white: #ffffff;
+                --wp--preset--color--pale-pink: #f78da7;
+                --wp--preset--color--vivid-red: #cf2e2e;
+                --wp--preset--color--luminous-vivid-orange: #ff6900;
+                --wp--preset--color--luminous-vivid-amber: #fcb900;
+                --wp--preset--color--light-green-cyan: #7bdcb5;
+                --wp--preset--color--vivid-green-cyan: #00d084;
+                --wp--preset--color--pale-cyan-blue: #8ed1fc;
+                --wp--preset--color--vivid-cyan-blue: #0693e3;
+                --wp--preset--color--vivid-purple: #9b51e0;
+                --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+                --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+                --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+                --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+                --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+                --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+                --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+                --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+                --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+                --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+                --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+                --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+                --wp--preset--duotone--dark-grayscale: url(#wp-duotone-dark-grayscale);
+                --wp--preset--duotone--grayscale: url(#wp-duotone-grayscale);
+                --wp--preset--duotone--purple-yellow: url(#wp-duotone-purple-yellow);
+                --wp--preset--duotone--blue-red: url(#wp-duotone-blue-red);
+                --wp--preset--duotone--midnight: url(#wp-duotone-midnight);
+                --wp--preset--duotone--magenta-yellow: url(#wp-duotone-magenta-yellow);
+                --wp--preset--duotone--purple-green: url(#wp-duotone-purple-green);
+                --wp--preset--duotone--blue-orange: url(#wp-duotone-blue-orange);
+            }
+
+            html {
+                font-family: sans-serif;
+                line-height: 1.15;
+                -ms-overflow-style: scrollbar;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            ::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: #5e17a2ff;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: #202020;
+            }
+
+           
+            /**/
+           
+        </style>
+        <style>
+            /**/
+            .footer-content {
+                list-style: none;
+                color: #fff;
+                text-decoration: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+
+                a:hover, a:active {
+                    color: #9b51e0;
+                }
+
+            ul {
+                list-style: none;
+            }
+
+            .footer-main {
+                justify-content: center;
+                align-content: center;
+                width: 100%;
+            }
+
+            .div-1 {
+                display: flex;
+                margin: auto;
+                justify-content: center;
+                align-content: center;
+                gap: 20px;
+                padding-left: 10%;
+            }
+
+            html {
+                overflow-y: scroll;
+                text-rendering: optimizeLegibility;
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+                -webkit-text-size-adjust: 100%;
+                -moz-text-size-adjust: 100%;
+                text-size-adjust: 100%
+            }
+
+            div {
+                unicode-bidi: isolate;
+            }
+        </style>
+          <a id="moveTop"  title="Quay về đầu trang"  href="#" style="position:fixed; background: linear-gradient(to right, #522A77, #2a2e77) ; padding:10px; border-radius:50%; width:40px; height:40px; text-align:center; right:3rem; bottom:10%; margin:auto; color:#fff; z-index:3; transition:0.5s;"><i class="fa-solid fa-angle-up"></i></a>
+<%-- <script>
+     document.getElementById('moveTop').addEventListener('click', function (event) {
+         event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+         window.scrollTo({ top: 0, behavior: 'smooth' }); // Cuộn lên đầu trang một cách mượt mà
+     });
+ </script>--%>
+
+ <script>
+     // Hàm để kiểm tra vị trí cuộn và hiển thị/ẩn nút "Lên"
+     function checkScrollPosition() {
+         var moveTop = document.getElementById('moveTop');
+         if (window.scrollY >= 400) { // Kiểm tra nếu cuộn quá 100vh
+             moveTop.style.display = 'block'; // Hiển thị nút "Lên"
+         } else {
+             moveTop.style.display = 'none'; // Ẩn nút "Lên"
+         }
+     }
+
+     // Thêm sự kiện listener cho sự kiện `scroll`
+     window.addEventListener('scroll', checkScrollPosition);
+
+     // Gọi hàm checkScrollPosition đầu tiên để đảm bảo nút "Lên" được hiển thị/ẩn đúng từ đầu
+     checkScrollPosition();
+
+     // Hàm xử lý sự kiện click trên nút "Lên"
+     document.getElementById('moveTop').addEventListener('click', function (event) {
+         event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+         window.scrollTo({ top: 0, behavior: 'smooth' }); // Cuộn lên đầu trang một cách mượt mà
+     });
+ </script>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+        <hr id="hr" style="color: #9b51e0; background: #9b51e0; border-top:1px solid #636363 !important;" />
+        <!-- Footer-->
+       <style>
+           @media only screen and (max-width:728px){
+           }
+       </style>
+        <footer id="footer footer-wrap" style="background: #000000;">
+            <div class="container footer-all-content" style="">
+                <div class="footer-main">
+                     <style>
+                         form{
+                             background:#000 !important;
+                         }
+                     </style>
+                    <style>
+                        footer, hr {
+                            margin-top: 5rem;
+                            color: aliceblue;
+                        }
+
+                        .footer-1, .footer-2{
+                            width:max-content;
+                            
+                            padding:0;
+                            
+                        }
+                        
+                        .footer-2{
+                            width:192px;
+                            
+                        }
+
+                        * {
+                            user-select: none;
+                        }
+
+                        section, form {
+                           /* background: #000000;*/
+                            background: #242526;
+                        }
+
+                      /*  @media only screen and (max-width: 768px) .footer-bottom {
+                            flex-wrap: wrap;
+                        }*/
+
+
+                        .footer-main {
+                            margin: auto;
+                            gap: 0.5rem;
+                        }
+
+                        .footer-bottom {
+                            /*                            border-top: 1px solid white;
+*/ display: flex;
+                            justify-content: space-between;
+                        }
+
+                        footer .footer-title {
+                            color: #9b51e0;
+                            margin-bottom: 10px;
+                            font-style: normal !important;
+                            font-size: 18px;
+                            text-transform: uppercase;
+                        }
+
+                        .footer-title {
+                            font-family: Roboto;
+                            text-transform: uppercase;
+                            color: #9b51e0;
+                            font-size: 18px;
+                            font-weight: 400;
+                            margin-bottom: 30px;
+                            margin-left: 1rem;
+                            text-align: left;
+                            
+                        }
+
+                        .footer-bottom {
+                            font-family: Roboto;
+                            font-size: 16px;
+                        }
+
+                        .left {
+                            float: left;
+                            margin-left: 1rem;
+                            margin-bottom: 2rem;
+                        }
+
+                        .right {
+                            float: right;
+                            margin-right: 1rem;
+                            margin-bottom: 2rem;
+                        }
+
+                        .footer-line {
+                            margin-left: 1rem;
+                        }
+
+                        .footer-icon {
+                            width: 16px;
+                        }
+                    </style>
+                    <img class="footer-logo" src="Content/logo/K-Photoroom.png">
+                    <div class="footer-1">
+                        <div class="footer-title div-footer-1" style="">Công ty CP TM &amp; Dv KStore Việt Nam</div>
+                        <div class="footer-line">
+                            <%-- <i class="fas fa-map-marker" aria-hidden="true"></i>--%>
+                            <i class="fa-solid fa-location-dot" style="margin-right: 5px; width: 25px; color: #B197FC;"></i>Địa chỉ: Tầng 4 Tòa Nhà Số 736, Đường Nguyễn Trãi, Quận 5, TP.Hồ Chí Minh.
+                        </div>
+                        <div class="footer-line">
+                            <i class="fa-solid fa-phone" style="margin-right: 5px; width: 25px; color: #B197FC;"></i>Số điện thoại: 0389.80.03.08
+                        </div>
+                        <div class="footer-line">
+                            <i class="fa-solid fa-envelope" style="margin-right: 5px; width: 25px; color: #B197FC;"></i>Địa chỉ Email: info@KStore.com
+                        </div>
+                        <div class="footer-line">
+                            <i class="fa-solid fa-certificate" style="margin-right: 5px; width: 25px; color: #B197FC;"></i>Số ĐKKD: 123456789. Ngày cấp: 01/04/2024.
+                        </div>
+                        <div class="footer-line">
+                            Nơi cấp: Sở kế hoạch và Đầu tư Thành phố Hồ Chí Minh.
+                        </div>
+                        <div class="footer-line dowload-app">
+
+                            <a target="_blank" href="#!">
+                                <img src="Content/icon/bo_cong_thuong_grande.png" alt="" style="width: 20%;">
+                            </a>
+                        </div>
+                        <%-- <div class="footer-line social">
+                     <a target="_blank" href="https://www.facebook.com/KStore/"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
+                     <a target="_blank" href="https://www.instagram.com/KStore/"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                     <a target="_blank" href="https://www.youtube.com/c/KStore"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                     <a target="_blank" href="https://www.tiktok.com/@KStore/"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                     <a target="_blank" href="https://zalo.me/0389800308"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
+                 </div>--%>
+                    </div>
+                    <div class="d-flex div-footer-content2">
+                    <div class="footer-2">
+                        <div class="footer-title">Về chúng tôi</div>
+                        <div class="footer-content">
+                            <div class="menu-footer-abous">
+                                <ul id="menu-footer-ve-chung-toi" class="menu" style="padding-left:1rem;">
+                                    <li id="menu-item-1319" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1319"><a href="ChildForm.aspx?page=KStoreIntroduce">Giới thiệu KStore</a></li>
+                                    <li id="menu-item-1320" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1320"><a href="https://KStore.com/nhuongquyen/">Nhượng quyền</a></li>
+                                    <li id="menu-item-2119" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2119"><a href="http://KStore.com/tin-tuc-khuyen-mai/">Tin tức khuyến mại</a></li>
+                                    <li id="menu-item-1865" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1865"><a href="https://KStore.com/quy-dinh-chung/">Quy định chung</a></li>
+                                    <li id="menu-item-1866" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1866"><a href="ChildForm.aspx?page=KStoreContact">TT liên hệ &amp; ĐKKD</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-2">
+                        <div class="footer-title">Chính sách</div>
+                        <div class="footer-content">
+                            <div class="menu-footer-policy">
+                                <ul id="menu-footer-chinh-sach" class="menu" style="padding-left:1rem;"> 
+                                    <li id="menu-item-1313" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1313"><a href="/chinh-sach/dieu-khoan-chinh-sach-thanh-vien-than-thiet-tocotococlub/">Chính sách thành viên</a></li>
+                                    <li id="menu-item-1314" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1314"><a href="ChildForm.aspx?page=KStorePayment">Hình thức thanh toán</a></li>
+                                    <li id="menu-item-1315" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1315"><a href="/chinh-sach/chinh-sach-van-chuyen-giao-nhan/">Vận chuyển giao nhận</a></li>
+                                    <li id="menu-item-1316" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1316"><a href="/chinh-sach/chinh-sach-doi-tra-hang-va-hoan-tien/">Đổi trả và hoàn tiền</a></li>
+<%--                                    <li id="menu-item-1317" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1317"><a href="/chinh-sach/chinh-sach-bao-ve-thong-tin-ca-nhan-cua-nguoi-tieu-dung/">Bảo vệ thông tin cá nhân</a></li>--%>
+                                    <li id="menu-item-1318" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1318"><a href="/chinh-sach/chinh-sach-bao-hanh-bao-tri/">Bảo trì, bảo hành</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                </div>
+                <style>
+                    #line-footer {
+                        border-top: 1px solid #9b51e0;
+                        margin: 20px 0;
+                    }
+                    @media only screen and (min-width:768px){
+                         .footer-main {
+                             display: inline-flex;
+                             gap: 10px;
+                         }
+                          .footer-logo {
+                             width: 20%;
+                             height: 20%;
+                         }
+                          .footer-all-content{
+                              text-align: left;
+                          }
+                          .div-footer-1{
+                              margin-right: 17rem;
+                          }
+                    }
+                    @media only screen and (max-width:768px){
+                        .footer-line{
+                            font-size:14px;
+                        }
+                     .div-footer-content2{
+                       
+                         text-align:center;
+                         margin:1rem auto 0 auto;
+                     }
+                      .footer-all-content{
+                         text-align: center;
+                     }
+                      .footer-title{
+                          text-align:center;
+                      }
+                      .footer-1, .footer-2 {
+                             width: 100%; 
+                            padding: 0;
+                           
+                        }
+                      .footer-1{
+                           text-align:center;
+                      }
+                      .footer-icon{
+                          display:none;
+                      }
+                      .footer-bottom{
+                          display:grid;
+                      }
+                       .footer-bottom .left, .footer-bottom .right{
+                         width:100%;
+                     }
+                    }
+                </style>
+                <div class="footer-line" id="line-footer"></div>
+                <div class="footer-bottom">
+                    <div class="left">
+                        KStore - Cửa hàng tiên phong mang nền văn hóa Kpop đến Việt Nam
+    
+                    </div>
+                    <div class="right">
+                        Copyrights © 2024 by KStore. All rights reserved.
+    
+                    </div>
+                </div>
+            </div>
+            <div class="footer-cover"></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="Scripts/js/scripts.js"></script>
+
+    </form>
+</body>
+
+</html>

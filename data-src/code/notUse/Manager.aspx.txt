@@ -1,0 +1,1308 @@
+<%@ Page Title="" Language="C#" MasterPageFile="~/Shop.Master" AutoEventWireup="true" CodeBehind="Manager.aspx.cs" Inherits="TH03_WebBanHang.Manager" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    <style>
+        .searchInput-Manager{
+            touch-action: none; 
+            border-top-left-radius:10px;
+            border-bottom-left-radius:10px; 
+            border:1px solid #000; 
+            padding-left:1rem;
+            color:#fff;
+            background:#000;
+        }
+        #AccountList, #BranchList, #OrderList, #ProductList, #RevenueList{
+            border-top:2px dashed #636363;
+            padding-top:20px;
+        }
+    </style>
+
+
+    <div class="d-flex" style="width:100%;">
+     <section style="height:100vh; width:300px;">
+        <style>
+            #footer, #header{
+                display:none !important;
+            }
+        </style>
+
+  
+        <style>
+
+                .adminul li {
+                    width: 100%;
+                    text-align: left;
+                    
+                    
+                    border-radius:0;
+                     background: linear-gradient(to right, #522A77, #2a2e77);
+                 
+                  
+                  
+                }
+                #adminul{
+              
+             
+                }
+             .adminul nav-item, #adminul  nav-item{
+                 font-size:15px;
+       
+       
+             }
+            .adminul *{
+                transition:linear 0.5s, opacity 0.5s linear;
+            }
+            .adminul li a{
+                 border-left:1px solid #636363;
+                 border-bottom:1px solid #636363;
+                 
+                border-radius:0;
+                padding:5px 15px;
+            }
+             .adminul li:hover .dropdown-item, #adminul .nav-item:hover .nav-link{
+         
+                transition: 0.25s ease-in;
+                color: #fff !important;
+                
+             }
+             
+             .smallul li a{
+                 padding:5px 15px;
+             }
+             /* CSS cho phần tử <li> cha */
+            .nav-item:hover > ul {
+                display: block;
+    
+            }
+
+            /* CSS cho phần tử <ul> con */
+            .adminul.smallul {
+                display: none; /* Ban đầu, các phần tử <ul> con sẽ không hiển thị */
+            }
+
+            /* CSS cho phần tử <li> con khi hover lên */
+            .nav-item:hover > ul > li {
+                display: block; /* Hiển thị các phần tử <li> con khi hover lên */
+            }
+            #adminul li h5{
+                font-size:18px;
+            }
+             #adminul li a{
+                 font-size:15px;
+             }
+             #adminul{
+                 border:1px solid #636363;
+                 border-bottom-right-radius:10px;
+                 overflow:hidden;
+                 border-top:none;
+                 border-left:none;
+                width:max-content;
+             }
+        </style>
+    <ul id="adminul" class="navbar-nav adminul" style="position:fixed; background:#000;  height:max-content; border-right:1px solid #636363;">
+<%--        <li><a style="padding:0; margin:-1px;" href="Default.aspx"><img src="Content/logo/kstore_edited.jpg" style="width:100%;"/></a></li>--%>
+        <%--<li  style="border-bottom:1px solid #fff; padding-top:10px; text-align:center; padding-left:1rem"><h5>Kiểm tra</h5></li>--%>
+        <li class="nav-item"><a class="nav-link dropdown-item" href="ManagerRevenue.aspx"><i class="fa-solid fa-chart-column"style="margin-right: 5px; width:35px; "></i>Doanh thu</a></li>
+        <li class="nav-item"><a class="nav-link dropdown-item" href="ManagerOrder.aspx"><i class="fa-solid fa-boxes-stacked"style="margin-right: 5px; width:35px; "></i>Đơn hàng</a></li>
+         <%--<li   style="border-bottom:1px solid #fff; padding-top:10px; text-align:center; padding-left:1rem"><h5>Quản lý</h5></li>--%>
+    <li class="nav-item"><a class="nav-link active dropdown-item" aria-current="page"  href="ManagerAccount.aspx" style="color: #9b51e0;"><i class="fas fa-user"style="margin-right: 5px; width:35px; "></i>Tài khoản</a>
+        <ul class="adminul smallul">
+            <li>
+                <a class="dropdown-item" href="AddAccount.aspx" style="color: #fff;"><i class="fa-solid fa-arrow-right"style="margin-right: 5px; width:35px; "></i>Thêm tài khoản</a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item"><a class="nav-link dropdown-item" href="ManagerProduct.aspx"><i class="fas fa-box"style="margin-right: 5px; width:35px; "></i>Sản phẩm</a>
+         <ul class="adminul smallul">
+             <li>
+                 <a class="dropdown-item" href="AddProduct.aspx" style="color: #fff;"><i class="fa-solid fa-arrow-right"style="margin-right: 5px; width:35px; "></i>Thêm sản phẩm</a>
+             </li>
+         </ul>
+    </li>
+            <li class="nav-item"><a class="nav-link dropdown-item" href="#"><i class="fa-brands fa-artstation"style="margin-right: 5px; width:35px; "></i>Nghệ sĩ</a>
+     
+</li>
+    <li class="nav-item"><a class="nav-link dropdown-item" href="ManagerBranch.aspx"><i class="fas fa-map-marker-alt"style="margin-right: 5px; width:35px; "></i>Chi nhánh</a>
+         <ul class="adminul smallul">
+             <li>
+                 <a class="dropdown-item" href="BrandOrder.aspx?Deptid=CN1" style="color: #fff;"><i class="fa-solid fa-arrow-right"style="margin-right: 5px; width:35px; "></i>Hà nội</a>
+             </li>
+               <li>
+                <a class="dropdown-item" href="BrandOrder.aspx?Deptid=CN2" style="color: #fff;"><i class="fa-solid fa-arrow-right"style="margin-right: 5px; width:35px; "></i>Hồ chí minh</a>
+              </li>
+         </ul>
+    </li>
+
+         <li class="nav-item"><a class="nav-link dropdown-item" href="#"><i class="fa-solid fa-globe"style="margin-right: 5px; width:35px; "></i>Mạng xã hội</a>
+      
+ </li>
+     <%--<li class="nav-item"  style="border-bottom:1px solid #fff; padding-top:10px; text-align:center; padding-left:1rem"><h5>Thêm nội dung</h5></li>--%>
+    <%--    <li class="nav-item">
+    <a class="dropdown-item" href="AddAccount.aspx" style="color: #fff;"><i class="fas fa-plus"style="margin-right: 5px; width:35px; "></i>Thêm tài khoản</a>
+</li>
+      
+               <li class="nav-item ">
+    <a class="dropdown-item" href="AddProduct.aspx" style="color: #fff;"><i class="fas fa-plus"style="margin-right: 5px; width:35px; "></i>Thêm sản phẩm</a>
+</li>      
+                       <li class="nav-item">
+    <a class="dropdown-item" href="AddProduct.aspx" style="color: #fff;"><i class="fas fa-plus"style="margin-right: 5px; width:35px; "></i>Thêm nghệ sĩ</a>
+</li>   --%>   
+        <li class="nav-item ">
+    <a class="dropdown-item" href="UpdateInformational.aspx" style="color: #fff;"><i class="fas fa-plus"style="margin-right: 5px; width:35px; "></i>Thông tin</a>
+</li>
+        <%--<li class="nav-item" style="border-bottom:1px solid #fff; padding-top:10px; text-align:center; padding-left:1rem"><h5>Yêu cầu</h5></li>--%>
+       
+                       
+                        <li class="nav-item ">
+    <a class="dropdown-item" href="#" style="color: #fff;"><i class="fa-solid fa-right-left"style="margin-right: 5px; width:35px; "></i>Hoàn tiền, trả hàng</a>
+</li>
+                  <li class="nav-item ">
+    <a class="dropdown-item" href="#" style="color: #fff;"><i class="fa-solid fa-face-meh"style="margin-right: 5px; width:35px; "></i>Đánh giá, khiếu nại</a>
+</li>
+
+</ul></section>
+
+        <section style="padding:20px 10rem;">
+            <div id="RevenueList">
+                            <style>
+                .tenSP-ls-h3 {
+                padding-bottom: 1.5rem;
+                text-align: center;
+                font-weight: bolder;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: #9b51e0;
+                width: 100%;
+            }
+
+            .tenSP-ls-p {            color: #9b51e0;
+                width: max-content;
+                padding: 8px;
+                margin: auto;
+                border-bottom-color:#000 ;
+                border:1px solid;
+                border-top-style:none;
+                border-left-style:none;
+                border-right:none;
+            }
+			body{
+				text-align:center;
+				justify-content:center;
+								
+
+			}
+			.btn-color:hover{
+				color:#9b51e0;
+			}
+			.td-longer{
+				width:12rem;
+				
+			}
+			
+			.btn-w{
+				width:6rem;
+			}#linksContainer {
+            display: none;
+        }
+			 td,tr,th{
+				 
+				 text-align:center;
+			 }
+			 .ListView1{
+				 display:flex;
+				text-align:center;
+				justify-content:center;
+			 }
+            </style>
+
+
+	    <section  style=" gap:2rem; text-align:center; justify-content:center; margin:auto;" class=" fade-out justify-content-center align-content-center" >
+		        <link href="Content/css/stylesChart.css" rel="stylesheet" />		
+<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid px-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-area me-1"></i> Area Chart Example
+                </div>
+                <div class="card-body"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+           <%-- <div class="row">
+                <div class="col-lg-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-chart-bar me-1"></i> Bar Chart Example
+                        </div>
+                        <div class="card-body"><canvas id="myBarChart" width="100%" height="50"></canvas></div>
+                        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-chart-pie me-1"></i> Pie Chart Example
+                        </div>
+                        <div class="card-body"><canvas id="myPieChart" width="100%" height="50"></canvas></div>
+                        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                    </div>
+                </div>
+            </div>--%>
+        </div>
+    </main>
+    <style>
+        a{
+            text-decoration:none;
+            color:#fff;
+        }
+    </style>
+</div>
+        <script src="Scripts/js/script.js"></script>
+        <script src="Scripts/js/scriptsChart.js"></script>
+        <script src="Scripts/js/datatables-simple-demo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+           <asp:ListView ID="ListViewRevenue" runat="server" ItemType="TH03_WebBanHang.Models.DoanhThu"
+ SelectMethod="GetRevernue" >
+ <ItemTemplate>
+<script>
+
+    // Set new default font family and font color to mimic Bootstrap's default styling
+    Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+    Chart.defaults.global.defaultFontColor = '#292b2c';
+    // Area Chart Example
+    var ctx = document.getElementById("myAreaChart");
+
+    var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [<%#:Item.Ngay%> + " /" + <%#:Item.Thang%>,<%#:Item.Ngay%> + " /" + <%#:Item.Thang%>],
+            datasets: [{
+                label: "Tổng Doanh Thu Ngày",
+                lineTension: 0.3,
+                backgroundColor: "rgb(131, 2, 216, 0.20)",
+                borderColor: "rgb(147, 2, 216)",
+                pointRadius: 5,
+                pointBackgroundColor: "rgb(147, 2, 216)",
+                pointBorderColor: "rgba(255,255,255,0.8)",
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgb(147, 2, 216)",
+                pointHitRadius: 50,
+                pointBorderWidth: 2,
+                data: [<%#:Item.DoanhThuNgay%>,<%#:Item.DoanhThuNgay%>],
+            }],
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                    time: {
+                        unit: 'date'
+                    },
+                    gridLines: {
+                        display: false
+                    },
+                    ticks: {
+                        maxTicksLimit: 7
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                        max: 100000000 /*4000000000*/,
+                        maxTicksLimit: 5
+                    },
+                    gridLines: {
+                        color: "rgba(0, 0, 0, .125)",
+                    }
+                }],
+            },
+            legend: {
+                display: false
+            }
+        }
+    });
+
+
+    //// Set new default font family and font color to mimic Bootstrap's default styling
+    //Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+    //Chart.defaults.global.defaultFontColor = '#292b2c';
+
+    //// Bar Chart Example
+    //var ctx = document.getElementById("myBarChart");
+    //var myLineChart = new Chart(ctx, {
+    //    type: 'bar',
+    //    data: {
+    //        labels: ["January", "February", "March", "April", "May", "June"],
+    //        datasets: [{
+    //            label: "Revenue",
+    //            backgroundColor: "rgb(147, 2, 216)",
+    //            borderColor: "rgb(147, 2, 216)",
+    //            data: [4215, 5312, 6251, 7841, 9821, 14984],
+    //        }],
+    //    },
+    //    options: {
+    //        scales: {
+    //            xAxes: [{
+    //                time: {
+    //                    unit: 'month'
+    //                },
+    //                gridLines: {
+    //                    display: false
+    //                },
+    //                ticks: {
+    //                    maxTicksLimit: 6
+    //                }
+    //            }],
+    //            yAxes: [{
+    //                ticks: {
+    //                    min: 0,
+    //                    max: 15000,
+    //                    maxTicksLimit: 5
+    //                },
+    //                gridLines: {
+    //                    display: true
+    //                }
+    //            }],
+    //        },
+    //        legend: {
+    //            display: false
+    //        }
+    //    }
+    //});
+
+
+    //// Set new default font family and font color to mimic Bootstrap's default styling
+    //Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+    //Chart.defaults.global.defaultFontColor = '#292b2c';
+
+    //// Pie Chart Example
+    //var ctx = document.getElementById("myPieChart");
+    //var myPieChart = new Chart(ctx, {
+    //    type: 'pie',
+    //    data: {
+    //        labels: ["Blue", "Red", "Yellow", "Green"],
+    //        datasets: [{
+    //            data: [12.21, 15.58, 11.25, 8.32],
+    //            backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745'],
+    //        }],
+    //    },
+    //});
+
+
+</script>
+<%--<script src="assets/demo/chart-area-demo.js"></script>
+<script src="assets/demo/chart-bar-demo.js"></script>
+<script src="assets/demo/chart-pie-demo.js"></script>--%>
+      </ItemTemplate>  </asp:ListView>
+    </section>
+
+
+
+
+	<section style="display:flex; width:100%; gap:2rem; text-align:center; justify-content:center;" class=" fade-out">
+<asp:ListView ID="ListViewRevenueList" runat="server" ItemType="TH03_WebBanHang.Models.ChiTietDonHang"
+	SelectMethod="GetDeparmentsRevenue" OnSelectedIndexChanged="ListView1Revenue_SelectedIndexChanged" class="text-center ListView1">
+	<EmptyDataTemplate>
+			<table>
+				<tr>
+					<td></td>
+				</tr>
+			</table>
+		</EmptyDataTemplate>
+		<EmptyItemTemplate>
+			<td />
+		</EmptyItemTemplate>
+		<GroupTemplate>
+			<tr id="itemPlaceholderContainer" runat="server">
+				<td id="itemPlaceholder" runat="server"></td>
+			</tr>
+		</GroupTemplate>
+		
+		<ItemTemplate>
+			
+			<td class="justify-content-center align-content-center"><%#:Item.MaCTDH%></td>
+			<td class="justify-content-center align-content-center"><%#:Item.Ngay%></td>			<td <%--class="td-longer"--%>> <a class="a-hadItems"  href="item.aspx?sp=<%#:Item.MaSP%>"> <%#:Item.TenSP%></a></td>
+
+			<td class="justify-content-center align-content-center"><%#:Item.SoLuong%></td>
+			<td class="justify-content-center align-content-center"><%#:string.Format("{0:N0}", Item.Gia)%>đ</td>
+									<td class="justify-content-center align-content-center"><%# string.Format("{0:N0}", Item.ThanhTien) %>đ</td>
+
+
+			<%--<td>
+				<a class="btn btn-default btn-color btn-w" href="EditAccount.aspx?Deptid=<%#:Item.MaDH%>">Chỉnh sửa</a>
+				<a class="btn btn-default btn-color btn-w" href="DeleteAccount.aspx?Deptid=<%#:Item.MaDH%>">Xóa</a>
+			</td>--%>
+		</ItemTemplate>
+		<LayoutTemplate><div class="d-flex justify-content-center align-content-center  fade-out">
+			<table class="table" id="groupPlaceholderContainer" runat="server" style="width:100%;">
+			
+				<thead>
+					<tr>
+						
+						<th class="justify-content-center align-content-center">Mã Đơn</th>
+						<th class="justify-content-center align-content-center">Ngày</th>
+						<th class="justify-content-center align-content-center">Sản Phẩm</th>
+						<th class="justify-content-center align-content-center">Số Lượng</th>
+						<th class="justify-content-center align-content-center">Giá</th>
+						<th class="justify-content-center align-content-center">Thành Tiền</th>
+						<%--<th></th>--%>
+					</tr>
+				</thead>
+				<tbody>
+										<tr id="groupPlaceholder"></tr>
+										<tr> <td colspan="5" style="text-align:left;" class="justify-content-center align-content-center" >	
+						<style>
+    .pagerImage {
+        width: 24px; /* Độ rộng mong muốn */
+        height: 24px; /* Độ cao mong muốn */
+	
+	
+    }
+	
+	.btn-num-page:hover{
+		color:#9B51E0;
+	
+	}
+	
+	.pagerGap {
+    margin: 0 5px; /* Thêm khoảng cách giữa các phần tử */
+}.numericPagerField a {
+    margin-right: 10px;
+		padding-bottom:2rem;
+
+
+}
+
+/* To ensure the last button doesn't have an extra margin on the right */
+.numericPagerField a:last-child {
+    margin-right: 0;
+}.currentPage {
+    font-weight: bold;
+    color: #9B51E0;
+}
+
+ .btn-w{
+     color: #fff !important;
+ }
+</style>
+						<asp:DataPager ID="DataPager1" runat="server" PagedControlID="ListViewRevenueList" PageSize="5">
+							<Fields>
+													
+
+								<asp:NextPreviousPagerField ButtonType="Image" PreviousPageImageUrl="~/Content/icon/previous-page.png" ShowFirstPageButton="false" ShowLastPageButton="false" ShowPreviousPageButton="true" ShowNextPageButton="false" ButtonCssClass="pagerImage pagerGap"/>
+<asp:NumericPagerField ButtonCount="10" ButtonType="Link" CurrentPageLabelCssClass="currentPage numericPagerField"/>
+
+								<asp:NextPreviousPagerField  ButtonType="Image" ShowNextPageButton="true" ShowLastPageButton="false" ShowPreviousPageButton="false" NextPageImageUrl="~/Content/icon/next-page.png" ButtonCssClass="pagerImage pagerGap"/>
+							</Fields>
+						</asp:DataPager>
+					    </td></tr>
+				</tbody>
+			</table></div>
+		</LayoutTemplate>
+		
+	</asp:ListView>
+	<div> <asp:GridView ID="GridViewMonthlyRevenue" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" style="background:#522A77; width:max-content;">
+            <Columns>
+                <asp:BoundField DataField="Month" HeaderText="Tháng"/>
+                <asp:BoundField DataField="Revenue" HeaderText="Doanh thu (VNĐ)" DataFormatString="{0:N0}" />
+            </Columns>
+        </asp:GridView>
+        <br />
+        <div style="background:#522A77;">
+<h6>Tổng Doanh Thu Năm <%#:Year %></h6>
+        <asp:Label ID="LabelTotalRevenue" runat="server" Text="" style="font-size:20px; font-weight:bold;"></asp:Label></div></div>
+</section>
+            </div>
+			<div id="OrderList">
+				    <style>
+        .tenSP-ls-h3 {
+            padding-bottom: 1.5rem;
+            text-align: center;
+            font-weight: bolder;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #9b51e0;
+            width: 100%;
+        }
+
+        .tenSP-ls-p {            color: #9b51e0;
+            width: max-content;
+            padding: 8px;
+            margin: auto;
+            border-bottom-color: #000;
+            border: 1px solid;
+            border-top-style: none;
+            border-left-style: none;
+            border-right: none;
+        }
+
+        body {
+            text-align: center;
+            justify-content: center;
+        }
+
+        .btn-color:hover {
+            color: #9b51e0;
+        }
+
+        .td-longer {
+            width: 12rem;
+        }
+
+        .btn-w {
+            width: 6rem;
+        }
+
+        #linksContainer {
+            display: none;
+        }
+
+        td, tr, th {
+            border: 0.8px solid #b8b8b84f;
+            text-align: center;
+        }
+
+        .ListView1 {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+    </style>
+        <div class="container fade-out" style="text-align:right; margin-bottom:0.4rem;">
+				<div class="search-container-table fade-in" style="position:relative;">
+    <asp:TextBox ID="searchinputOrder" placeholder="Tìm kiếm" type="search" Text="" runat="server" CssClass="searchInput-Manager"></asp:TextBox>
+			  <div style="border:1px solid #000; padding:5px; border-top-right-radius:10px;
+border-bottom-right-radius:10px;">    <asp:Button runat="server" ID="Button2" CssClass="searchbutton" OnClick="SearchButtonOrder_Click" Text="" />
+</div>
+    <style>
+        .searchbutton {
+            background-image: url('Content/icon/search.png');
+            background-repeat: no-repeat;
+            background-size: contain; /* Thay đổi kích thước ảnh nếu cần */
+            width: 18px; /* Độ rộng của nút */
+            height: 18px; /* Độ cao của nút */
+            cursor: pointer; /* Biểu tượng con trỏ khi rê chuột vào nút */
+            margin-top: 4%;
+            margin-left: 2%;
+			padding:8px;
+			
+		
+        }
+		.search-container-table{
+			right:0;
+		}
+    </style>
+</div>   </div>
+    <asp:ListView ID="ListViewOrderList" runat="server" ItemType="TH03_WebBanHang.Models.DonHang"
+        SelectMethod="GetDeparmentsOrder" OnSelectedIndexChanged="ListView1Order_SelectedIndexChanged" class="text-center ListView1">
+        <EmptyDataTemplate>
+            <table>
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
+        </EmptyDataTemplate>
+        <EmptyItemTemplate>
+            <td />
+        </EmptyItemTemplate>
+        <GroupTemplate>
+            <tr id="itemPlaceholderContainer" runat="server">
+                <td id="itemPlaceholder" runat="server"></td>
+            </tr>
+        </GroupTemplate>
+
+        <ItemTemplate>
+            <%--						<td><%#:TH03_WebBanHang.Pay.kh%></td>--%>
+            <td class="justify-content-center align-content-center"><%#:Item.MaDH%></td>
+            <td class="justify-content-center align-content-center"><%#:Item.KH%></td>
+
+            <td class="justify-content-center align-content-center"><%#:Item.ChiNhanh.TenCN%></td>
+
+            <td class="justify-content-center align-content-center" style="width:8rem"><%#:Item.Ngay%></td>
+            <td class="justify-content-center align-content-center"><%#:Item.ChiTietDonHangs.Sum(s=>s.SoLuong)%></td>
+           <%-- <td>
+ <asp:Repeater ID="Repeater1" runat="server" ItemType="TH03_WebBanHang.Models.ChiTietDonHang" SelectMethod="GetDeparments2">
+                    <HeaderTemplate>
+                        <table class="order-item-table">
+                            <thead>
+                                <tr>
+                                    <th class="son-table">Tên Sản Phẩm</th>
+                                    <th class="son-table" style=" text-align:center;">Số Lượng</th>
+                                    <th class="son-table" style=" text-align:center;">Giá</th>
+                                    <th class="son-table" style=" text-align:center;">Thành Tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr>
+                            <td class="son-table" style="text-align:left;"><%#:Item.TenSP %></td>
+                            <td class="son-table"><%#:Item.SoLuong%></td>
+                            <td class="son-table" style="text-align:center;"><%# string.Format("{0:N0}", Item.Gia) %>đ</td>
+                            <td class="son-table" style="text-align:center;"><%# string.Format("{0:N0}", Item.ThanhTien) %>đ</td>
+                            <td class="son-table"><a class="btn btn-default btn-color btn-w" href="DetailOrder.aspx?MaDH=<%#:Item.MaDH%>&SP=<%#:Item.MaSP%>">Chi tiết</a></td>
+
+                        </tr>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                                </tbody>
+                            </table>
+                    </FooterTemplate>
+                </asp:Repeater>                </td>--%>
+            <td class="justify-content-center align-content-center">
+                <%# string.Format("{0:N0}", Item.ChiTietDonHangs.Sum(p=>p.ThanhTien)) %>đ
+            </td>
+            <td class="justify-content-center align-content-center">
+                <a class="btn btn-default btn-color btn-w" href="DetailOrder.aspx?MaDH=<%#:Item.MaDH%>">Chi tiết</a>
+                <a class="btn btn-default btn-color btn-w" href="DeleteOrder.aspx?MaDH=<%#:Item.MaDH%>">Xóa</a>
+
+				<%--<a class="btn btn-default btn-color btn-w" href="EditProduct.aspx?Deptid=<%#:Item.MaDH%>">Chỉnh sửa</a>
+				<a class="btn btn-default btn-color btn-w" href="DeleteProduct.aspx?Deptid=<%#:Item.MaDH%>">Xóa</a>--%>
+			</td>
+        </ItemTemplate>
+        <LayoutTemplate><div class="d-flex justify-content-center align-content-center fade-out">
+            <table class="table" id="groupPlaceholderContainer" runat="server" style="">
+                <thead>
+                    <tr>
+                        <th class="justify-content-center align-content-center">Mã Đơn</th>
+                        <th class="justify-content-center align-content-center">Mã Khách</th>
+
+                        <th class="justify-content-center align-content-center">Chi Nhánh</th>
+                        <th class="justify-content-center align-content-center">Thời Gian</th>
+                        <th class="justify-content-center align-content-center">Số Sản Phẩm</th>
+                        <th class="justify-content-center align-content-center">Tổng Tiền</th>
+                      
+                      
+
+
+                        <%--						<th>Mã Khách Hàng</th>
+
+                        <%--<th></th>--%>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="groupPlaceholder"></tr>
+                    					<tr> <td colspan="5" style="text-align:left;" class="justify-content-center align-content-center" >	
+						<style>
+
+          .son-table{
+    padding:10px
+}
+    .pagerImage {
+        width: 24px; /* Độ rộng mong muốn */
+        height: 24px; /* Độ cao mong muốn */
+	
+	
+    }
+	
+	.btn-num-page:hover{
+		color:#9B51E0;
+	
+	}
+	
+	.pagerGap {
+    margin: 0 5px; /* Thêm khoảng cách giữa các phần tử */
+}.numericPagerField a {
+    margin-right: 10px;
+		padding-bottom:2rem;
+
+
+}
+
+/* To ensure the last button doesn't have an extra margin on the right */
+.numericPagerField a:last-child {
+    margin-right: 0;
+}.currentPage {
+    font-weight: bold;
+    color: #9B51E0;
+}
+
+
+/*.order-item-table thead {
+    background-color: #f5f5f5;*/ /* Optional: Add a background color to the header */
+/*}*/
+
+.order-item-table  {
+    display: block; /* Allows the tbody to be scrollable */
+    max-height: 160px; /* Sets the maximum height */
+    overflow-y: auto; /* Enables vertical scrolling */
+    max-width:100%;
+    
+}
+
+
+
+/*.order-item-table tbody td,
+.order-item-table tbody th {
+    width: auto;*/ /* Ensures the cells take up the available space */
+/*}*/
+
+
+</style>
+						<asp:DataPager ID="DataPager1" runat="server" PagedControlID="ListViewOrderList" PageSize="5">
+							<Fields>
+													
+
+								<asp:NextPreviousPagerField ButtonType="Image" PreviousPageImageUrl="~/Content/icon/previous-page.png" ShowFirstPageButton="false" ShowLastPageButton="false" ShowPreviousPageButton="true" ShowNextPageButton="false" ButtonCssClass="pagerImage pagerGap"/>
+<asp:NumericPagerField ButtonCount="10" ButtonType="Link" CurrentPageLabelCssClass="currentPage numericPagerField"/>
+
+								<asp:NextPreviousPagerField  ButtonType="Image" ShowNextPageButton="true" ShowLastPageButton="false" ShowPreviousPageButton="false" NextPageImageUrl="~/Content/icon/next-page.png" ButtonCssClass="pagerImage pagerGap"/>
+							</Fields>
+						</asp:DataPager>
+					    </td></tr>                </tbody>
+            </table></div>
+        </LayoutTemplate>
+    </asp:ListView>
+			</div>
+
+
+
+            <div id="AccountList">
+                            <style>
+                .tenSP-ls-h3 {
+                padding-bottom: 1.5rem;
+                text-align: center;
+                font-weight: bolder;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: #9b51e0;
+                width: 100%;
+            }
+
+            .tenSP-ls-p {            color: #9b51e0;
+                width: max-content;
+                padding: 8px;
+                margin: auto;
+                border-bottom-color:#000 ;
+                border:1px solid;
+                border-top-style:none;
+                border-left-style:none;
+                border-right:none;
+            }
+			body{
+				text-align:center;
+				justify-content:center;
+								
+
+			}
+			.btn-color:hover{
+				color:#9b51e0;
+			}
+			.td-longer{
+				width:12rem;
+				
+			}
+			
+			.btn-w{
+				width:6rem;
+			}#linksContainer {
+            display: none;
+        }
+			 td,tr,th{
+				 
+				 text-align:center;
+			 }
+			 .ListView1{
+				 display:flex;
+				text-align:center;
+				justify-content:center;
+			 }.btn-color:hover{
+	 background:#9B51E0 !important;
+	 color:white;
+ }
+            </style>
+		<div class="d-flex container fade-out"style=" ">
+		      <a class="btn btn-default btn-color fade-in" style="z-index:1;margin-left:-0.75rem; padding:5px;background:#7728C0; border:1px solid #D7D7D7; border-bottom-right-radius:0;border-bottom-left-radius:0; border-top-right-radius:10px;border-top-left-radius:10px;border:none; color:#fff; width:100%; justify-content:left"   href="AddAccount.aspx">Thêm</a> 
+				<div class="search-container-table fade-in" style="margin-bottom:0.4rem;position:relative; right:0; width:max-content; height:40%; justify-content:right">
+    <asp:TextBox ID="searchinputAccount" placeholder="Tìm kiếm" Text="" type="search" runat="server" CssClass="searchInput-Manager"></asp:TextBox>
+			  <div style="border:1px solid #000; padding:5px; border-top-right-radius:10px;
+border-bottom-right-radius:10px;">    <asp:Button runat="server" ID="btnSearch" CssClass="searchbutton" OnClick="SearchButtonAccount_Click" Text="" />
+</div>
+    <style>
+        .searchbutton {
+            background-image: url('Content/icon/search.png');
+            background-repeat: no-repeat;
+            background-size: contain; /* Thay đổi kích thước ảnh nếu cần */
+            width: 18px; /* Độ rộng của nút */
+            height: 18px; /* Độ cao của nút */
+            cursor: pointer; /* Biểu tượng con trỏ khi rê chuột vào nút */
+            margin-top: 4%;
+            margin-left: 2%;
+			padding:8px;
+			
+		
+        }
+		.search-container-table{
+			right:0;
+		}
+    </style>
+</div>   </div>
+
+	<asp:ListView ID="ListViewAccountList" runat="server" ItemType="TH03_WebBanHang.Models.KhachHang"
+		SelectMethod="GetDeparmentsAccount" OnSelectedIndexChanged="ListView1Account_SelectedIndexChanged" class="text-center ListView1">
+		<EmptyDataTemplate>
+			<table>
+				<tr>
+					<td><%--No data was returned.--%></td>
+				</tr>
+			</table>
+		</EmptyDataTemplate>
+		<EmptyItemTemplate>
+			<td />
+		</EmptyItemTemplate>
+		<GroupTemplate>
+			<tr id="itemPlaceholderContainer" runat="server">
+				<td id="itemPlaceholder" runat="server"></td>
+			</tr>
+		</GroupTemplate>
+		
+		<ItemTemplate>
+			<td class="td-longer justify-content-center align-content-center"><img style="width:100px; border-radius:50%; border:5px solid #2bf345ab; height:100px; object-fit:cover; overflow:hidden" src="<%#:Item.AvatarUser%>"/></td>
+			<td class="td-longer justify-content-center align-content-center"><%#:Item.HoTen%></td>
+			<td class="justify-content-center align-content-center"><%#:Item.DienThoai%></td>
+			<td class="justify-content-center align-content-center"><%#:Item.GioiTinh%></td>
+			<td class="td-longer justify-content-center align-content-center"><%#:Item.DiaChi%></td>
+			<td class="justify-content-center align-content-center"><%#:Item.Email%></td>
+			<%--<td class="justify-content-center align-content-center"><%#:Item.MatKhau%></td>--%>
+						<td class="justify-content-center align-content-center"><%#:Item.Diem%></td>
+
+			<td class="d-grid" style="border:none;">
+				<a style="margin:auto;" class="btn btn-default btn-color btn-w justify-content-center align-content-center" href="GetPermission.aspx?Deptid=<%#:Item.Email%>">Quyền</a>
+<%--				<a class="btn btn-default btn-color btn-w" href="ManagerOrder.aspx?Deptid=<%#:Item.Email %>">Đơn</a>--%>
+				<a style="margin:auto;" class="btn btn-default btn-color btn-w justify-content-center align-content-center" href="DeleteAccount.aspx?Deptid=<%#:Item.Email%>">Xóa</a>
+			</td>
+		</ItemTemplate>
+		<LayoutTemplate><div class="d-flex justify-content-center align-content-center fade-out">
+			<table class="table" id="groupPlaceholderContainer" runat="server" style=" z-index:2;" >
+				<thead>
+					<tr>
+						<th class="justify-content-center align-content-center">Ảnh</th>
+						<th class="justify-content-center align-content-center">Họ Tên</th>
+						<th class="justify-content-center align-content-center">Điện Thoại</th>
+						<th class="justify-content-center align-content-center">Giới Tính</th>
+						<th class="justify-content-center align-content-center">Địa Chỉ</th>
+						<th class="justify-content-center align-content-center">Email</th>
+						<%--<th class="justify-content-center align-content-center">Mật Khẩu</th>--%>
+												<th class="justify-content-center align-content-center">Điểm</th>
+
+						<th></th>
+					</tr>
+				</thead>
+								<tbody>
+					<tr id="groupPlaceholder"></tr>
+										<tr> <td colspan="5" style="text-align:left;" class="justify-content-center align-content-center" >	
+						<style>
+    .pagerImage {
+        width: 24px; /* Độ rộng mong muốn */
+        height: 24px; /* Độ cao mong muốn */
+	
+	
+    }
+	
+	.btn-num-page:hover{
+		color:#9B51E0;
+	
+	}
+	
+	.pagerGap {
+    margin: 0 5px; /* Thêm khoảng cách giữa các phần tử */
+}.numericPagerField a {
+    margin-right: 10px;
+		padding-bottom:2rem;
+
+
+}
+
+/* To ensure the last button doesn't have an extra margin on the right */
+.numericPagerField a:last-child {
+    margin-right: 0;
+}.currentPage {
+    font-weight: bold;
+    color: #9B51E0;
+}
+
+
+</style>
+						<asp:DataPager ID="DataPager1" runat="server" PagedControlID="ListViewAccountList" PageSize="5">
+							<Fields>
+													
+
+								<asp:NextPreviousPagerField ButtonType="Image" PreviousPageImageUrl="~/Content/icon/previous-page.png" ShowFirstPageButton="false" ShowLastPageButton="false" ShowPreviousPageButton="true" ShowNextPageButton="false" ButtonCssClass="pagerImage pagerGap"/>
+<asp:NumericPagerField ButtonCount="10" ButtonType="Link" CurrentPageLabelCssClass="currentPage numericPagerField"/>
+
+								<asp:NextPreviousPagerField  ButtonType="Image" ShowNextPageButton="true" ShowLastPageButton="false" ShowPreviousPageButton="false" NextPageImageUrl="~/Content/icon/next-page.png" ButtonCssClass="pagerImage pagerGap"/>
+							</Fields>
+						</asp:DataPager>
+					    </td></tr>
+				</tbody>
+			</table></div>
+		</LayoutTemplate>
+	</asp:ListView>
+            </div>
+            <div id="ProductList">
+                                                                    <style>
+                                    
+                                    .btn-p-m{
+                                        width:1.5rem;
+                                        padding:0;
+                                        background-color:#fff;
+                                        border:none;
+                                        border-radius:50%;
+                                         margin:0 0.4rem;
+                                         height:1.5rem;
+                                        
+                                    }
+                                    .btn-p-m:hover{
+  
+                                        border:1px solid #000;
+                                                                                background-color:#000;
+
+    
+}                                    .btn-p-m:active{
+  
+                                        border:1px solid #000;
+                                        background-color:#000;
+    
+}
+                                </style>        
+	<style>
+                .tenSP-ls-h3 {
+                padding-bottom: 1.5rem;
+                text-align: center;
+                font-weight: bolder;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: #9b51e0;
+                width: 100%;
+            }
+
+            .tenSP-ls-p {            color: #9b51e0;
+                width: max-content;
+                padding: 8px;
+                margin: auto;
+                border-bottom-color:#000 ;
+                border:1px solid;
+                border-top-style:none;
+                border-left-style:none;
+                border-right:none;
+            }
+			body{
+				text-align:center;
+				justify-content:center;
+								
+
+			}
+			.btn-color:hover{
+				color:#9b51e0;
+			}
+			.td-longer{
+				width:12rem;
+				
+			}
+			
+			.btn-w{
+				width:6rem;
+			}#linksContainer {
+            display: none;
+        }
+			 td,tr,th{
+				 
+				 text-align:center;
+			 }
+			 .ListView1{
+				 display:flex;
+				text-align:center;
+				justify-content:center;}
+			 		.btn-color:hover{
+ background:#9B51E0 !important;
+ color:white;
+}
+            </style>
+		<div class="d-flex container fade-out"style="">
+		<a class="btn btn-default btn-color  fade-in" style="margin-left:-0.75rem; padding:5px;background:#7728C0; border:1px solid #D7D7D7; border-bottom-right-radius:0;border-bottom-left-radius:0; border-top-right-radius:10px;border-top-left-radius:10px;border:none; color:#fff; width:100%; justify-content:left" href="AddProduct.aspx">Thêm</a>
+
+				<div class="search-container-table  fade-in" style=" margin-bottom:0.4rem;position:relative; right:0; width:82%; height:40%; justify-content:right">
+    <asp:TextBox ID="searchinputProduct" placeholder="Tìm kiếm" type="search" Text="" runat="server" CssClass="searchInput-Manager"></asp:TextBox>
+			  <div style="border:1px solid #000; padding:5px; border-top-right-radius:10px;
+border-bottom-right-radius:10px;">    <asp:Button runat="server" ID="Button1" CssClass="searchbutton" OnClick="SearchButtonProduct_Click" Text="" />
+</div>
+    <style>
+        .searchbutton {
+            background-image: url('Content/icon/search.png');
+            background-repeat: no-repeat;
+            background-size: contain; /* Thay đổi kích thước ảnh nếu cần */
+            width: 18px; /* Độ rộng của nút */
+            height: 18px; /* Độ cao của nút */
+            cursor: pointer; /* Biểu tượng con trỏ khi rê chuột vào nút */
+            margin-top: 4%;
+            margin-left: 2%;
+			padding:8px;
+			
+		
+        }
+		.search-container-table{
+			right:0;
+		}
+    </style>
+</div>   
+
+		</div>
+	<asp:ListView ID="ListViewProductList" runat="server" ItemType="TH03_WebBanHang.Models.SanPham"
+		SelectMethod="GetDeparmentsProduct" OnSelectedIndexChanged="ListView1Product_SelectedIndexChanged" class="text-center ListView1">
+		<EmptyDataTemplate>
+			<table>
+				<tr>
+					<td></td>
+				</tr>
+			</table>
+		</EmptyDataTemplate>
+		<EmptyItemTemplate>
+			<td />
+		</EmptyItemTemplate>
+		<GroupTemplate>
+			<tr id="itemPlaceholderContainer" runat="server">
+				<td id="itemPlaceholder" runat="server"></td>
+			</tr>
+		</GroupTemplate>
+		
+		<ItemTemplate>
+			<td class="justify-content-center align-content-center"> <a class="a-hadItems"  href="item.aspx?sp=<%#:Item.MaSP%>"> <%#:Item.Ver%></a></td>
+			<td class="justify-content-center align-content-center"> <a class="a-hadItems"  href="item.aspx?sp=<%#:Item.MaSP%>"> <img  src="<%#:Item.DuongDan%>" alt="..." style="padding: 20px; height: max-content; width:10rem;" /></a></td>
+			<td class="justify-content-center align-content-center"> <a class="a-hadItems"  href="item.aspx?sp=<%#:Item.MaSP%>"> <%#:Item.TenSP%></a></td>
+			<%--<td class="justify-content-center align-content-center" ><%#:Item.MoTa%></td>--%>
+			<td class="justify-content-center align-content-center"><%# string.Format("{0:N0}", Item.Gia) %>đ</td>
+			<%--<td class="justify-content-center align-content-center"><%#:Item.MaLoai%></td>--%>
+						<td class="justify-content-center align-content-center"><%#:Item.NgaySX%></td>
+									<td class="justify-content-center align-content-center"><%#:Item.NgayHH%></td>
+
+						<td class="justify-content-center align-content-center"><%#:Item.NgayNhap%></td>
+						<td class="justify-content-center align-content-center" ><%#:Item.DoanhSo%></td>
+						<td class="d-flex justify-content-center align-content-center" style="width:8rem; height:max-content; padding: 4.8rem 0;">
+							
+							<%--<div class="d-grid justify-content-center align-content-center" style="margin:2.25rem 0">--%>
+<%--								<div class="d-flex justify-content-center align-content-center" style="">--%>
+									<asp:ImageButton ID="btnDelete" runat="server" CommandArgument='<%# Eval("MaSP") %>' OnClick="btnDelete_Click" CssClass="btn btn-danger btn-p-m" ImageUrl="~/Content/icon/g-minus.png" />
+<%--<%#:Item.SoLuongKho%>--%>
+							
+        <input id="txtSoLuongKho" runat="server" value="<%#:Item.SoLuongKho%>" style="background:#2E0D4C; border:none; width:3.5rem; text-align:center; height:1.5rem;" min="0" onchange="validateInput(this)" />
+
+<script type="text/javascript">
+	function validateInput(input) {
+		var value = input.value;
+        var hasNonNumeric = /[^0-9]/g.test(value);
+
+        // Check if the input is empty
+        if (input.value === '') {
+            // Set the value to 0
+            input.value = '0';
+		}
+        if (hasNonNumeric) {
+            input.value = '';
+        }
+		var newValue = value.replace(/[^0-9]/g, '');
+        input.value = newValue;
+    }
+</script>
+
+  
+           <script type="text/javascript">
+               document.getElementById('txtSoLuongKho').addEventListener('input', function (e) {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+           </script>
+   
+<asp:ImageButton ID="btnChange" runat="server" CommandArgument='<%# Eval("MaSP") %>' OnClick="btnChange_Click" CssClass="btn btn-warning btn-p-m" ImageUrl="~/Content/icon/g-plus.png" />
+<%--</div>--%>
+								<%--<style>
+									.btnUpdate:hover{
+										background-color:#9B51E0;
+									}
+								</style>--%>
+							<%--</div>--%>
+							
+						</td>
+
+
+			<td class="justify-content-center align-content-center">
+				 <asp:Button ID="btnUpdate" class="btnUpdate btn btn-default btn-color btn-w" runat="server" style="border:none; /*background-color:#0000;*/ /*background:linear-gradient(to right, #7c92ea,#4cff00);*/   /*font-size:14px;*/ /*width:max-content;*/ width: 6rem; background-color:#0000;" CommandArgument='<%# Eval("MaSP") %>' OnClick="btnUpdate_Click" Text="Cập nhật" CssClass="btn btn-primary" />
+				<a class="btn btn-default btn-color btn-w" href="EditProduct.aspx?Deptid=<%#:Item.MaSP%>">Chỉnh sửa</a>
+				<a class="btn btn-default btn-color btn-w" href="DeleteProduct.aspx?Deptid=<%#:Item.MaSP%>">Xóa</a>
+			</td>
+		</ItemTemplate>
+		<LayoutTemplate><div class="d-flex justify-content-center align-content-center  fade-out">
+			<table class="table" id="groupPlaceholderContainer" runat="server" style="">
+				<thead>
+					<tr>
+						<th class="justify-content-center align-content-center">Mã</th>
+						<th class="justify-content-center align-content-center">Hình</th>
+						<th class="justify-content-center align-content-center">Tên Sản Phẩm</th>
+						<%--<th class="justify-content-center align-content-center">Mô Tả</th>--%>
+						<th class="justify-content-center align-content-center">Giá</th>
+						<%--<th class="justify-content-center align-content-center">Loại</th>--%>
+						<th class="justify-content-center align-content-center">Ngày Sản Xuất</th>
+												<th class="justify-content-center align-content-center">Ngày Hết Hạn</th>
+
+						<th class="justify-content-center align-content-center">Ngày Nhập Kho</th>
+						<th class="justify-content-center align-content-center">Doanh Số</th>
+						<th class="justify-content-center align-content-center">Còn Trong Kho</th>
+						<th class="justify-content-center align-content-center"></th>
+					</tr>
+				</thead>
+								<tbody>
+					<tr id="groupPlaceholder"></tr>
+					<tr> <td colspan="5" style="text-align:left;" class="justify-content-center align-content-center" >	
+						<style>
+    .pagerImage {
+        width: 24px; /* Độ rộng mong muốn */
+        height: 24px; /* Độ cao mong muốn */
+	
+	
+    }
+	
+	.btn-num-page:hover{
+		color:#9B51E0;
+	
+	}
+	
+	.pagerGap {
+    margin: 0 5px; /* Thêm khoảng cách giữa các phần tử */
+}.numericPagerField a {
+    margin-right: 10px;
+		padding-bottom:2rem;
+
+
+}
+
+/* To ensure the last button doesn't have an extra margin on the right */
+.numericPagerField a:last-child {
+    margin-right: 0;
+}.currentPage {
+    font-weight: bold;
+    color: #9B51E0;
+}
+
+
+</style>
+						<asp:DataPager ID="DataPager1" runat="server" PagedControlID="ListViewProductList" PageSize="5">
+							<Fields>
+													
+
+								<asp:NextPreviousPagerField ButtonType="Image" PreviousPageImageUrl="~/Content/icon/previous-page.png" ShowFirstPageButton="false" ShowLastPageButton="false" ShowPreviousPageButton="true" ShowNextPageButton="false" ButtonCssClass="pagerImage pagerGap"/>
+<asp:NumericPagerField ButtonCount="10" ButtonType="Link" CurrentPageLabelCssClass="currentPage numericPagerField"/>
+
+								<asp:NextPreviousPagerField  ButtonType="Image" ShowNextPageButton="true" ShowLastPageButton="false" ShowPreviousPageButton="false" NextPageImageUrl="~/Content/icon/next-page.png" ButtonCssClass="pagerImage pagerGap"/>
+							</Fields>
+						</asp:DataPager>
+					    </td></tr>
+				</tbody>
+			</table></div>
+		</LayoutTemplate>
+	</asp:ListView>
+            </div>
+            <div id="BranchList">
+                           <style>
+               .tenSP-ls-h3 {
+               padding-bottom: 1.5rem;
+               text-align: center;
+               font-weight: bolder;
+               font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+               color: #9b51e0;
+               width: 100%;
+           }
+
+           .tenSP-ls-p {            color: #9b51e0;
+               width: max-content;
+               padding: 8px;
+               margin: auto;
+               border-bottom-color:#000 ;
+               border:1px solid;
+               border-top-style:none;
+               border-left-style:none;
+               border-right:none;
+           }
+		body{
+			text-align:center;
+			justify-content:center;
+							
+
+		}
+		.btn-color:hover{
+			color:#9b51e0;
+		}
+		.td-longer{
+			width:12rem;
+			
+		}
+		
+		.btn-w{
+			width:6rem;
+		}#linksContainer {
+           display: none;
+       }
+		 td,tr,th{
+			 
+			 text-align:center;
+		 }
+		  td,tr{
+ 
+ text-align:left;
+}
+		 .ListView1{
+			 display:flex;
+			text-align:center;
+			justify-content:center;
+		 }
+           </style>
+
+<asp:ListView ID="ListViewBranchList" runat="server" ItemType="TH03_WebBanHang.Models.ChiNhanh"
+	SelectMethod="GetDeparmentsBranch" OnSelectedIndexChanged="ListView1Branch_SelectedIndexChanged" class="text-center ListView1">
+	<EmptyDataTemplate>
+		<table>
+			<tr>
+				<td></td>
+			</tr>
+		</table>
+	</EmptyDataTemplate>
+	<EmptyItemTemplate>
+		<td />
+	</EmptyItemTemplate>
+	<GroupTemplate>
+		<tr id="itemPlaceholderContainer" runat="server">
+			<td id="itemPlaceholder" runat="server"></td>
+		</tr>
+	</GroupTemplate>
+	
+	<ItemTemplate>
+		<td class="justify-content-center align-content-center"><%#:Item.MaCN%></td>
+		<td class="justify-content-center align-content-center"><%#:Item.TenCN%></td>
+		<td class="justify-content-center align-content-center"><%#:Item.DiaChiCN%></td>
+		<td class="justify-content-center align-content-center" style="text-align:center;"><%#:Item.DonHangs.Count%></td>
+		
+		<td class="justify-content-center align-content-center">
+			<a class="btn btn-default btn-color btn-w" href="BrandOrder.aspx?Deptid=<%#:Item.MaCN%>">Chi Tiết</a>
+			<%--<a class="btn btn-default btn-color btn-w" href="DeleteBranch.aspx?Deptid=<%#:Item.MaCN%>">Xóa</a>--%>
+		</td>
+	</ItemTemplate>
+	<LayoutTemplate>
+		<div class="d-flex justify-content-center align-content-center fade-out"><table class="table" id="groupPlaceholderContainer" runat="server" style="width: 60%">
+			<thead>
+				<tr>
+					<th class="justify-content-center align-content-center">Mã</th>
+					<th class="justify-content-center align-content-center">Khu Vực</th>
+					<th class="justify-content-center align-content-center">Địa Chỉ</th>
+					<th class="justify-content-center align-content-center">Đơn Nhận</th>
+					
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr id="groupPlaceholder"></tr>
+			</tbody>
+		</table></div>
+		
+	</LayoutTemplate>
+</asp:ListView>
+            </div>
+			
+        </section>
+
+    </div>
+</asp:Content>

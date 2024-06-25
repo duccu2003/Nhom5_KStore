@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="QL_BTSEntities-Web.config Connection String" description="QL_BTSEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.Model.csdl|res://*/Models.Model.ssdl|res://*/Models.Model.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DUC-LAPTOP\NGUYENHOANGDUC;initial catalog=QL_BTS;persist security info=True;user id=sa;password=1;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\Học\\Bài\ Tập\\Code\\My\ Made\\VS\ Studio\\ASP\.Net\\TraSua\\TH03_WebBanHang-TS\\TH03_WebBanHang\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='QL_BTSEntities']/@connectionString" />
+  </parameter>
+</parameters>

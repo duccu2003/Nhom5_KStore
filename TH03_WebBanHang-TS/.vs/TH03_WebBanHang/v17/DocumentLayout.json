@@ -1,0 +1,1424 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|c:\\users\\vippr\\onedrive\\desktop\\new\\web kpop\\kstore\\th03_webbanhang-ts\\th03_webbanhang\\shop.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\shop.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\forgot.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\forgot.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\models\\tk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\models\\tk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\cart.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\cart.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\pay.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\pay.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\item.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\item.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\checkoutorder\\outorder.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\checkoutorder\\outorder.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\detailorder.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\detailorder.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\detailorder.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\detailorder.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\error\\503.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\error\\503.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\error\\408.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\error\\408.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\error\\403.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\error\\403.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\error\\401.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\error\\401.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\manager.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\manager.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\accountorder.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\accountorder.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\manageraccount.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\manageraccount.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\managerorder.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\managerorder.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\managerproduct.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\managerproduct.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\managergroup.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\managergroup.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\updateinformation.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\updateinformation.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\updatepob.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\updatepob.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\deleteproduct.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\deleteproduct.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\addproduct.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\addproduct.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\addaccount.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\addaccount.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\manager.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\manager.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\error\\504.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\error\\504.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\error\\500.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\error\\500.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\error\\404.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\error\\404.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\error\\404.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\error\\404.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\account.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\account.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\account.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\account.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\pay.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\pay.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\momo\\momo_return.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\momo\\momo_return.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\momo\\momo_return.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\momo\\momo_return.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\momo\\momosecurity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\momo\\momosecurity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\momo\\paymentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\momo\\paymentrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\shop.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\shop.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\checkoutorder\\outorder.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\checkoutorder\\outorder.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\checkoutorder\\checkout.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\checkoutorder\\checkout.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\vnpay\\vnpay_return.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\vnpay\\vnpay_return.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\editprofileaccount.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\editprofileaccount.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\editaccount.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\editaccount.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\models\\model.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\models\\model.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\models\\vnlocal.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\models\\vnlocal.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\managergroup.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\managergroup.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\updateinformation.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\updateinformation.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\updatepob.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\updatepob.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\managerproduct.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\managerproduct.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\addproduct.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\addproduct.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\item.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\item.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\manageraccount.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\manageraccount.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\managerorder.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\managerorder.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\changepassword.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\changepassword.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\accountorder.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\accountorder.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\editprofileaccount.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\editprofileaccount.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\editaccount.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\editaccount.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\deleteproduct.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\deleteproduct.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\addaccount.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\addaccount.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\contact.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\contact.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\sign.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\sign.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\changepassword.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\changepassword.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\sign.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\sign.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\site.mobile.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\site.mobile.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\vnpay\\vnpay_ipn.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\vnpay\\vnpay_ipn.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\checkoutorder\\checkout.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\checkoutorder\\checkout.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\error\\paymentfailed.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\error\\paymentfailed.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\vnpay\\vnpay_pay.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\vnpay\\vnpay_pay.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\error\\paymentfailed.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\error\\paymentfailed.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\forgot.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\forgot.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\help\\hepler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\help\\hepler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\models\\orderinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\models\\orderinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\vnpay\\vnpay_return.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\vnpay\\vnpay_return.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\vnpay\\vnpay_ipn.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\vnpay\\vnpay_ipn.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\vnpay-pay.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\vnpay-pay.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\vnpay\\vnpaylibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\vnpay\\vnpaylibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\cart.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\cart.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\vnpay\\vnpay_pay.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\vnpay\\vnpay_pay.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\childform.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\childform.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\contact.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\contact.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\th03_webbanhang\\childform.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C0EE8F72-7A0A-48BC-BA55-121391D51A65}|TH03_WebBanHang\\TH03_WebBanHang.csproj|solutionrelative:th03_webbanhang\\childform.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 341,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DetailOrder.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\DetailOrder.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\DetailOrder.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\DetailOrder.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\DetailOrder.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-16T00:17:16.006Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Item.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Item.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Item.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Item.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Item.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-03-27T17:06:15.721Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Pay.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Pay.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Pay.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Pay.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Pay.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-04-02T18:20:37.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Cart.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Cart.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Cart.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Cart.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Cart.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-03-29T23:32:59.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SanPham.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Models\\SanPham.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Models\\SanPham.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Models\\SanPham.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Models\\SanPham.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAQwDgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T13:30:51.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TK.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Models\\TK.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Models\\TK.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Models\\TK.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Models\\TK.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAkwCEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T13:26:53.25Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Forgot.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Forgot.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Forgot.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Forgot.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Forgot.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-04-02T18:19:27.431Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Shop.Master",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Shop.Master",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Shop.Master",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Shop.Master",
+              "RelativeToolTip": "TH03_WebBanHang\\Shop.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-05T13:45:19.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "503.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\503.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Error\\503.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\503.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Error\\503.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-21T18:24:03.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "408.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\408.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Error\\408.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\408.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Error\\408.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-21T18:22:11.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "403.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\403.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Error\\403.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\403.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Error\\403.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-21T18:21:23.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "401.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\401.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Error\\401.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\401.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Error\\401.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-21T18:19:39.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Manager.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Manager.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Manager.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Manager.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Manager.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-12T18:16:21.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DetailOrder.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\DetailOrder.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\DetailOrder.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\DetailOrder.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\DetailOrder.aspx.cs",
+              "ViewState": "AQIAAEAAAAAALDMzMzMowFUAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T00:17:33.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OutOrder.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\checkOutOrder\\OutOrder.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\checkOutOrder\\OutOrder.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\checkOutOrder\\OutOrder.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\checkOutOrder\\OutOrder.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-07T13:12:46.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AccountOrder.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\AccountOrder.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\AccountOrder.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\AccountOrder.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\AccountOrder.aspx.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAAADoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T07:58:51.69Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ManagerAccount.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ManagerAccount.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\ManagerAccount.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ManagerAccount.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\ManagerAccount.aspx.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAAACYAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T00:21:01.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ManagerOrder.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ManagerOrder.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\ManagerOrder.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ManagerOrder.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\ManagerOrder.aspx.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAACcAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T00:21:58.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ManagerProduct.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ManagerProduct.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\ManagerProduct.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ManagerProduct.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\ManagerProduct.aspx.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAAACsAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T00:22:42.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ManagerGroup.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ManagerGroup.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\ManagerGroup.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ManagerGroup.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\ManagerGroup.aspx.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAAACYAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T17:24:18.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UpdateInformation.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\UpdateInformation.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\UpdateInformation.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\UpdateInformation.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\UpdateInformation.aspx.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAAACsAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T08:33:04.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "UpdatePob.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\UpdatePob.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\UpdatePob.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\UpdatePob.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\UpdatePob.aspx.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAAAGAAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T23:58:59.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "DeleteProduct.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\DeleteProduct.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\DeleteProduct.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\DeleteProduct.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\DeleteProduct.aspx.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAAACgAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T00:32:56.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AddProduct.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\AddProduct.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\AddProduct.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\AddProduct.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\AddProduct.aspx.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAawC8AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T00:16:23.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AddAccount.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\AddAccount.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\AddAccount.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\AddAccount.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\AddAccount.aspx.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAAACkAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T00:14:01.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Manager.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Manager.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Manager.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Manager.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Manager.aspx.cs",
+              "ViewState": "AQIAANgAAAAAAAAAAAAawPIAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T18:16:35.492Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "504.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\504.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Error\\504.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\504.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Error\\504.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-21T18:25:01.212Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "500.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\500.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Error\\500.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\500.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Error\\500.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-21T18:23:23.111Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "404.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\404.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Error\\404.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\404.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Error\\404.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-10T10:17:10.114Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "404.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\404.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Error\\404.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\404.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Error\\404.aspx.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T10:17:40.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Account.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Account.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Account.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Account.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Account.aspx.cs",
+              "ViewState": "AQIAAHIBAAAAAAAAAIBZwHcBAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-30T21:26:47.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Account.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Account.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Account.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Account.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Account.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-03-30T14:21:11.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Pay.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Pay.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Pay.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Pay.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Pay.aspx.cs",
+              "ViewState": "AQIAAK8CAAAAAAAAAIBZwLQCAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T16:00:45.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Momo_return.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Momo\\Momo_return.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Momo\\Momo_return.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Momo\\Momo_return.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Momo\\Momo_return.aspx.cs",
+              "ViewState": "AQIAALcCAAAAZmZmZmYhwDUDAABtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T13:04:06.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Momo_return.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Momo\\Momo_return.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Momo\\Momo_return.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Momo\\Momo_return.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Momo\\Momo_return.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-07T14:28:32.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "MoMoSecurity.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Momo\\MoMoSecurity.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Momo\\MoMoSecurity.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Momo\\MoMoSecurity.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Momo\\MoMoSecurity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAH8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-06T20:48:02.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "PaymentRequest.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Momo\\PaymentRequest.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Momo\\PaymentRequest.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Momo\\PaymentRequest.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Momo\\PaymentRequest.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAYwDcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T15:25:34.836Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "OutOrder.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\checkOutOrder\\OutOrder.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\checkOutOrder\\OutOrder.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\checkOutOrder\\OutOrder.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\checkOutOrder\\OutOrder.aspx.cs",
+              "ViewState": "AQIAALgAAAAAm5mZmdklwG0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T13:08:54.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Shop.Master.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Shop.Master.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Shop.Master.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Shop.Master.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Shop.Master.cs",
+              "ViewState": "AQIAAAMAAACAXmZmZmYSwA4AAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T20:07:54.597Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "checkOut.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\checkOutOrder\\checkOut.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\checkOutOrder\\checkOut.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\checkOutOrder\\checkOut.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\checkOutOrder\\checkOut.aspx.cs",
+              "ViewState": "AQIAAGwCAAAAAAAAAAAawHsCAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T13:48:52.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "vnpay_return.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\VNPay\\vnpay_return.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\VNPay\\vnpay_return.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\VNPay\\vnpay_return.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\VNPay\\vnpay_return.aspx.cs",
+              "ViewState": "AQIAAHAAAAAAKAAAAMAlwIYAAABiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T17:14:29.404Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "KhachHang.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Models\\KhachHang.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Models\\KhachHang.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Models\\KhachHang.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Models\\KhachHang.cs",
+              "ViewState": "AQIAABoAAAAAzMzMzAwzwCYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T13:22:43.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "EditProfileAccount.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\EditProfileAccount.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\EditProfileAccount.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\EditProfileAccount.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\EditProfileAccount.aspx.cs",
+              "ViewState": "AQIAAF0BAABAl5mZmRkiwE4BAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T08:40:30.696Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "EditAccount.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\EditAccount.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\EditAccount.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\EditAccount.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\EditAccount.aspx.cs",
+              "ViewState": "AQIAAFsBAAAAAAAAAIBZwGABAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T00:19:16.387Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Model.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Models\\Model.edmx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Models\\Model.edmx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Models\\Model.edmx [Diagram1]",
+              "RelativeToolTip": "TH03_WebBanHang\\Models\\Model.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-06-21T13:18:00.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "VNLocal.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Models\\VNLocal.edmx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Models\\VNLocal.edmx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Models\\VNLocal.edmx [Diagram1]",
+              "RelativeToolTip": "TH03_WebBanHang\\Models\\VNLocal.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-06-21T13:16:29.811Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Web.config",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Web.config",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Web.config",
+              "RelativeToolTip": "TH03_WebBanHang\\Web.config",
+              "ViewState": "AQIAAAAAAAAA/P////8awJIAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-04-27T07:01:26.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "About.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\About.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\About.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\About.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\About.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-04-02T18:19:17.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Global.asax.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Global.asax.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Global.asax.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Global.asax.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwCcAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-15T20:48:13.604Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "ManagerGroup.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ManagerGroup.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\ManagerGroup.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ManagerGroup.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\ManagerGroup.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-18T17:14:36.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "UpdateInformation.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\UpdateInformation.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\UpdateInformation.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\UpdateInformation.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\UpdateInformation.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-16T08:32:54.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "UpdatePob.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\UpdatePob.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\UpdatePob.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\UpdatePob.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\UpdatePob.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-16T23:58:49.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "ManagerProduct.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ManagerProduct.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\ManagerProduct.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ManagerProduct.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\ManagerProduct.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-16T00:22:31.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "Default.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Default.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Default.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Default.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Default.aspx.cs",
+              "ViewState": "AQIAAFAAAAAAAAAAAEBdwFUAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T17:30:27.811Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Default.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Default.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Default.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-03-27T17:26:48.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "AddProduct.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\AddProduct.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\AddProduct.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\AddProduct.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\AddProduct.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-16T00:16:02.51Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "Item.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Item.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Item.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Item.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Item.aspx.cs",
+              "ViewState": "AQIAAH0BAAAAAAAAAIBZwIIBAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T13:41:44.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "ManagerAccount.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ManagerAccount.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\ManagerAccount.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ManagerAccount.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\ManagerAccount.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-16T00:20:49.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "ManagerOrder.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ManagerOrder.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\ManagerOrder.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ManagerOrder.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\ManagerOrder.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-16T00:21:36.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "ChangePassword.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ChangePassword.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\ChangePassword.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ChangePassword.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\ChangePassword.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-11T11:58:49.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "AccountOrder.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\AccountOrder.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\AccountOrder.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\AccountOrder.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\AccountOrder.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-16T07:57:37.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "EditProfileAccount.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\EditProfileAccount.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\EditProfileAccount.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\EditProfileAccount.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\EditProfileAccount.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-16T08:36:36.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "EditAccount.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\EditAccount.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\EditAccount.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\EditAccount.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\EditAccount.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-16T00:19:02.325Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "DeleteProduct.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\DeleteProduct.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\DeleteProduct.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\DeleteProduct.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\DeleteProduct.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-17T00:32:41.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "AddAccount.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\AddAccount.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\AddAccount.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\AddAccount.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\AddAccount.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-17T00:12:00.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "Contact.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Contact.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Contact.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Contact.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Contact.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-04-02T18:23:08.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "Sign.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Sign.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Sign.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Sign.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Sign.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-05T11:11:20.312Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "ChangePassword.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ChangePassword.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\ChangePassword.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ChangePassword.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\ChangePassword.aspx.cs",
+              "ViewState": "AQIAACIAAABAKzMzM7MXwHkAAACJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T11:59:00.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "Sign.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Sign.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Sign.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Sign.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Sign.aspx.cs",
+              "ViewState": "AQIAALMBAAAAAAAAAIBZwLgBAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T11:14:52.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "vnpay_ipn.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\VNPay\\vnpay_ipn.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\VNPay\\vnpay_ipn.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\VNPay\\vnpay_ipn.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\VNPay\\vnpay_ipn.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-05T17:15:07.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "Site.Mobile.Master",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Site.Mobile.Master",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Site.Mobile.Master",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Site.Mobile.Master",
+              "RelativeToolTip": "TH03_WebBanHang\\Site.Mobile.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-16T09:31:32.388Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "PaymentFailed.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\PaymentFailed.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Error\\PaymentFailed.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\PaymentFailed.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\Error\\PaymentFailed.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-10T10:15:48.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "checkOut.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\checkOutOrder\\checkOut.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\checkOutOrder\\checkOut.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\checkOutOrder\\checkOut.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\checkOutOrder\\checkOut.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-08T10:51:20.815Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "vnpay_pay.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\VNPay\\vnpay_pay.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\VNPay\\vnpay_pay.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\VNPay\\vnpay_pay.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\VNPay\\vnpay_pay.aspx.cs",
+              "ViewState": "AQIAAEUAAAAAAAAAACBjwE4AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T17:16:43.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "PaymentFailed.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\PaymentFailed.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Error\\PaymentFailed.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Error\\PaymentFailed.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Error\\PaymentFailed.aspx.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T10:17:49.69Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "Forgot.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Forgot.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Forgot.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Forgot.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Forgot.aspx.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAuwCEAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T18:19:34.149Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "Hepler.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Help\\Hepler.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Help\\Hepler.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Help\\Hepler.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Help\\Hepler.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAqwCUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T15:41:09.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "vnpay_return.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\VNPay\\vnpay_return.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\VNPay\\vnpay_return.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\VNPay\\vnpay_return.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\VNPay\\vnpay_return.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-05T17:14:26.425Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "OrderInfo.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Models\\OrderInfo.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Models\\OrderInfo.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Models\\OrderInfo.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Models\\OrderInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T17:17:21.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "vnpay_ipn.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\VNPay\\vnpay_ipn.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\VNPay\\vnpay_ipn.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\VNPay\\vnpay_ipn.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\VNPay\\vnpay_ipn.aspx.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAQwC8AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T17:15:10.387Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "vnpay-Pay.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\vnpay-Pay.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\vnpay-Pay.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\vnpay-Pay.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\vnpay-Pay.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-05T17:10:27.834Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "VnPayLibrary.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\VNPay\\VnPayLibrary.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\VNPay\\VnPayLibrary.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\VNPay\\VnPayLibrary.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\VNPay\\VnPayLibrary.cs",
+              "ViewState": "AQIAAI0AAAAAAAAAAAAIwBsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-05T17:14:55.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 82,
+              "Title": "Cart.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Cart.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Cart.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Cart.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Cart.aspx.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAWwEkAAAB6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T17:44:56.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 83,
+              "Title": "vnpay_pay.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\VNPay\\vnpay_pay.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\VNPay\\vnpay_pay.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\VNPay\\vnpay_pay.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\VNPay\\vnpay_pay.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-06-05T17:16:39.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 84,
+              "Title": "ChildForm.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ChildForm.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\ChildForm.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ChildForm.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\ChildForm.aspx.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAqwBcAAABMBQAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T18:22:58.928Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 86,
+              "Title": "ChildForm.aspx",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ChildForm.aspx",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\ChildForm.aspx",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\ChildForm.aspx",
+              "RelativeToolTip": "TH03_WebBanHang\\ChildForm.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-04-02T18:22:43.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 85,
+              "Title": "Contact.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Contact.aspx.cs",
+              "RelativeDocumentMoniker": "TH03_WebBanHang\\Contact.aspx.cs",
+              "ToolTip": "C:\\Users\\vippr\\OneDrive\\Desktop\\new\\Web Kpop\\KStore\\TH03_WebBanHang-TS\\TH03_WebBanHang\\Contact.aspx.cs",
+              "RelativeToolTip": "TH03_WebBanHang\\Contact.aspx.cs",
+              "ViewState": "AQIAACUAAAA4MzMzM5MwwCkAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T18:23:18.177Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VNlocalModelStoreContainer" CdmEntityContainer="VNlocalEntities">
+    <EntitySetMapping Name="devvn_quanhuyen">
+      <EntityTypeMapping TypeName="VNlocalModel.devvn_quanhuyen">
+        <MappingFragment StoreEntitySet="devvn_quanhuyen">
+          <ScalarProperty Name="maqh" ColumnName="maqh" />
+          <ScalarProperty Name="nameQH" ColumnName="nameQH" />
+          <ScalarProperty Name="typeQH" ColumnName="typeQH" />
+          <ScalarProperty Name="matp" ColumnName="matp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="devvn_tinhthanhpho">
+      <EntityTypeMapping TypeName="VNlocalModel.devvn_tinhthanhpho">
+        <MappingFragment StoreEntitySet="devvn_tinhthanhpho">
+          <ScalarProperty Name="matp" ColumnName="matp" />
+          <ScalarProperty Name="nameTP" ColumnName="nameTP" />
+          <ScalarProperty Name="typeTP" ColumnName="typeTP" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="devvn_xaphuongthitran">
+      <EntityTypeMapping TypeName="VNlocalModel.devvn_xaphuongthitran">
+        <MappingFragment StoreEntitySet="devvn_xaphuongthitran">
+          <ScalarProperty Name="xaid" ColumnName="xaid" />
+          <ScalarProperty Name="nameXP" ColumnName="nameXP" />
+          <ScalarProperty Name="typeXP" ColumnName="typeXP" />
+          <ScalarProperty Name="maqh" ColumnName="maqh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="VNlocalModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
