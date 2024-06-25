@@ -433,7 +433,7 @@ text-align:center;
     align-items: center;
     height:100% !important;'>
                 <div class="d-flex" style="border-bottom:1px solid #242426;">
-                <asp:ImageButton ID="btnDelete" runat="server" CommandArgument='<%# Eval("MaSP") %>' OnClick="btnDelete_Click" CssClass="btn btn-danger btn-p-m" ImageUrl='~/Content/icon/sl-plus.png' />
+                <asp:ImageButton ID="btnDelete" runat="server" CommandArgument='<%# Eval("MaSP") %>' OnClick="btnDelete_Click" CssClass="btn btn-danger btn-p-m" ImageUrl='~/Content/icon/sl-minus.png' />
                 <input id="txtSoLuongKho" runat="server" value='<%#:Item.SoLuongKho%>' style='border:1px solid #242426; border-radius:5px; width:3.5rem; text-align:center; height: 25px !important; ' min="0" onchange="validateInput(this)" />
                 <script type="text/javascript">
                     function validateInput(input) {
@@ -454,7 +454,7 @@ text-align:center;
                         this.value = this.value.replace(/[^0-9]/g, '');
                     });
                 </script>
-                <asp:ImageButton ID="btnChange" runat="server" CommandArgument='<%# Eval("MaSP") %>' OnClick="btnChange_Click" CssClass="btn btn-warning btn-p-m" ImageUrl='~/Content/icon/sl-minus.png' />
+                <asp:ImageButton ID="btnChange" runat="server" CommandArgument='<%# Eval("MaSP") %>' OnClick="btnChange_Click" CssClass="btn btn-warning btn-p-m" ImageUrl='~/Content/icon/sl-plus.png' />
            </div> </td>
             <td class="justify-content-center align-content-center d-grid" style="display:grid !important; height:100% !important; row-gap:1rem;">
                

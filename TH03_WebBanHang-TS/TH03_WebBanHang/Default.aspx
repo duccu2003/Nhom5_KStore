@@ -237,7 +237,7 @@
                              <ItemTemplate>
                                  
                                  <div class='carousel-item <%# Eval("MaBanner").ToString() == "0"? "active" : "" %>'>
-                                    <img loading="lazy" src="<%#:Item.DuongDan %>"" class="d-block w-100" alt="Background Image 2">
+                                    <img loading="lazy" src="<%#:Item.DuongDan %>" class="d-block w-100" alt="Background Image 2">
                                 </div>
 
                              </ItemTemplate>
