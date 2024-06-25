@@ -37,6 +37,5 @@ namespace TH03_WebBanHang.Models
         public virtual ICollection<ThichSP> ThichSPs { get; set; }
         public ICollection<KhachHang> KhachHangs { get; internal set; } = new HashSet<KhachHang>();
 
-
     }
 }
