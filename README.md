@@ -2,7 +2,7 @@
 
 ---
 # *English*
-# KSTORE - K-Pop Album Trading Platform
+# KSTORE - K-Pop Album Online Selling Website
 
 ## Introduction
 
@@ -111,7 +111,7 @@ If you have any questions or suggestions, feel free to contact us via one of the
 
 ---
 # *Vietnamese*
-# KSTORE - Dự án Buôn Bán Album K-Pop
+# KSTORE - Trang Web Buôn Bán Album K-Pop
 
 ## Giới thiệu
 
