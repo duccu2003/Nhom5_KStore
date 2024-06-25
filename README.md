@@ -53,7 +53,10 @@ Trước tiên, bạn cần khởi tạo cơ sở dữ liệu:
 
 ![Screenshot 2024-06-25 113927](https://github.com/duccu2003/Nhom5_KStore/assets/130604232/3a928cbc-18db-4ae1-aab7-a157fc83fc31)
 
+Các file này sẽ tạo bảng và cấu trúc cơ sở dữ liệu cần thiết cho dự án KSTORE.
+
 ### Sửa lại các file sau
+
 1. TK.cs trong Model
 ![Screenshot 2024-06-25 114131](https://github.com/duccu2003/Nhom5_KStore/assets/130604232/2304db05-6435-4e87-aed2-33c2cc45e436)
 2. KhachHang.cs trong Model
@@ -62,14 +65,6 @@ Trước tiên, bạn cần khởi tạo cơ sở dữ liệu:
 ![Screenshot 2024-06-25 114156](https://github.com/duccu2003/Nhom5_KStore/assets/130604232/5223e26e-3e88-446e-ab99-6faeb8090dba)
 4. Shop.Master.cs
 ![Screenshot 2024-06-25 114248](https://github.com/duccu2003/Nhom5_KStore/assets/130604232/9716de8f-43f6-4b38-b98d-eeba7d305bb4)
-
-
-
-
-
-
-
-Các file này sẽ tạo bảng và cấu trúc cơ sở dữ liệu cần thiết cho dự án KSTORE.
 
 ### Cài đặt Dự án
 
