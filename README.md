@@ -1,7 +1,7 @@
-
 ![K-Photoroom](https://github.com/duccu2003/Nhom5_KStore/assets/130604232/5320b814-5f86-403e-b702-25815f2275e0)
 
 ---
+
 # KSTORE - Dự án Buôn Bán Album K-Pop
 
 ## Giới thiệu
@@ -30,10 +30,11 @@ KSTORE là một nền tảng trực tuyến chuyên về buôn bán album K-pop
 ### Cài đặt Cơ sở Dữ liệu
 
 Trước tiên, bạn cần khởi tạo cơ sở dữ liệu:
-- Cài đặt SQL Server và SQL Server Management Studio (SSMS) từ trang web chính thức của Microsoft.
-- Chạy hai file SQL sau để thiết lập cơ sở dữ liệu:
-1. `QL_KPOPStore.sql`
-2. `newLocalVN.sql`
+1. Cài đặt SQL Server và SQL Server Management Studio (SSMS) từ trang web chính thức của Microsoft.
+2. Chạy hai file SQL sau để thiết lập cơ sở dữ liệu:
+
+   - `QL_KPOPStore.sql`
+   - `newLocalVN.sql`
 
 ### Thêm Cơ sở Dữ liệu vào Project
 
@@ -53,7 +54,7 @@ Trước tiên, bạn cần khởi tạo cơ sở dữ liệu:
 
 ![Screenshot 2024-06-25 113927](https://github.com/duccu2003/Nhom5_KStore/assets/130604232/3a928cbc-18db-4ae1-aab7-a157fc83fc31)
 
-Các file này sẽ tạo bảng và cấu trúc cơ sở dữ liệu cần thiết cho dự án KSTORE.
+*Các file này sẽ tạo bảng và cấu trúc cơ sở dữ liệu cần thiết cho dự án KSTORE.*
 
 ### Sửa lại các file sau
 
@@ -91,6 +92,7 @@ Các file này sẽ tạo bảng và cấu trúc cơ sở dữ liệu cần thi�
    ```bash
    npm start
    ```
+*Nếu không thể bằng những cách thức trên thì bạn có thể tải thủ công hoặc liên hệ đến nhóm chúng tôi.*
 
 ## Sử dụng
 
@@ -104,6 +106,6 @@ Nếu bạn có bất kỳ câu hỏi hoặc góp ý, đừng ngần ngại liê
 - **Zalo**: [0389800308](zalo://talk/?number=0389800308)
 - **Số Điện Thoại**: +84389800308 (0389800308)
 
-Nhóm chúng tôi luôn sẵn lòng hỗ trợ và lắng nghe ý kiến từ các bạn!
+*Nhóm chúng tôi luôn sẵn lòng hỗ trợ và lắng nghe ý kiến từ các bạn!*
 
 ---
