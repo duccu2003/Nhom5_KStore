@@ -426,7 +426,7 @@ $(function(){
             			<td class="td-longer justify-content-center align-content-center"><img style="width:100px; border-radius:50%; border:5px solid #2bf345ab; height:100px; object-fit:cover; overflow:hidden" src="<%#:Item.AvatarUser%>"/></td>
 			<td class="td-longer justify-content-center align-content-center"><%#:Item.HoTen%></td>
 			<td class="justify-content-center align-content-center"><%#:Item.DienThoai%></td>
-			<td class="justify-content-center align-content-center"><%#:Item.GioiTinh%></td>
+			<%--<td class="justify-content-center align-content-center"><%#:Item.GioiTinh%></td>--%>
 			<td class="td-longer justify-content-center align-content-center"><%#:Item.DiaChi%></td>
 			<td class="justify-content-center align-content-center"><%#:Item.Email%></td>
 			<%--<td class="justify-content-center align-content-center"><%#:Item.MatKhau%></td>--%>
@@ -448,7 +448,7 @@ $(function(){
                            <th scope="col" class="justify-content-center align-content-center">Ảnh</th>
 <th scope="col" class="justify-content-center align-content-center">Họ Tên</th>
 <th scope="col" class="justify-content-center align-content-center">Điện Thoại</th>
-<th scope="col" class="justify-content-center align-content-center">Giới Tính</th>
+<%--<th scope="col" class="justify-content-center align-content-center">Giới Tính</th>--%>
 <th scope="col" class="justify-content-center align-content-center">Địa Chỉ</th>
 <th scope="col" class="justify-content-center align-content-center">Email</th>
 <%--<th class="justify-content-center align-content-center">Mật Khẩu</th>--%>

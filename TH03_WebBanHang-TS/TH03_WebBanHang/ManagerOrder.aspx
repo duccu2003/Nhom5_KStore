@@ -418,7 +418,7 @@ $(function(){
                        <%--						<td><%#:TH03_WebBanHang.Pay.kh%></td>--%>
            <td class="justify-content-center align-content-center"><%#:Item.MaDH%></td>
            <td class="justify-content-center align-content-center"><%#:Item.HoTenNN%></td>
-                       <td class="justify-content-center align-content-center td-longer"><%#:Item.DiaChiNN%></td>
+<%--                       <td class="justify-content-center align-content-center"><%#:Item.DiaChiNN%></td>--%>
 
            <td class="justify-content-center align-content-center"><%#:Item.ChiNhanh.TenCN%></td>
 
@@ -456,9 +456,16 @@ $(function(){
            <td class="justify-content-center align-content-center">
                <%# string.Format("{0:N0}", Item.ChiTietDonHangs.Sum(p=>p.ThanhTien)) %>đ
            </td>
-                       <td class="justify-content-center align-content-center d-grid" style="display:grid !important; height:100% !important; row-gap:1rem;">
+           
+            <td class="justify-content-center align-content-center">
+                    <%# Item.PhuongThuc=="COD"?"<p style=' background:linear-gradient(to right, #14452F , #009e59); padding:5px 10px; color:#FFF; border-radius:20px; width:max-content; margin:auto; text-align:center;'>"+ Item.PhuongThuc+"</p>": Item.PhuongThuc=="Momo"?"<p style='background:linear-gradient(to right, #D82D8B , #ff0000); padding:5px 10px; color:#FFF; border-radius:20px; width:max-content; margin:auto; text-align:center;'>"+ Item.PhuongThuc + "</p>":"<p style=' background:linear-gradient(to right, #6c38ef , #008abaff); padding:5px 10px; color:#FFF; border-radius:20px; width:max-content; margin:auto; text-align:center;'>"+ Item.PhuongThuc + "</p>"%>
 
-               <a class="btn btn-default btn-color btn-w" href="DetailOrder.aspx?MaDH=<%#:Item.MaDH%>">Chi tiết</a>
+
+            </td>
+                       <td class="justify-content-center align-content-center d-grid" style="display:grid !important; height:100% !important; text-align:center; justify-content:center; justify-items:center; align-content:center; align-items:center;">
+
+                   <%#  Item.ChiTietDonHangs.Any(s => s.GiaoDich == true)? "<p style='border-radius:5px; color:#fff; background:forestgreen; padding:5px 10px;'>Đã thanh toán</p>":"<p style='border-radius:5px; color:#fff; background:orangered; padding:5px 10px;'>Đợi thanh toán</p>" %>
+                    <a class="btn btn-default btn-color btn-w" href="DetailOrder.aspx?MaDH=<%#:Item.MaDH%>">Chi tiết</a>
 <%--               <a class="btn btn-default btn-color btn-w" href="DeleteOrder.aspx?MaDH=<%#:Item.MaDH%>">Xóa</a>--%>
 
 			<%--<a class="btn btn-default btn-color btn-w" href="EditProduct.aspx?Deptid=<%#:Item.MaDH%>">Chỉnh sửa</a>
@@ -472,12 +479,14 @@ $(function(){
                         <tr>
                            <th scope="col" class="justify-content-center align-content-center">Mã đơn</th>
 <th scope="col" class="justify-content-center align-content-center">Khách hàng</th>
-<th scope="col" class="justify-content-center align-content-center">Địa chỉ</th>
+<%--<th scope="col" class="justify-content-center align-content-center">Địa chỉ</th>--%>
 <th scope="col" class="justify-content-center align-content-center">Chi nhánh</th>
 <th scope="col" class="justify-content-center align-content-center">Thời gian</th>
 <th scope="col" class="justify-content-center align-content-center">Số lượng</th>
 <th scope="col" class="justify-content-center align-content-center">Tổng tiền</th>
-                      <%--<th></th>--%>
+                            <th scope="col" class="justify-content-center align-content-center">Phương thức</th>
+
+                      <th scope="col" class="justify-content-center align-content-center" style="width:max-content;"></th>
                       
 
                         </tr>
@@ -485,7 +494,7 @@ $(function(){
                     <tbody>
                         <tr id="groupPlaceholder"></tr>
                         <tr>
-                            <td colspan="9" style="text-align:center; width:100%;" class="justify-content-center align-content-center">
+                            <td colspan="8" style="text-align:center; width:100%;" class="justify-content-center align-content-center">
                                 <div class="d-flex justify-content-center align-content-center">
                                 <asp:DataPager ID="DataPager1" runat="server" PagedControlID="ListView1" PageSize="5">
                                     <Fields>                                        

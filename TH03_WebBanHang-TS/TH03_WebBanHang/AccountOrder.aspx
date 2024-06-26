@@ -65,6 +65,8 @@
 
        .btn-color:hover {
            /* color: #242426;*/
+           color: #fff;
+           background:#000;
         }
 
         table {
@@ -79,6 +81,7 @@
         table th, table td {
            /*border-bottom:1px solid #242426;*/
            /*border:1px solid #60536D;*/
+            box-shadow:0 1px 2px #242426;
         }
         
         table th:first-child, table td:first-child {
@@ -134,7 +137,7 @@
 
         <div class="form-container container" style="margin-top:10rem !important;">
    
-    <div style="width:80%; padding:20px; background: linear-gradient(to right, #7a29c4, #3b0d677b);  margin:auto;           border-radius: 10px;">
+    <div style="width:100%; padding:20px; background: linear-gradient(to right, #7a29c4, #3b0d677b);  margin:auto;           border-radius: 10px;">
    <div class="container" style="text-align:left; padding-left:2px; margin-bottom:1rem;">
        
                <div title="Tìm kiếm" class="justify-content-center align-content-center search-container container mt-2" style="border: 1px solid #7a29c4 !important; width:15rem;  font-size:18px; height:40px;">
@@ -240,8 +243,8 @@
          <%--  <td><%#:Item.KH%></td>--%>
 
         <%--   <td><%#:Item.MaCN%></td>--%>
-             <td class="justify-content-center align-content-center"><%#:Item.HoTenNN%></td>
-             <td class="justify-content-center align-content-center td-longer"><%#:Item.DiaChiNN%></td>
+<%--             <td class="justify-content-center align-content-center"><%#:Item.HoTenNN%></td>--%>
+             <td class="justify-content-center align-content-center"><%#:Item.DiaChiNN%></td>
            <td class="td-longer justify-content-center align-content-center"><%#:Item.Ngay%></td>
                        <td class="justify-content-center align-content-center"><%#:Item.ChiTietDonHangs.Sum(s=>s.SoLuong)%></td>
 
@@ -282,14 +285,22 @@
            <td class="justify-content-center align-content-center">
                <%# string.Format("{0:N0}", Item.ChiTietDonHangs.Sum(p=>p.ThanhTien)) %>đ
            </td>
-                 <td class="justify-content-center align-content-center d-grid" style="display:grid !important; height:100% !important; row-gap:1rem;">
-                       <a class="btn btn-default btn-color btn-w" href="DetailOrder.aspx?MaDH=<%#:Item.MaDH%>">Chi tiết</a>
+                        <%--<td class="justify-content-center align-content-center">
+                    <%# Item.PhuongThuc=="COD"?"<p style=' background:linear-gradient(to right, #14452F , #009e59); padding:5px 10px; color:#FFF; border-radius:20px; width:max-content; margin:auto; text-align:center;'>"+ Item.PhuongThuc+"</p>": Item.PhuongThuc=="Momo"?"<p style='background:linear-gradient(to right, #D82D8B , #ff0000); padding:5px 10px; color:#FFF; border-radius:20px; width:max-content; margin:auto; text-align:center;'>"+ Item.PhuongThuc + "</p>":"<p style=' background:linear-gradient(to right, #6c38ef , #008abaff); padding:5px 10px; color:#FFF; border-radius:20px; width:max-content; margin:auto; text-align:center;'>"+ Item.PhuongThuc + "</p>"%>
 
-<%--       <a class="btn btn-default btn-color btn-w" href="DeleteOrder.aspx?MaDH=<%#:Item.MaDH%>">Xóa</a>--%>
 
-	<%--<a class="btn btn-default btn-color btn-w" href="EditProduct.aspx?Deptid=<%#:Item.MaDH%>">Chỉnh sửa</a>
-	<a class="btn btn-default btn-color btn-w" href="DeleteProduct.aspx?Deptid=<%#:Item.MaDH%>">Xóa</a>--%>
-</td>
+            </td>--%>
+                       <td class="justify-content-center align-content-center d-grid" style="display:grid !important; height:100% !important; text-align:center; justify-content:center; justify-items:center; align-content:center; align-items:center;">
+
+                   <%#  Item.ChiTietDonHangs.Any(s => s.GiaoDich == true)? "<p style='border-radius:5px; color:#fff; background:forestgreen; padding:5px 10px;'>Đã thanh toán</p>":"<p style='border-radius:5px; color:#fff; background:orangered; padding:5px 10px;'>Đợi thanh toán</p>" %>
+                    <a class="btn btn-default btn-color btn-w" href="DetailOrder.aspx?MaDH=<%#:Item.MaDH%>">Chi tiết</a>
+<%--               <a class="btn btn-default btn-color btn-w" href="DeleteOrder.aspx?MaDH=<%#:Item.MaDH%>">Xóa</a>--%>
+
+			<%--<a class="btn btn-default btn-color btn-w" href="EditProduct.aspx?Deptid=<%#:Item.MaDH%>">Chỉnh sửa</a>
+			<a class="btn btn-default btn-color btn-w" href="DeleteProduct.aspx?Deptid=<%#:Item.MaDH%>">Xóa</a>--%>
+		</td>
+
+                 
             <%--						<td><%#:TH03_WebBanHang.Pay.kh%></td>--%>
           <%--  <td><%#:Item.MaCTDH%></td>
 
@@ -314,15 +325,18 @@
                 <table class="table" id="groupPlaceholderContainer" runat="server">
                     <thead>
                         <tr>
-                                                   <th scope="col" class="justify-content-center align-content-center text-center">Mã Đơn</th>
-                         <th scope="col" class="justify-content-center align-content-center text-center">Khách hàng</th>
+                                                   <th scope="col" class="justify-content-center align-content-center text-center">Mã đơn</th>
+<%--                         <th scope="col" class="justify-content-center align-content-center text-center">Khách hàng</th>--%>
  <th scope="col" class="justify-content-center align-content-center text-center">Địa chỉ</th>
- <th scope="col" class="justify-content-center align-content-center text-center">Thời Gian</th>
+ <th scope="col" class="justify-content-center align-content-center text-center">Thời gian</th>
 
 <%-- <th class="justify-content-center align-content-center">Chi Tiết</th>--%>
-<th scope="col" class="justify-content-center align-content-center text-center">Số Sản Phẩm</th>
+<th scope="col" class="justify-content-center align-content-center text-center">Số sản phẩm</th>
 
- <th scope="col" class="justify-content-center align-content-center text-center">Tổng Tiền</th>
+ <th scope="col" class="justify-content-center align-content-center text-center">Tổng tiền</th>
+<%--                                  <th scope="col" class="justify-content-center align-content-center">Phương thức</th>--%>
+
+<th scope="col" class="justify-content-center align-content-center" style="width:max-content;"></th>
                       <%--  <th>Mã Đơn</th>
 
                         <th>Thời Gian</th>
@@ -340,7 +354,7 @@
                     <tbody>
                         <tr id="groupPlaceholder"></tr>
                         <tr>
-                            <td colspan="9" style="text-align:center; width:100%;" class="justify-content-center align-content-center">
+                            <td colspan="6" style="text-align:center; width:100%;" class="justify-content-center align-content-center">
                                 <div class="d-flex justify-content-center align-content-center">
                                 <asp:DataPager ID="DataPager1" runat="server" PagedControlID="ListView1" PageSize="5">
                                     <Fields>                                        
