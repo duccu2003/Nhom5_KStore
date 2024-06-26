@@ -11,7 +11,7 @@ namespace TH03_WebBanHang.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class SanPham
     {
         public SanPham()
@@ -21,7 +21,7 @@ namespace TH03_WebBanHang.Models
             this.DanhGias = new HashSet<DanhGia>();
             this.ThichSPs = new HashSet<ThichSP>();
         }
-    
+
         public string MaSP { get; set; }
         public string TenSP { get; set; }
         public string DuongDan { get; set; }
@@ -37,7 +37,7 @@ namespace TH03_WebBanHang.Models
         public string Ver { get; set; }
         public string TenVer { get; set; }
         public string NguonHang { get; set; }
-    
+
         public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }
         public virtual ICollection<ChiTietDonHang> ChiTietDonHangs1 { get; set; }
         public virtual ICollection<DanhGia> DanhGias { get; set; }

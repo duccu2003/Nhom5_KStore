@@ -11,7 +11,7 @@ namespace TH03_WebBanHang.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class TK
     {
         public TK()
@@ -19,13 +19,13 @@ namespace TH03_WebBanHang.Models
             this.DonHangs = new HashSet<DonHang>();
             this.KhachHangs = new HashSet<KhachHang>();
         }
-    
+
         public int MaTK { get; set; }
         public string MatKhau { get; set; }
         public string Email { get; set; }
         public string Quyen { get; set; }
         public Nullable<bool> TrangThai { get; set; }
-    
+
         public virtual ICollection<DonHang> DonHangs { get; set; }
         public virtual ICollection<KhachHang> KhachHangs { get; set; }
         public ICollection<TK> TKs { get; internal set; } = new List<TK>();
