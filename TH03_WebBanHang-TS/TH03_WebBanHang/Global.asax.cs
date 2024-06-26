@@ -23,21 +23,21 @@ namespace TH03_WebBanHang
             Session.Remove("User");
             Session.Remove("TenTaiKhoan");
             Session.Remove("MatKhau");           
-            Session["MaKH"] = "";                       
+            //Session["MaKH"] = "";                       
             Session.Remove("Password");
             Session.Remove("Email");          
             Session.Remove("MaKH");
-            Session.Remove("Password");
-            Session.Remove("Email");
+            //Session.Remove("Password");
+            //Session.Remove("Email");
             Sign.email = null;
             Sign.pass = null;
-            Session.Remove("TenTaiKhoan");
-            Session.Remove("MatKhau");
-            Session.Remove("User");
-            Session.Remove("Password");
-            Session.Remove("Email");
-            Session["MaKH"] = "";
-            Session.Remove("MaKH");
+            //Session.Remove("TenTaiKhoan");
+            //Session.Remove("MatKhau");
+            //Session.Remove("User");
+            //Session.Remove("Password");
+            //Session.Remove("Email");
+            //Session["MaKH"] = "";
+            //Session.Remove("MaKH");
         }
     }
 }

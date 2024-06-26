@@ -12,6 +12,8 @@ using Newtonsoft.Json.Linq;
 using System.Data;
 using System.Web.ModelBinding;
 using System.IO;
+using System.Data.Entity.Migrations;
+using Microsoft.IdentityModel.Tokens;
 
 namespace TH03_WebBanHang
 {
@@ -366,28 +368,87 @@ namespace TH03_WebBanHang
 
                 var Khs = dbContext.KhachHangs.Any(p => p.TrangThai == true && p.Email == Sign.email);
 
-                if (Tks)
+                if (disabledTKs.Email.IsNullOrEmpty() || (disabledKhs.Email.IsNullOrEmpty() && disabledKhs.HoTen.IsNullOrEmpty() && disabledKhs.DienThoai.IsNullOrEmpty()))
                 {
-                    
-                    disabledTKs.TrangThai = false;
-                    
-                    disabledKhs.TrangThai = false;
-                } 
-                else
-                {
+
+                    var emailTK = disabledTKs.Email;
+                    var emailKH = disabledKhs.Email;
+                    TK deparment = dbcontext.TKs.SingleOrDefault(p => p.Email == emailKH || p.Email== emailTK); //lọc trong xem có email nào == lbDeptid đang được hiện (TK)
+                    KhachHang client = dbcontext.KhachHangs.SingleOrDefault(p => p.Email == emailKH || p.Email == emailTK); //lọc trong xem có email nào == lbDeptid đang được hiện (KH)
+
+
+                    if (client != null && deparment != null)
+                    {
+
+                        var donHangs = dbcontext.DonHangs.Where(d => d.KH == client.MaKH).ToList();
+                        var chiTietDonKH = dbcontext.ChiTietDonHangs.Where(d => d.KH == client.MaKH).ToList();
+
+                        foreach (var donHang in donHangs)
+                        {
+                            dbcontext.DonHangs.Remove(donHang);
+                        }
+                        foreach (var chitietDon in chiTietDonKH)
+                        {
+                            dbcontext.ChiTietDonHangs.Remove(chitietDon);
+
+                        }
+                        dbcontext.SaveChanges();
+
+
+                        ICollection<TK> eTK = deparment.TKs.ToList();
+                        foreach (var employeeTK in eTK)
+                        {
+                            dbcontext.TKs.Remove(employeeTK);
+                        }
+                        ICollection<KhachHang> eKH = client.KhachHangs.ToList();
+                        foreach (var employeeKH in eKH)
+                        {
+                            dbcontext.KhachHangs.Remove(employeeKH);
+                        }
+
+
+                        dbcontext.TKs.Remove(deparment);
+                        dbcontext.KhachHangs.Remove(client);
+
+                        dbcontext.SaveChanges();
+                       
+
+                    }
+
 
                 }
-                //var disabledKHs = dbContext.KhachHangs.Where(p => p.TrangThai == true).ToList();
-                //foreach (var kh in disabledKHs)
-                //{
-                //    kh.TrangThai = false;
-                //}
+                else
+                {
+                    if (Tks)
+                    {
+                    
+                        disabledTKs.TrangThai = false;
+                    
+                        disabledKhs.TrangThai = false;
+                        dbContext.TKs.AddOrUpdate(disabledTKs);
+                        dbContext.KhachHangs.AddOrUpdate(disabledKhs);
+                        dbContext.SaveChanges();
 
+                    
+                    } 
+                    else
+                    {
+                        disabledTKs.TrangThai = false;
 
-                // Lưu thay đổi vào cơ sở dữ liệu
+                        disabledKhs.TrangThai = false;
+                    
+                        dbContext.TKs.AddOrUpdate(disabledTKs);
+                        dbContext.KhachHangs.AddOrUpdate(disabledKhs);
+                        dbContext.SaveChanges();
+                    
+                    }
+                }
+               
+               
                 dbContext.SaveChanges();
-                dbcontext.SaveChanges();
+                
             }
+
             if (Request.Cookies["UserAccount"] != null)
             {
 
@@ -399,11 +460,10 @@ namespace TH03_WebBanHang
                 cookie.Expires = DateTime.Now.AddMonths(-1); // Đặt thời hạn về một ngày trong quá khứ
                 Response.Cookies.Add(cookie);
             }
-            //Response.Write("<script>alert('Tài khoản hoặc mật khẩu không chính xác');</script>");
-            Session.Remove("Password");
-            Session.Remove("Email");
-            Sign.email = null;
-            Sign.pass = null;
+            
+            //Session.Remove("Password");
+            //Session.Remove("Email");
+            
             Session.Remove("TenTaiKhoan");
             Session.Remove("MatKhau");
             Session.Remove("User");
@@ -411,6 +471,8 @@ namespace TH03_WebBanHang
             Session.Remove("Email");
             //Session["MaKH"] = "";
             Session.Remove("MaKH");
+            Sign.email = null;
+            Sign.pass = null;
             //Session.Clear();
             Response.Redirect("Sign.aspx");
 
