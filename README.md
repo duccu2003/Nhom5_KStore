@@ -105,7 +105,7 @@ If you have any questions or suggestions, feel free to contact us via one of the
 - **Facebook**: [Duc Nguyen](https://www.facebook.com/ducnguyenhoang2003)
 - **Zalo**: [0389800308](zalo://talk/?number=0389800308)
 - **Phone Number**: +84389800308 (0389800308)
-- **Github**: [duccu2003], [Kumetiqn], [Anh]
+- **Github**: [duccu2003](https://github.com/duccu2003), [Kumetiqn](https://github.com/Kumetiqn), [trnhatanh1211@gmail.com](https://github.com/trnhatanh1211@gmail.com)
 
 *Our team is always ready to support and listen to your feedback!*
 
@@ -214,7 +214,7 @@ Nếu bạn có bất kỳ câu hỏi hoặc góp ý, đừng ngần ngại liê
 - **Facebook**: [Đức Nguyễn](https://www.facebook.com/ducnguyenhoang2003)
 - **Zalo**: [0389800308](zalo://talk/?number=0389800308)
 - **Số Điện Thoại**: +84389800308 (0389800308)
-- **Github**: [duccu2003], [Kumetiqn], [Anh]
+- **Github**: [duccu2003](https://github.com/duccu2003), [Kumetiqn](https://github.com/Kumetiqn), [trnhatanh1211@gmail.com](https://github.com/trnhatanh1211@gmail.com)
 
 *Nhóm chúng tôi luôn sẵn lòng hỗ trợ và lắng nghe ý kiến từ các bạn!*
 
