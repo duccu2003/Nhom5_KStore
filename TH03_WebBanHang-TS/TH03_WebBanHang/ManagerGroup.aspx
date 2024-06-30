@@ -444,10 +444,10 @@ text-align:center;
                     <thead>
                         <tr>
                             <th scope="col" class="justify-content-center align-content-center">Mã</th>
-                            <th scope="col" class="justify-content-center align-content-center">Nghệ danh</th>
+                            <th scope="col" class="justify-content-center align-content-center">Nghệ Danh</th>
                             <th scope="col" class="justify-content-center align-content-center">Logo</th>
                             <th scope="col" class="justify-content-center align-content-center">Ảnh</th>
-                            <th scope="col" class="justify-content-center align-content-center">Lượng sản phẩm</th>
+                            <th scope="col" class="justify-content-center align-content-center">Lượng Sản Phẩm</th>
                            
                            <%-- <th class="justify-content-center align-content-center"></th>--%>
                         </tr>

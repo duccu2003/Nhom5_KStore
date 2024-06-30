@@ -147,11 +147,12 @@ namespace TH03_WebBanHang
 
 
         }
-        protected void btnCart_Click(object sender, ImageClickEventArgs e)
+
+        protected void btnCart_Click(object sender, EventArgs e)
         {
             // Trở lại trang hiện tại
             string url = HttpContext.Current.Request.Url.ToString();
-            ImageButton btnCart = (ImageButton)sender;
+            Button btnCart = (Button)sender;
             string itemMaSP = btnCart.CommandArgument;
             //productDetail.DataItem.
             // Lấy giở hàng
@@ -180,17 +181,63 @@ namespace TH03_WebBanHang
                 Response.Redirect(url + "?#SP");
 
             }
-            else if(saP != null && sanPhamCon1 == null)
+            else if (saP != null && sanPhamCon1 == null)
             {
                 chiTietDon.SoLuong++;
                 chiTietDon.ThanhTien = chiTietDon.Gia * chiTietDon.SoLuong;
                 Session["GioHang"] = lstGioHang;
                 Thread.Sleep(1500);
 
-                Response.Redirect(url+"?#SP");
+                Response.Redirect(url + "?#SP");
             }
 
         }
+
+
+        //protected void btnCart_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    // Trở lại trang hiện tại
+        //    string url = HttpContext.Current.Request.Url.ToString();
+        //    ImageButton btnCart = (ImageButton)sender;
+        //    string itemMaSP = btnCart.CommandArgument;
+        //    //productDetail.DataItem.
+        //    // Lấy giở hàng
+        //    List<ChiTietDonHang> lstGioHang = LayGioHang();
+        //    // 
+        //    //string idsp = HttpContext.Current.Request.QueryString.Get("sp");
+        //    ChiTietDonHang chiTietDon = lstGioHang.Find(sp => sp.MaSP == itemMaSP);
+        //    var sanPhamCon1 = dbcontext.SanPhams.FirstOrDefault(p => p.MaSP == itemMaSP && p.SoLuongKho == 1);
+        //    var saP = dbcontext.SanPhams.FirstOrDefault(p => p.MaSP == itemMaSP && p.SoLuongKho > 0);
+
+        //    if (chiTietDon == null && saP != null)
+        //    {
+        //        SanPham sanPham = dbcontext.SanPhams.FirstOrDefault(p => p.MaSP == itemMaSP);
+        //        chiTietDon = new ChiTietDonHang();
+        //        chiTietDon.MaSP = itemMaSP;
+        //        chiTietDon.SoLuong = 1;
+        //        chiTietDon.TenSP = sanPham.TenSP;
+        //        chiTietDon.DuongDan = sanPham.DuongDan;
+        //        chiTietDon.Gia = (double)sanPham.Gia;
+        //        chiTietDon.ThanhTien = (double)sanPham.Gia;
+        //        lstGioHang.Add(chiTietDon);
+        //        Session["GioHang"] = lstGioHang;
+
+        //        Thread.Sleep(1500);
+
+        //        Response.Redirect(url + "?#SP");
+
+        //    }
+        //    else if(saP != null && sanPhamCon1 == null)
+        //    {
+        //        chiTietDon.SoLuong++;
+        //        chiTietDon.ThanhTien = chiTietDon.Gia * chiTietDon.SoLuong;
+        //        Session["GioHang"] = lstGioHang;
+        //        Thread.Sleep(1500);
+
+        //        Response.Redirect(url+"?#SP");
+        //    }
+
+        //}
 
         protected void AddToCart_Click(object sender, EventArgs e)
         {

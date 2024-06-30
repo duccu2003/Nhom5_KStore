@@ -37,8 +37,15 @@
  
 
     <style>
-
-
+        .btn-send{
+            font-weight:bold;
+            background-color:#9b51e0;
+            border-radius:5px;
+            width:100%;
+        }
+        .btn-send:hover{
+            box-shadow:0 0 20px #636363;
+        }
 
         .tenSP-ls-h3 {
             padding-bottom: 1.5rem;
@@ -133,7 +140,7 @@
                     <span class="focus-input100"></span>
                 </div>
                 <div class="container-contact100-form-btn">
-                    <asp:Button ID="btnSend" runat="server" Text="Gửi phản hồi" CssClass="contact100-form-btn" OnClick="btnSend_Click" style="background-color:#9b51e0; border-radius:10px; width:100%" />
+                    <asp:Button ID="btnSend" runat="server" Text="Gửi phản hồi đến chúng tôi" CssClass="contact100-form-btn btn-send" OnClick="btnSend_Click" style="" />
                 </div>
             </div>
             <div class="contact100-more flex-col-c-m fade-out" style="background-image: url('Content/image-branch/4.png');">
@@ -192,8 +199,8 @@ Hỗ Trợ
                                 width:36px !important;
                               
                             } a:hover, a:active {
-     color: #9b51e0 !important;
- }
+                                 color: #9b51e0 !important;
+                             }
                         </style>
                                                 <img class="icon-mxh fade-in" src="Content/icon/facebook.png"/>
                         <img class="icon-mxh fade-in" style="  margin-left:1rem;" src="Content/icon/instagram.png"/>
@@ -218,7 +225,7 @@ Liên Hệ
         <div class="container px-5 px-lg-5  content2 fade-in" style=" display:block;">
             <h3  class="fade-in" style=""><strong>LƯU Ý VỀ VIỆC GỬI PHẢN HỒI ĐẾN KSTORE</strong></h3>
             <p>Nội dung phản hồi của bạn sẽ được chúng tôi lưu trữ lại nhầm nâng cao chất lượng dịch vụ trong tương lai, nếu bạn đồng ý với điều kiện đó vui lòng gửi phản hồi cho chúng tôi, sau khi chúng tôi đọc và kiểm tra thư chúng tôi sẽ gửi lại phản hồi đến địa chỉ Email mà bạn đã gửi phản hồi trước đó. </p>
-            <p>Kstore chần thành cảm ơn những ý kiến, đóng góp, phản hồi của bạn và sẽ cố gắng cải thiện hơn trong tương lai.</p>
+            <p>Kstore chân thành cảm ơn những ý kiến, đóng góp, phản hồi của bạn và sẽ cố gắng cải thiện hơn trong tương lai.</p>
 <%--    <div class="col-sm-6 d-grid fade-in">
     <h3  class="fade-in" style=""><strong>KẾT NỐI VỚI KSTORE</strong></h3>
 

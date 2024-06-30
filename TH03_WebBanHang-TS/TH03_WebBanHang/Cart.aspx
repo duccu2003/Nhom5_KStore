@@ -248,7 +248,7 @@
                          }
                     </style>
                 <div>
-                    <asp:Button ID="btnDathang" CssClass="justify-content-center  btnDathang" runat="server" Text="Tiến hành đặt hàng" OnClick="btnDathang_Click" style="width:100%; background:linear-gradient(to left, #522A77, #2a2e77); border-radius:10px;  padding:5px 1rem; outline-color:#fff0; border:1px solid #303030a0;"/>
+                    <asp:Button ID="btnDathang" CssClass="justify-content-center  btnDathang" runat="server" Text="TIẾN HÀNH ĐẶT HÀNG" OnClick="btnDathang_Click" style="width:100%; background:linear-gradient(to left, #522A77, #2a2e77); border-radius:10px;  padding:5px 1rem; outline-color:#fff0; border:1px solid #303030a0;"/>
                    <%-- <style>                        #btnDathang {
                             padding:10px;
                             border: 1px solid #ccc;

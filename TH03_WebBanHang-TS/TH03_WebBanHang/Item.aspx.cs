@@ -57,11 +57,11 @@ namespace TH03_WebBanHang
 
                         if (sanPham.SoLuongKho <= 0)
                         {
-                            txtSoLuong.Text = "Hết hàng";
+                            txtSoLuong.Text = "HẾT HÀNG";
                             btnChange.Visible = false;
                             btnDelete.Visible = false;
                             txtSoLuong.Enabled = false;
-                            Response.Write("<style>#divSL{padding:0 !important;} #SL *{margin:0 !important;} #SL{width:144.25px; color:orangered;} .txtSoLuong{width:100% !important;} #notification, #notification *{display:none !important;} </style>");
+                            Response.Write("<style>#divSL{padding:0 !important;} #SL *{margin:0 !important;} #SL{width:144.25px; color:orangered;} .txtSoLuong{width:100% !important; color:orangered !important;} #notification, #notification *{display:none !important;} </style>");
                             ddlPop.Enabled = false;
 
 
@@ -226,7 +226,7 @@ namespace TH03_WebBanHang
 
                     if (sanPham.SoLuongKho <= 0)
                     {
-                        txtSoLuong.Text = "Hết hàng";
+                        txtSoLuong.Text = "HẾT HÀNG";
                         btnChange.Visible = false;
                         btnDelete.Visible = false;
                         txtSoLuong.Enabled = false;
@@ -1778,11 +1778,12 @@ namespace TH03_WebBanHang
 
 
         }
-        protected void btnCart_Click(object sender, ImageClickEventArgs e)
+
+        protected void btnCart_Click(object sender, EventArgs e)
         {
             // Trở lại trang hiện tại
             string url = HttpContext.Current.Request.Url.ToString();
-            ImageButton btnCart = (ImageButton)sender;
+            Button btnCart = (Button)sender;
             string itemMaSP = btnCart.CommandArgument;
             //productDetail.DataItem.
             // Lấy giở hàng
@@ -1790,7 +1791,7 @@ namespace TH03_WebBanHang
             var saP = dbcontext.SanPhams.FirstOrDefault(p => p.MaSP == itemMaSP && p.SoLuongKho > 0);
             var popSP = dbcontext.POBs.FirstOrDefault(s => s.MaSP == itemMaSP);
 
-            
+
 
 
 
@@ -1833,7 +1834,7 @@ namespace TH03_WebBanHang
                     chiTietDon.TenPob = null;
                 }
 
-                
+
                 lstGioHang.Add(chiTietDon);
                 Response.Write(" <script>\r\n        // Sử dụng class của nút thêm vào giỏ hàng để lắng nghe sự kiện click\r\n        const notification = document.getElementById('notification');\r\n\r\n       \r\n            // Hiển thị thông báo\r\n            notification.style.display = 'flex';\r\n\r\n            // Ẩn thông báo sau 2 giây\r\n            setTimeout(function () {\r\n                notification.style.display = 'none';\r\n            }, 2000);\r\n        \r\n    </script>");
 
@@ -1846,7 +1847,7 @@ namespace TH03_WebBanHang
             {
                 if (pOP)
                 {
-                    if(chiTietDon.TenPob == popSP.TenPob)
+                    if (chiTietDon.TenPob == popSP.TenPob)
                     {
                         chiTietDon.SoLuong++;
                     }
@@ -1870,6 +1871,102 @@ namespace TH03_WebBanHang
             }
 
         }
+
+
+        //protected void btnCart_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    // Trở lại trang hiện tại
+        //    string url = HttpContext.Current.Request.Url.ToString();
+        //    ImageButton btnCart = (ImageButton)sender;
+        //    string itemMaSP = btnCart.CommandArgument;
+        //    //productDetail.DataItem.
+        //    // Lấy giở hàng
+        //    var pOP = dbcontext.POBs.Any(p => p.MaSP == itemMaSP);
+        //    var saP = dbcontext.SanPhams.FirstOrDefault(p => p.MaSP == itemMaSP && p.SoLuongKho > 0);
+        //    var popSP = dbcontext.POBs.FirstOrDefault(s => s.MaSP == itemMaSP);
+
+            
+
+
+
+        //    List<ChiTietDonHang> lstGioHang = LayGioHang();
+        //    // 
+        //    //string idsp = HttpContext.Current.Request.QueryString.Get("sp");
+        //    //ChiTietDonHang chiTietDon = lstGioHang.Find(sp => sp.MaSP == itemMaSP);
+        //    ChiTietDonHang chiTietDon = lstGioHang.Find(sp => sp.MaSP == itemMaSP);
+
+        //    if (pOP)
+        //    {
+        //        chiTietDon = lstGioHang.Find(sp => sp.MaSP == itemMaSP && sp.TenPob == popSP.TenPob);
+
+        //    }
+        //    else
+        //    {
+        //        chiTietDon = lstGioHang.Find(sp => sp.MaSP == itemMaSP);
+
+        //    }
+
+
+        //    var sanPhamCon1 = dbcontext.SanPhams.FirstOrDefault(p => p.MaSP == itemMaSP && p.SoLuongKho == 1);
+
+        //    if (chiTietDon == null && saP != null)
+        //    {
+        //        SanPham sanPham = dbcontext.SanPhams.FirstOrDefault(p => p.MaSP == itemMaSP);
+        //        chiTietDon = new ChiTietDonHang();
+        //        chiTietDon.MaSP = itemMaSP;
+        //        chiTietDon.SoLuong = 1;
+        //        chiTietDon.TenSP = sanPham.TenSP;
+        //        chiTietDon.DuongDan = sanPham.DuongDan;
+        //        chiTietDon.Gia = (double)sanPham.Gia;
+        //        chiTietDon.ThanhTien = (double)sanPham.Gia;
+        //        if (pOP)
+        //        {
+        //            chiTietDon.TenPob = popSP.TenPob;
+        //        }
+        //        else
+        //        {
+        //            chiTietDon.TenPob = null;
+        //        }
+
+                
+        //        lstGioHang.Add(chiTietDon);
+        //        Response.Write(" <script>\r\n        // Sử dụng class của nút thêm vào giỏ hàng để lắng nghe sự kiện click\r\n        const notification = document.getElementById('notification');\r\n\r\n       \r\n            // Hiển thị thông báo\r\n            notification.style.display = 'flex';\r\n\r\n            // Ẩn thông báo sau 2 giây\r\n            setTimeout(function () {\r\n                notification.style.display = 'none';\r\n            }, 2000);\r\n        \r\n    </script>");
+
+        //        Session["GioHang"] = lstGioHang;
+        //        Thread.Sleep(1500);
+
+        //        Response.Redirect(Request.RawUrl);
+        //    }
+        //    else if (saP != null && sanPhamCon1 == null)
+        //    {
+        //        if (pOP)
+        //        {
+        //            if(chiTietDon.TenPob == popSP.TenPob)
+        //            {
+        //                chiTietDon.SoLuong++;
+        //            }
+        //            else
+        //            {
+        //                chiTietDon.SoLuong++;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            chiTietDon.SoLuong++;
+        //        }
+        //        //chiTietDon.SoLuong++;
+        //        Response.Write(" <script>\r\n        // Sử dụng class của nút thêm vào giỏ hàng để lắng nghe sự kiện click\r\n        const notification = document.getElementById('notification');\r\n\r\n       \r\n            // Hiển thị thông báo\r\n            notification.style.display = 'flex';\r\n\r\n            // Ẩn thông báo sau 2 giây\r\n            setTimeout(function () {\r\n                notification.style.display = 'none';\r\n            }, 2000);\r\n        \r\n    </script>");
+
+        //        chiTietDon.ThanhTien = chiTietDon.Gia * chiTietDon.SoLuong;
+        //        Session["GioHang"] = lstGioHang;
+        //        Thread.Sleep(1500);
+
+        //        Response.Redirect(Request.RawUrl);
+        //    }
+
+        //}
+
+
         protected void BuyNow_Click(object sender, EventArgs e)
         {
             // Trở lại trang hiện tại

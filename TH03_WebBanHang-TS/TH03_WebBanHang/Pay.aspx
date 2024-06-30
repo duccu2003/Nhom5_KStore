@@ -235,7 +235,7 @@
 <%--</div></p>--%>
                     
 </div>                                 
-            <asp:Button ID="btnXoa" runat="server" Text="Xóa" CssClass="btnXoaSP" CommandArgument='<%# Eval("MaSP")+ ";" +Eval("TenPob") %>' OnClick="btnXoa_Click" style=" background:#000; /*background:linear-gradient(to left, #522A77, #2a2e77);*/ color:#fff; border:1px solid #636363; border-radius:20px; width:80px; height:40px; padding:1px; margin:10px 0" />
+            <asp:Button ID="btnXoa" runat="server" Text="X" title="Xóa sản phẩm khỏi đơn hàng" CssClass="btnXoaSP" CommandArgument='<%# Eval("MaSP")+ ";" +Eval("TenPob") %>' OnClick="btnXoa_Click" style=" background:#000; /*background:linear-gradient(to left, #522A77, #2a2e77);*/ color:#fff; border:1px solid #636363; border-radius:20px; width:35px; height:35px; padding:1px; margin:10px 0" />
             </div>
         </div>
     </ItemTemplate>
@@ -303,8 +303,8 @@
              <asp:Label runat="server" ID="lbTong" style="font-size:x-large; padding-left:1rem; color:#fff; font-weight:bolder; margin:0.5rem 0"></asp:Label>
 
             <div class="d-flex" style="gap:10px;">
-        <asp:Button ID="btnConfirm" runat="server" Text="Xác nhận giao dịch" OnClick="btnConfirm_Click" CssClass="btn-confirm" style="background:#9b51e0; border:none; border-radius:10px; padding:5px 0; height:38px; color:#fff; width:14rem;"/>
-        <asp:Button ID="btnCancel" runat="server" Text="Hủy giao dịch" OnClick="btnCancel_Click" CssClass="btn-cancel" style="background:#9b51e0; border:none; border-radius:10px; padding:5px 0; height:38px; color:#fff; width:14rem;" />
+        <asp:Button ID="btnConfirm" runat="server" title="Xác nhận giao dịch này và tiến hành thanh toán" Text="XÁC NHẬN GIAO DỊCH" OnClick="btnConfirm_Click" CssClass="btn-confirm" style="background:#9b51e0; border:none; border-radius:10px; padding:5px 0; height:38px; color:#fff; width:14rem;"/>
+        <asp:Button ID="btnCancel" runat="server" title="Hủy giao dịch này" Text="HỦY GIAO DỊCH" OnClick="btnCancel_Click" CssClass="btn-cancel" style="background:#9b51e0; border:none; border-radius:10px; padding:5px 0; height:38px; color:#fff; width:14rem;" />
   
         </div>
 </div>

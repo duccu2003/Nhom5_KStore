@@ -2,6 +2,21 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <style>
+        .btn-item {
+            background-color: #fff !important;
+        }
+        .btn-at-sp-hover:hover{
+            color:#FFFF !important;
+            background:#000 !important;
+             box-shadow:0 0 50px #636363;
+        }
+        .btn-at-sp-hover{
+            transition:0.5s;
+        
+        }
+    </style>
+
+    <style>
 
         .alert{
             top:0;
@@ -190,7 +205,7 @@
                  <div class="widget-item">
                      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-                                    <a href="#" <%--href="https://www.messenger.com/t/100005745948829"--%> class="widget-link" style="z-index:99999;"  title="Nhắn tin với KStore" >
+                                    <a onclick="toggleChatWindow()" href="#" <%--href="https://www.messenger.com/t/100005745948829"--%> class="widget-link" style="z-index:99999;"  title="Nhắn tin với KStore" >
                                         <i class="fas fa-comment-alt"></i>
                                     </a>
                                 </div>
@@ -367,25 +382,23 @@
                            
                            
                             <div class="d-grid" id="divButtonMuaGioDG" style="gap: 1rem;">
-                                <style>
-                                    .btn-item {
-                                        background-color: #fff !important;
-                                    }
-                                </style>
+                                
 
 
 
 
 
                                 <div class="d-flex" style="gap: 1rem;">
-                                <asp:Button ID="BuyNow" runat="server" title="Mua sản phẩm ngay"  Text="Mua Ngay" OnClick="BuyNow_Click" class="btn btn-outline-dark flex-shrink-0 btn-mua-ngay btn-item" />
+                                <asp:Button ID="BuyNow" runat="server" title="Mua sản phẩm ngay"  Style="height:45px;"  Text="MUA NGAY" OnClick="BuyNow_Click" class="btn btn-outline-dark flex-shrink-0 btn-mua-ngay btn-item btn-at-sp-hover btn-at-sp btn-bold" />
+
+                                <asp:Button ID="Button1" runat="server" title="Thêm sản phẩm này vào giỏ hàng"  Style="height:45px;" OnClick="AddToCart_Click" class="btn btn-outline-dark flex-shrink-0 btn-item btn-gio btn-at-sp-hover btn-at-sp btn-bold" Text="THÊM VÀO GIỎ"/>
 
                                
-                                <asp:ImageButton ID="Button1" runat="server" title="Thêm sản phẩm vào giỏ hàng"  Style="width: 3.5rem;" OnClick="AddToCart_Click" class="btn btn-outline-dark flex-shrink-0 btn-item btn-gio" ImageUrl="~/Content/icon/add-cart.png" />
-                                                                    <a title="Xem đánh giá của sản phẩm"  id="toggleRating" herf="#" class="btn btn-outline-dark flex-shrink-0 btn-item toggleRating" style="cursor:pointer; justify-content:center; align-content:center; align-items:center; justify-items:center; text-align:center;" >Đánh giá</a>
+<%--                                <asp:ImageButton ID="Button1" runat="server" title="Thêm sản phẩm vào giỏ hàng"  Style="width: 3.5rem;" OnClick="AddToCart_Click" class="btn btn-outline-dark flex-shrink-0 btn-item btn-gio" ImageUrl="~/Content/icon/add-cart.png" />--%>
+                                                                    <a title="Xem đánh giá của sản phẩm"  id="toggleRating" herf="#" class="btn btn-outline-dark flex-shrink-0 btn-item toggleRating btn-at-sp-hover btn-at-sp btn-bold" style="height:45px; cursor:pointer; justify-content:center; align-content:center; align-items:center; justify-items:center; text-align:center;" >XEM ĐÁNH GIÁ</a>
 
                                 </div>
-                                <a title="Xem nội dung bên trong của sản phẩm" id="btnViewMore" class="btn btn-outline-dark flex-shrink-0 btn-item" style="cursor:pointer; justify-content:center; align-content:center; align-items:center; justify-items:center; text-align:center;" href="#" onclick="toggleAdditionalContent(); return false;">Xem nội dung bên trong sản phẩm <%--<%#:Item.MoTa%>--%></a>            
+                                <a title="Xem nội dung bên trong của sản phẩm" id="btnViewMore" class="btn btn-outline-dark flex-shrink-0 btn-item btn-at-sp-hover btn-bold" style="height:45px; cursor:pointer; justify-content:center; align-content:center; align-items:center; justify-items:center; text-align:center;" href="#" onclick="toggleAdditionalContent(); return false;">XEM NỘI DUNG BÊN TRONG SẢN PHẨM <%--<%#:Item.MoTa%>--%></a>            
 
                                 <i class="bi-cart-fill me-1"></i>
 
@@ -426,7 +439,7 @@
  <asp:ListView ID="lvVer" runat="server" ItemType="TH03_WebBanHang.Models.SanPham" SelectMethod="GetVer">
     <ItemTemplate>
          <%# IfNotNullOrEmpty(Item.Ver,"<style> @media only screen and  (max-width: 768px) {\r\n        \r\n            \r\n              #divSL{\r\n     \r\n                  bottom:16.4rem !important;\r\n                  left:8.525rem !important;\r\n                   height:43px !important;\r\n\r\n              }\r\n         \r\n     }</style>")%>
-        <a loading="lazy" class="aVer" href="item.aspx?sp=<%#:Item.MaSP%>" id="aTenVer" style="text-align:center; border:1px solid #fff0; border-radius:10px;  color:#000;    background:#fff0; width:100px; height:max-content; padding:0 0 -1rem 0; margin-bottom:0.1rem;">   
+        <a loading="lazy" class="aVer" href="item.aspx?sp=<%#:Item.MaSP%>" id="aTenVer" style="text-align:center; border:1px solid #fff0; border-radius:5px;  color:#000;    background:#fff0; width:100px; height:max-content; padding:0 0 -1rem 0; margin-bottom:0.1rem;">   
             <img  title="<%#:Item.TenSP%>"  loading="lazy" id="verImg" src="<%#:Item.DuongDan%>" style="width:70px; height:70px; border-radius:10px; margin:1rem auto auto auto; justify-content:center; align-content:center; justify-items:center; align-items:center;" alt="Versions"/>
             <p id="pTenVer" loading="lazy" style="/*border:1px solid #fff;*/  /*color:#000;    background:#fff;*/ flex-wrap:wrap;   border-radius:10px; padding:2.5px 0  -1rem 0;"><%#:Item.TenVer %></p></a>
     </ItemTemplate>
@@ -491,7 +504,7 @@
                                 <div id="divSL" class="d-flex" style="gap:16px; height:42px; text-align:center; justify-content:center;justify-items:center; align-content:center; align-items:center;">
                                          <div id="SL" style="background:#fff; height:100%; text-align:center; justify-content:center;justify-items:center; align-content:center; align-items:center; border-radius:5px;">
                                             <asp:ImageButton ID="btnDelete" Visible="false" runat="server" CommandArgument='<%# Eval("MaSP") %>' OnClick="btnDelete_Click" CssClass="btn btn-danger btn-p-m" ImageUrl="~/Content/icon/sl-minus.png" />
-                                            <asp:TextBox runat="server" Visible="false"   ID="txtSoLuong" CssClass="txtSoLuong" Text="1" AutoPostBack="true" ShowButtonShapes="false" style="width:3rem; height:31px; color:#000; text-align:center; border-radius:5px; border:none;"></asp:TextBox>
+                                            <asp:TextBox runat="server" Visible="false"   ID="txtSoLuong" CssClass="txtSoLuong" Text="1" AutoPostBack="true" ShowButtonShapes="false" style="width:3rem; height:31px; color:#000; text-align:center; border-radius:5px; border:none; font-weight:bold;"></asp:TextBox>
                                             <asp:ImageButton ID="btnChange" Visible="false" runat="server" CommandArgument='<%# Eval("MaSP") %>' OnClick="btnChange_Click" CssClass="btn btn-warning btn-p-m" ImageUrl="~/Content/icon/sl-plus.png" />
 
                                             <script type="text/javascript">
@@ -514,7 +527,7 @@
                                         </div>
                                   
                                     <div id="divPop" style="height:100%;width:144px; background:#fff; text-align:center; justify-content:center;justify-items:center; align-content:center; align-items:center; border-radius:5px;">
-                                        <asp:DropDownList ID="ddlPop" runat="server" Visible="false" AutoPostBack="True" OnSelectedIndexChanged="ddlPop_SelectedIndexChanged" CssClass="full-width div-ls divPop dropPop" style="width:136px; height:27px; text-align:center; color:#000;height:100%; background:#fff; border:none;">
+                                        <asp:DropDownList ID="ddlPop" runat="server" Visible="false" AutoPostBack="True" OnSelectedIndexChanged="ddlPop_SelectedIndexChanged" CssClass="full-width div-ls divPop dropPop" style="width:136px; height:27px; text-align:center; color:#000;height:100%; background:#fff; border:none; font-weight:bold;">
 
                                         </asp:DropDownList> 
                                       
@@ -577,12 +590,12 @@
                    
                    if (additionalContent.style.display === "grid") {
                        additionalContent.style.display = "none";
-                       document.getElementById('btnViewMore').innerHTML = 'Xem nội dung bên trong sản phẩm';
+                       document.getElementById('btnViewMore').innerHTML = 'XEM NỘI DUNG BÊN TRONG SẢN PHẨM';
 
                        
                    } else {
                        additionalContent.style.display = "grid";
-                       document.getElementById('btnViewMore').innerHTML = 'Ẩn bớt nội dung bên trong sản phẩm';
+                       document.getElementById('btnViewMore').innerHTML = 'ẨN BỚT NỘI DUNG BÊN TRONG SẢN PHẨM';
                        
                    }
                }
@@ -687,12 +700,13 @@
                         var divDetailProduct = document.getElementById('divDetailProduct');
                         if (ratingElement.style.display === 'none') {
                             ratingElement.style.display = 'grid';
+                            document.getElementById('toggleRating').innerHTML = "ẨN ĐÁNH GIÁ";
                             divDetailProduct.style.paddingBottom = '0';
                             localStorage.setItem('ratingElementDisplay', 'grid'); // Lưu trạng thái hiển thị
                         } else {
                             ratingElement.style.display = 'none';
                             divDetailProduct.style.paddingBottom = '0';
-
+                            document.getElementById('toggleRating').innerHTML = "XEM ĐÁNH GIÁ";
                             localStorage.setItem('ratingElementDisplay', 'none'); // Lưu trạng thái ẩn
                         }
                     });
@@ -799,6 +813,18 @@
                     <style>
                         @media only screen and  (max-width: 768px) {
                                
+                             .btn-at-sp{
+                                 width:137.5px;
+                                 font-size:small;
+                             }
+                             #btnViewMore{
+                                 font-size:small;
+                             }
+                             .btn-p-m {
+                                 width:27px;
+                             }
+
+
                                 #divSL{
                                     position:absolute;
                                     bottom:19.438rem;
@@ -958,6 +984,11 @@
                          }
                                                 @media only screen and  (min-width: 768px) {
                                                    
+
+                                                     .btn-at-sp{
+                                                         width:145.5px;
+                                                     }
+
                                                     #divNoteContentText{
                                                         padding-left:11.5rem !important;
                                                     }
@@ -1208,11 +1239,16 @@
 
                             }
                         </style>
-                                                            <a href="#"  onclick="hideLSRating()" id="btnHideDG" class="btnHideDG" style="margin:5px auto; background:#7a41b0;  text-align:center; padding:10px 15px;width:150px; border-radius:10px; transition:0.5s" >Ẩn đánh giá</a>
+                                                            <a href="#"  onclick="hideLSRating()" id="btnHideDG" class="btnHideDG btn-bold" style="margin:5px auto; background:#7a41b0;  text-align:center; padding:10px 15px;width:150px; border-radius:10px; transition:0.5s" >ẨN ĐÁNH GIÁ</a>
 
-                    <a id="showFormButton"  href="#" style="margin:5px auto; background: #7a41b0; text-align:center; padding:10px 15px;width:150px; border-radius:10px;">Viết đánh giá</a>
+                    <a id="showFormButton" class="btn-bold"  href="#" style="margin:5px auto; background: #7a41b0; text-align:center; padding:10px 15px;width:150px; border-radius:10px;">VIẾT ĐÁNH GIÁ</a>
 </div>
                    <style>
+                       .btn-bold{
+                           font-weight:bold;
+                       }
+
+
                        #showFormButton,#btnHideDG{
                            transition:0.5s;
                            font-size:16px;
@@ -1459,8 +1495,13 @@
                                                      });
                                             });
                                         </script>
-                                                                            <button class="btn btn-outline-dark mt-auto btn-mua" style="background:#fff; color:#000;" type="button" data-href="item.aspx?sp=<%#:Item.MaSP%>">Mua</button>
-                                                                        <asp:ImageButton ID="btnCart" CommandArgument='<%#:Item.MaSP%>' runat="server" Style="width: 57.5px; height:37.5px; background:#fff;" OnClick="btnCart_Click" class="btn btn-outline-dark flex-shrink-0 btn-gio  btn-gio-card" ImageUrl="~/Content/icon/sz-add-cart.png" />
+                                                                            <%--<button class="btn btn-outline-dark mt-auto btn-mua" style="background:#fff; color:#000;" type="button" data-href="item.aspx?sp=<%#:Item.MaSP%>">Mua</button>
+                                                                        <asp:ImageButton ID="btnCart" CommandArgument='<%#:Item.MaSP%>' runat="server" Style="width: 57.5px; height:37.5px; background:#fff;" OnClick="btnCart_Click" class="btn btn-outline-dark flex-shrink-0 btn-gio  btn-gio-card" ImageUrl="~/Content/icon/sz-add-cart.png" />--%>
+                                                                        
+                                               
+                                                <asp:Button ID="btnCart" CommandArgument='<%#:Item.MaSP%>' runat="server" Style="font-size:small; width: 145.5px; height:37.5px; background:#fff;" OnClick="btnCart_Click" class="btn btn-outline-dark flex-shrink-0 btn-gio btn-gio-card btn-bold btn-at-sp-hover" Text="THÊM VÀO GIỎ" title="Thêm sản phẩm này vào giỏ hàng"/>
+
+
                                                                         <script>
                                                                             const btnCart = document.getElementById('btnCart');
                                                                             const btnCartclass = document.querySelector('.btn-gio-card');
@@ -1776,7 +1817,7 @@
 </div>
 
 <%--                       <asp:ImageButton ID="btnSubmitCommentIMG" runat="server" ImageUrl="~/Content/icon/send.png" OnClick="btnSubmitCommentIMG_Click"  Visible="false"  CssClass="btn-comment justify-content-center align-content-center" style="padding:8px; border-radius:50%;"/>--%>
-                        <asp:Button  ID="btnSubmitComment" runat="server" Text="Gửi đánh giá"  OnClick="btnSubmitComment_Click"  Visible="false"  CssClass="btn-comment justify-content-center align-content-center" style="padding:8px; border-radius:10px; background:#464baa; border:none; margin:auto; width:100%;"/>
+                        <asp:Button  ID="btnSubmitComment" runat="server" Text="GỬI BÀI ĐÁNH GIÁ"  OnClick="btnSubmitComment_Click"  Visible="false"  CssClass="btn-comment justify-content-center align-content-center btn-bold" style="padding:8px; border-radius:10px; background:#464baa; border:none; margin:auto; width:100%;"/>
                     </div>
                         <style>
 

@@ -164,18 +164,21 @@
 
                 <li class="nav-item"><a class="nav-link active dropdown-item" href="#Revenue"><i class="fa-solid fa-chart-column" style="margin-right: 5px; width: 35px;"></i>Quản lý doanh thu</a></li>
                 <li class="nav-item"><a class="nav-link dropdown-item" href="ManagerOrder"><i class="fa-solid fa-boxes-stacked" style="margin-right: 5px; width: 35px;"></i>Quản lý đơn hàng</a></li>
-               <li class="nav-item ">
-    <a class="dropdown-item" href="UpdateInformation" style="color: #fff;"><i class="fa-solid fa-pager" style="margin-right: 5px; width: 35px;"></i>Quản lý nội dung</a>
-            </li>
+              
                 <li class="nav-item"><a class="nav-link dropdown-item" aria-current="page" href="ManagerAccount" style=""><i class="fas fa-user" style="margin-right: 5px; width: 35px;"></i>Quản lý tài khoản</a>
                     
                 </li>
                 <li class="nav-item"><a class="nav-link dropdown-item" href="ManagerProduct"><i class="fas fa-box" style="margin-right: 5px; width: 35px;"></i>Quản lý sản phẩm</a>
                     
                 </li>
-                <li class="nav-item"><a class="nav-link dropdown-item" href="#"><i class="fa-brands fa-artstation" style="margin-right: 5px; width: 35px;"></i>Quản lý nghệ sĩ</a>
+                <li class="nav-item"><a class="nav-link dropdown-item" href="ManagerGroup"><i class="fa-brands fa-artstation" style="margin-right: 5px; width: 35px;"></i>Quản lý nghệ sĩ</a>
 
                 </li>
+
+                           <li class="nav-item ">
+                <a class="dropdown-item" href="UpdateInformation" style="color: #fff;"><i class="fa-solid fa-pager" style="margin-right: 5px; width: 35px;"></i>Quản lý nội dung</a>
+                </li>
+
                <%-- <li class="nav-item"><a class="nav-link dropdown-item" href="ManagerBranch.aspx"><i class="fas fa-map-marker-alt" style="margin-right: 5px; width: 35px;"></i>Chi nhánh</a>
                     
                 </li>--%>

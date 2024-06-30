@@ -483,12 +483,12 @@ text-align:center;
                         <tr>
                             <th scope="col" class="justify-content-center align-content-center">Mã</th>
                             <th scope="col" class="justify-content-center align-content-center">Hình</th>
-                            <th scope="col" class="justify-content-center align-content-center">Tên sản phẩm</th>
+                            <th scope="col" class="justify-content-center align-content-center">Tên Sản Phẩm</th>
                             <th scope="col" class="justify-content-center align-content-center">Giá</th>
-                            <th scope="col" class="justify-content-center align-content-center">Ngày sản xuất</th>
-                            <th scope="col" class="justify-content-center align-content-center">Ngày nhập kho</th>
+                            <th scope="col" class="justify-content-center align-content-center">Ngày Sản Xuất</th>
+                            <th scope="col" class="justify-content-center align-content-center">Ngày Nhập Kho</th>
                             <th scope="col" class="justify-content-center align-content-center">Doanh Số</th>
-                            <th scope="col" class="justify-content-center align-content-center">Còn trong kho</th>
+                            <th scope="col" class="justify-content-center align-content-center">Còn Trong Kho</th>
                             <th scope="col" class="justify-content-center align-content-center"></th>
                         </tr>
                     </thead>

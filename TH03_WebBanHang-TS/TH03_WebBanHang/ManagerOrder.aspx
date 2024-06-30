@@ -477,14 +477,14 @@ $(function(){
                 <table class="table" id="groupPlaceholderContainer" runat="server">
                     <thead>
                         <tr>
-                           <th scope="col" class="justify-content-center align-content-center">Mã đơn</th>
-<th scope="col" class="justify-content-center align-content-center">Khách hàng</th>
+                           <th scope="col" class="justify-content-center align-content-center">Mã Đơn</th>
+<th scope="col" class="justify-content-center align-content-center">Khách Hàng</th>
 <%--<th scope="col" class="justify-content-center align-content-center">Địa chỉ</th>--%>
-<th scope="col" class="justify-content-center align-content-center">Chi nhánh</th>
-<th scope="col" class="justify-content-center align-content-center">Thời gian</th>
-<th scope="col" class="justify-content-center align-content-center">Số lượng</th>
-<th scope="col" class="justify-content-center align-content-center">Tổng tiền</th>
-                            <th scope="col" class="justify-content-center align-content-center">Phương thức</th>
+<th scope="col" class="justify-content-center align-content-center">Chi Nhánh</th>
+<th scope="col" class="justify-content-center align-content-center">Thời Gian</th>
+<th scope="col" class="justify-content-center align-content-center">Số Lượng</th>
+<th scope="col" class="justify-content-center align-content-center">Tổng Tiền</th>
+                            <th scope="col" class="justify-content-center align-content-center">Phương Thức</th>
 
                       <th scope="col" class="justify-content-center align-content-center" style="width:max-content;"></th>
                       

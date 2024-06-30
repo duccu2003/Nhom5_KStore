@@ -1409,10 +1409,13 @@
                                                 });
                                             });
                                         </script>
-                            <button class="btn btn-outline-dark mt-auto btn-mua" style="background:#fff; color:#000;" type="button" data-href="item.aspx?sp=<%#:Item.MaSP%>">Mua</button>
-                                                                        <asp:ImageButton ID="btnCart" CommandArgument='<%#:Item.MaSP%>' runat="server" Style="width: 57.5px; height:37.5px; background:#fff;" OnClick="btnCart_Click" class="btn btn-outline-dark flex-shrink-0 btn-gio  btn-gio-card" ImageUrl="~/Content/icon/sz-add-cart.png" />
+                            
+                            <%-- <button class="btn btn-outline-dark mt-auto btn-mua" style="background:#fff; color:#000;" type="button" data-href="item.aspx?sp=<%#:Item.MaSP%>">Mua</button>
+                             <asp:ImageButton ID="btnCart" CommandArgument='<%#:Item.MaSP%>' runat="server" Style="width: 57.5px; height:37.5px; background:#fff;" OnClick="btnCart_Click" class="btn btn-outline-dark flex-shrink-0 btn-gio  btn-gio-card" ImageUrl="~/Content/icon/sz-add-cart.png" />--%>
+                             <asp:Button ID="btnCart" CommandArgument='<%#:Item.MaSP%>' runat="server" Style="font-size:small; width: 145.5px; height:37.5px; background:#fff;" OnClick="btnCart_Click" class="btn btn-outline-dark flex-shrink-0 btn-gio btn-gio-card btn-bold btn-at-sp-hover" Text="THÊM VÀO GIỎ" title="Thêm sản phẩm này vào giỏ hàng"/>
 
-            </div>
+            
+                                       </div>
 
                                 </div>
                             </a>
@@ -1420,6 +1423,23 @@
                     </ItemTemplate>
                 </asp:ListView>
                            <style>
+
+                                .btn-bold{
+                                     font-weight:bold;
+                                 }
+
+                               .btn-at-sp-hover:hover{
+                                    color:#FFFF !important;
+                                    background:#000 !important;
+                                     box-shadow:0 0 50px #636363;
+                                }
+                                .btn-at-sp-hover{
+                                    transition:0.5s;
+    
+                                }
+
+
+
                                #scrollLeftSP:hover, #scrollRightSP:hover {
                                    background:#636363;
                                }
