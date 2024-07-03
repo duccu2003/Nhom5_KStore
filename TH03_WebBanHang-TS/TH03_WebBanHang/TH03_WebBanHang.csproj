@@ -505,6 +505,7 @@
     <Content Include="Content\icon\loupe.png" />
     <Content Include="Content\icon\Maccount.png" />
     <Content Include="Content\icon\mail.png" />
+    <Content Include="Content\icon\messenger.png" />
     <Content Include="Content\icon\minus.png" />
     <Content Include="Content\icon\money.png" />
     <Content Include="Content\icon\more.png" />

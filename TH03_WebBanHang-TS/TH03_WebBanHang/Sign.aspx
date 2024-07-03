@@ -22,7 +22,6 @@
         
         body {
             background-color: #c9d6ff;
-            /*background: linear-gradient(to right, #e2e2e2, #c9ddff);*/
             background: #000;
             display: flex;
             align-items: center;
@@ -289,136 +288,136 @@
         }
 
 
-         .form-container {
-     
-     margin-bottom: 20px;
+         .form-container {  
+             margin-bottom: 20px;
+         }
 
- }
+         .form-container h1 {
+             font-size: 24px;
+             margin-bottom: 10px;
 
-     .form-container h1 {
-         font-size: 24px;
-         margin-bottom: 10px;
+         }
 
-     }
+         .form-container span {
+             font-size: 14px;
+             color: #666;
+             display: block;
+             margin-bottom: 10px;
+         }
 
-     .form-container span {
-         font-size: 14px;
-         color: #666;
-         display: block;
-         margin-bottom: 10px;
-     }
-
-     .form-container input[type="text"],
-     .form-container input[type="password"] {
+         .form-container input[type="text"],
+         .form-container input[type="password"] {
         
-         padding: 10px;
+             padding: 10px;
         
-         border-radius: 4px;
-         border: 1px solid #ccc;
-         box-sizing: border-box;
-     }
+             border-radius: 4px;
+             border: 1px solid #ccc;
+             box-sizing: border-box;
+         }
 
-     .form-container input[type="submit"] {
+         .form-container input[type="submit"] {
          
-         padding: 10px;
-         border: none;
-         background-color: #fff0;
-         color: white;
-         border-radius: 4px;
-         cursor: pointer;
-         font-size: 16px;
-     }
+             padding: 10px;
+             border: none;
+             background-color: #fff0;
+             color: white;
+             border-radius: 4px;
+             cursor: pointer;
+             font-size: 16px;
+         }
 
          .form-container input[type="submit"]:hover {
              background-color: #9B51E0;
          }
          #btnSignUp {
-     background-color:#9b51e0;
+            background-color:#9b51e0;
      
- }
- #btnSignUp:hover {
-     background-color:#a49ccb;
-     color:#636161;
- }#img-maid1 {
-     position: absolute;
-     right: 0;
-     width:18.5rem;
-                 bottom: 0;
+         }
+         #btnSignUp:hover {
+             background-color:#a49ccb;
+             color:#636161;
+         }
+         #img-maid1 {
+             position: absolute;
+             right: 0;
+             width:18.5rem;
+                         bottom: 0;
 
 
- }#img-maid2 {
-     position: absolute;
-     left: 0;
-     bottom: 0;
-     width:18.5rem;
+         }
+         #img-maid2 {
+             position: absolute;
+             left: 0;
+             bottom: 0;
+             width:18.5rem;
 
- }
+         }
 
-  .form-container {
-    margin-bottom: 20px;
-}
+         .form-container {
+            margin-bottom: 20px;
+         }
 
-.text-center {
-    text-align: center;
-}
+        .text-center {
+            text-align: center;
+        }
 
-.form-container h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #353535e1 !important;
-}
+        .form-container h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #353535e1 !important;
+        }
 
-.form-container span {
-    font-size: 14px;
-    color: #666;
-    display: block;
-    margin-bottom: 10px;
-}
+        .form-container span {
+            font-size: 14px;
+            color: #666;
+            display: block;
+            margin-bottom: 10px;
+        }
 
-.form-container input[type="text"],
-.form-container input[type="password"] {
+        .form-container input[type="text"],
+        .form-container input[type="password"] {
     
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
 
-.form-container input[type="submit"] {
+        .form-container input[type="submit"] {
     
-    padding: 10px;
-    border: none;
-    background-color: #fff0;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+            padding: 10px;
+            border: none;
+            background-color: #fff0;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
 
-}
+        }
 
-    .form-container input[type="submit"]:hover {
-        background-color: #9B51E0;
-    }
+        .form-container input[type="submit"]:hover {
+            background-color: #9B51E0;
+        }
 
-    .forgot-password {
-        font-size: 12px;
-        color: #666;
-        text-decoration: none;
-        display: block;
+        .forgot-password {
+            font-size: 12px;
+            color: #666;
+            text-decoration: none;
+            display: block;
         
-    }
+        }
 
         .forgot-password:hover {
             text-decoration: underline;
         }
 
-    .signup-password {
-        font-size: 12px;
-        color: #666;
-        text-decoration: none;
-        display: block;
+        .signup-password {
+            font-size: 12px;
+            color: #666;
+            text-decoration: none;
+            display: block;
        
-    }
+        }
 
         .signup-password:hover {
             text-decoration: underline;
@@ -428,329 +427,295 @@
 
    
     
-    #btnSignIn {
-        background-color:#9b51e0;
+        #btnSignIn {
+            background-color:#9b51e0;
         
-    }
-    #btnSignIn:hover {
-        background-color:#a49ccb;
-        color:#636161;
-    }
-     #img-maid1 {
-        position: absolute;
-        right: 0;
-        width:18.5rem;
-                    bottom: 0;
+        }
+        #btnSignIn:hover {
+            background-color:#a49ccb;
+            color:#636161;
+        }
+         #img-maid1 {
+            position: absolute;
+            right: 0;
+            width:18.5rem;
+                        bottom: 0;
 
-    }
+        }
 
-    #img-maid2 {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width:18.5rem;
+        #img-maid2 {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width:18.5rem;
 
-    }
-    #container{
-        background-image:url("Content/image-bg/bg-for-slide-gp.png");
-        background-size:cover;
-        background-repeat:no-repeat;
-        object-fit:cover;
+        }
+        #container{
+            background-image:url("Content/image-bg/bg-for-slide-gp.png");
+            background-size:cover;
+            background-repeat:no-repeat;
+            object-fit:cover;
        
         
-    }
-    #form1{
-        background:#2424269b;
-    }
-    input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-    .alert{
-        top:0;
-        position:absolute;
-        width:100%;
-        z-index:9999;
-        padding:10px 0;
-        text-align:center;
-        color:#000;
-    }
-    .alert-success{
-        background:#d4edda;
-        color: #155724;
-        background-color: #d4edda;
-        border-color: #c3e6cb;
+        }
+        #form1{
+            background:#2424269b;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        .alert{
+            top:0;
+            position:absolute;
+            width:100%;
+            z-index:9999;
+            padding:10px 0;
+            text-align:center;
+            color:#000;
+        }
+        .alert-success{
+            background:#d4edda;
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
 
-    }
-    .alert-danger{
-            background:#f8d7da;
+        }
+        .alert-danger{
+             background:#f8d7da;
              color: #721c24;
-              border-color: #f5c6cb;
-    }
+             border-color: #f5c6cb;
+        }
+        .container-check {
+             display: block;
+             position: relative;
+     
+             margin: 5px auto;
+             cursor: pointer;
+             font-size: 12px;
+             -webkit-user-select: none;
+             -moz-user-select: none;
+             -ms-user-select: none;
+             user-select: none;
+             padding-left:18px;
+             justify-items:center;
+             justify-content:center;
+             align-content:center;
+             align-items:center;
+        }
+
+        .container-check input {
+             position: absolute;
+             opacity: 0;
+             cursor: pointer;
+             height: 0;
+             width: 0;
+
+        }
+
+        .checkmark {
+             position: absolute;
+             top: 0;
+             left: 0;
+             height: 15px;
+             width: 15px;
+             background-color: #eee;
+             border-radius:10px;
+        }
+
+        .container-check:hover input ~ .checkmark {
+             background-color: #ccc;
+        }
+
+        .container-check input:checked ~ .checkmark {
+             background-color: #2196F3;
+        }
+
+        .checkmark:after {
+             content: "";
+             position: absolute;
+             display: none;
+        }
+
+        .container-check input:checked ~ .checkmark:after {
+             display: block;
+        }
+
+        .container-check .checkmark:after {
+             left: 4.5px;
+             top: 2.5px;
+             width: 2.5px;
+             height: 5px;
+             border: solid white;
+             border-width: 0 3px 3px 0;
+             -webkit-transform: rotate(45deg);
+             -ms-transform: rotate(45deg);
+             transform: rotate(45deg);
+        }
+        .content-form{
+             display:grid;
+             width:max-content;
+             background:#e3e3e3a1;
+             padding:20px 15px 10px 15px;
+             border-radius:10px;
+
+        }
+        #ddlGT {
+             padding:8px 8px 8px 5px;
+             text-align:left; 
+             border-radius:5px;
+        } 
+        #btnSignIn {
+            background-color:#9b51e0;
+        }
+        .signin-password {
+            font-size: 12px;
+            color: #666;
+            text-decoration: none;
+            display: block;
+   
+        }
+
+        .signin-password:hover {
+            text-decoration: underline;
+        }
+        .forgot-password {
+            font-size: 12px;
+            color: #242426 !important;
+            text-decoration: none;
+            display: block;
+   
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+
+        .btn-a-click:hover{
+            background:linear-gradient(to top, #c9d6ff88, #ffffff6d);
+        }
 
     </style>
-
+    
 </head>
 
 <body>
+    
     <div class="container active" id="container">
         <form id="form1" runat="server">
-        
-        
-     
-      
             <div class="form-container sign-in">
-             <div class="content-form">
-          <h1>ĐĂNG NHẬP</h1>
-          <%--<div class="social-icons">
-            <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
-            <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-            <a href="#" class="icon"><i class="fa-brands fa-linkedin"></i></a>
-          </div>
-          <span>or use your email password</span>--%>
+                <div class="content-form">
+                    <h1>ĐĂNG NHẬP</h1>
+                      <%--<div class="social-icons">
+                        <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-linkedin"></i></a>
+                      </div>
+                      <span>or use your email password</span>--%>
                     <asp:TextBox ID="txtEmailSignIn" runat="server" placeholder="Email" CssClass=""></asp:TextBox>
                     <asp:TextBox ID="txtPasswordSignIn" type="password" runat="server" TextMode="Password" placeholder="Mật khẩu" CssClass=""></asp:TextBox>
 
-    <asp:Button ID="btnSignIn" runat="server" Text="ĐĂNG NHẬP" CssClass="submit-button" OnClick="btnSignIn_Click" />
+                    <asp:Button ID="btnSignIn" runat="server" Text="ĐĂNG NHẬP" CssClass="submit-button" OnClick="btnSignIn_Click" />
                 
                        
-                 <label class="container-check">Ghi nhớ đăng nhập
-                     <style>
-                         .container-check {
-                              display: block;
-                              position: relative;
-                              
-                              margin: 5px auto;
-                              cursor: pointer;
-                              font-size: 12px;
-                              -webkit-user-select: none;
-                              -moz-user-select: none;
-                              -ms-user-select: none;
-                              user-select: none;
-                              padding-left:18px;
-                              justify-items:center;
-                              justify-content:center;
-                              align-content:center;
-                              align-items:center;
-                            }
-
-                            /* Hide the browser's default checkbox */
-                            .container-check input {
-                              position: absolute;
-                              opacity: 0;
-                              cursor: pointer;
-                              height: 0;
-                              width: 0;
-
-                            }
-
-                            /* Create a custom checkbox */
-                            .checkmark {
-                              position: absolute;
-                              top: 0;
-                              left: 0;
-                              height: 15px;
-                              width: 15px;
-                              background-color: #eee;
-                              border-radius:10px;
-                            }
-
-                            /* On mouse-over, add a grey background color */
-                            .container-check:hover input ~ .checkmark {
-                              background-color: #ccc;
-                            }
-
-                            /* When the checkbox is checked, add a blue background */
-                            .container-check input:checked ~ .checkmark {
-                              background-color: #2196F3;
-                            }
-
-                            /* Create the checkmark/indicator (hidden when not checked) */
-                            .checkmark:after {
-                              content: "";
-                              position: absolute;
-                              display: none;
-                            }
-
-                            /* Show the checkmark when checked */
-                            .container-check input:checked ~ .checkmark:after {
-                              display: block;
-                            }
-
-                            /* Style the checkmark/indicator */
-                            .container-check .checkmark:after {
-                              left: 4.5px;
-                              top: 2.5px;
-                              width: 2.5px;
-                              height: 5px;
-                              border: solid white;
-                              border-width: 0 3px 3px 0;
-                              -webkit-transform: rotate(45deg);
-                              -ms-transform: rotate(45deg);
-                              transform: rotate(45deg);
-                            }
-                     </style>
-                              <asp:CheckBox ID="chkRemember" runat="server" />
-                  <span class="checkmark"></span>
-                </label>
+                    <label class="container-check">Ghi nhớ đăng nhập
+                        <asp:CheckBox ID="chkRemember" runat="server" />
+                        <span class="checkmark"></span>
+                    </label>
        
-                <a  class="forgot-password" href="Forgot">Quên mật khẩu</a>
-          </div>
-                
+                    <a  class="forgot-password" href="Forgot">Quên mật khẩu</a>
+                </div>               
             </div>
-        <div class="form-container sign-up">
-            <div class="content-form">
-                <h1>ĐĂNG KÝ</h1>
-                <%--<div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-                <span>or use your email for registeration</span>   --%>         
+            <div class="form-container sign-up">
+                <div class="content-form">
+                    <h1>ĐĂNG KÝ</h1>
+                    <%--<div class="social-icons">
+                        <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="icon"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <span>or use your email for registeration</span>   --%>         
            
-               <%-- <img src="Content/icon/ag.gif" style="max-width: 100%; border-radius: 2rem; margin-bottom: 1.5rem;" />
-                <h1>Đăng Ký</h1>--%>
-                <%--                <span>or use your email for registration</span>--%>
+                   <%-- <img src="Content/icon/ag.gif" style="max-width: 100%; border-radius: 2rem; margin-bottom: 1.5rem;" />
+                    <h1>Đăng Ký</h1>--%>
+                    <%--                <span>or use your email for registration</span>--%>
                               
-                           <div class="d-flex">
-                      <asp:TextBox ID="txtName" type="text" runat="server" placeholder="Họ và tên" CssClass=""></asp:TextBox>
-                <asp:TextBox ID="TextPhone" type ="number"   runat="server" placeholder="Số điện thoại" CssClass="" style=""></asp:TextBox>
-                </div>
-                 <div class="d-flex">
-                                    <asp:DropDownList ID="ddlGT" runat="server" CssClass="" OnSelectedIndexChanged="ddlGT_SelectedIndexChanged" AutoPostBack="True" Width="100%" Font-Size="small">
-    <asp:ListItem ID="txtGTNam" Text="Nam" Value="Nam"></asp:ListItem>
-    <asp:ListItem ID="txtGTNu" Text="Nữ" Value="Nữ"></asp:ListItem>
-    <asp:ListItem ID="txtGTKhac" Text="Khác" Value="Khác"></asp:ListItem>
+                    <div class="d-flex">
+                        <asp:TextBox ID="txtName" type="text" runat="server" placeholder="Họ và tên" CssClass=""></asp:TextBox>
+                        <asp:TextBox ID="TextPhone" type ="number"   runat="server" placeholder="Số điện thoại" CssClass="" style=""></asp:TextBox>
+                    </div>
+                    <div class="d-flex">
+                        <asp:DropDownList ID="ddlGT" runat="server" CssClass="" OnSelectedIndexChanged="ddlGT_SelectedIndexChanged" AutoPostBack="True" Width="100%" Font-Size="small">
+                            <asp:ListItem ID="txtGTNam" Text="Nam" Value="Nam"></asp:ListItem>
+                            <asp:ListItem ID="txtGTNu" Text="Nữ" Value="Nữ"></asp:ListItem>
+                            <asp:ListItem ID="txtGTKhac" Text="Khác" Value="Khác"></asp:ListItem>
+                        </asp:DropDownList>
+                        <asp:TextBox ID="txtEmailSignUp" type="email" runat="server" placeholder="Email" CssClass="" style=" padding-left:10px;"></asp:TextBox>
+                    </div>
 
-</asp:DropDownList>
-                <asp:TextBox ID="txtEmailSignUp" type="email" runat="server" placeholder="Email" CssClass="" style=" padding-left:10px;"></asp:TextBox>
-</div>
-
-                 <div class="d-flex">
-                <asp:TextBox ID="txtPasswordSignUp" type="password" runat="server" TextMode="Password" placeholder="Mật khẩu" CssClass=""></asp:TextBox>
-
-                <asp:TextBox ID="txtPasswordSignUpAgain" type="password" runat="server" TextMode="Password" placeholder="Nhập lại mật khẩu" CssClass=""></asp:TextBox>
-</div>
+                    <div class="d-flex">
+                        <asp:TextBox ID="txtPasswordSignUp" type="password" runat="server" TextMode="Password" placeholder="Mật khẩu" CssClass=""></asp:TextBox>
+                        <asp:TextBox ID="txtPasswordSignUpAgain" type="password" runat="server" TextMode="Password" placeholder="Nhập lại mật khẩu" CssClass=""></asp:TextBox>
+                    </div>
                  
                 
-                     <div class="d-flex">         
-<asp:DropDownList ID="ddlCity" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCity_SelectedIndexChanged" CssClass="" style="padding:  8px 5px;">
-</asp:DropDownList> 
+                    <div class="d-flex">         
+                        <asp:DropDownList ID="ddlCity" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCity_SelectedIndexChanged" CssClass="" style="padding:  8px 5px;">
+                        </asp:DropDownList> 
                         <asp:DropDownList ID="ddlDistrict" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlDistrict_SelectedIndexChanged" CssClass="" style="padding: 8px 5px;">
-</asp:DropDownList>
-</div> 
+                        </asp:DropDownList>
+                    </div> 
                      
    
-                 <div class="d-flex">
-<asp:DropDownList ID="ddlW" runat="server" AutoPostBack="True" CssClass="" style="padding: 8px 5px;" >
-</asp:DropDownList>
-                                     <asp:TextBox ID="txtDiachi" type="text" runat="server" placeholder="Địa chỉ" CssClass=" " Style ="" ></asp:TextBox>
-</div>
-                      
-                           
-        <style> 
-            .content-form{
-                display:grid;
-                width:max-content;
-                background:#e3e3e3a1;
-                padding:20px 15px 10px 15px;
-                border-radius:10px;
-
-            }
-            #ddlGT {
-                padding:8px 8px 8px 5px;
-                text-align:left;
+                    <div class="d-flex">
+                        <asp:DropDownList ID="ddlW" runat="server" AutoPostBack="True" CssClass="" style="padding: 8px 5px;" >
+                        </asp:DropDownList>
+                        <asp:TextBox ID="txtDiachi" type="text" runat="server" placeholder="Địa chỉ" CssClass=" " Style ="" ></asp:TextBox>
+                    </div>
                 
-                border-radius:5px;
-            } 
-#btnSignIn {
-    background-color:#9b51e0;
-}
-.signin-password {
-    font-size: 12px;
-    color: #666;
-    text-decoration: none;
-    display: block;
-   
-}
-
-    .signin-password:hover {
-        text-decoration: underline;
-    }.forgot-password {
-    font-size: 12px;
-    color: #242426 !important;
-    text-decoration: none;
-    display: block;
-   
-}
-
-    .forgot-password:hover {
-        text-decoration: underline;
-    }
-
-
-    .btn-a-click:hover{
-        background:linear-gradient(to top, #c9d6ff88, #ffffff6d);
-    }
-
-        </style>
-
-<%--<asp:DropDownList ID="ddlCity" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCity_SelectedIndexChanged" CssClass="" style="padding:  8px 5px; width:45%">
-</asp:DropDownList>
-
-<asp:DropDownList ID="ddlDistrict" runat="server" CssClass="" style="padding: 8px 5px; width:45%">
-</asp:DropDownList>--%>
-
-                <asp:Button ID="btnSignUp" runat="server" Text="ĐĂNG KÝ" CssClass="submit-button btn-sign-up" OnClick="btnSignUp_Click" />
+                    <asp:Button ID="btnSignUp" runat="server" Text="ĐĂNG KÝ" CssClass="submit-button btn-sign-up" OnClick="btnSignUp_Click" />
                 
-                <a class="forgot-password" href="Forgot">Quên mật khẩu</a>
-            </div>
-            </div>
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                      <a href="Default.aspx" style="text-decoration:none; color:#9b51e0;">
-                          <img style="width:80%;" src="Content/logo/K-Photoroom.png"/>
-                     </a>
-                    <h1>Chào mừng bạn đến với KStore!</h1>
-                    <p>Đăng nhập thông tin cá nhân của bạn để sử dụng tất cả các tính năng của trang web</p>
-                    <a href="#" class="hidden button btn-a-click" id="login">Đăng nhập ngay!</a>
-                </div>
-                <div class="toggle-panel toggle-right">
-                      <a href="Default.aspx" style="text-decoration:none; color:#9b51e0;">
-                          <img style="width:80%;" src="Content/logo/K-Photoroom.png"/>
-                     </a>
-                    <h1>KStore xin chào quý khách!</h1>
-                    <p>
-                        Đăng ký với thông tin cá nhân của bạn để sử dụng tất cả các tính năng của trang web
-                    </p>
-                    <a href="#" class="hidden button btn-a-click" id="register">Đăng ký ngay!</a>
+                    <a class="forgot-password" href="Forgot">Quên mật khẩu</a>
                 </div>
             </div>
-        </div>
-    
-     </form>
-        
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <a href="Default.aspx" style="text-decoration:none; color:#9b51e0;">
+                            <img style="width:80%;" src="Content/logo/K-Photoroom.png"/>
+                        </a>
+                        <h1>Chào mừng bạn đến với KStore!</h1>
+                        <p>Đăng nhập thông tin cá nhân của bạn để sử dụng tất cả các tính năng của trang web</p>
+                        <a href="#" class="hidden button btn-a-click" id="login">Đăng nhập ngay!</a>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <a href="Default.aspx" style="text-decoration:none; color:#9b51e0;">
+                            <img style="width:80%;" src="Content/logo/K-Photoroom.png"/>
+                        </a>
+                        <h1>KStore xin chào quý khách!</h1>
+                        <p>
+                            Đăng ký với thông tin cá nhân của bạn để sử dụng tất cả các tính năng của trang web
+                        </p>
+                        <a href="#" class="hidden button btn-a-click" id="register">Đăng ký ngay!</a>
+                    </div>
+                </div>
+            </div>   
+        </form>           
+    </div>
     <script>
         var singIn = false;
         var signupSC = document.getElementsByClassName('btn-sign-up');
         const registerBtn = document.getElementById("register");
         const container = document.getElementById("container");
         const loginBtn = document.getElementById("login");
-        //registerBtn.addEventListener("click", () => {
-        //    container.classList.add("active");
-        //    singUp = true;
-        //});
-        //loginBtn.addEventListener("click", () => {
-        //    container.classList.remove("active");
-        //});
 
         registerBtn.addEventListener("click", () => {
             container.classList.add("active");
-            localStorage.setItem("tabActive", "signUp"); // Lưu trạng thái
+            localStorage.setItem("tabActive", "signUp"); //Lưu trạng thái
             singIn = true;
         });
 
@@ -758,26 +723,25 @@ input::-webkit-inner-spin-button {
             container.classList.remove("active");
             localStorage.setItem("tabActive", "");
             singIn = false;
-            
+
         });
         signupSC.addEventListener("click", () => {
             container.classList.remove("active");
             localStorage.setItem("tabActive", "");
-            
+
         });
 
         document.addEventListener("DOMContentLoaded", function () {
-            // Kiểm tra trạng thái lưu trữ
+            //Kiểm tra trạng thái lưu trữ
             if (localStorage.getItem("tabActive") === "signUp") {
                 container.classList.add("active");
                 singIn = true;
             } else if (localStorage.getItem("tabActive") === "") {
-                // Không áp dụng trạng thái nếu không có trạng thái được lưu trữ
+                //Không áp dụng trạng thái nếu không có trạng thái được lưu trữ
             }
         });
 
     </script>
-        </div>
 </body>
 
 </html>

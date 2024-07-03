@@ -74,6 +74,10 @@ namespace TH03_WebBanHang
         }
         protected void btnUpload_Click(object sender, EventArgs e)
         {
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
             string email = HttpContext.Current.Request.QueryString.Get("Email");
             string MaKH = HttpContext.Current.Request.QueryString.Get("MaKH");
             int MaK;
@@ -89,8 +93,8 @@ namespace TH03_WebBanHang
                 // Lấy đường dẫn từ "Content" trở đi
                 string relativePath = filePath.Substring(filePath.IndexOf("Content"));
 
-                var tk = dbcontext.TKs.FirstOrDefault(p => p.Email == Sign.email);
-                KhachHang khachhang = dbcontext.KhachHangs.FirstOrDefault(p => (p.Email == Sign.email || p.Email == email) && p.MaKH == MaK);
+                var tk = dbcontext.TKs.FirstOrDefault(p => p.Email == EmailKhach);
+                KhachHang khachhang = dbcontext.KhachHangs.FirstOrDefault(p => (p.Email == EmailKhach || p.Email == email) && p.MaKH == MaK);
                 if (tk != null)
                 {
                     // Cập nhật thuộc tính AvatarUser và lưu thay đổi vào cơ sở dữ liệu
@@ -132,8 +136,8 @@ namespace TH03_WebBanHang
             }
             else
             {
-                var tk = dbcontext.TKs.FirstOrDefault(p => p.Email == Sign.email);
-                KhachHang khachhang = dbcontext.KhachHangs.FirstOrDefault(p => (p.Email == Sign.email || p.Email == email) && p.MaKH == MaK);
+                var tk = dbcontext.TKs.FirstOrDefault(p => p.Email == EmailKhach);
+                KhachHang khachhang = dbcontext.KhachHangs.FirstOrDefault(p => (p.Email == EmailKhach || p.Email == email) && p.MaKH == MaK);
 
                 if (tk != null)
                 {

@@ -14,6 +14,9 @@ using System.Web.ModelBinding;
 using System.IO;
 using System.Data.Entity.Migrations;
 using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
+using System.Security.Cryptography;
 
 namespace TH03_WebBanHang
 {
@@ -28,228 +31,112 @@ namespace TH03_WebBanHang
         {
 
 
-            // Query the database for the user with the given username and password
+            
             var user = from u in dbcontext.TKs
                        select u;
             var khachhang = from u in dbcontext.KhachHangs
                             select u;
 
             var db = new QL_KPOPStoreEntities();
-            if (user.Count() > 1)
+
+
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
+            
+            if (!VerifyToken())
             {
-                //Session.Clear();
-
-
-
-
+                
+                Response.Redirect("Sign.aspx");
             }
-            if (user.Any(p => (p.TrangThai == true && p.Email == Sign.email)))
-            {
-
-
-                var tk = user.FirstOrDefault(p => p.Email == Sign.email); //lọc trong xem có email nào == lbDeptid đang được hiện (TK)
-                var kh = khachhang.FirstOrDefault(p => p.Email == Sign.email); //lọc trong xem có email nào == lbDeptid đang được hiện (TK)
-                if (kh != null)
-                {
-                    maK = kh.MaKH.ToString(); MaKhach = kh.MaKH;
-
-                    if (kh.AvatarUser != null)
-                    {
-                        ProfileImage.ImageUrl = dbcontext.KhachHangs.FirstOrDefault(p => p.MaKH == MaKhach).AvatarUser;
-                        urlAvt = dbcontext.KhachHangs.FirstOrDefault(p => p.MaKH == MaKhach).AvatarUser;
-                    }
-                    else
-                    {
-                        ProfileImage.ImageUrl = Shop.defaultAvatar_BlackKS;
-                        urlAvt = Shop.defaultAvatar_BlackKS;
-
-                    }
-                    lbDiem.Text = "Điểm: " + dbcontext.KhachHangs.FirstOrDefault(p => p.MaKH == MaKhach).Diem.ToString();
-
-                }
-                else if (kh == null && Sign.email == "Admin")
-                {
-                    ProfileImage.ImageUrl = Shop.defaultAvatar_BlackKS;
-                    urlAvt = Shop.defaultAvatar_BlackKS;
-                    MaKhach = 0;
-                }
-                else
-                {
-                    MaKhach = 0;
-                }
-
-                makh = tk.MaTK; // Cập nhật giá trị của makh từ tk.MaKH
-                Session["MaKH"] = MaKhach; // Gán giá trị của makh vào Session["MaKH"]
-
-                FileUploadProfilePic.Attributes["onchange"] = "btnUpload_Click(this)";
-                if (tk.Email == "Admin" || tk.Quyen == "Admin" || tk.Quyen == "Manager")
-                {
-                    btnControl.Visible = true;
-                    if (tk.Email == "Admin")
-                    { btnAccOrder.Visible = false; Response.Redirect("Manager"); }
-                    if (tk.Email != "Admin" && (tk.Quyen == "Admin" || tk.Quyen == "Manager"))
-                    { btnAccOrder.Visible = true; }
-
-                }
-                else if (tk.Quyen == null || tk.Quyen == "None") { btnControl.Visible = false; }
-                else btnControl.Visible = false;
-
-
-            }
-            // Otherwise, display an error message
-
             else
             {
 
-                Response.Redirect("Sign.aspx");
+                
+                if (user.Any(p => (p.Email == EmailKhach)))
+                {
+                   
 
+                        var tk = user.FirstOrDefault(p => p.Email == EmailKhach); //lọc trong xem có email nào == lbDeptid đang được hiện (TK)
+                        var kh = khachhang.FirstOrDefault(p => p.Email == EmailKhach); //lọc trong xem có email nào == lbDeptid đang được hiện (TK)
+                        if (kh != null)
+                        {
+                            maK = kh.MaKH.ToString(); MaKhach = kh.MaKH;
+
+                            if (kh.AvatarUser != null)
+                            {
+                                ProfileImage.ImageUrl = dbcontext.KhachHangs.FirstOrDefault(p => p.Email == EmailKhach).AvatarUser;
+                                urlAvt = dbcontext.KhachHangs.FirstOrDefault(p => p.Email == EmailKhach).AvatarUser;
+                            }
+                            else
+                            {
+                                ProfileImage.ImageUrl = Shop.defaultAvatar_BlackKS;
+                                urlAvt = Shop.defaultAvatar_BlackKS;
+
+                            }
+                            lbDiem.Text = "Điểm: " + dbcontext.KhachHangs.FirstOrDefault(p => p.Email == EmailKhach).Diem.ToString();
+
+                        }
+                        else if (kh == null && EmailKhach == "Admin")
+                        {
+                            ProfileImage.ImageUrl = Shop.defaultAvatar_BlackKS;
+                            urlAvt = Shop.defaultAvatar_BlackKS;
+                            
+                        }
+                        else
+                        {
+                           
+                        }
+                        if (tk.Email == "Admin")
+                        {
+                            makh = 0;
+                            Session["MaKH"] =makh;
+                        }
+                        else
+                        {
+                            makh = kh.MaKH;
+                            Session["MaKH"] = kh.MaKH;
+                        }
+
+
+
+
+
+
+
+                        FileUploadProfilePic.Attributes["onchange"] = "btnUpload_Click(this)";
+                        if (tk.Email == "Admin" || tk.Quyen == "Admin" || tk.Quyen == "Manager")
+                        {
+                            btnControl.Visible = true;
+                            if (tk.Email == "Admin")
+                            { btnAccOrder.Visible = false; Response.Redirect("Manager"); }
+                            if (tk.Email != "Admin" && (tk.Quyen == "Admin" || tk.Quyen == "Manager"))
+                            { btnAccOrder.Visible = true; }
+
+                        }
+                        else if (tk.Quyen == null || tk.Quyen == "None") { btnControl.Visible = false; }
+                        else btnControl.Visible = false;
+
+                        var activeAccounts = dbcontext.KhachHangs.Where(p => p.TrangThai == true && p.Email == EmailKhach).ToList();
+                        ListViewAccounts.DataSource = activeAccounts;
+
+                        ListViewAccounts.DataBind();
+                    }
+                    
+            
+            
+                else
+                {
+
+                    Response.Redirect("Sign.aspx");
+
+                }
             }
-            //if (Session["TenTaiKhoan"] != null)
-            //{
-            //    // Lấy tên tài khoản từ session
-            //    string tenTaiKhoan = Session["TenTaiKhoan"].ToString();
-            //    string khachHang = Session["MaKH"].ToString();
-            //    int maKH;
-            //    // Query the database for the user with the given username
-            //    var users = dbcontext.TKs.FirstOrDefault(u => u.TenTaiKhoan == tenTaiKhoan);
-            //    if (int.TryParse(khachHang, out maKH))
-            //    {
-            //        var khs = dbcontext.KhachHangs.FirstOrDefault(kh => kh.MaKH == maKH);
-            //        if (khs != null)
-            //        {
-            //            // Sử dụng thông tin của khách hàng tại đây
-            //            ListViewClient.DataSource = new List<KhachHang> { khs };
-            //            ListViewClient.DataBind();
-            //        }
-            //        else
-            //        {
-            //            // Không tìm thấy khách hàng có mã tương ứng
-            //        }
-            //    }
-            //    // Kiểm tra xem tài khoản có tồn tại hay không
-            //    if (users != null)
-            //    {
-            //        // Tài khoản tồn tại, thêm nó vào ListView
-            //        ListViewAccounts.DataSource = new List<TK> { users };
-            //        ListViewAccounts.DataBind();
-            //    }
-            //    else
-            //    {
-            //        // Tài khoản không tồn tại, có thể hiển thị thông báo lỗi hoặc thực hiện hành động phù hợp
-            //        Response.Redirect("Sign.aspx");
-            //    }
-            //}
-            //else
-            //{
-            //    // Nếu session không chứa thông tin tên tài khoản, chuyển hướng người dùng đến trang đăng nhập
-            //    //Response.Redirect("Sign.aspx");
-            //}
-
-            var activeAccounts = dbcontext.KhachHangs.Where(p => p.TrangThai == true && p.Email == Sign.email).ToList();
-            ListViewAccounts.DataSource = activeAccounts;
-
-            ListViewAccounts.DataBind();
-            //var activeClient = dbcontext.KhachHangs.Where(p => p.TrangThai == true).ToList();
-
-            //ListViewClient.DataSource = activeClient;
-            //ListViewClient.DataBind();
-
-            //// Lấy giá trị từ các TextBox
-            //string hoTen = txtHoTen.Text;
-            //string gioiTinh = txtGioiTinh.Text;
-            //string diaChi = txtDiaChi.Text;
-            //string soDienThoai = TextPhone.Text;
-
-            //// Thêm logic lưu dữ liệu vào cơ sở dữ liệu ở đây
-
-            //// Sau khi lưu, cập nhật lại giá trị của các TextBox thành các giá trị đã nhập
-            //txtHoTen.Attributes["value"] = hoTen;
-            //txtGioiTinh.Attributes["value"] = gioiTinh;
-            //txtDiaChi.Attributes["value"] = diaChi;
-            //TextPhone.Attributes["value"] = soDienThoai;
-            //        if (IsPostBack)
-            //{
-            //    string name = txtHoTen.Text;
-            //            string gt = txtGioiTinh.Text;
-            //    string dc = txtDiaChi.Text;
-            //            string phone = TextPhone.Text;
-
-            //            // Validate the input here
-
-            //            using (var dbcontext = new QL_KPOPStoreEntities())
-            //            {
-            //                // Assuming you have a DbContext named dbContext and a model named User
-            //                var kh = new KhachHang
-            //                {
-            //                    HoTen = name,
-            //                    GioiTinh = gt,
-            //                    DiaChi = dc,
-
-            //                };
-
-            //                dbcontext.KhachHangs.Add(kh);
-            //            }
-            //}
+            
 
         }
-        //protected void btnSave_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        // Lấy giá trị từ QueryString
-        //        string kh = Request.QueryString["kh"];
-
-        //        if (!string.IsNullOrEmpty(kh))
-        //        {
-        //            KhachHang khachHang = dbcontext.KhachHangs.FirstOrDefault(p => p.MaKH == kh);
-
-        //            if (khachHang != null)
-        //            {
-        //                // Lấy giá trị từ các TextBox
-        //                string hoTen = txtHoTen.Text;
-        //                string gioiTinh = txtGioiTinh.Text;
-        //                string diaChi = txtDiaChi.Text;
-        //                string soDienThoai = TextPhone.Text;
-
-        //                // Thực hiện cập nhật dữ liệu vào đối tượng khachHang
-        //                khachHang.HoTen = hoTen;
-        //                khachHang.GioiTinh = gioiTinh;
-        //                khachHang.DiaChi = diaChi;
-
-        //                // Kiểm tra xem số điện thoại có hợp lệ không trước khi gán
-        //                int soDienThoaiValue;
-        //                if (int.TryParse(soDienThoai, out soDienThoaiValue))
-        //                {
-        //                    khachHang.DienThoai = soDienThoaiValue;
-        //                }
-        //                else
-        //                {
-        //                    // Xử lý trường hợp số điện thoại không hợp lệ
-        //                    // Ví dụ: Hiển thị thông báo lỗi cho người dùng
-        //                    throw new Exception("Số điện thoại không hợp lệ.");
-        //                }
-
-        //                // Lưu thay đổi vào cơ sở dữ liệu
-        //                dbcontext.SaveChanges();
-
-        //                // Sau khi lưu, cập nhật lại giá trị của các TextBox
-        //                txtHoTen.Text = khachHang.HoTen;
-        //                txtGioiTinh.Text = khachHang.GioiTinh;
-        //                txtDiaChi.Text = khachHang.DiaChi;
-        //                TextPhone.Text = khachHang.DienThoai.ToString();
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        // Xử lý ngoại lệ
-        //        // Ví dụ: Ghi log, hiển thị thông báo lỗi cho người dùng, v.v.
-        //        // Ở đây, chúng ta có thể ghi log để ghi lại lỗi
-        //        // và hiển thị một thông báo lỗi cho người dùng
-        //        // Hoặc thực hiện các hành động phù hợp với ứng dụng của bạn.
-        //        // Ví dụ: lblMessage.Text = "Đã xảy ra lỗi: " + ex.Message;
-        //    }
-        //}
+        
         protected void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -271,6 +158,11 @@ namespace TH03_WebBanHang
         }
         protected void btnUpload_Click(object sender, EventArgs e)
         {
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
+
             if (FileUploadProfilePic.HasFile)
             {
                 string uploadFolderPath = Server.MapPath("Content/account-img/");
@@ -282,8 +174,8 @@ namespace TH03_WebBanHang
                 // Lấy đường dẫn từ "Content" trở đi
                 string relativePath = filePath.Substring(filePath.IndexOf("Content"));
 
-                var tk = dbcontext.TKs.Where(p => p.Email == Sign.email).FirstOrDefault();
-                var khachhang = dbcontext.KhachHangs.Where(s => s.Email == Sign.email).FirstOrDefault();
+                var tk = dbcontext.TKs.Where(p => p.Email == EmailKhach).FirstOrDefault();
+                var khachhang = dbcontext.KhachHangs.Where(s => s.Email == EmailKhach).FirstOrDefault();
                 if (tk != null)
                 {
                     // Cập nhật thuộc tính AvatarUser và lưu thay đổi vào cơ sở dữ liệu
@@ -305,176 +197,51 @@ namespace TH03_WebBanHang
             }
         }
 
-        //protected void btnSave_Click(object sender, EventArgs e)
-        //{
-        //    // Lấy giá trị từ QueryString
-        //    string kh = Request.QueryString["kh"];
-
-        //    if (!string.IsNullOrEmpty(kh))
-        //    {
-        //        KhachHang khachHang = dbcontext.KhachHangs.FirstOrDefault(p => p.MaKH == kh);
-
-        //        if (khachHang != null)
-        //        {
-        //            // Lấy giá trị từ các TextBox
-        //            string hoTen = txtHoTen.Text;
-        //            string gioiTinh = txtGioiTinh.Text;
-        //            string diaChi = txtDiaChi.Text;
-        //            string soDienThoai = TextPhone.Text;
-
-        //            // Thực hiện cập nhật dữ liệu vào đối tượng khachHang
-        //            khachHang.HoTen = hoTen;
-        //            khachHang.GioiTinh = gioiTinh;
-        //            khachHang.DiaChi = diaChi;
-        //            int soDienThoaiValue;
-        //            if (int.TryParse(soDienThoai, out soDienThoaiValue))
-        //            {
-        //                // Gán giá trị số điện thoại vào thuộc tính
-        //                khachHang.DienThoai = soDienThoaiValue;
-        //            }
-        //            // Lưu thay đổi vào cơ sở dữ liệu
-        //            dbcontext.SaveChanges();
-
-        //            // Sau khi lưu, cập nhật lại giá trị của các TextBox
-        //            txtHoTen.Text = khachHang.HoTen;
-        //            txtGioiTinh.Text = khachHang.GioiTinh;
-        //            txtDiaChi.Text = khachHang.DiaChi;
-        //            TextPhone.Text = khachHang.DienThoai.ToString();
-        //        }
-        //    }
-        //}
 
         protected void btnCPass_Click(object sender, EventArgs e)
         {
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
+
             var user = from u in dbcontext.TKs
                        select u;
-            var tk = user.SingleOrDefault(p => p.Email == Sign.email);
+            var tk = user.SingleOrDefault(p => p.Email == EmailKhach);
 
             Response.Redirect("ChangePassword.aspx?Deptid=" + tk.Email);
         }
 
         protected void btnSignOut_Click(object sender, EventArgs e)
         {
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
+
             var user = from u in dbcontext.TKs
                        select u;
 
             using (var dbContext = new QL_KPOPStoreEntities())
             {
-                var disabledTKs = dbContext.TKs.FirstOrDefault(p => p.TrangThai == true && p.Email == Sign.email);
+                var disabledTKs = dbContext.TKs.FirstOrDefault(p => p.TrangThai == true && p.Email == EmailKhach);
 
-                var disabledKhs = dbContext.KhachHangs.FirstOrDefault(p => p.TrangThai == true && p.Email == Sign.email);
-                var Tks = dbContext.TKs.Any(p => p.TrangThai == true && p.Email == Sign.email);
-
-
-                var Khs = dbContext.KhachHangs.Any(p => p.TrangThai == true && p.Email == Sign.email);
-
-                if (disabledTKs.Email.IsNullOrEmpty() || (disabledKhs.Email.IsNullOrEmpty() && disabledKhs.HoTen.IsNullOrEmpty() && disabledKhs.DienThoai.IsNullOrEmpty()))
-                {
-
-                    var emailTK = disabledTKs.Email;
-                    var emailKH = disabledKhs.Email;
-                    TK deparment = dbcontext.TKs.SingleOrDefault(p => p.Email == emailKH || p.Email== emailTK); //lọc trong xem có email nào == lbDeptid đang được hiện (TK)
-                    KhachHang client = dbcontext.KhachHangs.SingleOrDefault(p => p.Email == emailKH || p.Email == emailTK); //lọc trong xem có email nào == lbDeptid đang được hiện (KH)
+                var disabledKhs = dbContext.KhachHangs.FirstOrDefault(p => p.TrangThai == true && p.Email == EmailKhach);
+                var Tks = dbContext.TKs.Any(p => p.TrangThai == true && p.Email == EmailKhach);
 
 
-                    if (client != null && deparment != null)
-                    {
+                var Khs = dbContext.KhachHangs.Any(p => p.TrangThai == true && p.Email == EmailKhach);
 
-                        var donHangs = dbcontext.DonHangs.Where(d => d.KH == client.MaKH).ToList();
-                        var chiTietDonKH = dbcontext.ChiTietDonHangs.Where(d => d.KH == client.MaKH).ToList();
+                Response.Cookies["AuthToken"].Value = null;
+                Response.Cookies["AuthToken"].Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies["Key"].Value = null;
+                Response.Cookies["Key"].Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies["Email"].Value = null;
+                Response.Cookies["Email"].Expires = DateTime.Now.AddDays(-1);
 
-                        foreach (var donHang in donHangs)
-                        {
-                            dbcontext.DonHangs.Remove(donHang);
-                        }
-                        foreach (var chitietDon in chiTietDonKH)
-                        {
-                            dbcontext.ChiTietDonHangs.Remove(chitietDon);
+                Response.Redirect("Sign.aspx");
 
-                        }
-                        dbcontext.SaveChanges();
-
-
-                        ICollection<TK> eTK = deparment.TKs.ToList();
-                        foreach (var employeeTK in eTK)
-                        {
-                            dbcontext.TKs.Remove(employeeTK);
-                        }
-                        ICollection<KhachHang> eKH = client.KhachHangs.ToList();
-                        foreach (var employeeKH in eKH)
-                        {
-                            dbcontext.KhachHangs.Remove(employeeKH);
-                        }
-
-
-                        dbcontext.TKs.Remove(deparment);
-                        dbcontext.KhachHangs.Remove(client);
-
-                        dbcontext.SaveChanges();
-                       
-
-                    }
-
-
-                }
-                else
-                {
-                    if (Tks)
-                    {
-                    
-                        disabledTKs.TrangThai = false;
-                    
-                        disabledKhs.TrangThai = false;
-                        dbContext.TKs.AddOrUpdate(disabledTKs);
-                        dbContext.KhachHangs.AddOrUpdate(disabledKhs);
-                        dbContext.SaveChanges();
-
-                    
-                    } 
-                    else
-                    {
-                        disabledTKs.TrangThai = false;
-
-                        disabledKhs.TrangThai = false;
-                    
-                        dbContext.TKs.AddOrUpdate(disabledTKs);
-                        dbContext.KhachHangs.AddOrUpdate(disabledKhs);
-                        dbContext.SaveChanges();
-                    
-                    }
-                }
-               
-               
-                dbContext.SaveChanges();
-                
             }
-
-            if (Request.Cookies["UserAccount"] != null)
-            {
-
-                Response.Cookies.Clear();
-            }
-            if (Request.Cookies["UserAccount"] != null)
-            {
-                HttpCookie cookie = new HttpCookie("UserAccount");
-                cookie.Expires = DateTime.Now.AddMonths(-1); // Đặt thời hạn về một ngày trong quá khứ
-                Response.Cookies.Add(cookie);
-            }
-            
-            //Session.Remove("Password");
-            //Session.Remove("Email");
-            
-            Session.Remove("TenTaiKhoan");
-            Session.Remove("MatKhau");
-            Session.Remove("User");
-            Session.Remove("Password");
-            Session.Remove("Email");
-            //Session["MaKH"] = "";
-            Session.Remove("MaKH");
-            Sign.email = null;
-            Sign.pass = null;
-            //Session.Clear();
-            Response.Redirect("Sign.aspx");
 
         }
 
@@ -486,9 +253,44 @@ namespace TH03_WebBanHang
         }
         protected void btnAccOrder_Click(object sender, EventArgs e)
         {
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
 
-
-            Response.Redirect("AccountOrder.aspx?Deptid=" + maK);
+            Response.Redirect("AccountOrder.aspx?Deptid=" + EmailKhach);
         }
+        private bool VerifyToken()
+        {
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if(Email==null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
+
+
+            HttpCookie Key = Request.Cookies["Key"];
+            HttpCookie cookie = Request.Cookies["AuthToken"];
+            if (cookie == null || EmailKhach == null) return false;
+            string token = cookie.Value;
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(Key.Value);
+            try
+            {
+                var principal = tokenHandler.ValidateToken(token, new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                }, out SecurityToken validatedToken);
+                return true;
+            }
+            catch (SecurityTokenException)
+            {
+                return false;
+            }
+        }
+       
     }
 }

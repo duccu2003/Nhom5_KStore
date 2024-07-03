@@ -7,6 +7,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TH03_WebBanHang.Models;
+using Microsoft.IdentityModel.Tokens;
+using System.Data.Entity.Migrations;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 
 namespace TH03_WebBanHang
 {
@@ -26,25 +30,39 @@ namespace TH03_WebBanHang
 
             //}
             // Otherwise, display an error message
-            if (user.Any(p => Sign.email != null && ((p.Email == Sign.email && Sign.email == "Admin") || ((p.Quyen == "Admin" || p.Quyen == "Manager") && p.Email == Sign.email))))
-            {
 
+            if (!VerifyToken())
+            {
+                // Redirect to the login page
+                Response.Redirect("Sign.aspx");
             }
             else
             {
-                //Response.Write("<script>alert('Bạn không có quyền truy cập');</script>");
-                Response.Write("<div class=\"alert alert-danger\" role=\"alert\">Bạn không có quyền truy cập!</div>");
-                Response.Write("<script type=\"text/javascript\">");
-                Response.Write("setTimeout(function() {");
-                Response.Write("var elements = document.getElementsByClassName('alert');");
-                Response.Write("for (var i = 0; i < elements.length; i++) {");
-                Response.Write("elements[i].style.display = 'none';");
-                Response.Write("}");
-                Response.Write("}, 3000);"); // 1000 mili giây = 1 giây
-                Response.Write("</script>");
-                Response.Redirect("Error/401");
+                HttpCookie Email = Request.Cookies["Email"];
+                string EmailKhach;
+                if (Email == null) EmailKhach = Sign.email;
+                else EmailKhach = Email.Value;
+                if ( user.Any(p => EmailKhach != null && ((p.Email == EmailKhach && EmailKhach == "Admin") || ((p.Quyen == "Admin" || p.Quyen == "Manager") && p.Email == EmailKhach))))
+                {
 
+                }
+                else
+                {
+                    //Response.Write("<script>alert('Bạn không có quyền truy cập');</script>");
+                    Response.Write("<div class=\"alert alert-danger\" role=\"alert\">Bạn không có quyền truy cập!</div>");
+                    Response.Write("<script type=\"text/javascript\">");
+                    Response.Write("setTimeout(function() {");
+                    Response.Write("var elements = document.getElementsByClassName('alert');");
+                    Response.Write("for (var i = 0; i < elements.length; i++) {");
+                    Response.Write("elements[i].style.display = 'none';");
+                    Response.Write("}");
+                    Response.Write("}, 3000);"); // 1000 mili giây = 1 giây
+                    Response.Write("</script>");
+                    Response.Redirect("Error/401");
+
+                }
             }
+
             if (!IsPostBack)
             {
                 Year = DateTime.Now.Year; // Sử dụng năm hiện tại làm mặc định
@@ -192,6 +210,10 @@ namespace TH03_WebBanHang
 
         protected void BindData()
         {
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
             DataTable dt = new DataTable();
             //string dataSource = "DUC-LAPTOP\\NGUYENHOANGDUC";
             //string initialCatalog = "QL_KPOPStore";
@@ -225,9 +247,9 @@ namespace TH03_WebBanHang
                 .Select(s => s.MaDH)
                 .Distinct()
                 .Count();
-            var isSignin = dbcontext.TKs.Any(s => s.Email == Sign.email);
-            var accountPer = dbcontext.TKs.Any(s => s.Email == Sign.email && (s.Quyen == "Admin" || s.Quyen == "Manager"));
-            if (!isSignin && Sign.email == null)
+            var isSignin = dbcontext.TKs.Any(s => s.Email == EmailKhach);
+            var accountPer = dbcontext.TKs.Any(s => s.Email == EmailKhach && (s.Quyen == "Admin" || s.Quyen == "Manager"));
+            if (!isSignin && EmailKhach == null)
             {
                 Response.Redirect("Error/401");
             }
@@ -235,7 +257,7 @@ namespace TH03_WebBanHang
             {
                 if (accountPer)
                 {
-                    var account = dbcontext.TKs.FirstOrDefault(s => s.Email == Sign.email && (s.Quyen == "Admin" || s.Quyen == "Manager"));
+                    var account = dbcontext.TKs.FirstOrDefault(s => s.Email == EmailKhach && (s.Quyen == "Admin" || s.Quyen == "Manager"));
                     lbAccountCheck.Text = account.Email;
                 }
                 else
@@ -277,7 +299,7 @@ namespace TH03_WebBanHang
             return totalRevenue;
         }
 
-        private int startRowIndex, maximumRows;
+        //private int startRowIndex, maximumRows;
 
         protected void SearchButtonGetDeparments_Click(object sender, EventArgs e)
         {
@@ -337,80 +359,168 @@ namespace TH03_WebBanHang
 
         protected void btnCPass_Click(object sender, EventArgs e)
         {
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
+
             var user = from u in dbcontext.TKs
                        select u;
-            var tk = user.SingleOrDefault(p => p.Email == Sign.email);
+            var tk = user.SingleOrDefault(p => p.Email == EmailKhach);
 
             Response.Redirect("ChangePassword.aspx?Deptid=" + tk.Email);
         }
 
         protected void btnSignOut_Click(object sender, EventArgs e)
         {
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
             var user = from u in dbcontext.TKs
                        select u;
 
             using (var dbContext = new QL_KPOPStoreEntities())
             {
-                var disabledTKs = dbContext.TKs.FirstOrDefault(p => p.TrangThai == true && p.Email == Sign.email);
+                var disabledTKs = dbContext.TKs.FirstOrDefault(p => p.TrangThai == true && p.Email == EmailKhach);
+                var disabledKhs = dbContext.KhachHangs.FirstOrDefault(p => p.TrangThai == true && p.Email == EmailKhach);
+                var Tks = dbContext.TKs.Any(p => p.TrangThai == true && p.Email == EmailKhach);
+                var Khs = dbContext.KhachHangs.Any(p => p.TrangThai == true && p.Email == EmailKhach);
 
-                var disabledKhs = dbContext.KhachHangs.FirstOrDefault(p => p.TrangThai == true && p.Email == Sign.email);
-                disabledTKs.TrangThai = false;
+               //if (Tks)
+               //{
 
-                var Khs = dbContext.KhachHangs.Any(p => p.TrangThai == true && p.Email == Sign.email);
-                var Tks = dbContext.TKs.Any(p => p.TrangThai == true && p.Email == Sign.email);
+               //         disabledTKs.TrangThai = false;
 
-
-
-                if (Tks)
-                {
-
-                    disabledTKs.TrangThai = false;
-                    if(Khs)
-                        disabledKhs.TrangThai = false;
-                }
-
-                else
-                {
-
-                }
-                //var disabledKHs = dbContext.KhachHangs.Where(p => p.TrangThai == true).ToList();
-                //foreach (var kh in disabledKHs)
-                //{
-                //    kh.TrangThai = false;
-                //}
+               //         disabledKhs.TrangThai = false;
+               //         dbContext.TKs.AddOrUpdate(disabledTKs);
+               //         dbContext.KhachHangs.AddOrUpdate(disabledKhs);
+               //         dbContext.SaveChanges();
 
 
-                // Lưu thay đổi vào cơ sở dữ liệu
-                dbContext.SaveChanges();
-                dbcontext.SaveChanges();
+               //}
+               //else
+               //{
+               //         disabledTKs.TrangThai = false;
+
+               //         disabledKhs.TrangThai = false;
+
+               //         dbContext.TKs.AddOrUpdate(disabledTKs);
+               //         dbContext.KhachHangs.AddOrUpdate(disabledKhs);
+               //         dbContext.SaveChanges();
+
+               //}
+
+                //dbContext.SaveChanges();
+                Response.Cookies["AuthToken"].Value = null;
+                Response.Cookies["AuthToken"].Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies["Key"].Value = null;
+                Response.Cookies["Key"].Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies["Email"].Value = null;
+                Response.Cookies["Email"].Expires = DateTime.Now.AddDays(-1);
+                Response.Redirect("Sign.aspx");
+
             }
-            if (Request.Cookies["UserAccount"] != null)
-            {
 
-                Response.Cookies.Clear();
-            }
-            if (Request.Cookies["UserAccount"] != null)
-            {
-                HttpCookie cookie = new HttpCookie("UserAccount");
-                cookie.Expires = DateTime.Now.AddMonths(-1); // Đặt thời hạn về một ngày trong quá khứ
-                Response.Cookies.Add(cookie);
-            }
-            //Response.Write("<script>alert('Tài khoản hoặc mật khẩu không chính xác');</script>");
-            Session.Remove("Password");
-            Session.Remove("Email");
-            Sign.email = null;
-            Sign.pass = null;
-            Session.Remove("TenTaiKhoan");
-            Session.Remove("MatKhau");
-            Session.Remove("User");
-            Session.Remove("Password");
-            Session.Remove("Email");
-            //Session["MaKH"] = "";
-            Session.Remove("MaKH");
-            //Session.Clear();
-            Response.Redirect("Sign.aspx");
 
         }
+        private bool VerifyToken()
+        {
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
+            HttpCookie Key = Request.Cookies["Key"];
+            HttpCookie cookie = Request.Cookies["AuthToken"];
+            if (cookie == null || EmailKhach == null) return false;
+            string token = cookie.Value;
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(Key.Value);
+            try
+            {
+                var principal = tokenHandler.ValidateToken(token, new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                }, out SecurityToken validatedToken);
+                return true;
+            }
+            catch (SecurityTokenException)
+            {
+                return false;
+            }
+        }
+
+        //protected void btnSignOut_Click(object sender, EventArgs e)
+        //{
+        //    var user = from u in dbcontext.TKs
+        //               select u;
+
+        //    using (var dbContext = new QL_KPOPStoreEntities())
+        //    {
+        //        var disabledTKs = dbContext.TKs.FirstOrDefault(p => p.TrangThai == true && p.Email == Sign.email);
+
+        //        var disabledKhs = dbContext.KhachHangs.FirstOrDefault(p => p.TrangThai == true && p.Email == Sign.email);
+        //        disabledTKs.TrangThai = false;
+
+        //        var Khs = dbContext.KhachHangs.Any(p => p.TrangThai == true && p.Email == Sign.email);
+        //        var Tks = dbContext.TKs.Any(p => p.TrangThai == true && p.Email == Sign.email);
+
+
+
+        //        if (Tks)
+        //        {
+
+        //            disabledTKs.TrangThai = false;
+        //            if(Khs)
+        //                disabledKhs.TrangThai = false;
+        //        }
+
+        //        else
+        //        {
+
+        //        }
+        //        //var disabledKHs = dbContext.KhachHangs.Where(p => p.TrangThai == true).ToList();
+        //        //foreach (var kh in disabledKHs)
+        //        //{
+        //        //    kh.TrangThai = false;
+        //        //}
+
+
+        //        // Lưu thay đổi vào cơ sở dữ liệu
+        //        dbContext.SaveChanges();
+        //        dbcontext.SaveChanges();
+        //    }
+        //    if (Request.Cookies["UserAccount"] != null)
+        //    {
+
+        //        Response.Cookies.Clear();
+        //    }
+        //    if (Request.Cookies["UserAccount"] != null)
+        //    {
+        //        HttpCookie cookie = new HttpCookie("UserAccount");
+        //        cookie.Expires = DateTime.Now.AddMonths(-1); // Đặt thời hạn về một ngày trong quá khứ
+        //        Response.Cookies.Add(cookie);
+        //    }
+        //    //Response.Write("<script>alert('Tài khoản hoặc mật khẩu không chính xác');</script>");
+        //    Session.Remove("Password");
+        //    Session.Remove("Email");
+        //    Sign.email = null;
+        //    Sign.pass = null;
+        //    Session.Remove("TenTaiKhoan");
+        //    Session.Remove("MatKhau");
+        //    Session.Remove("User");
+        //    Session.Remove("Password");
+        //    Session.Remove("Email");
+        //    //Session["MaKH"] = "";
+        //    Session.Remove("MaKH");
+        //    //Session.Clear();
+        //    Response.Redirect("Sign.aspx");
+
+        //}
 
 
     }

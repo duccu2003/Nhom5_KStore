@@ -195,11 +195,15 @@ namespace TH03_WebBanHang
 
         protected void btnDathang_Click(object sender, EventArgs e)
         {
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
             // Query the database for the user with the given username and password
             var user = from u in dbcontext.TKs
                        select u;
             var khachhang = from kh in dbcontext.KhachHangs select kh;
-            if (user.Any(p => (p.TrangThai == true && p.Email == Sign.email)) && Session["GioHang"] != null)
+            if (user.Any(p => (p.TrangThai == true && p.Email == EmailKhach)) && Session["GioHang"] != null)
             {
                 Response.Redirect("Pay.aspx");
 

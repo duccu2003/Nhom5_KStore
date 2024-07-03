@@ -26,7 +26,8 @@ namespace TH03_WebBanHang
 {
     public partial class Item : System.Web.UI.Page
     {
-        private QL_KPOPStoreEntities dbcontext = new QL_KPOPStoreEntities();       
+        private QL_KPOPStoreEntities dbcontext = new QL_KPOPStoreEntities(); 
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             string MaSP = Request.QueryString["sp"];
@@ -35,8 +36,12 @@ namespace TH03_WebBanHang
 
 
             string searchText = Request.QueryString["searchText"];
+            HttpCookie Email = Request.Cookies["Email"];
 
 
+            string EmailKhach;
+            if(Email==null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
             
 
 
@@ -98,12 +103,12 @@ namespace TH03_WebBanHang
                             
                         
 
-                        var thichList = dbcontext.ThichSPs.Any(s => s.MaSP == sp && (s.Email == Sign.email||s.MaKH == Account.MaKhach));
+                        var thichList = dbcontext.ThichSPs.Any(s => s.MaSP == sp && (s.Email == EmailKhach ||s.MaKH == Account.MaKhach));
 
 
                         if (thichList)
                         {
-                            var thich = dbcontext.ThichSPs.FirstOrDefault(t => t.MaSP == sp && (t.Email == Sign.email || t.MaKH == Account.MaKhach));
+                            var thich = dbcontext.ThichSPs.FirstOrDefault(t => t.MaSP == sp && (t.Email == EmailKhach || t.MaKH == Account.MaKhach));
 
                             if (thich.DaThich == true)
                             {
@@ -134,9 +139,10 @@ namespace TH03_WebBanHang
             }
             if (!IsPostBack)
             {
+                
                 LoadPop();
                 BindLoaiListView();
-                var khach = dbcontext.KhachHangs.Any(s => s.Email == Sign.email);
+                var khach = dbcontext.KhachHangs.Any(s => s.Email == EmailKhach);
 
                 var danhGia = dbcontext.DanhGias.Where(s => (s.MaSP==sp || s.MaSP==MaSP)).Select(s=>s.RatingValue.Value);
                
@@ -148,7 +154,7 @@ namespace TH03_WebBanHang
                 {
                     if (khach)
                     {
-                        KhachHang khachHang = dbcontext.KhachHangs.FirstOrDefault(s => s.Email == Sign.email);
+                        KhachHang khachHang = dbcontext.KhachHangs.FirstOrDefault(s => s.Email == EmailKhach);
                         var hadRating = dbcontext.DanhGias.Any(s => s.DienThoai == khachHang.DienThoai || s.Email == khachHang.Email);
 
                         txtDienThoai.Visible = false;
@@ -162,10 +168,10 @@ namespace TH03_WebBanHang
                         lbLike.Visible = true;
                         btnToggleLike.Visible = true;
 
-                        var thichList = dbcontext.ThichSPs.Any(s => s.MaSP == sp && (s.Email == Sign.email || s.MaKH == Account.MaKhach));
+                        var thichList = dbcontext.ThichSPs.Any(s => s.MaSP == sp && (s.Email == EmailKhach || s.MaKH == Account.MaKhach));
                         if (thichList)
                         {
-                            var thich = dbcontext.ThichSPs.FirstOrDefault(t => t.MaSP == sp && (t.Email == Sign.email || t.MaKH == Account.MaKhach));
+                            var thich = dbcontext.ThichSPs.FirstOrDefault(t => t.MaSP == sp && (t.Email == EmailKhach || t.MaKH == Account.MaKhach));
 
                             if (thich.DaThich == true)
                             {
@@ -379,7 +385,7 @@ namespace TH03_WebBanHang
 
                 if (khach)
                 {
-                    KhachHang khachHang = dbcontext.KhachHangs.FirstOrDefault(s => s.Email == Sign.email);
+                    KhachHang khachHang = dbcontext.KhachHangs.FirstOrDefault(s => s.Email == EmailKhach);
 
                     imgClientCMT.ImageUrl = Account.urlAvt;
 
@@ -559,24 +565,28 @@ namespace TH03_WebBanHang
         }
         protected void btnSubmitComment_Click(object sender, EventArgs e)
         {
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
             string sp = HttpContext.Current.Request.QueryString.Get("sp");
 
             var sanphamRating = dbcontext.SanPhams.FirstOrDefault(s=>s.MaSP==sp);
 
-            var khach = dbcontext.KhachHangs.Any(s => s.Email == Sign.email);
+            var khach = dbcontext.KhachHangs.Any(s => s.Email == EmailKhach);
             string imagePath = Server.MapPath(Shop.logoForMail_BlackKS);
             string pic1String = null, pic2String = null, pic3String = null, pic4String = null, pic5String = null, videoString=null, avatar=null, userName =null ;
             int valueRate = Convert.ToInt32(ratingValue.Value);
 
             //string tenKH = ddlMaNhom.SelectedItem.Text.ToLower().Replace(" ", "");
 
-            string tenKH = (khach ? dbcontext.KhachHangs.Where(s => s.Email == Sign.email).Select(s => s.HoTen).FirstOrDefault() : txtHoTen.Text).Replace(" ", ""); ;
+            string tenKH = (khach ? dbcontext.KhachHangs.Where(s => s.Email == EmailKhach).Select(s => s.HoTen).FirstOrDefault() : txtHoTen.Text).Replace(" ", ""); ;
             // Thay thế các dấu tiếng Việt bằng ký tự tương ứng không dấu
             tenKH = tenKH.Replace("á", "a").Replace("à", "a").Replace("ả", "a").Replace("ã", "a").Replace("ạ", "a").Replace("ă", "a").Replace("ắ", "a").Replace("ằ", "a").Replace("ẳ", "a").Replace("ẵ", "a").Replace("ặ", "a").Replace("â", "a").Replace("ấ", "a").Replace("ầ", "a").Replace("ẩ", "a").Replace("ậ", "a").Replace("é", "e").Replace("è", "e").Replace("ẻ", "e").Replace("ẽ", "e").Replace("ẹ", "e").Replace("ê", "e").Replace("ế", "e").Replace("ề", "e").Replace("ể", "e").Replace("ễ", "e").Replace("ệ", "e").Replace("í", "i").Replace("ì", "i").Replace("ỉ", "i").Replace("ĩ", "i").Replace("ị", "i").Replace("ó", "o").Replace("ò", "o").Replace("ỏ", "o").Replace("õ", "o").Replace("ọ", "o").Replace("ô", "o").Replace("ố", "o").Replace("ồ", "o").Replace("ổ", "o").Replace("ỗ", "o").Replace("ộ", "o").Replace("ơ", "o").Replace("ớ", "o").Replace("ờ", "o").Replace("ở", "o").Replace("ỡ", "o").Replace("ợ", "o").Replace("ú", "u").Replace("ù", "u").Replace("ủ", "u").Replace("ũ", "u").Replace("ụ", "u").Replace("ư", "u").Replace("ứ", "u").Replace("ừ", "u").Replace("ử", "u").Replace("ữ", "u").Replace("ự", "u").Replace("ý", "y").Replace("ỳ", "y").Replace("ỷ", "y").Replace("ỹ", "y").Replace("ỵ", "y");
 
 
-            string sdtKH = (khach ? dbcontext.KhachHangs.Where(s => s.Email == Sign.email).Select(s => s.DienThoai).FirstOrDefault() : txtDienThoai.Text).ToLower().Replace(" ", "");
-            string emailKH = (khach ? dbcontext.KhachHangs.Where(s => s.Email == Sign.email).Select(s => s.Email).FirstOrDefault() : txtEmail.Text).ToLower().Replace(" ", "");
+            string sdtKH = (khach ? dbcontext.KhachHangs.Where(s => s.Email == EmailKhach).Select(s => s.DienThoai).FirstOrDefault() : txtDienThoai.Text).ToLower().Replace(" ", "");
+            string emailKH = (khach ? dbcontext.KhachHangs.Where(s => s.Email == EmailKhach).Select(s => s.Email).FirstOrDefault() : txtEmail.Text).ToLower().Replace(" ", "");
             //string dateRating = DateTime.Now.ToString();
             string format = "ddMMyyyy-HH-mm";
 
@@ -694,7 +704,7 @@ namespace TH03_WebBanHang
 
             if (khach)
             {
-                KhachHang khachHang = dbcontext.KhachHangs.FirstOrDefault(s => s.Email == Sign.email);
+                KhachHang khachHang = dbcontext.KhachHangs.FirstOrDefault(s => s.Email == EmailKhach);
                 userName = khachHang.HoTen;
                 var Rating = dbcontext.DanhGias.Any(s => (s.DienThoai == khachHang.DienThoai || s.Email == khachHang.Email) && s.MaSP == sp);
                 if (Rating)
@@ -1210,11 +1220,15 @@ namespace TH03_WebBanHang
 
         protected void btnToggleLike_Click(object sender, EventArgs e)
         {
-            if (dbcontext.TKs.Any(s => s.Email == Sign.email))
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
+            if (dbcontext.TKs.Any(s => s.Email == EmailKhach))
             {
-                if (dbcontext.KhachHangs.Any(s => s.Email == Sign.email))
+                if (dbcontext.KhachHangs.Any(s => s.Email == EmailKhach))
                 {
-                    KhachHang khachHang = dbcontext.KhachHangs.FirstOrDefault(s => s.Email == Sign.email);
+                    KhachHang khachHang = dbcontext.KhachHangs.FirstOrDefault(s => s.Email == EmailKhach);
                     string MaSP = Request.QueryString["sp"];
                     string sp = HttpContext.Current.Request.QueryString.Get("sp");
                     var saP = dbcontext.SanPhams.FirstOrDefault(p => (p.MaSP == sp || p.MaSP == MaSP));
@@ -2266,7 +2280,7 @@ namespace TH03_WebBanHang
         //    { 
         //        using (var db = new QL_KPOPStoreEntities())
         //        {
-        //           KhachHang khachHang = dbcontext.KhachHangs.FirstOrDefault(s => s.Email == Sign.email);
+        //           KhachHang khachHang = dbcontext.KhachHangs.FirstOrDefault(s => s.Email == EmailKhach);
 
         //            var thichNot = dbcontext.ThichSPs.Any(s=>s.MaSP==maSP&&s.MaKH==maKH&&s.Email== khachHang.Email&& s.DienThoai==khachHang.DienThoai);
         //            if (thichNot)

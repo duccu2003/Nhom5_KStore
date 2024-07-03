@@ -26,7 +26,12 @@ namespace TH03_WebBanHang
             var khachhang = from u in dbcontext.KhachHangs
                             select u;
             var db = new QL_KPOPStoreEntities();
-            if (user.Any(p => Sign.email != null && ((p.Email == Sign.email && Sign.email == "Admin") || ((p.Quyen == "Admin" || p.Quyen == "Manager") && p.Email == Sign.email))))
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
+
+            if (user.Any(p => EmailKhach != null && ((p.Email == EmailKhach && EmailKhach == "Admin") || ((p.Quyen == "Admin" || p.Quyen == "Manager") && p.Email == EmailKhach))))
             {
 
             }
@@ -48,7 +53,7 @@ namespace TH03_WebBanHang
                 Response.Redirect("Error/401");
 
             }
-            //if (user.Any(p => (p.Email == "Admin" && p.TrangThai == true && p.Email == Sign.email && Sign.email == "Admin") || (p.Quyen == "Admin" || p.Quyen == "Manager") && p.TrangThai == true && p.Email == Sign.email))
+            //if (user.Any(p => (p.Email == "Admin" && p.TrangThai == true && p.Email == EmailKhach && EmailKhach == "Admin") || (p.Quyen == "Admin" || p.Quyen == "Manager") && p.TrangThai == true && p.Email == EmailKhach))
             //{
 
             //}
@@ -1295,11 +1300,11 @@ namespace TH03_WebBanHang
 
 
                                 string[] DuongDan = new string[5];
-                                string DuongDan2 = null;
-                                string DuongDan3 = null;
-                                string DuongDan4 = null;
-                                string DuongDan5 = null;
-                                string MainDP;
+                                //string DuongDan2 = null;
+                                //string DuongDan3 = null;
+                                //string DuongDan4 = null;
+                                //string DuongDan5 = null;
+                                //string MainDP;
                                 string fileNameMem1 = Path.GetFileName(fileUploadGPmem.FileName);
                                 string fileNameLogo1 = Path.GetFileName(fileUploadGPLogo.FileName);
                                 // Add parameters for the ProductData_Add stored procedure

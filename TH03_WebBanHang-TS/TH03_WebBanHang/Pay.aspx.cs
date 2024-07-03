@@ -50,12 +50,16 @@ namespace TH03_WebBanHang
           LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         protected void Page_Load(object sender, EventArgs e)
         {
+            HttpCookie Email = Request.Cookies["Email"];
             string apiKeyCK = ConfigurationManager.AppSettings["KStore-CK"];
             string apiKeyBM = ConfigurationManager.AppSettings["KStore-BM"];
             var user = from u in dbcontext.TKs
                        select u;
             var khachhang = from u in dbcontext.KhachHangs
                             select u;
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
             if (!IsPostBack)
             {
                 // Khôi phục giá trị count từ session nếu có
@@ -67,22 +71,22 @@ namespace TH03_WebBanHang
                 //ddlCity.Items.Add(new ListItem("Chọn thành phố", ""));
                 //ddlCity.Items.Add(new ListItem("Hà Nội", "Hanoi"));
                 //ddlCity.Items.Add(new ListItem("TP. Hồ Chí Minh", "HCM"));
-                if (khachhang.Any(p => p.Email == Sign.email)|| user.Any(p => (p.TrangThai == true && p.Email == Sign.email)))
+                if (khachhang.Any(p => p.Email == EmailKhach)|| user.Any(p => (p.TrangThai == true && p.Email == EmailKhach)))
                 {
 
                     // Đặt giá trị cho txtEmailSignUp
-                    txtEmailSignUp.Text = khachhang.Where(s=>s.Email==Sign.email).Select(p => p.Email).FirstOrDefault() ?? string.Empty;
+                    txtEmailSignUp.Text = khachhang.Where(s=>s.Email==EmailKhach).Select(p => p.Email).FirstOrDefault() ?? string.Empty;
 
                     // Đặt giá trị cho txtName
-                    txtName.Text = khachhang.Where(s => s.Email == Sign.email).Select(p => p.HoTen).FirstOrDefault() ?? string.Empty;
+                    txtName.Text = khachhang.Where(s => s.Email == EmailKhach).Select(p => p.HoTen).FirstOrDefault() ?? string.Empty;
 
 
                     // Đặt giá trị cho txtPasswordSignUp
                     // Lưu ý: Mật khẩu không nên được hiển thị trực tiếp
                     // txtPasswordSignUp.Text = khachhang.Select(p => p.MatKhau).FirstOrDefault() ?? string.Empty;
-                    TextPhone.Text = khachhang.Where(s => s.Email == Sign.email).Select(p => p.DienThoai).FirstOrDefault() ?? string.Empty;
+                    TextPhone.Text = khachhang.Where(s => s.Email == EmailKhach).Select(p => p.DienThoai).FirstOrDefault() ?? string.Empty;
                     // Đặt giá trị cho ddlGT
-                    //var gioiTinh = khachhang.Where(s => s.Email == Sign.email).Select(p => p.GioiTinh).FirstOrDefault();
+                    //var gioiTinh = khachhang.Where(s => s.Email == EmailKhach).Select(p => p.GioiTinh).FirstOrDefault();
                     //var gioiTinhItem = ddlGT.Items.FindByText(gioiTinh);
                     //if (gioiTinhItem != null)
                     //{
@@ -120,7 +124,7 @@ namespace TH03_WebBanHang
 
 
                     Response.Write(" <style>\r\n        .input-field-DiaChi{\r\n \r\n   width:28rem !important;\r\n}\r\n    </style>");
-                    txtDiachi.Text = khachhang.Where(s => s.Email == Sign.email).Select(p => p.DiaChi).FirstOrDefault() ?? string.Empty;
+                    txtDiachi.Text = khachhang.Where(s => s.Email == EmailKhach).Select(p => p.DiaChi).FirstOrDefault() ?? string.Empty;
                     
 
 
@@ -180,7 +184,7 @@ namespace TH03_WebBanHang
 
             var db = new QL_KPOPStoreEntities();
 
-            if (user.Any(p => (p.TrangThai == true && p.Email == Sign.email)) && Session["GioHang"] != null)
+            if (user.Any(p => (p.TrangThai == true && p.Email == EmailKhach)) && Session["GioHang"] != null)
             {
                 //user.SingleOrDefault(p => p.MaTK==makh); 
                 
@@ -667,6 +671,10 @@ namespace TH03_WebBanHang
         }
         public void CreateTheOrder(string MaDH, string kh, int makh)
         {
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
             if (string.IsNullOrEmpty(txtEmailSignUp.Text) ||
     string.IsNullOrEmpty(txtName.Text) ||
     string.IsNullOrEmpty(txtDiachi.Text) ||
@@ -708,7 +716,7 @@ namespace TH03_WebBanHang
                 var hadClientNonPass = user.Any(s => s.Email == txtEmailSignUp.Text && (s.MatKhau == null || s.MatKhau == ""));
 
 
-                if (Sign.email == null /*&& (!hadUser || !hadClient)*/)
+                if (EmailKhach == null /*&& (!hadUser || !hadClient)*/)
                 {
                     using (var db = new QL_KPOPStoreEntities())
                     {
@@ -915,7 +923,7 @@ namespace TH03_WebBanHang
                     DiaChitxt = txtDiachi.Text;
                     var khach = dbcontext.KhachHangs.FirstOrDefault(p => p.Email == txtEmailSignUp.Text);
 
-                    if (Sign.email != null && user.Any(p => p.Email == Sign.email))
+                    if (EmailKhach != null && user.Any(p => p.Email == EmailKhach))
                     {
                         // Tạo một đơn hàng mới
                         DonHang donHang = new DonHang

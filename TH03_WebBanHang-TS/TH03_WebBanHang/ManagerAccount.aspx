@@ -6,11 +6,13 @@
 <head runat="server">
     <title>KStore</title>
     <link href="Content/logo/K.png" rel="shortcut icon" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-y12XeLvPH5sAAfwm+4D/J2vPT3j9ky8/Sf1gXIS6Xr4F5ujP+0x2jE+8whv2G4N6" crossorigin="anonymous">
- <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-y12XeLvPH5sAAfwm+4D/J2vPT3j9ky8/Sf1gXIS6Xr4F5ujP+0x2jE+8whv2G4N6" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <style>
       ::-webkit-scrollbar {
      width: 5px;
  }
@@ -25,7 +27,7 @@
      body {
          margin: 0;
          padding: 0;
-         color #000;                      
+         color: #000;                      
      }
      *{
          color:#000;font-family:Roboto;transition:0.5s;
@@ -140,7 +142,6 @@
      }
      /* Các định dạng khác không thay đổi */
  </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
         <style>
         #loader {
@@ -214,17 +215,7 @@ text-align:center;
     font-family:Roboto;
 }
     </style>
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
-<script>
-var loader = function() {
-    setTimeout(function() {
-        $('#loader').css({ 'opacity': 0, 'visibility':'hidden' });
-    }, 1000);
-};
-$(function(){
-    loader();
-});
-</script>
+   
 
 </head>
 <body style="overflow-x:hidden;">    
@@ -234,6 +225,11 @@ $(function(){
         <div class="circle2"></div>
     </div>
 </div>
+    <style>
+        .avt-user{
+            width:100px; border-radius:50%; border:5px solid; height:100px; object-fit:cover; overflow:hidden
+        }
+    </style>
     <img loading="lazy" style="filter: brightness(50%); height: 100%; width: 100%; position: fixed; z-index: 0;" src="Content/image-bg/bg-for-slide-gp.png" />
 
     <form id="form1" runat="server" class="form-container container justify-content-center align-items-center" style="padding:20px 0;">
@@ -423,7 +419,7 @@ $(function(){
             </tr>
         </GroupTemplate>
         <ItemTemplate>
-            			<td class="td-longer justify-content-center align-content-center"><img style="width:100px; border-radius:50%; border:5px solid #2bf345ab; height:100px; object-fit:cover; overflow:hidden" src="<%#:Item.AvatarUser%>"/></td>
+            <td class="td-longer justify-content-center align-content-center"><img class="avt-user" style='<%# Item.TrangThai == true ? "border-color: #2bf345;" : "border-color: #808080;" %>' src="<%#:Item.AvatarUser%>"/></td>
 			<td class="td-longer justify-content-center align-content-center"><%#:Item.HoTen%></td>
 			<td class="justify-content-center align-content-center"><%#:Item.DienThoai%></td>
 			<%--<td class="justify-content-center align-content-center"><%#:Item.GioiTinh%></td>--%>
@@ -499,5 +495,16 @@ $(function(){
 </div>
 
     </form>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+    var loader = function () {
+        setTimeout(function () {
+            $('#loader').css({ 'opacity': 0, 'visibility': 'hidden' });
+        }, 1000);
+    };
+    $(function () {
+        loader();
+    });
+</script>
 </body>
 </html>

@@ -49,27 +49,7 @@ namespace TH03_WebBanHang
             var khachhang = from u in dbcontext.KhachHangs
                             select u;
             var db = new QL_KPOPStoreEntities();
-            if (user.Any(p => (p.Email == "Admin" &&Sign.email=="Admin"&&p.Email==Sign.email) || ((p.Quyen == "Admin" || p.Quyen == "Manager") && p.Email == Sign.email)))
-            {
-                Response.Write("<script>\r\n                            document.addEventListener(\"DOMContentLoaded\", function (event) {\r\n                                var admin = document.getElementById(\"li-admin\");\r\n                                admin.style.display = \"block\";\r\n                            });\r\n                        </script>");
-                //if (user.Any(p => p.Quyen == "Manager"&&p.Quyen!="Admin"))
-                //{
-                //    Response.Write("<script>\r\n                            document.addEventListener(\"DOMContentLoaded\", function (event) {\r\n                                                            var fa1 = document.getElementById(\"f-a1\");\r\n               var fa2 = document.getElementById(\"f-a2\");\r\n                    fa1.style.display = \"none\";\r\n          fa2.style.display = \"none\";\r\n                   });\r\n                        </script>");
-
-                //}
-                //else if (user.Any(p => p.Quyen == "Admin"|| (p.Email == "Admin" && Sign.email == "Admin")))
-                //{
-                    Response.Write("<script>\r\n                            document.addEventListener(\"DOMContentLoaded\", function (event) {\r\n                                                            var fa1 = document.getElementById(\"f-a1\");\r\n       var fa2 = document.getElementById(\"f-a2\");\r\n                            fa1.style.display = \"block\";\r\n          fa2.style.display = \"block\";\r\n                   });\r\n                        </script>");
-                //}
-            }
-            // Otherwise, display an error message
-
-            else
-            {
-                Response.Write("<script>\r\n                            document.addEventListener(\"DOMContentLoaded\", function (event) {\r\n                                var admin = document.getElementById(\"li-admin\");\r\n                                admin.style.display = \"none\";\r\n                            });\r\n                        </script>");
-
-
-            }
+            HttpCookie Email = Request.Cookies["Email"];
 
             List<ChiTietDonHang> lstGioHang = Session["GioHang"] as List<ChiTietDonHang>;
             Hepler hepler = new Hepler();
@@ -245,54 +225,6 @@ namespace TH03_WebBanHang
             // Gọi phương thức để cập nhật dữ liệu khi người dùng nhập vào TextBox
             BindData();
         }
-        //[System.Web.Services.WebMethod]
-        //public static List<SanPham> GetSanPhams(string searchText)
-        //{
-        //    QL_KPOPStoreEntities db= new QL_KPOPStoreEntities();
-        //    // Thực hiện truy vấn dữ liệu dựa trên searchText
-        //    // Đây chỉ là một ví dụ, bạn cần thay thế bằng cách truy vấn dữ liệu thực tế từ database
-        //    var items = db.SanPhams.Where(p => p.TenSP.Contains(searchText)).ToList();
-        //    return items;
-        //}
-
-        //private void LoadSearchItems()
-        //{
-        //    if (!searchinput.Text.IsNullOrEmpty())
-        //    {
-        //        var queryItems = from s in dbcontext.SanPhams
-        //                         where s.SoLuongKho > 0 && (s.Ver == searchinput.Text || s.Ver.Contains(searchinput.Text) || searchinput.Text.Contains(s.Ver) || s.MaSP == searchinput.Text || s.MaSP.Contains(searchinput.Text) || searchinput.Text.Contains(s.MaSP))
-        //                         select s;
-        //        lvItemsSearch.DataSource = queryItems.ToList();
-        //        lvItemsSearch.DataBind();
-        //    }
-
-        //}
-
-        //public IQueryable<TH03_WebBanHang.Models.SanPham> GetItems()
-        //{
-
-        //    var sanphams = dbcontext.SanPhams.Any(s => s.SoLuongKho > 0 && (s.Ver == searchinput.Text || s.Ver.Contains(searchinput.Text) || searchinput.Text.Contains(s.Ver) || s.MaSP == searchinput.Text || s.MaSP.Contains(searchinput.Text) || searchinput.Text.Contains(s.MaSP)));
-
-        //    IQueryable<SanPham> sanPham = dbcontext.SanPhams.Where(p => p.Ver == searchinput.Text || p.Ver.Contains(searchinput.Text) || searchinput.Text.Contains(p.Ver) || p.MaSP == searchinput.Text || p.MaSP.Contains(searchinput.Text) || searchinput.Text.Contains(p.MaSP));
-
-
-
-        //    return sanPham;
-        //}
-        //public IQueryable<TH03_WebBanHang.Models.SanPham> GetItems(string searchText)
-        //{
-        //    var sanPhams = dbcontext.SanPhams
-        //       .Where(p =>
-        //            p.SoLuongKho > 0 &&
-        //            (p.Ver == searchText || p.Ver.Contains(searchText) || searchText.Contains(p.Ver) ||
-        //            p.MaSP == searchText || p.MaSP.Contains(searchText) || searchText.Contains(p.MaSP))
-        //        );
-
-        //    return sanPhams;
-        //}
-
-
-
-
+        
     }
 }

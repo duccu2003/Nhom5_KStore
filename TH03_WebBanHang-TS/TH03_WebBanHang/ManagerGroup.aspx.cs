@@ -17,7 +17,11 @@ namespace TH03_WebBanHang
             var khachhang = from u in dbcontext.KhachHangs
                             select u;
             var db = new QL_KPOPStoreEntities();
-            if (user.Any(p => Sign.email != null && ((p.Email == Sign.email && Sign.email == "Admin") || ((p.Quyen == "Admin" || p.Quyen == "Manager") && p.Email == Sign.email))))
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
+            if (user.Any(p => EmailKhach != null && ((p.Email == EmailKhach && EmailKhach == "Admin") || ((p.Quyen == "Admin" || p.Quyen == "Manager") && p.Email == EmailKhach))))
             {
 
             }

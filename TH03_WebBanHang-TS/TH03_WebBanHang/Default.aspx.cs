@@ -24,16 +24,7 @@ namespace TH03_WebBanHang
                             select u;
 
             var db = new QL_KPOPStoreEntities();
-            if (user.Any(p => (p.TrangThai == true && p.Email == Sign.email)))
-            {
-
-                var tk = user.SingleOrDefault(p => p.TrangThai == true && p.Email == Sign.email); //lọc trong xem có email nào == lbDeptid đang được hiện (TK)
-
-                makh = tk.MaTK; // Cập nhật giá trị của makh từ tk.MaKH
-                Session["MaKH"] = makh - 1; // Gán giá trị của makh vào Session["MaKH"]
-
-
-            }
+            
 
         }
 

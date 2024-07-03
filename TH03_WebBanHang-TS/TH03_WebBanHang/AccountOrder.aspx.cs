@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Graph.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,20 +21,24 @@ namespace TH03_WebBanHang
             var khachhang = from u in dbcontext.KhachHangs
                             select u;
             var db = new QL_KPOPStoreEntities();
-            if (user.Any(p => p.TrangThai == true && p.Email == Sign.email))
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
+
+            if (user.Any(p => /*p.TrangThai == true &&*/ p.Email == EmailKhach))
             {
                 if (!IsPostBack)
                 {
                     var str = Request.QueryString["Deptid"].ToString();
 
-                    int clientStr;
-                    int.TryParse(str, out clientStr);
+                    
 
-                    KhachHang deparments = dbcontext.KhachHangs.SingleOrDefault(p => p.MaKH == Account.makh);
-                    ChiTietDonHang chitet = dbcontext.ChiTietDonHangs.FirstOrDefault(p => p.KH == clientStr);
+                    KhachHang deparments = dbcontext.KhachHangs.SingleOrDefault(p => p.Email == str || p.Email == EmailKhach);
+                    
                 }
             }
-            // Otherwise, display an error message
+            
 
             else
             {
@@ -59,10 +64,19 @@ namespace TH03_WebBanHang
         }
         protected void SearchButton_Click(object sender, EventArgs e)
         {
+            var str = Request.QueryString["Deptid"].ToString();
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
+
+            KhachHang deparments = dbcontext.KhachHangs.SingleOrDefault(p => p.Email == str || p.Email == EmailKhach);
+
+
             ListView1.DataSource = null;
             ListView1.DataSourceID = null;
             ListView1.DataBind();
-            GetDeparments();
+            GetDeparments(deparments.Email);
 
 
 
@@ -74,38 +88,13 @@ namespace TH03_WebBanHang
             string searchTextA = searchinputA.Text;
             //IQueryable<SanPham> sanPham = dbcontext.SanPhams.Where(p => p.MaLoai != "6");
             string searchText = Request.QueryString["searchText"];
+            //HttpCookie Email = Request.Cookies["Email"];
 
-            //KhachHang deparments = dbcontext.KhachHangs.SingleOrDefault(p => p.MaKH == Account.makh);
-            //MaKH = Account.makh - 1;
+            string Email = Request.QueryString["Deptid"].ToString();
 
-            //string kh = MaKH.ToString();
-            //var don = dbcontext.ChiTietDonHangs.Where(s => s.KH == MaKH);
-            //int searhtoint;
-            //int.TryParse(searchTextA, out searhtoint);
+            
 
-
-            //if (!string.IsNullOrEmpty(searchTextA))
-            //{
-            //    DateTime searchDate;
-            //    if (DateTime.TryParse(searchTextA, out searchDate))
-            //    {
-            //        // Nếu chuyển đổi thành công, tìm kiếm ngày
-            //        IQueryable<ChiTietDonHang> dateorder = don.Where(p => p.Ngay.ToString().Contains(searchTextA));
-            //        return dateorder;
-            //    }
-            //    else return chiTiets;
-
-            //}
-            //else if (!string.IsNullOrEmpty(searchText))
-            //{
-            //    return don.Where(p => p.MaCTDH == searchText || p.MaDH == searchText);
-            //}
-
-            //else return don;
-
-            //IQueryable<ChiTietDonHang> chiTiets = don.Where(p => p.TenSP.Contains(searchTextA) || p.MaCTDH.Contains(searchTextA) || p.KH == searhtoint || p.MaDH.Contains(searchTextA) || p.MaSP.Contains(searchTextA));
-
-            var departments = dbcontext.ChiTietDonHangs.OrderBy(s => s.MaDH);
+            var departments = dbcontext.ChiTietDonHangs.OrderBy(s => s.MaDH).Where(s=> s.DonHang.KhachHang.Email == Email);
             int maK;
 
             int.TryParse(searchTextA, out maK);
@@ -133,49 +122,28 @@ namespace TH03_WebBanHang
 
 
         }
-        public IQueryable<DonHang> GetDeparments()
+        public IQueryable<DonHang> GetDeparments(string Email)
         {
             string searchTextA = searchinputA.Text;
             string searchText = Request.QueryString["searchText"];
 
-            int maK;
-            int.TryParse(searchTextA, out maK);
+            
+            HttpCookie cokieEmail = Request.Cookies["Email"];
+            string EmailKhach;
+            if (cokieEmail == null) EmailKhach = Sign.email;
+            else EmailKhach = cokieEmail.Value;
 
-            //if (!string.IsNullOrEmpty(searchTextA))
-            //{
-            //    DateTime searchDate;
-            //    if (DateTime.TryParse(searchTextA, out searchDate))
-            //    {
-            //        // Assuming you want to filter by date
-            //        return don.Where(p => p.Ngay == searchDate);
-            //    }
-            //    else
-            //    {
-            //        // Filter by text
-            //        return don.Where(p => p.MaDH.Contains(searchTextA) || p.KH == maK);
-            //    }
-            //}
-            //else if (!string.IsNullOrEmpty(searchText))
-            //{
-            //    return don.Where(p => p.MaDH == searchText);
-            //}
-
-            //return don;
-            //string searchTextA = searchinputA.Text;
-            ////IQueryable<SanPham> sanPham = dbcontext.SanPhams.Where(p => p.MaLoai != "6");
-            //string searchText = Request.QueryString["searchText"];
-
-            KhachHang deparments = dbcontext.KhachHangs.SingleOrDefault(p => p.MaKH == Account.makh);
-            MaKH = Account.MaKhach;
+            KhachHang deparments = dbcontext.KhachHangs.SingleOrDefault(p => p.Email == Email || p.Email == EmailKhach);
+            MaKH = deparments.MaKH;
 
             string kh = MaKH.ToString();
-            var donCT = dbcontext.ChiTietDonHangs.Where(s => s.KH == MaKH);
-            var don = dbcontext.DonHangs.OrderBy(s1 => s1.MaDH);
+            var donCT = dbcontext.ChiTietDonHangs.Where(s => s.KH == MaKH && (s.DonHang.KhachHang.Email == Email || s.DonHang.KhachHang.Email == EmailKhach));
+            var don = dbcontext.DonHangs.OrderBy(s1 => s1.MaDH).Where(s=> s.KH == MaKH && (s.KhachHang.Email == Email || s.KhachHang.Email == EmailKhach));
             int searhtoint;
             int.TryParse(searchTextA, out searhtoint);
             IQueryable<ChiTietDonHang> chiTiets = donCT.Where(p => p.TenSP.Contains(searchTextA) || p.MaCTDH.Contains(searchTextA) || p.KH == searhtoint || p.MaDH.Contains(searchTextA) || p.MaSP.Contains(searchTextA));
 
-            var donofKH = don.Where(s => s.KH == Account.MaKhach);
+            var donofKH = don.Where(s =>  s.KhachHang.Email == Email || s.KhachHang.Email == EmailKhach /*&& s.KH == Account.MaKhach*/);
 
 
             if (!string.IsNullOrEmpty(searchTextA))
@@ -185,67 +153,24 @@ namespace TH03_WebBanHang
                 {
                     // Nếu chuyển đổi thành công, tìm kiếm ngày
                     IQueryable<ChiTietDonHang> dateorder = donCT.Where(p => p.Ngay.ToString().Contains(searchTextA));
-                    return donofKH.Where(p => p.Ngay == searchDate);
+                    return donofKH.Where(p =>  p.Ngay == searchDate);
                 }
                 else
                 {
                     // Filter by text
-                    return donofKH.Where(p => p.MaDH.Contains(searchTextA));
+                    return donofKH.Where(p =>  p.MaDH.Contains(searchTextA));
                 }
 
             }
-            //else if (!string.IsNullOrEmpty(searchText))
-            //{
-            //    return don.Where(p => p.MaCTDH == searchText || p.MaDH == searchText);
-            //}
+            
             else if (!string.IsNullOrEmpty(searchText))
             {
-                return don.Where(p => p.MaDH == searchText);
+                return don.Where(p =>  p.MaDH == searchText);
             }
 
-            else return don.Where(s => s.KH == Account.MaKhach).OrderByDescending(s=>s.Ngay);
+            else return don.OrderByDescending(s=>s.Ngay);
 
 
         }
-        //public IQueryable<ChiTietDonHang> GetDeparments()
-        //{
-        //    string searchTextA = searchinputA.Text;
-        //    //IQueryable<SanPham> sanPham = dbcontext.SanPhams.Where(p => p.MaLoai != "6");
-        //    string searchText = Request.QueryString["searchText"];
-
-        //    KhachHang deparments = dbcontext.KhachHangs.SingleOrDefault(p => p.MaKH == Account.makh);
-        //    MaKH = Account.makh - 1;
-
-        //    string kh = MaKH.ToString();
-        //    var don = dbcontext.ChiTietDonHangs.Where(s => s.KH == MaKH);
-        //    int searhtoint;
-        //    int.TryParse(searchTextA, out searhtoint);
-        //    IQueryable<ChiTietDonHang> chiTiets = don.Where(p => p.TenSP.Contains(searchTextA) || p.MaCTDH.Contains(searchTextA) || p.KH== searhtoint || p.MaDH.Contains(searchTextA) || p.MaSP.Contains(searchTextA));
-
-
-        //    if (!string.IsNullOrEmpty(searchTextA))
-        //    {
-        //        DateTime searchDate;
-        //        if (DateTime.TryParse(searchTextA, out searchDate))
-        //        {
-        //            // Nếu chuyển đổi thành công, tìm kiếm ngày
-        //            IQueryable<ChiTietDonHang> dateorder = don.Where(p => p.Ngay.ToString().Contains(searchTextA));
-        //            return dateorder;
-        //        }
-        //        else return chiTiets;
-
-        //    }
-        //    else if (!string.IsNullOrEmpty(searchText))
-        //    {
-        //        return don.Where(p => p.MaCTDH == searchText || p.MaDH == searchText);
-        //    }
-
-        //    else return don;
-
-
-
-
-        //}
-
     }
 }

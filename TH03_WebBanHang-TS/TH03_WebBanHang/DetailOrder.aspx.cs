@@ -36,11 +36,13 @@ namespace TH03_WebBanHang
             var khachhang = dbcontext.KhachHangs.FirstOrDefault(s => s.Email == don.DonHang.KhachHang.Email);
             var list = dbcontext.ChiTietDonHangs.Where(s => s.MaDH == maDH).ToList();
 
-
-
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
             var user = from u in dbcontext.TKs
                        select u;
-            if (user.Any(p => (p.Email == "Admin" && p.TrangThai == true && p.Email == Sign.email && Sign.email == "Admin") || ((p.Quyen == "Admin" || p.Quyen == "Manager") && p.TrangThai == true && p.Email == Sign.email)))
+            if (user.Any(p => (p.Email == "Admin" && p.TrangThai == true && p.Email == EmailKhach && EmailKhach == "Admin") || ((p.Quyen == "Admin" || p.Quyen == "Manager") && p.TrangThai == true && p.Email == EmailKhach)))
             {
                 btnDel.Visible = true;
                 if(don.GiaoDich !=true)
