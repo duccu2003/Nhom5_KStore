@@ -10,7 +10,7 @@ use QL_KPOPStore
 go
 CREATE TABLE TK
 (
-MaTK INT IDENTITY(1,1) PRIMARY KEY , 
+	MaTK INT IDENTITY(1,1) PRIMARY KEY , 
     MatKhau VARCHAR(50) collate Latin1_General_CI_AS  NULL, 
    
     Email VARCHAR(50) collate Latin1_General_CI_AS NULL,
@@ -31,8 +31,8 @@ create table Nhom
 (
 	MaNhom varchar(100) not null,
 	TenNhom varchar(50) not null,
-	DuongDan varchar(Max) not null,
-	AnhNhom varchar(100) null,
+	DuongDan nvarchar(Max) not null,
+	AnhNhom nvarchar(100) null,
 	constraint PK_Size primary key (MaNhom),
 )
 go
@@ -48,12 +48,12 @@ GO
 CREATE TABLE SanPhamData
 (
     MaSP varchar(50) NOT NULL,
-    DuongDan1 varchar(Max) NULL,
-    DuongDan2 varchar(Max) NULL,
-    DuongDan3 varchar(Max) NULL,
-    DuongDan4 varchar(Max) NULL,
-    DuongDan5 varchar(Max) NULL,
-	AnhNote varchar(Max) NULL,
+    DuongDan1 nvarchar(Max) NULL,
+    DuongDan2 nvarchar(Max) NULL,
+    DuongDan3 nvarchar(Max) NULL,
+    DuongDan4 nvarchar(Max) NULL,
+    DuongDan5 nvarchar(Max) NULL,
+	AnhNote nvarchar(Max) NULL,
 	--Pop bit NOT NULL DEFAULT 0
 	Pob bit
 
@@ -68,7 +68,7 @@ CREATE TABLE SanPham
 (
     MaSP varchar(50) NOT NULL,
     TenSP nvarchar(50) NOT NULL,
-    DuongDan varchar(Max) NOT NULL,
+    DuongDan nvarchar(Max) NOT NULL,
     Gia float NOT NULL,
     MoTa nvarchar(255) NOT NULL,
     MaLoai varchar(100) NOT NULL,
@@ -101,7 +101,7 @@ GO
 create table KhachHang
 (
 	MaTK INT,
-	AvatarUser varchar(100) null,
+	AvatarUser varchar(Max) null,
 
     MaKH INT IDENTITY(1,1),
     HoTen NVARCHAR(255) NULL,
@@ -134,7 +134,7 @@ create table DonHang
 go
 CREATE TABLE DanhGia
 (
-	AvatarUser varchar(100) null,
+	AvatarUser varchar(max) null,
     MaDG int IDENTITY(1,1) NOT NULL, -- ID duy nhất cho mỗi bình luận
     MaSP varchar(50) NOT NULL, -- Mã sản phẩm
     TenKH nvarchar(50) NULL, -- Tên khách hàng
@@ -142,12 +142,12 @@ CREATE TABLE DanhGia
     NoiDung nvarchar(Max) NULL, -- Nội dung bình luận
     NgayDG datetime NULL, -- Ngày bình luận
 	RatingValue INT CHECK (RatingValue >= 1 AND RatingValue <= 5),
-	Anh1 varchar(Max) NULL,
-	Anh2 varchar(Max) NULL,
-	Anh3 varchar(Max) NULL,
-	Anh4 varchar(Max) NULL,
-	Anh5 varchar(Max) NULL,
-	Video varchar(Max) NULL,
+	Anh1 nvarchar(Max) NULL,
+	Anh2 nvarchar(Max) NULL,
+	Anh3 nvarchar(Max) NULL,
+	Anh4 nvarchar(Max) NULL,
+	Anh5 nvarchar(Max) NULL,
+	Video nvarchar(Max) NULL,
 	Email VARCHAR(100) NULL,
 	LuotThich INT DEFAULT 0,
     CONSTRAINT PK_DanhGia PRIMARY KEY (MaDG),
@@ -195,7 +195,7 @@ create table ChiTietDonHang
 	MaSP varchar(50) not null,
 	SoLuong integer not null,
 	TenSP nvarchar(50) not null,
-	DuongDan varchar(Max) not null,
+	DuongDan nvarchar(Max) not null,
 	Gia float not null,
 	TenPob nvarchar(50) NULL,
 	ThanhTien float not null,
@@ -217,7 +217,7 @@ go
 CREATE TABLE TinTuc
 (
     MaBV INT IDENTITY(1,1),
-    HinhAnhBV varchar(Max) NULL,
+    HinhAnhBV nvarchar(Max) NULL,
     DuongDanBV varchar(Max) NULL,
     TieuDe nvarchar(Max) NULL,
     NoiDungBV nvarchar(Max) Null,
@@ -229,7 +229,7 @@ GO
 CREATE TABLE VideoThongTin
 (
     MaV INT IDENTITY(1,1),  
-    DuongDanV varchar(Max) NULL,
+    DuongDanV nvarchar(Max) NULL,
 	NgayDangBV DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
     
 );
@@ -237,7 +237,8 @@ GO
 CREATE TABLE Banner
 (
     MaBanner INT IDENTITY(0,1),
-    DuongDan varchar(Max) NULL,
+	TieuDe nvarchar(Max) NULL,
+    DuongDan nvarchar(Max) NULL,
 	NgayDangBV DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
     
 );
@@ -373,17 +374,17 @@ VALUES	('https://www.youtube.com/embed/if0we38Hbyk?si=WNpzGXpbqMuT6kOH'),
 		('https://www.youtube.com/embed/VFm6ztzZ188?si=3V4l6e2bZX284Y9D');
 
 go
-INSERT INTO Banner(DuongDan)
-VALUES	('Content\image-banner\banner1.1.png'),
-		('Content\image-banner\banner2.png'),
-		('Content\image-banner\banner3.png'),
-		('Content\image-banner\banner4.png');
+INSERT INTO Banner(TieuDe,DuongDan)
+VALUES	('KStore','Content\image-banner\banner1.1.png'),
+		('Aespa Better Things','Content\image-banner\banner2.png'),
+		('ILLIT New Album Coming','Content\image-banner\banner3.png'),
+		('2024 Christmas Sale','Content\image-banner\banner4.png');
 
 go
 CREATE PROCEDURE Product_Add 
     @MaSP varchar(50), 
     @TenSP nvarchar(50), 
-    @DuongDan varchar(Max), 
+    @DuongDan nvarchar(Max), 
     @Gia float, 
     @MoTa nvarchar(255), 
     @MaLoai varchar(100),
@@ -436,12 +437,12 @@ GO
 
 CREATE PROCEDURE ProductData_Add 
     @MaSP varchar(50), 
-    @DuongDan1 varchar(Max), 
-    @DuongDan2 varchar(Max), 
-    @DuongDan3 varchar(Max), 
-    @DuongDan4 varchar(Max), 
-    @DuongDan5 varchar(Max),
-    @AnhNote varchar(Max),
+    @DuongDan1 nvarchar(Max), 
+    @DuongDan2 nvarchar(Max), 
+    @DuongDan3 nvarchar(Max), 
+    @DuongDan4 nvarchar(Max), 
+    @DuongDan5 nvarchar(Max),
+    @AnhNote nvarchar(Max),
 	@Pob bit = 0,
 	
 	@IsPreOrder bit = 0
@@ -577,5 +578,4 @@ go
 --BEGIN
 --    EXEC CapNhatDoanhThu;
 --END;
-
 
