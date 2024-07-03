@@ -94,7 +94,10 @@ namespace TH03_WebBanHang.checkOutOrder
         protected void Page_Load(object sender, EventArgs e)
         {
 
-
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
             string maDH = HttpContext.Current.Request.QueryString.Get("MaDH");
 
             var don = dbcontext.ChiTietDonHangs.FirstOrDefault(s => s.MaDH == maDH);
@@ -143,7 +146,7 @@ namespace TH03_WebBanHang.checkOutOrder
                 Session["GioHang"] = lstGioHang;
 
                 Session["MailMD"] = don.MaDH;
-                string email = Sign.email;
+                string email = EmailKhach;
 
                 var db = new QL_KPOPStoreEntities();
                 var user = db.TKs.FirstOrDefault(u => u.Email == checkOut.mail || u.Email == email || u.Email==Pay.emailKHnoSign);

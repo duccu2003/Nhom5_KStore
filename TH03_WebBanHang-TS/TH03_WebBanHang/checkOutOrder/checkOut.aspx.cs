@@ -110,9 +110,13 @@ namespace TH03_WebBanHang.checkOutOrder
                 var hadUser = tk.Any(p => p.Email == Pay.emailKHnoSign && (p.MatKhau != null || p.MatKhau != ""));
                 var hadClient = user.Any(p => p.Email == Pay.emailKHnoSign && (p.MatKhau != null || p.MatKhau != ""));
                 var hadClientNonPass = user.Any(s => s.Email == Pay.emailKHnoSign && (s.MatKhau == null || s.MatKhau == ""));
+                HttpCookie Email = Request.Cookies["Email"];
+                string EmailKhach;
+                if (Email == null) EmailKhach = Sign.email;
+                else EmailKhach = Email.Value;
 
 
-                if (Sign.email == null)
+                if (EmailKhach == null)
                 {
                     using (var db = new QL_KPOPStoreEntities())
                     {
@@ -320,7 +324,7 @@ namespace TH03_WebBanHang.checkOutOrder
                 }
                 else if (hadUser && hadClient && !hadClientNonPass)
                 {
-                    if (Sign.email != null && user.Any(p => p.Email == Sign.email))
+                    if (EmailKhach != null && user.Any(p => p.Email == EmailKhach))
                     {
                         // Tạo một đơn hàng mới
                         DonHang donHang = new DonHang
@@ -869,7 +873,7 @@ namespace TH03_WebBanHang.checkOutOrder
                     //Session["GioHang"] = lstGioHang;
 
                     //Session["MailMD"] = don.MaDH;
-                    //string email = Sign.email;
+                    //string email = EmailKhach;
 
                     //var db = new QL_KPOPStoreEntities();
                     //var user = db.TKs.FirstOrDefault(u => u.Email == email);
