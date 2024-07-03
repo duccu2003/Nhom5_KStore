@@ -51,6 +51,15 @@ namespace TH03_WebBanHang
         protected global::System.Web.UI.WebControls.Label lbCart;
 
         /// <summary>
+        /// imgHeaderAVTofUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgHeaderAVTofUser;
+
+        /// <summary>
         /// PlaceHolderGioiThieu control.
         /// </summary>
         /// <remarks>

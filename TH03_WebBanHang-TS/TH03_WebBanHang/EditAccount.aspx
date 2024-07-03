@@ -4,7 +4,7 @@
         <asp:FormView ID="editImg" runat="server" ItemType="TH03_WebBanHang.Models.KhachHang" SelectMethod="GetProfile" RenderOuterTable="false" OnPageIndexChanging="editImg_PageIndexChanging">
             <ItemTemplate><div class="d-grid" id="divChangeAvt">
                 <img id="userAvatar" loading="lazy" 
-     style="border-radius: 50%; height: 300px; width: 300px; overflow: hidden; object-fit: cover; border:5px double #31772a;" 
+     style="border-radius: 50%; height: 300px; width: 300px; overflow: hidden; object-fit: cover;" 
      class="fade-in card-img-top mb-5 mb-md-0 zoom-hover justify-content-center align-content-center img-avt" 
      src="<%#: Item.AvatarUser %>" 
      alt="..." />
@@ -16,81 +16,83 @@
             *{
                 font-family:Roboto;
             }
+            #divChangeAvt{
+                transition:0.5s all;
+            }
+            #divChangeAvt #userAvatar{
+                border:5px dashed #FFFF;
+                transition:0.5s all;
+            }
+            #divChangeAvt:hover #userAvatar{
+                border:5px solid #31772a;
+            }
            .alert{
-    top:0;
-    position:absolute;
-    width:100%;
-    z-index:9999;
-    padding:10px 0;
-    text-align:center;
-    color:#000;
-}
-.alert-success{
-    background:#d4edda;
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
+                top:0;
+                position:absolute;
+                width:100%;
+                z-index:9999;
+                padding:10px 0;
+                text-align:center;
+                color:#000;
+            }
+            .alert-success{
+                background:#d4edda;
+                color: #155724;
+                background-color: #d4edda;
+                border-color: #c3e6cb;
 
-}
-.alert-danger{
-        background:#f8d7da;
-         color: #721c24;
-          border-color: #f5c6cb;
-}
+            }
+            .alert-danger{
+                background:#f8d7da;
+                color: #721c24;
+                border-color: #f5c6cb;
+            }
 
             #divChangeAvt:hover #btnChangeIMG{
 
                 display:block !important;
             }
-             .custom-file-upload {
-     display: none;
- }
- .custom-file-label {
-     padding: .375rem .75rem;
-     font-size: 1rem;
-     line-height: 1.5;
-     color: #495057;
-     background-color: #ffffff00;
-     border: 1px solid #ced4da;
-     border-radius: .25rem;
-     cursor: pointer;
-     height:max-content;
-     width:max-content;
-     margin:0 auto;
-   
-    
-
-     
- }
+            .custom-file-upload {
+                display: none;
+            }
+             .custom-file-label {
+                 padding: .375rem .75rem;
+                 font-size: 1rem;
+                 line-height: 1.5;
+                 color: #495057;
+                 background-color: #ffffff00;
+                 border: 1px solid #ced4da;
+                 border-radius: .25rem;
+                 cursor: pointer;
+                 height:max-content;
+                 width:max-content;
+                 margin:0 auto;
+             }
             .custom-file-label{
-    transition:0.5s;
-}
-.custom-file-label:hover{
+                transition:0.5s;
+            }
+            .custom-file-label:hover{
     
-    box-shadow:0 10px 50px #636363;
-}
-             .custom-file-label:hover{
+                box-shadow:0 10px 50px #636363;
+            }
+            .custom-file-label:hover{
      
-     background:#522A77;
- }
+                 background:#522A77;
+             }
             .div-content{
                 margin:auto;
                 width:max-content;
                 background: linear-gradient(to bottom, #522A77, #0000) ;
-                               /*background:url('Content/image-bg/bg1.png') no-repeat;
-               
-background-size:cover;
-object-fit:cover;*/
-                
-                
+                /*background:url('Content/image-bg/bg1.png') no-repeat;
+                background-size:cover;
+                object-fit:cover;*/
                 padding:2rem;
                 border-radius:10px;
-                
             }
             .same-css-edit{
                 margin-bottom:0.5rem;
-                 font-size:16px;
-                  padding:5px 0;
+                font-size:16px;
+                 padding:5px 0;
                  border:none;
                  border-radius:10px;
                 

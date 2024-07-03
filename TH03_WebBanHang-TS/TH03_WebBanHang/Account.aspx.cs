@@ -17,6 +17,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using System.Security.Cryptography;
+using System.Windows.Controls;
 
 namespace TH03_WebBanHang
 {
@@ -53,76 +54,94 @@ namespace TH03_WebBanHang
             else
             {
 
-                
+
                 if (user.Any(p => (p.Email == EmailKhach)))
                 {
-                   
 
-                        var tk = user.FirstOrDefault(p => p.Email == EmailKhach); //lọc trong xem có email nào == lbDeptid đang được hiện (TK)
-                        var kh = khachhang.FirstOrDefault(p => p.Email == EmailKhach); //lọc trong xem có email nào == lbDeptid đang được hiện (TK)
-                        if (kh != null)
+
+                    var tk = user.FirstOrDefault(p => p.Email == EmailKhach); //lọc trong xem có email nào == lbDeptid đang được hiện (TK)
+                    var kh = khachhang.FirstOrDefault(p => p.Email == EmailKhach); //lọc trong xem có email nào == lbDeptid đang được hiện (TK)
+                    if (kh != null)
+                    {
+                        maK = kh.MaKH.ToString(); MaKhach = kh.MaKH;
+
+                        if (kh.AvatarUser != null)
                         {
-                            maK = kh.MaKH.ToString(); MaKhach = kh.MaKH;
-
-                            if (kh.AvatarUser != null)
-                            {
-                                ProfileImage.ImageUrl = dbcontext.KhachHangs.FirstOrDefault(p => p.Email == EmailKhach).AvatarUser;
-                                urlAvt = dbcontext.KhachHangs.FirstOrDefault(p => p.Email == EmailKhach).AvatarUser;
-                            }
-                            else
-                            {
-                                ProfileImage.ImageUrl = Shop.defaultAvatar_BlackKS;
-                                urlAvt = Shop.defaultAvatar_BlackKS;
-
-                            }
-                            lbDiem.Text = "Điểm: " + dbcontext.KhachHangs.FirstOrDefault(p => p.Email == EmailKhach).Diem.ToString();
-
+                            ProfileImage.ImageUrl = dbcontext.KhachHangs.FirstOrDefault(p => p.Email == EmailKhach).AvatarUser;
+                            urlAvt = dbcontext.KhachHangs.FirstOrDefault(p => p.Email == EmailKhach).AvatarUser;
                         }
-                        else if (kh == null && EmailKhach == "Admin")
+                        else
                         {
                             ProfileImage.ImageUrl = Shop.defaultAvatar_BlackKS;
                             urlAvt = Shop.defaultAvatar_BlackKS;
-                            
+
                         }
-                        else
-                        {
-                           
-                        }
+                        lbDiem.Text = "Điểm: " + dbcontext.KhachHangs.FirstOrDefault(p => p.Email == EmailKhach).Diem.ToString();
+
+                    }
+                    else if (kh == null && EmailKhach == "Admin")
+                    {
+                        ProfileImage.ImageUrl = Shop.defaultAvatar_BlackKS;
+                        urlAvt = Shop.defaultAvatar_BlackKS;
+
+                    }
+                    else
+                    {
+
+                    }
+                    if (tk.Email == "Admin")
+                    {
+                        makh = 0;
+                        Session["MaKH"] = makh;
+                    }
+                    else
+                    {
+                        makh = kh.MaKH;
+                        Session["MaKH"] = kh.MaKH;
+                    }
+
+
+
+
+
+
+
+                    //LinkButton linkButton = (LinkButton)sender;
+
+
+
+
+                    FileUploadProfilePic.Attributes["onchange"] = "btnUpload_Click(this)";
+                    if (tk.Email == "Admin" || tk.Quyen == "Admin" || tk.Quyen == "Manager")
+                    {
+                        //btnControl.Visible = true;
+                        Response.Write("<style>.btnControl{\r\n            display:block !important;\r\n        }</style>");
                         if (tk.Email == "Admin")
                         {
-                            makh = 0;
-                            Session["MaKH"] =makh;
+                            //btnAccOrder.Visible = false; 
+                            Response.Write("<style>.btnAccOrder{\r\n            display:none !important;\r\n        }</style>");
+                            Response.Redirect("Manager"); }
+                        if (tk.Email != "Admin" && (tk.Quyen == "Admin" || tk.Quyen == "Manager"))
+                        { 
+                            /*btnAccOrder.Visible = true;*/
+                            Response.Write("<style>.btnAccOrder{\r\n            display:block !important;\r\n        }</style>");
                         }
-                        else
-                        {
-                            makh = kh.MaKH;
-                            Session["MaKH"] = kh.MaKH;
-                        }
 
-
-
-
-
-
-
-                        FileUploadProfilePic.Attributes["onchange"] = "btnUpload_Click(this)";
-                        if (tk.Email == "Admin" || tk.Quyen == "Admin" || tk.Quyen == "Manager")
-                        {
-                            btnControl.Visible = true;
-                            if (tk.Email == "Admin")
-                            { btnAccOrder.Visible = false; Response.Redirect("Manager"); }
-                            if (tk.Email != "Admin" && (tk.Quyen == "Admin" || tk.Quyen == "Manager"))
-                            { btnAccOrder.Visible = true; }
-
-                        }
-                        else if (tk.Quyen == null || tk.Quyen == "None") { btnControl.Visible = false; }
-                        else btnControl.Visible = false;
-
-                        var activeAccounts = dbcontext.KhachHangs.Where(p => p.TrangThai == true && p.Email == EmailKhach).ToList();
-                        ListViewAccounts.DataSource = activeAccounts;
-
-                        ListViewAccounts.DataBind();
                     }
+                    else if (tk.Quyen == null || tk.Quyen == "None") {
+                        /*btnControl.Visible = false;*/
+                        Response.Write("<style>.btnControl{\r\n            display:none !important;\r\n        }</style>");
+                    }
+                    else {
+                        /*btnControl.Visible = false*/
+                        Response.Write("<style>.btnControl{\r\n            display:none !important;\r\n        }</style>");
+                    };
+
+                    var activeAccounts = dbcontext.KhachHangs.Where(p => p.TrangThai == true && p.Email == EmailKhach).ToList();
+                    ListViewAccounts.DataSource = activeAccounts;
+
+                    ListViewAccounts.DataBind();
+                }
                     
             
             
@@ -224,13 +243,33 @@ namespace TH03_WebBanHang
 
             using (var dbContext = new QL_KPOPStoreEntities())
             {
-                var disabledTKs = dbContext.TKs.FirstOrDefault(p => p.TrangThai == true && p.Email == EmailKhach);
+                var disabledTKs = dbContext.TKs.FirstOrDefault(p => p.Email == EmailKhach);
 
-                var disabledKhs = dbContext.KhachHangs.FirstOrDefault(p => p.TrangThai == true && p.Email == EmailKhach);
-                var Tks = dbContext.TKs.Any(p => p.TrangThai == true && p.Email == EmailKhach);
+                var disabledKhs = dbContext.KhachHangs.FirstOrDefault(p => p.Email == EmailKhach);
+                var Tks = dbContext.TKs.Any(p => p.Email == EmailKhach);
 
 
-                var Khs = dbContext.KhachHangs.Any(p => p.TrangThai == true && p.Email == EmailKhach);
+                var Khs = dbContext.KhachHangs.Any(p => p.Email == EmailKhach);
+                //if (Tks)
+                //{
+                //    disabledTKs.TrangThai = false;
+                //    if(Khs) disabledKhs.TrangThai = false;
+                //}
+                if (Tks)
+                {
+
+                    disabledTKs.TrangThai = false;
+                    dbContext.TKs.AddOrUpdate(disabledTKs);
+                    if (Khs)
+                    { 
+                        disabledKhs.TrangThai = false;
+                        dbContext.KhachHangs.AddOrUpdate(disabledKhs);
+                    }
+                    dbContext.SaveChanges();
+                }
+
+                dbContext.SaveChanges();
+                dbcontext.SaveChanges();
 
                 Response.Cookies["AuthToken"].Value = null;
                 Response.Cookies["AuthToken"].Expires = DateTime.Now.AddDays(-1);
@@ -251,15 +290,15 @@ namespace TH03_WebBanHang
 
             Response.Redirect("Manager.aspx");
         }
-        protected void btnAccOrder_Click(object sender, EventArgs e)
-        {
-            HttpCookie Email = Request.Cookies["Email"];
-            string EmailKhach;
-            if (Email == null) EmailKhach = Sign.email;
-            else EmailKhach = Email.Value;
+        //protected void btnAccOrder_Click(object sender, EventArgs e)
+        //{
+        //    HttpCookie Email = Request.Cookies["Email"];
+        //    string EmailKhach;
+        //    if (Email == null) EmailKhach = Sign.email;
+        //    else EmailKhach = Email.Value;
 
-            Response.Redirect("AccountOrder.aspx?Deptid=" + EmailKhach);
-        }
+        //    Response.Redirect("AccountOrder.aspx?Deptid=" + EmailKhach);
+        //}
         private bool VerifyToken()
         {
             HttpCookie Email = Request.Cookies["Email"];

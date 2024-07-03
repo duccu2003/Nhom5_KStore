@@ -1,4 +1,5 @@
 ﻿using Microsoft.Ajax.Utilities;
+using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.Graph;
 using Microsoft.Graph.Models;
 using System;
@@ -799,10 +800,10 @@ namespace TH03_WebBanHang
                                 cmd.Parameters.AddWithValue("@MaSP", productId);
 
 
-                                cmd.Parameters.AddWithValue("@AvatarUser", Account.urlAvt);
+                                
 
                                 avatar = Account.urlAvt;
-
+                                cmd.Parameters.AddWithValue("@AvatarUser", avatar);
                                 cmd.Parameters.AddWithValue("@TenKH", khachHang.HoTen); // Giả sử tên khách hàng
                                 imgClientCMT.ImageUrl = Account.urlAvt;
                                 cmd.Parameters.AddWithValue("@DienThoai", khachHang.DienThoai); // Giả sử tên khách hàng
@@ -1358,145 +1359,180 @@ namespace TH03_WebBanHang
 
         public IQueryable<TH03_WebBanHang.Models.SanPham> GetPhones()
         {
+            HttpCookie Email = Request.Cookies["Email"];
+            string EmailKhach;
+            if (Email == null) EmailKhach = Sign.email;
+            else EmailKhach = Email.Value;
+
+
             string url = HttpContext.Current.Request.Url.ToString();
             string sppopular = HttpContext.Current.Request.QueryString.Get("sp");
             string gp = HttpContext.Current.Request.QueryString.Get("gp");
             string ls = HttpContext.Current.Request.QueryString.Get("ls");
             string searchText = Request.QueryString["searchText"];
+            string myrating = HttpContext.Current.Request.QueryString.Get("myrating");
+            string mylike = HttpContext.Current.Request.QueryString.Get("mylike");
 
-            if ((dbcontext.SanPhams.Any(p =>p.MaNhom == gp) || gp != null)&&ls==null)
+            if((mylike !=null || myrating != null) && (gp==null || ls==null || sppopular == null || searchText==null))
             {
-                return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaNhom == gp).OrderByDescending(s => s.NgayNhap);
-            }
-            //if (dbcontext.SanPhams.Any(p => p.MaLoai == ls)||ls!=null)
-            //{
-            //    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaLoai == ls);
-            //}
-            if (dbcontext.SanPhams.Any(p => p.SoLuongKho > 0 && p.MaNhom == gp || p.MaLoai == ls))
-            {
-                if (dbcontext.SanPhams.Any(p => p.SoLuongKho > 0 && p.MaNhom == gp && p.MaLoai == ls))
+                if (mylike != null && myrating == null)
                 {
-                    return dbcontext.SanPhams.Where(p => p.MaNhom == gp && p.MaLoai == ls).OrderByDescending(s => s.NgayNhap);
+                    var khach = dbcontext.KhachHangs.FirstOrDefault(s => s.Email == EmailKhach && s.Email == mylike);
+                    var liked = dbcontext.ThichSPs.FirstOrDefault(s => (s.Email == EmailKhach && s.MaKH == khach.MaKH) || (s.Email == EmailKhach && s.Email==mylike));
+                    var hadliked = dbcontext.ThichSPs.Any(s => (s.Email == EmailKhach && s.MaKH == khach.MaKH) || (s.Email == EmailKhach && s.Email == mylike));
+                    if (hadliked && ls == null)
+                        return dbcontext.SanPhams.Where(s => s.MaSP == liked.MaSP);
+                    else if(hadliked && ls != null) return dbcontext.SanPhams.Where(s => s.MaSP == liked.MaSP && s.MaLoai == ls);
+                    else return null;
                 }
-                else if (gp != null && ls == "0")
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaNhom == gp).OrderByDescending(s => s.NgayNhap);
-                else if (gp != null && ls != null)
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaNhom == gp && p.MaLoai == ls).OrderByDescending(s => s.NgayNhap);
-                else if (dbcontext.SanPhams.Any(p => p.SoLuongKho > 0 && p.MaNhom == gp))
+                else if (myrating != null && mylike == null)
                 {
-
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaNhom == gp).OrderByDescending(s => s.NgayNhap);
+                    var khach = dbcontext.KhachHangs.FirstOrDefault(s => s.Email == EmailKhach && s.Email == myrating);
+                    var rated = dbcontext.DanhGias.FirstOrDefault(s => (s.Email == EmailKhach && s.Email == khach.Email) || (s.Email == myrating && s.Email == EmailKhach));
+                    var hadrated = dbcontext.DanhGias.Any(s => (s.Email == EmailKhach && s.Email == khach.Email) || (s.Email == myrating && s.Email==EmailKhach));
+                    if(hadrated && ls==null)
+                        return dbcontext.SanPhams.Where(s => s.MaSP == rated.MaSP);
+                    else if (hadrated && ls !=null) return dbcontext.SanPhams.Where(s => s.MaSP == rated.MaSP && s.MaLoai == ls);
+                    else return null;
                 }
-                else if (dbcontext.SanPhams.Any(p => p.SoLuongKho > 0 && p.MaLoai == ls) && (gp == null || gp == ""))
-                {
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaLoai == ls).OrderByDescending(s => s.NgayNhap);
-                }
-                else if (ls == "0" && (gp != null || gp != ""))
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaNhom == gp).OrderByDescending(s => s.NgayNhap);
-                else if (ls == "0" && (gp == null || gp == ""))
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0).OrderByDescending(s => s.NgayNhap);
-                else if (ls == "0")
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0).OrderByDescending(s => s.NgayNhap);
-                else if (gp == null)
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0).OrderByDescending(s => s.NgayNhap);
-                else if (gp != null)
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaNhom == gp).OrderByDescending(s => s.NgayNhap);
-                else if (ls != null && (gp != null || gp != ""))
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaLoai == ls && p.MaNhom == gp).OrderByDescending(s => s.NgayNhap);
-                else if (ls != null && (gp == null || gp == ""))
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaLoai == ls).OrderByDescending(s => s.NgayNhap);
-                else
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0).OrderByDescending(s => s.NgayNhap);
+                else return null;
             }
             else
             {
-                if (sppopular == "popular")
+                if ((dbcontext.SanPhams.Any(p =>p.MaNhom == gp) || gp != null)&&ls==null)
                 {
-                    var chitietList = dbcontext.ChiTietDonHangs.Where(p => p.MaDH != null).ToList();
-                    var maSPList = chitietList.Select(p => p.MaSP).ToList();
-                    if (ls != null)
+                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaNhom == gp).OrderByDescending(s => s.NgayNhap);
+                }
+                //if (dbcontext.SanPhams.Any(p => p.MaLoai == ls)||ls!=null)
+                //{
+                //    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaLoai == ls);
+                //}
+                if (dbcontext.SanPhams.Any(p => p.SoLuongKho > 0 && p.MaNhom == gp || p.MaLoai == ls))
+                {
+                    if (dbcontext.SanPhams.Any(p => p.SoLuongKho > 0 && p.MaNhom == gp && p.MaLoai == ls))
                     {
-                        var sanpham = dbcontext.SanPhams
-                                           .Where(p => maSPList.Contains(p.MaSP) && p.MaLoai == ls)
-                                           .OrderByDescending(p => p.DoanhSo)
-                                           .Take(8);
-                        return sanpham;
+                        return dbcontext.SanPhams.Where(p => p.MaNhom == gp && p.MaLoai == ls).OrderByDescending(s => s.NgayNhap);
                     }
+                    else if (gp != null && ls == "0")
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaNhom == gp).OrderByDescending(s => s.NgayNhap);
+                    else if (gp != null && ls != null)
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaNhom == gp && p.MaLoai == ls).OrderByDescending(s => s.NgayNhap);
+                    else if (dbcontext.SanPhams.Any(p => p.SoLuongKho > 0 && p.MaNhom == gp))
+                    {
+
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaNhom == gp).OrderByDescending(s => s.NgayNhap);
+                    }
+                    else if (dbcontext.SanPhams.Any(p => p.SoLuongKho > 0 && p.MaLoai == ls) && (gp == null || gp == ""))
+                    {
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaLoai == ls).OrderByDescending(s => s.NgayNhap);
+                    }
+                    else if (ls == "0" && (gp != null || gp != ""))
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaNhom == gp).OrderByDescending(s => s.NgayNhap);
+                    else if (ls == "0" && (gp == null || gp == ""))
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0).OrderByDescending(s => s.NgayNhap);
+                    else if (ls == "0")
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0).OrderByDescending(s => s.NgayNhap);
+                    else if (gp == null)
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0).OrderByDescending(s => s.NgayNhap);
+                    else if (gp != null)
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaNhom == gp).OrderByDescending(s => s.NgayNhap);
+                    else if (ls != null && (gp != null || gp != ""))
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaLoai == ls && p.MaNhom == gp).OrderByDescending(s => s.NgayNhap);
+                    else if (ls != null && (gp == null || gp == ""))
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaLoai == ls).OrderByDescending(s => s.NgayNhap);
                     else
-                    {
-                        var sanpham = dbcontext.SanPhams
-                                           .Where(p => maSPList.Contains(p.MaSP))
-                                           .OrderByDescending(p => p.DoanhSo)
-                                           .Take(8);
-                        return sanpham;
-                    }
-                }
-                else if (sppopular == "new")
-                {
-                    if (ls != null)
-                    {
-                        var sanpham = dbcontext.SanPhams
-                                           .Where(p => p.MaLoai == ls)
-                                           .OrderByDescending(p => p.NgayNhap)
-                                           .Take(8);
-                        return sanpham;
-                    }
-                    else
-                    {
-                        var sanpham = dbcontext.SanPhams
-                                               .OrderByDescending(p => p.NgayNhap)
-                                               .Take(8);
-                        return sanpham;
-                    }
-                }
-                else if (gp != null && ls != null)
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaNhom == gp && p.MaLoai == ls ).OrderByDescending(s => s.NgayNhap);
-                else if (dbcontext.SanPhams.Any(p => p.SoLuongKho > 0 && p.MaLoai == ls ))
-                {
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaLoai == ls ).OrderByDescending(s => s.NgayNhap);
-                }
-                else if (gp != null && ls == "0")
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaNhom == gp ).OrderByDescending(s => s.NgayNhap);
-                else if (ls == "0")
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 ).OrderByDescending(s => s.NgayNhap);
-                else if (ls != null && (gp != null || gp != ""))
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaLoai == ls && p.MaNhom == gp ).OrderByDescending(s => s.NgayNhap);
-                else if (ls != null && (gp == null || gp == ""))
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaLoai == ls ).OrderByDescending(s => s.NgayNhap);
-                else if (!string.IsNullOrEmpty(searchText))
-                {
-                    var hasloai = dbcontext.Loais.Any(s => s.TenLoai.Contains(searchText) || s.MaLoai.Contains(searchText));
-                    var hasnhom = dbcontext.Nhoms.Any(s => s.TenNhom.Contains(searchText) || s.MaNhom.Contains(searchText));
-                    if (hasloai)
-                    {
-                        Loai loai = dbcontext.Loais.FirstOrDefault(s => s.TenLoai.Contains(searchText) || s.MaLoai.Contains(searchText));
-                        return dbcontext.SanPhams.Where(p => p.MaLoai == loai.MaLoai).GroupBy(p => p.TenSP).Select(group => group.OrderBy(p => p.Gia).FirstOrDefault());
-
-                    }
-                    else if (hasnhom)
-                    {
-                        Nhom nhom = dbcontext.Nhoms.FirstOrDefault(s => s.TenNhom.Contains(searchText) || s.MaNhom.Contains(searchText));
-
-
-                        return dbcontext.SanPhams.Where(p => p.MaNhom == nhom.MaNhom).GroupBy(p => p.TenSP).Select(group => group.OrderBy(p => p.Gia).FirstOrDefault());
-
-                    }
-                    else
-                    {
-                        return dbcontext.SanPhams.Where(p => p.TenSP.Contains(searchText)).GroupBy(p => p.TenSP).Select(group => group.OrderBy(p => p.Gia).FirstOrDefault());
-
-                    }
-                }
-                else if (string.IsNullOrEmpty(searchText))
-                {
-                    return dbcontext.SanPhams.OrderByDescending(s => s.NgayNhap);
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0).OrderByDescending(s => s.NgayNhap);
                 }
                 else
                 {
-                    return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && (gp == "" || gp == null) ).GroupBy(p => p.TenSP).Select(group => group.OrderBy(p => p.Gia).OrderByDescending(s => s.NgayNhap).FirstOrDefault());
+                    if (sppopular == "popular")
+                    {
+                        var chitietList = dbcontext.ChiTietDonHangs.Where(p => p.MaDH != null).ToList();
+                        var maSPList = chitietList.Select(p => p.MaSP).ToList();
+                        if (ls != null)
+                        {
+                            var sanpham = dbcontext.SanPhams
+                                               .Where(p => maSPList.Contains(p.MaSP) && p.MaLoai == ls)
+                                               .OrderByDescending(p => p.DoanhSo)
+                                               .Take(8);
+                            return sanpham;
+                        }
+                        else
+                        {
+                            var sanpham = dbcontext.SanPhams
+                                               .Where(p => maSPList.Contains(p.MaSP))
+                                               .OrderByDescending(p => p.DoanhSo)
+                                               .Take(8);
+                            return sanpham;
+                        }
+                    }
+                    else if (sppopular == "new")
+                    {
+                        if (ls != null)
+                        {
+                            var sanpham = dbcontext.SanPhams
+                                               .Where(p => p.MaLoai == ls)
+                                               .OrderByDescending(p => p.NgayNhap)
+                                               .Take(8);
+                            return sanpham;
+                        }
+                        else
+                        {
+                            var sanpham = dbcontext.SanPhams
+                                                   .OrderByDescending(p => p.NgayNhap)
+                                                   .Take(8);
+                            return sanpham;
+                        }
+                    }
+                    else if (gp != null && ls != null)
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaNhom == gp && p.MaLoai == ls ).OrderByDescending(s => s.NgayNhap);
+                    else if (dbcontext.SanPhams.Any(p => p.SoLuongKho > 0 && p.MaLoai == ls ))
+                    {
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaLoai == ls ).OrderByDescending(s => s.NgayNhap);
+                    }
+                    else if (gp != null && ls == "0")
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaNhom == gp ).OrderByDescending(s => s.NgayNhap);
+                    else if (ls == "0")
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 ).OrderByDescending(s => s.NgayNhap);
+                    else if (ls != null && (gp != null || gp != ""))
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaLoai == ls && p.MaNhom == gp ).OrderByDescending(s => s.NgayNhap);
+                    else if (ls != null && (gp == null || gp == ""))
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && p.MaLoai == ls ).OrderByDescending(s => s.NgayNhap);
+                    else if (!string.IsNullOrEmpty(searchText))
+                    {
+                        var hasloai = dbcontext.Loais.Any(s => s.TenLoai.Contains(searchText) || s.MaLoai.Contains(searchText));
+                        var hasnhom = dbcontext.Nhoms.Any(s => s.TenNhom.Contains(searchText) || s.MaNhom.Contains(searchText));
+                        if (hasloai)
+                        {
+                            Loai loai = dbcontext.Loais.FirstOrDefault(s => s.TenLoai.Contains(searchText) || s.MaLoai.Contains(searchText));
+                            return dbcontext.SanPhams.Where(p => p.MaLoai == loai.MaLoai).GroupBy(p => p.TenSP).Select(group => group.OrderBy(p => p.Gia).FirstOrDefault());
+
+                        }
+                        else if (hasnhom)
+                        {
+                            Nhom nhom = dbcontext.Nhoms.FirstOrDefault(s => s.TenNhom.Contains(searchText) || s.MaNhom.Contains(searchText));
+
+
+                            return dbcontext.SanPhams.Where(p => p.MaNhom == nhom.MaNhom).GroupBy(p => p.TenSP).Select(group => group.OrderBy(p => p.Gia).FirstOrDefault());
+
+                        }
+                        else
+                        {
+                            return dbcontext.SanPhams.Where(p => p.TenSP.Contains(searchText)).GroupBy(p => p.TenSP).Select(group => group.OrderBy(p => p.Gia).FirstOrDefault());
+
+                        }
+                    }
+                    else if (string.IsNullOrEmpty(searchText))
+                    {
+                        return dbcontext.SanPhams.OrderByDescending(s => s.NgayNhap);
+                    }
+                    else
+                    {
+                        return dbcontext.SanPhams.Where(p => p.SoLuongKho > 0 && (gp == "" || gp == null) ).GroupBy(p => p.TenSP).Select(group => group.OrderBy(p => p.Gia).OrderByDescending(s => s.NgayNhap).FirstOrDefault());
+
+                    }
 
                 }
-
             }
         }
 

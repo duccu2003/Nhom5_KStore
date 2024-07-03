@@ -48,8 +48,25 @@ namespace TH03_WebBanHang
                        select u;
             var khachhang = from u in dbcontext.KhachHangs
                             select u;
+
             var db = new QL_KPOPStoreEntities();
             HttpCookie Email = Request.Cookies["Email"];
+            
+            if (Email != null)
+            {
+                var isKhachLog = dbcontext.KhachHangs.Any(s => s.Email == Email.Value);
+                if (isKhachLog)
+                {
+                    imgHeaderAVTofUser.Visible = true;
+                    var KhachHang = dbcontext.KhachHangs.FirstOrDefault(s => s.Email == Email.Value);
+                    imgHeaderAVTofUser.ImageUrl = KhachHang.AvatarUser;
+                    Response.Write("<style>#iconAccount{display:none;}</style>");
+                }
+                else
+                {
+                    imgHeaderAVTofUser.Visible=false;
+                }
+            }
 
             List<ChiTietDonHang> lstGioHang = Session["GioHang"] as List<ChiTietDonHang>;
             Hepler hepler = new Hepler();

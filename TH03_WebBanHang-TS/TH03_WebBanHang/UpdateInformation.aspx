@@ -239,9 +239,14 @@ $(function(){
                       <%--  <th><%#Item.MaSP %></th>
                                   </tr>--%>
                         <tr>
-                            <th scope="col">
+                            <th colspan="2" scope="col" style="background:#000; color:#FFFF;">
+                                <p><%#:Item.TieuDe %></p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th colspan="2" scope="col">
                                 <img style="width:100%;" src="<%#Item.DuongDan %>"/>
-                                </th>
+                            </th>
                                        
                                                        
 
@@ -251,6 +256,9 @@ $(function(){
                             <th colspan="2"><%#Item.NoiDungBV %></th>
                         </tr>--%>
                         <tr>
+                                <th scope="col">
+                                    <p><%#:Item.NgayDangBV %></p>
+                                </th>
                               <td>
 
 	                             <asp:Button ID="btnDelBanner" class="btnUpdate btn btn-default btn-color btn-w" runat="server" style="border:none; /*background-color:#0000;*/ /*background:linear-gradient(to right, #7c92ea,#4cff00);*/   /*font-size:14px;*/ /*width:max-content;*/ width: 6rem; background-color:#0000;" CommandArgument='<%# Eval("MaBanner")%>' OnClick="btnDelBanner_Click" Text="Xóa" CssClass="btn btn-primary" />

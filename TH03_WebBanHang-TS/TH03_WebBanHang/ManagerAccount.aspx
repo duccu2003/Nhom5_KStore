@@ -227,7 +227,13 @@ text-align:center;
 </div>
     <style>
         .avt-user{
-            width:100px; border-radius:50%; border:5px solid; height:100px; object-fit:cover; overflow:hidden
+            width:100px; 
+            border-radius:50%; 
+            border:5px solid; 
+            height:100px; 
+            object-fit:cover; 
+            overflow:hidden;
+         
         }
     </style>
     <img loading="lazy" style="filter: brightness(50%); height: 100%; width: 100%; position: fixed; z-index: 0;" src="Content/image-bg/bg-for-slide-gp.png" />
@@ -419,7 +425,12 @@ text-align:center;
             </tr>
         </GroupTemplate>
         <ItemTemplate>
-            <td class="td-longer justify-content-center align-content-center"><img class="avt-user" style='<%# Item.TrangThai == true ? "border-color: #2bf345;" : "border-color: #808080;" %>' src="<%#:Item.AvatarUser%>"/></td>
+            <td class="td-longer justify-content-center align-content-center">
+                <img title="<%#:Item.HoTen %>"" class="avt-user" style='<%# Item.TrangThai == true ? "border-color: #50C878;" : "border-color: #808080;" %>' src="<%#:Item.AvatarUser%>"/>
+                <div style="text-align:center; justify-content:center; margin:auto; width:100%;">
+                    <p style='<%#:Item.TrangThai==true?"color:#50C878; border-radius:10px; position:relative; top:-0.85rem; margin:auto; padding:0 2px; text-align:center; background:#FFF;  font-weight:bold; width:max-content;": "color:#808080; border-radius:10px; position:relative; top:-0.85rem; margin:auto; padding:0 2px; text-align:center; background:#FFF;  font-weight:bold; width:max-content;" %>'><%#:Item.TrangThai==true?"Online" : "Offline" %></p>
+                </div>
+            </td>
 			<td class="td-longer justify-content-center align-content-center"><%#:Item.HoTen%></td>
 			<td class="justify-content-center align-content-center"><%#:Item.DienThoai%></td>
 			<%--<td class="justify-content-center align-content-center"><%#:Item.GioiTinh%></td>--%>

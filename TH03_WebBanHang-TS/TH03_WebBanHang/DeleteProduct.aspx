@@ -208,7 +208,7 @@ $(function(){
         }
 
         #btDel {
-        background-color:#9b51e0;
+        
     }
 
         
@@ -227,11 +227,13 @@ $(function(){
         
 
             #btDel,.btn-del {
-        background-color:#000 !important;
+        background-color:#FFFF !important;
+        color:#000;
+        transition:0.5s all;
     }
     #btDel:hover,.btn-del:hover {
-        background-color:#a49ccb !important;
-        color:#636161;
+        background-color:#000 !important;
+        color:#FFFF;
     }
         </style>		
     <div id="content" class="d-grid" style="display:grid !important; row-gap:0.5rem; justify-content:center; align-content:center; align-items:center; text-align:center;">

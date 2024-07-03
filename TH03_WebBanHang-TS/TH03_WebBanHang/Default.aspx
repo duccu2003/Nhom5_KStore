@@ -236,7 +236,7 @@
                          <asp:ListView ID="ListView6" runat="server" ItemType="TH03_WebBanHang.Models.Banner" SelectMethod="GetBanner">
                              <ItemTemplate>
                                  
-                                 <div class='carousel-item <%# Eval("MaBanner").ToString() == "0"? "active" : "" %>'>
+                                 <div title="<%#:Item.TieuDe %>" class='carousel-item <%# Eval("MaBanner").ToString() == "0"? "active" : "" %>'>
                                     <img loading="lazy" src="<%#:Item.DuongDan %>" class="d-block w-100" alt="Background Image 2">
                                 </div>
 

@@ -39,6 +39,8 @@
         .nav-link:hover, .dropdown-item:hover{
             background:#000 !important;
             color:#fff !important;
+            transform:scale(1.1);
+            
         }
         .nav-link:hover *,.dropdown-item:hover *{
             color:#fff !important;

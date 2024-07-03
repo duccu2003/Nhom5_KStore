@@ -387,31 +387,24 @@ namespace TH03_WebBanHang
                 var Tks = dbContext.TKs.Any(p => p.TrangThai == true && p.Email == EmailKhach);
                 var Khs = dbContext.KhachHangs.Any(p => p.TrangThai == true && p.Email == EmailKhach);
 
-               //if (Tks)
-               //{
 
-               //         disabledTKs.TrangThai = false;
+                if (Tks)
+                {
 
-               //         disabledKhs.TrangThai = false;
-               //         dbContext.TKs.AddOrUpdate(disabledTKs);
-               //         dbContext.KhachHangs.AddOrUpdate(disabledKhs);
-               //         dbContext.SaveChanges();
+                    disabledTKs.TrangThai = false;
+                    dbContext.TKs.AddOrUpdate(disabledTKs);
+                    if (Khs)
+                    {
+                        disabledKhs.TrangThai = false;
+                        dbContext.KhachHangs.AddOrUpdate(disabledKhs);
+                    }
+                    dbContext.SaveChanges();
+                }
+
+                dbContext.SaveChanges();
+                dbcontext.SaveChanges();
 
 
-               //}
-               //else
-               //{
-               //         disabledTKs.TrangThai = false;
-
-               //         disabledKhs.TrangThai = false;
-
-               //         dbContext.TKs.AddOrUpdate(disabledTKs);
-               //         dbContext.KhachHangs.AddOrUpdate(disabledKhs);
-               //         dbContext.SaveChanges();
-
-               //}
-
-                //dbContext.SaveChanges();
                 Response.Cookies["AuthToken"].Value = null;
                 Response.Cookies["AuthToken"].Expires = DateTime.Now.AddDays(-1);
                 Response.Cookies["Key"].Value = null;

@@ -10,7 +10,9 @@
 
 
         }
-
+        /*.btnControl{
+            display:none;
+        }*/
         .profile-picture {
             width: 180px;
             height: 180px;
@@ -25,10 +27,10 @@
                 object-fit: cover;
             }
 
-        .profile-info {
-            text-align: match-parent;
+            .profile-info {
+                text-align: match-parent;
                         
-        }
+            }
 
             .profile-info h5 {
                 
@@ -155,8 +157,17 @@
                         .icon-container {
                             display: grid;
                             right:-10%; 
-                            top:20%;
+                            top:-1rem;
                             position:fixed;
+                        }
+                        .icon-link:hover {
+    
+                            transform:translate(10px,-10px);
+                            box-shadow:0px 10px 50px #636363;
+                        }
+                        .p-icon-link{
+                            left:3rem;
+                            bottom:-15px;
                         }
                         
                     
@@ -175,6 +186,16 @@
                             
                            
                         }
+                          .p-icon-link{
+                              left:0;
+                              bottom:-5rem;
+                              
+                          }
+                        .icon-link:hover {
+    
+                            transform:translate(0,-10px);
+                            box-shadow:0px 10px 50px #636363;
+                        }
                         .btn-sign-out{
                             margin-top:2rem;
                         }
@@ -192,9 +213,6 @@
     gap: 1rem; /* Add some space between the icons */
     margin-top:1rem;
     
-    
-
-    
 }
 
 .icon-link {
@@ -206,15 +224,45 @@
     transition:0.5s;
 
 }
+
+
+
+.icon-link  {
+    display:flex;
+    width:45px;
+    height:45px;
+    
+}
+.p-icon-link {
+    display:none;  
+    position:absolute;   
+    background: linear-gradient(to right, #522A77, #2a2e77) !important;   
+     transition:0.5s;
+
+}
+.icon-link:hover .p-icon-link {
+    display:block;
+    box-shadow:0px 10px 50px #636363;
+    padding:10px;
+    width:max-content;
+     border-radius:20px;
+}
 .icon-link:hover {
     
-    transform:translate(0,-10px);
-    box-shadow:0px 10px 50px #636363;
-}
-
-
-.icon-link i {
     
+}
+.icon-link i {
+    margin:auto;
+    text-align:center;
+    justify-content:center;
+    align-content:center;
+    align-items:center;
+    justify-items:center;
+    position:center;
+
+}
+.icon-link p {
+
 }
 </style>
  <style>
@@ -254,9 +302,37 @@
                  color: #fff;
                  background-color: #8b8ba9;
              }
+
+             
  </style>
             <asp:ListView ID="ListViewAccounts" runat="server">
                 <ItemTemplate>
+                          <div class="icon-container">
+    <a title="Chỉnh sửa thông tin" href="EditAccount.aspx?MaKH=<%# Eval("MaKH") %>&Email=<%# Eval("Email") %>" class="icon-link">
+        <p class="p-icon-link">Chỉnh sửa thông tin</p><i class="fas fa-edit"></i>
+    </a>
+    <a title="Sản phẩm đã thích" href="item?mylike=<%# Eval("Email") %>" class="icon-link">
+        <p class="p-icon-link">Sản phẩm đã yêu thích</p><i class="fas fa-heart"></i>
+    </a>
+    <a title="Sản phẩm đã đánh giá" href="item?myrating=<%# Eval("Email") %>" class="icon-link">
+        <p class="p-icon-link">Sản phẩm đã đánh giá</p><i class="fas fa-star"></i>
+    </a>
+    <a title="Đơn hàng" href="AccountOrder.aspx?Deptid=<%# Eval("Email") %>" class="icon-link">
+        <p class="p-icon-link">Đơn hàng của tôi</p>
+        <i class="fa-solid fa-boxes-packing"></i>
+    </a>
+
+    <asp:LinkButton ID="btnSignOut" runat="server" title="Đăng xuất" OnClick="btnSignOut_Click" CssClass="icon-link"><p class="p-icon-link">Đăng xuất tài khoản</p><i class="fa-solid fa-right-from-bracket"></i></asp:LinkButton>
+    
+<%--    <asp:LinkButton ID="btnControl"  runat="server" title="Quản trị" OnClick="btnControl_Click" CssClass="icon-link" Visible="false"><i class="fa-solid fa-user-tie"></i></asp:LinkButton>--%>
+
+    <button id="btnControl" runat="server"
+     onserverclick="btnControl_Click"
+    class="icon-link btnControl" style="border:none;">
+        <p class="p-icon-link">Quản lý KStore</p>
+        <i class="fa-solid fa-user-tie"></i>
+    </button>
+    </div>
                     <div class="pr-info fade-out" style="z-index:1; border-top-right-radius:20px;border-bottom-right-radius:20px;border-top-left-radius:0;border-bottom-left-radius:0;             width:max-content; height:max-content; 
   padding:0 10px; margin-top:1rem;"><div class="profile-info centered-text">
     
@@ -287,29 +363,22 @@
 
  </div>
                     
-      <div class="icon-container">
-    <a href="EditAccount.aspx?MaKH=<%# Eval("MaKH") %>&Email=<%# Eval("Email") %>" class="icon-link">
-        <i class="fas fa-edit"></i>
-    </a>
-    <a href="#" class="icon-link">
-        <i class="fas fa-heart"></i>
-    </a>
-    <a href="#" class="icon-link">
-        <i class="fas fa-star"></i>
-    </a>
-</div>
+
+                  
+     
                 </ItemTemplate>
             </asp:ListView>
         </div>
-        <div class="justify-content-center align-items-center d-flex fade-in" style="gap: 3rem; z-index:1;">
+        
+        <%--<div class="justify-content-center align-items-center d-flex fade-in" style="gap: 3rem; z-index:1;">--%>
            
-                                    <asp:Button ID="btnAccOrder" runat="server" Text="Đơn hàng" OnClick="btnAccOrder_Click" CssClass="btn-sign-out" Visible="true"/>
+<%--        <asp:Button ID="btnAccOrder" runat="server" Text="Đơn hàng" OnClick="btnAccOrder_Click" CssClass="btn-sign-out" Visible="true"/>--%>
 
            
-             <asp:Button ID="btnControl" runat="server" Text="Quản trị" OnClick="btnControl_Click" CssClass="btn-sign-out" Visible="false"/>
+<%--             <asp:Button ID="btnControl" runat="server" Text="Quản trị" OnClick="btnControl_Click" CssClass="btn-sign-out" Visible="false"/>--%>
 
-            <asp:Button ID="btnSignOut" runat="server" Text="Đăng xuất" OnClick="btnSignOut_Click" CssClass="btn-sign-out" />
-        </div>
+            <%--<asp:Button ID="btnSignOut" runat="server" Text="Đăng xuất" OnClick="btnSignOut_Click" CssClass="btn-sign-out" />--%>
+        <%--</div>--%>
 
        
 

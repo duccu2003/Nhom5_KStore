@@ -15,39 +15,49 @@
         *{
             font-family:Roboto;
         }
+        #divChangeAvt{
+            transition:0.5s all;
+        }
+        #divChangeAvt #userAvatar{
+            border:5px dashed #8549cdff;
+            transition:0.5s all;
+        }
+        #divChangeAvt:hover #userAvatar{
+            border:5px solid #31772a;
+        }
         .alert{
-    top:0;
-    position:absolute;
-    width:100%;
-    z-index:9999;
-    padding:10px 0;
-    text-align:center;
-    color:#000;
-}
-.alert-success{
-    background:#d4edda;
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
+            top:0;
+            position:absolute;
+            width:100%;
+            z-index:9999;
+            padding:10px 0;
+            text-align:center;
+            color:#000;
+        }
+        .alert-success{
+            background:#d4edda;
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
 
-}
-.alert-danger{
-        background:#f8d7da;
-         color: #721c24;
-          border-color: #f5c6cb;
-}
+        }
+        .alert-danger{
+                background:#f8d7da;
+                 color: #721c24;
+                  border-color: #f5c6cb;
+        }
 
-             ::-webkit-scrollbar {
-    width: 5px;
-}
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
 
-::-webkit-scrollbar-thumb {
-    background: #5e17a2ff;
-}
+        ::-webkit-scrollbar-thumb {
+            background: #5e17a2ff;
+        }
 
-::-webkit-scrollbar-track {
-    background: #202020;
-}
+        ::-webkit-scrollbar-track {
+            background: #202020;
+        }
         *{
             margin:0;
             padding:0;
@@ -59,72 +69,72 @@
     </style>
         <style>
         #loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99999;
-    width: 100%;
-    height: 100%;
-    background-color: #FFFF;
-    transition: all 0.3s ease-in-out;
-    text-align:center;
-    justify-content:center;
-align-content:center;
-align-items:center;
-justify-items:center;
-text-align:center;
-}
-.circle {
-    justify-content:center;
-    align-content:center;
-    align-items:center;
-    justify-items:center;
-    text-align:center;
-    height: 40px;
-    margin: auto;
-    position: relative;
-    text-align: center;
-    width: 40px;
-    -webkit-animation: circle_dot 2.0s infinite linear;
-            animation: circle_dot 2.0s infinite linear;
-}
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99999;
+            width: 100%;
+            height: 100%;
+            background-color: #FFFF;
+            transition: all 0.3s ease-in-out;
+            text-align:center;
+            justify-content:center;
+            align-content:center;
+            align-items:center;
+            justify-items:center;
+            text-align:center;
+        }
+        .circle {
+            justify-content:center;
+            align-content:center;
+            align-items:center;
+            justify-items:center;
+            text-align:center;
+            height: 40px;
+            margin: auto;
+            position: relative;
+            text-align: center;
+            width: 40px;
+            -webkit-animation: circle_dot 2.0s infinite linear;
+                    animation: circle_dot 2.0s infinite linear;
+        }
 
-.circle1, .circle2 {
-    height: 60%;
-    display: inline-block;
-    background-color: #6c38ef;
-    border-radius: 100%;
-    position: absolute;
-    top: 0;
-    width: 60%;
-    -webkit-animation: circle_bounce 2.0s infinite ease-in-out;
-            animation: circle_bounce 2.0s infinite ease-in-out;
-}
+        .circle1, .circle2 {
+            height: 60%;
+            display: inline-block;
+            background-color: #6c38ef;
+            border-radius: 100%;
+            position: absolute;
+            top: 0;
+            width: 60%;
+            -webkit-animation: circle_bounce 2.0s infinite ease-in-out;
+                    animation: circle_bounce 2.0s infinite ease-in-out;
+        }
 
-.circle2 {
-    bottom: 0;
-    top: auto;
-    -webkit-animation-delay: -1.0s;
-            animation-delay: -1.0s;
-}
+        .circle2 {
+            bottom: 0;
+            top: auto;
+            -webkit-animation-delay: -1.0s;
+                    animation-delay: -1.0s;
+        }
 
-@-webkit-keyframes circle_dot { 100% { -webkit-transform: rotate(360deg) }}
-@keyframes circle_dot { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+        @-webkit-keyframes circle_dot { 100% { -webkit-transform: rotate(360deg) }}
+        @keyframes circle_dot { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
 
-@-webkit-keyframes circle_bounce {
-    0%, 100% { -webkit-transform: scale(0.0) }
-    50%      { -webkit-transform: scale(1.0) }
-}
+        @-webkit-keyframes circle_bounce {
+            0%, 100% { -webkit-transform: scale(0.0) }
+            50%      { -webkit-transform: scale(1.0) }
+        }
 
-@keyframes circle_bounce {
-    0%, 100% { 
-        -webkit-transform: scale(0.0);
-                transform: scale(0.0);
-    } 50% { 
-        -webkit-transform: scale(1.0);
-                transform: scale(1.0);
-    }
-}
+        @keyframes circle_bounce {
+            0%, 100% { 
+                -webkit-transform: scale(0.0);
+                        transform: scale(0.0);
+            } 50% { 
+                -webkit-transform: scale(1.0);
+                        transform: scale(1.0);
+            }
+        }
     </style>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script>
@@ -152,7 +162,7 @@ text-align:center;
         <asp:FormView ID="editImg" runat="server" ItemType="TH03_WebBanHang.Models.KhachHang" SelectMethod="GetProfile" RenderOuterTable="false" OnPageIndexChanging="editImg_PageIndexChanging">
             <ItemTemplate><div class="d-grid" id="divChangeAvt" style="row-gap:1rem;">
                 <img id="userAvatar" loading="lazy" 
-     style="border-radius: 50%; margin-top:2rem; height: 300px; width: 300px; overflow: hidden; object-fit: cover; border:5px double #31772a;" 
+     style="border-radius: 50%; margin-top:2rem; height: 300px; width: 300px; overflow: hidden; object-fit: cover;" 
      class="fade-in card-img-top mb-5 mb-md-0 zoom-hover justify-content-center align-content-center img-avt" 
      src="<%#: Item.AvatarUser %>" 
      alt="..." />
@@ -305,11 +315,8 @@ object-fit:cover;*/
                  
 
                                    <div  class="d-grid div-pr-child" style="display:grid !important; margin-top:1rem;">
-                                            <Label ID="lbQuyen" runat="server">Quyền: <asp:Label ID="lbQuyenName" runat="server" 
-Text="2"></asp:Label></Label>
-
-
-                      </div>
+                                            <p>Quyền: <asp:Label ID="lbQuyenName" runat="server" Text=""></asp:Label></p>
+                                </div>
              <div class="d-flex" style="margin:auto; margin-left:1.18rem; gap:0.8rem; padding-top:4rem;">
 
              <a id="btnBack" href="Account.aspx" class="profile-image btn-upload justify-content-center align-content-center" style="position: relative; text-align:center; z-index: 0; color:#fff; background: #000 ; border:1px solid #000; width:40px; height:40px; border-radius:20px; margin: 1rem auto auto auto; padding: 8px 10px;" ><i class="fa-solid fa-arrow-left"></i></a>

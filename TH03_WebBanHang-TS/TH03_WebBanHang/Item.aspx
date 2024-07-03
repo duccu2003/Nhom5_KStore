@@ -3,6 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
     <style>
+        .btn-send-rating{
+            color:#FFFF !important;
+            transition:0.5s all;
+        }
+        .btn-send-rating:hover{
+            box-shadow:0 0 20px #636363;
+            transform:scale(1.05);
+        }
         .btn-item {
             background-color: #fff !important;
         }
@@ -1056,7 +1064,7 @@ margin:0;
                              <EmptyDataTemplate>
                                 
                                  <div style=" width:100%; height:70vh; font-family: 'Baloo 2', sans-serif; text-align:center; justify-content:center; align-content:flex-start; justify-items:center; align-items:center;">
-                                 <h3>Sẽ sớm được ra mắt.</h3>
+                                 <h3>Chưa có sản phẩm ở hạng mục này.</h3>
                          </div>
                              </EmptyDataTemplate>
                          <EmptyItemTemplate>
@@ -1182,7 +1190,7 @@ margin:0;
    
    </div>                     
 </div>
-                        <asp:Button  ID="btnSubmitComment" runat="server" Text="GỬI BÀI ĐÁNH GIÁ"  OnClick="btnSubmitComment_Click"  Visible="false"  CssClass="btn-comment justify-content-center align-content-center btn-bold" style="padding:8px; border-radius:10px; background:#464baa; border:none; margin:auto; width:100%;"/>
+                        <asp:Button  ID="btnSubmitComment" runat="server" Text="GỬI BÀI ĐÁNH GIÁ"  OnClick="btnSubmitComment_Click"  Visible="false"  CssClass="btn-comment justify-content-center align-content-center btn-bold btn-send-rating" style="padding:8px; border-radius:10px; background:#464baa; border:none; margin:auto; width:100%;"/>
                     </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>          
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -1379,9 +1387,10 @@ margin:0;
             if (displayStatus) {
                 ratingElement.style.display = displayStatus;
             }
+            if (ratingElement.style.display != 'none') document.getElementById('toggleRating').innerHTML = "ẨN ĐÁNH GIÁ";
         });
 
-    </script>
+</script>
 <script>
         document.getElementById('showFormButton').addEventListener('click', function () {
             document.getElementById('overlay').style.display = 'block';
