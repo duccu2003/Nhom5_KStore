@@ -15,6 +15,7 @@ namespace TH03_WebBanHang.Models
     public partial class Banner
     {
         public int MaBanner { get; set; }
+        public string TieuDe { get; set; }
         public string DuongDan { get; set; }
         public System.DateTime NgayDangBV { get; set; }
     }
