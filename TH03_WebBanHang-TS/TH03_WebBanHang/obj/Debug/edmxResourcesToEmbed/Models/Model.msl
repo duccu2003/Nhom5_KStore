@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="QL_KPOPStoreModelStoreContainer" CdmEntityContainer="QL_KPOPStoreEntities">
+<<<<<<< HEAD
     <EntitySetMapping Name="C__MigrationHistory">
       <EntityTypeMapping TypeName="QL_KPOPStoreModel.C__MigrationHistory">
         <MappingFragment StoreEntitySet="__MigrationHistory">
@@ -18,6 +19,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <EntitySetMapping Name="ChiNhanhs">
       <EntityTypeMapping TypeName="QL_KPOPStoreModel.ChiNhanh">
         <MappingFragment StoreEntitySet="ChiNhanh">
@@ -175,7 +178,10 @@
       <EntityTypeMapping TypeName="QL_KPOPStoreModel.Banner">
         <MappingFragment StoreEntitySet="Banner">
           <ScalarProperty Name="MaBanner" ColumnName="MaBanner" />
+<<<<<<< HEAD
           <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
           <ScalarProperty Name="DuongDan" ColumnName="DuongDan" />
           <ScalarProperty Name="NgayDangBV" ColumnName="NgayDangBV" />
         </MappingFragment>

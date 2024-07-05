@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="QL_KPOPStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<<<<<<< HEAD
   <EntityType Name="__MigrationHistory">
     <Key>
       <PropertyRef Name="MigrationId" />
@@ -8,6 +9,8 @@
     <Property Name="Model" Type="varbinary(max)" Nullable="false" />
     <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
   </EntityType>
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
   <!--Errors Found During Generation:
 warning 6002: The table/view 'QL_KPOPStore.dbo.Banner' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Banner">
@@ -16,6 +19,7 @@ warning 6002: The table/view 'QL_KPOPStore.dbo.Banner' does not have a primary k
       <PropertyRef Name="NgayDangBV" />
     </Key>
     <Property Name="MaBanner" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+<<<<<<< HEAD
     <Property Name="TieuDe" Type="nvarchar(max)" />
     <Property Name="DuongDan" Type="nvarchar(max)" />
     <Property Name="NgayDangBV" Type="datetime" Nullable="false" />
@@ -33,6 +37,11 @@ warning 6013: The table/view 'QL_KPOPStore.dbo.ChatBot' does not have a primary 
     <Property Name="ClientChat" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="BotChat" Type="nvarchar(max)" />
   </EntityType>
+=======
+    <Property Name="DuongDan" Type="varchar(max)" />
+    <Property Name="NgayDangBV" Type="datetime" Nullable="false" />
+  </EntityType>
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
   <EntityType Name="ChiNhanh">
     <Key>
       <PropertyRef Name="MaCN" />
@@ -51,7 +60,11 @@ warning 6013: The table/view 'QL_KPOPStore.dbo.ChatBot' does not have a primary 
     <Property Name="MaSP" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="SoLuong" Type="int" Nullable="false" />
     <Property Name="TenSP" Type="nvarchar" MaxLength="50" Nullable="false" />
+<<<<<<< HEAD
     <Property Name="DuongDan" Type="nvarchar(max)" Nullable="false" />
+=======
+    <Property Name="DuongDan" Type="varchar(max)" Nullable="false" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Property Name="Gia" Type="float" Nullable="false" />
     <Property Name="TenPob" Type="nvarchar" MaxLength="50" />
     <Property Name="ThanhTien" Type="float" Nullable="false" />
@@ -62,7 +75,11 @@ warning 6013: The table/view 'QL_KPOPStore.dbo.ChatBot' does not have a primary 
     <Key>
       <PropertyRef Name="MaDG" />
     </Key>
+<<<<<<< HEAD
     <Property Name="AvatarUser" Type="varchar(max)" />
+=======
+    <Property Name="AvatarUser" Type="varchar" MaxLength="100" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Property Name="MaDG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MaSP" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="TenKH" Type="nvarchar" MaxLength="50" />
@@ -70,12 +87,21 @@ warning 6013: The table/view 'QL_KPOPStore.dbo.ChatBot' does not have a primary 
     <Property Name="NoiDung" Type="nvarchar(max)" />
     <Property Name="NgayDG" Type="datetime" />
     <Property Name="RatingValue" Type="int" />
+<<<<<<< HEAD
     <Property Name="Anh1" Type="nvarchar(max)" />
     <Property Name="Anh2" Type="nvarchar(max)" />
     <Property Name="Anh3" Type="nvarchar(max)" />
     <Property Name="Anh4" Type="nvarchar(max)" />
     <Property Name="Anh5" Type="nvarchar(max)" />
     <Property Name="Video" Type="nvarchar(max)" />
+=======
+    <Property Name="Anh1" Type="varchar(max)" />
+    <Property Name="Anh2" Type="varchar(max)" />
+    <Property Name="Anh3" Type="varchar(max)" />
+    <Property Name="Anh4" Type="varchar(max)" />
+    <Property Name="Anh5" Type="varchar(max)" />
+    <Property Name="Video" Type="varchar(max)" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Property Name="Email" Type="varchar" MaxLength="100" />
     <Property Name="LuotThich" Type="int" />
   </EntityType>
@@ -108,7 +134,11 @@ warning 6013: The table/view 'QL_KPOPStore.dbo.ChatBot' does not have a primary 
       <PropertyRef Name="MaKH" />
     </Key>
     <Property Name="MaTK" Type="int" />
+<<<<<<< HEAD
     <Property Name="AvatarUser" Type="varchar(max)" />
+=======
+    <Property Name="AvatarUser" Type="varchar" MaxLength="100" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="HoTen" Type="nvarchar" MaxLength="255" />
     <Property Name="DienThoai" Type="nvarchar" MaxLength="13" />
@@ -132,8 +162,13 @@ warning 6013: The table/view 'QL_KPOPStore.dbo.ChatBot' does not have a primary 
     </Key>
     <Property Name="MaNhom" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="TenNhom" Type="varchar" MaxLength="50" Nullable="false" />
+<<<<<<< HEAD
     <Property Name="DuongDan" Type="nvarchar(max)" Nullable="false" />
     <Property Name="AnhNhom" Type="nvarchar" MaxLength="100" />
+=======
+    <Property Name="DuongDan" Type="varchar(max)" Nullable="false" />
+    <Property Name="AnhNhom" Type="varchar" MaxLength="100" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'QL_KPOPStore.dbo.POB' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -153,7 +188,11 @@ warning 6002: The table/view 'QL_KPOPStore.dbo.POB' does not have a primary key 
     </Key>
     <Property Name="MaSP" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="TenSP" Type="nvarchar" MaxLength="50" Nullable="false" />
+<<<<<<< HEAD
     <Property Name="DuongDan" Type="nvarchar(max)" Nullable="false" />
+=======
+    <Property Name="DuongDan" Type="varchar(max)" Nullable="false" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Property Name="Gia" Type="float" Nullable="false" />
     <Property Name="MoTa" Type="nvarchar" MaxLength="255" Nullable="false" />
     <Property Name="MaLoai" Type="varchar" MaxLength="100" Nullable="false" />
@@ -174,12 +213,21 @@ warning 6002: The table/view 'QL_KPOPStore.dbo.SanPhamData' does not have a prim
       <PropertyRef Name="MaSP" />
     </Key>
     <Property Name="MaSP" Type="varchar" MaxLength="50" Nullable="false" />
+<<<<<<< HEAD
     <Property Name="DuongDan1" Type="nvarchar(max)" />
     <Property Name="DuongDan2" Type="nvarchar(max)" />
     <Property Name="DuongDan3" Type="nvarchar(max)" />
     <Property Name="DuongDan4" Type="nvarchar(max)" />
     <Property Name="DuongDan5" Type="nvarchar(max)" />
     <Property Name="AnhNote" Type="nvarchar(max)" />
+=======
+    <Property Name="DuongDan1" Type="varchar(max)" />
+    <Property Name="DuongDan2" Type="varchar(max)" />
+    <Property Name="DuongDan3" Type="varchar(max)" />
+    <Property Name="DuongDan4" Type="varchar(max)" />
+    <Property Name="DuongDan5" Type="varchar(max)" />
+    <Property Name="AnhNote" Type="varchar(max)" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Property Name="Pob" Type="bit" />
     <Property Name="IsPreOrder" Type="bit" />
   </EntityType>
@@ -202,7 +250,11 @@ warning 6002: The table/view 'QL_KPOPStore.dbo.TinTuc' does not have a primary k
       <PropertyRef Name="NgayDangBV" />
     </Key>
     <Property Name="MaBV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+<<<<<<< HEAD
     <Property Name="HinhAnhBV" Type="nvarchar(max)" />
+=======
+    <Property Name="HinhAnhBV" Type="varchar(max)" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Property Name="DuongDanBV" Type="varchar(max)" />
     <Property Name="TieuDe" Type="nvarchar(max)" />
     <Property Name="NoiDungBV" Type="nvarchar(max)" />
@@ -226,7 +278,11 @@ warning 6002: The table/view 'QL_KPOPStore.dbo.VideoThongTin' does not have a pr
       <PropertyRef Name="NgayDangBV" />
     </Key>
     <Property Name="MaV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+<<<<<<< HEAD
     <Property Name="DuongDanV" Type="nvarchar(max)" />
+=======
+    <Property Name="DuongDanV" Type="varchar(max)" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Property Name="NgayDangBV" Type="datetime" Nullable="false" />
   </EntityType>
   <Association Name="FK__ChiTietDon__MaDH__440B1D61">
@@ -430,8 +486,11 @@ warning 6002: The table/view 'QL_KPOPStore.dbo.VideoThongTin' does not have a pr
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="QL_KPOPStoreModelStoreContainer">
+<<<<<<< HEAD
     <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ChatBots" EntityType="Self.ChatBots" Schema="dbo" store:Type="Tables" />
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <EntitySet Name="ChiNhanh" EntityType="Self.ChiNhanh" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ChiTietDonHang" EntityType="Self.ChiTietDonHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DanhGia" EntityType="Self.DanhGia" Schema="dbo" store:Type="Tables" />
@@ -446,7 +505,10 @@ warning 6002: The table/view 'QL_KPOPStore.dbo.VideoThongTin' does not have a pr
     <EntitySet Name="Banner" EntityType="Self.Banner" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
 [Banner].[MaBanner] AS [MaBanner], 
+<<<<<<< HEAD
 [Banner].[TieuDe] AS [TieuDe], 
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 [Banner].[DuongDan] AS [DuongDan], 
 [Banner].[NgayDangBV] AS [NgayDangBV]
 FROM [dbo].[Banner] AS [Banner]</DefiningQuery>

@@ -745,17 +745,24 @@
             padding: 5px 10px;
             border-radius: 5px;
             width:max-content;
+<<<<<<< HEAD
             display:block;
             overflow-x:hidden;
             flex-wrap:wrap;
             max-width:90%;
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         }
         .message.bot {
             text-align: left;
             background-color: #e9e9e9;
             color:black;
             display:block;
+<<<<<<< HEAD
             
+=======
+            width:100%;
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
             flex-wrap:wrap
         }
         .message.user {
@@ -812,6 +819,7 @@
             box-shadow:0 0 20px #636363;
             transform:scale(1.1);
         }
+<<<<<<< HEAD
         #div-items-Search{
             display:none;
         }
@@ -826,6 +834,10 @@
             user-select:text;
         }
     </style>
+=======
+    </style>
+    
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 </head>
 <body>
 
@@ -850,7 +862,10 @@
 
     </a>
     </div>
+<<<<<<< HEAD
    
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <div class="chat-window" id="chat-window">
         <div class="chat-header">
             KS Bot
@@ -863,7 +878,11 @@
 
             <textarea id="user-input" placeholder="Nội dung tin nhắn..."></textarea>
 
+<<<<<<< HEAD
             <button onclick="sendMessage(document.getElementById('user-input').value)"><i class="fas fa-paper-plane"></i></button>
+=======
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         </div>
     </div>
 
@@ -920,19 +939,55 @@
                     <div class="d-flex" style="width:max-content; gap:1.5rem; margin-top:1.5rem;">
                         <div title="Tìm kiếm" class="justify-content-center align-content-center search-container container mt-2" style="border: 2px solid #9b51e0; width:18.75rem; font-size:18px; height:40px;">
     
+<<<<<<< HEAD
                             
                             <asp:TextBox ID="searchinput" ClientIDMode="Static" AutoPostBack="false" placeholder="Tìm kiếm" type="search" Text="" runat="server" Style="border: 0.1px solid #fff0; touch-action: none; " CssClass="search-textbox searchinput" onkeyup="searchProducts(this.value)"></asp:TextBox>
+=======
+                    
+                            <asp:TextBox ID="searchinput" ClientIDMode="Static" AutoPostBack="true" placeholder="Tìm kiếm" type="search" Text="" runat="server" Style="border: 0.1px solid #fff0; touch-action: none; " class="search-textbox searchinput" OnTextChanged="searchinput_TextChanged"></asp:TextBox>
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
              
             
                             
 
                             
                             <asp:Button runat="server" ID="btnSearch" CssClass="searchbutton justify-content-center align-content-center" OnClick="SearchButton_Click" Text="" />
+<<<<<<< HEAD
                             
     
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
                            
+=======
+    
+    
+
+
+                           <%-- <script>
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    var searchInput = document.getElementsByClassName('searchinput');
+                                    var divSearch = document.getElementById('div-search-Items');
+
+                                    if (searchInput.value.trim() !== "") {
+                                        divSearch.style.display = "block";
+                                    } else {
+                                        divSearch.style.display = "none";
+                                    }
+                                }
+                            </script>--%>
+                           <%-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                            <script>
+                                $(document).ready(function () {
+                                    var searchInput = document.getElementsByClassName('searchinput');
+                                    var divSearch = document.getElementById('div-search-Items');
+                                    if ($("#searchinput").val().trim() !== "") {
+                                        divSearch.style.display = "block !important";
+                                    } else {
+                                        divSearch.style.display = "none";
+                                    }
+                                });
+                            </script>--%>
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
     
 </div>
@@ -952,6 +1007,7 @@
                              </a>
                         </div>
 
+<<<<<<< HEAD
                        
                        
                     </div>
@@ -961,6 +1017,61 @@
         <div id="div-items-Search" style=" position:absolute; left:46%; top:60%; border-radius:10px;  background:#000; border:1px solid #636363; z-index:9999; width:20rem; padding:5px 10px;">
    
 
+=======
+                        <%--<style>
+                           #div-head-1-e-n a {
+                              border:2px solid #9b51e0;
+                                height:40px;
+                                padding:5px 15px;
+                                text-align:center;
+                                  align-items:center;
+                                align-content:center;
+                                border-radius:10px;
+                            }
+                            #div-head-1-e-n a p{
+                                
+                              align-items:center;
+                              align-content:center;
+                          }
+                        </style>
+                        <div id="div-head-1-e-n" class="d-flex justify-content-center align-content-center mt-2" style="gap:1.5rem;">
+                        <a href="#" style="font-size:18px;">
+                            <p class="" style="">Thông báo</p>
+                        </a>
+                        <a href="#" style="font-size:18px;">
+                            <p>Sự kiện</p>
+                        </a></div>--%>
+
+                        <%-- <a title="Tìm kiếm" class="btn btn-outline-dark btn-header-u-c justify-content-center align-content-center" href="#">
+     <i class="fas fa-search"></i>
+ </a>--%>
+                       
+                    </div>
+                   
+
+                    
+                 <div id="div-items-Search" style=" position:absolute; left:46%; top:60%; border-radius:10px;  background:#000; border:1px solid #636363; z-index:9999; width:20rem; padding:5px 10px;">
+     <asp:PlaceHolder ID="PlaceHolderGioiThieu" runat="server">
+    <p>Sản phẩm gợi ý</p>
+</asp:PlaceHolder>
+     <asp:ListView ID="lvItemsSearch" runat="server" ItemType="TH03_WebBanHang.Models.SanPham">
+        
+         <EmptyDataTemplate>
+        <p>Không có sản phẩm liên quan.</p>
+    </EmptyDataTemplate>
+         <ItemTemplate>
+             <a style="" href="item.aspx?sp=<%#:Item.MaSP%>">
+                 <div class="d-flex" style="gap:1rem; margin:10px auto;">
+                     <img style="height:80px; border-radius:5px; " src="<%#:Item.DuongDan %>"/>
+                     <div class="d-grid">
+                         <p><%#:Item.TenSP %></p>
+                         <p class=""><%# string.Format("{0:N0}", Item.Gia) %>đ</p>
+                     </div>
+                 </div>
+             </a>
+         </ItemTemplate>
+     </asp:ListView>
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
 </div>     
 
@@ -1143,10 +1254,13 @@
         <script src="Scripts/js/scripts.js"></script>
 
     </form>
+<<<<<<< HEAD
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
 
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.plugins.min.js"></script>
@@ -1156,6 +1270,7 @@
      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js"></script>
      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.plugins.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<<<<<<< HEAD
    
     <script>
         
@@ -1178,6 +1293,21 @@
         
     </script>
 
+=======
+    <script type="text/javascript">
+
+
+
+        $(document).ready(function () {
+            // Lắng nghe sự kiện nhập vào
+            $('.searchinput').on('input', function () {
+                // Gọi __doPostback để thực hiện postback tự động
+                __doPostBack(this.name, '');
+            });
+        });
+
+    </script>
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var lazyLoadElementsUp = document.querySelectorAll('.fade-in');
@@ -1245,6 +1375,7 @@
              window.scrollTo({ top: 0, behavior: 'smooth' }); // Cuộn lên đầu trang một cách mượt mà
          });
      </script>
+<<<<<<< HEAD
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
@@ -1252,6 +1383,9 @@
         
 
 
+=======
+    <script>
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         const chatWindow = document.getElementById('chat-window');
         const chatMessages = document.getElementById('chat-messages');
         const userInput = document.getElementById('user-input');
@@ -1278,6 +1412,7 @@
             chatMessages.appendChild(messageDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
+<<<<<<< HEAD
         function addMessageImg(imgsrc, sender) {
             const img = document.createElement('img');
             img.classList.add('message', sender);
@@ -1347,6 +1482,20 @@
             }, 1000);
             userInput.value = '';
             
+=======
+
+        function sendMessage() {
+            const message = userInput.value;
+            if (message.trim() === '') return;
+
+            addMessage(message, 'user');
+            userInput.value = '';
+
+
+            setTimeout(() => {
+                getBotResponse(message);
+            }, 1000);
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         }
 
         function getBotResponse(userMessage) {
@@ -1364,17 +1513,24 @@
             else if (userMessage.toLowerCase().includes('liên hệ')) {
                 botMessage = 'Bạn có thể liên hệ với chúng tôi qua email support@example.com hoặc gọi điện thoại tới số (123) 456-7890.';
             }
+<<<<<<< HEAD
             else if (userMessage.toLowerCase().includes('sản phẩm này còn không')) {
                 botMessage = 'Sản phẩm này vẫn còn hàng.';
             }
                
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
             addMessage(botMessage, 'bot');
         }
 
         userInput.addEventListener('keypress', function (e) {
             if (e.key === 'Enter' && !e.shiftKey) {
+<<<<<<< HEAD
                 sendMessage(userInput.value);
+=======
+                sendMessage();
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                 e.preventDefault(); // Prevent default form submission if necessary
             }
         });

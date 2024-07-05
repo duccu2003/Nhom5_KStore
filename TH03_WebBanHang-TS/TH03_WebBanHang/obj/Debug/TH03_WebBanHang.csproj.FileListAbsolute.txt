@@ -1891,8 +1891,11 @@ C:\Boin\20.06\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\bin\Microsoft.CodeDom.Pr
 C:\Boin\20.06\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\obj\Debug\TH03_WebBanHang.csproj.CopyComplete
 C:\Boin\20.06\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\bin\Twilio.dll
 C:\Boin\20.06\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\bin\Twilio.xml
+<<<<<<< HEAD
 C:\Users\vippr\OneDrive\Desktop\new\Web Kpop\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\obj\Debug\TH03_WebBanHang.csproj.AssemblyReference.cache
 C:\Users\vippr\OneDrive\Desktop\new\Web Kpop\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\obj\Debug\TH03_WebBanHang.csproj.CoreCompileInputs.cache
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 C:\Users\vippr\OneDrive\Desktop\new\Web Kpop\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\bin\TH03_WebBanHang.dll.config
 C:\Users\vippr\OneDrive\Desktop\new\Web Kpop\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\bin\TH03_WebBanHang.dll
 C:\Users\vippr\OneDrive\Desktop\new\Web Kpop\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\bin\TH03_WebBanHang.pdb
@@ -2137,6 +2140,7 @@ C:\Users\vippr\OneDrive\Desktop\new\Web Kpop\KStore\TH03_WebBanHang-TS\TH03_WebB
 C:\Users\vippr\OneDrive\Desktop\new\Web Kpop\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\bin\Antlr3.Runtime.pdb
 C:\Users\vippr\OneDrive\Desktop\new\Web Kpop\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\vippr\OneDrive\Desktop\new\Web Kpop\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+<<<<<<< HEAD
 C:\Users\vippr\OneDrive\Desktop\new\Web Kpop\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\obj\Debug\TH03_Web.301F5013.Up2Date
 C:\Users\vippr\OneDrive\Desktop\new\Web Kpop\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\obj\Debug\TH03_WebBanHang.dll
 C:\Users\vippr\OneDrive\Desktop\new\Web Kpop\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\obj\Debug\TH03_WebBanHang.pdb
@@ -2389,3 +2393,10 @@ C:\Boin\4.7\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\obj\Debug\TH03_WebBanHang.
 C:\Boin\4.7\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\obj\Debug\TH03_WebBanHang.csproj.CopyComplete
 C:\Boin\4.7\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\obj\Debug\TH03_WebBanHang.dll
 C:\Boin\4.7\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\obj\Debug\TH03_WebBanHang.pdb
+=======
+C:\Users\vippr\OneDrive\Desktop\new\Web Kpop\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\obj\Debug\TH03_WebBanHang.csproj.AssemblyReference.cache
+C:\Users\vippr\OneDrive\Desktop\new\Web Kpop\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\obj\Debug\TH03_WebBanHang.csproj.CoreCompileInputs.cache
+C:\Users\vippr\OneDrive\Desktop\new\Web Kpop\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\obj\Debug\TH03_Web.301F5013.Up2Date
+C:\Users\vippr\OneDrive\Desktop\new\Web Kpop\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\obj\Debug\TH03_WebBanHang.dll
+C:\Users\vippr\OneDrive\Desktop\new\Web Kpop\KStore\TH03_WebBanHang-TS\TH03_WebBanHang\obj\Debug\TH03_WebBanHang.pdb
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498

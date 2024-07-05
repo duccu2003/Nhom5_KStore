@@ -718,7 +718,11 @@ margin:0;
                  <div class="widget-item">
                      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+<<<<<<< HEAD
                                     <a onclick="executeBothFunctions();" <%--onclick="toggleChatWindow(); sendMessage(document.getElementById('user-input').value)"--%> href="#" <%--href="https://www.messenger.com/t/100005745948829"--%> class="widget-link" style="z-index:99999;"  title="Nhắn tin với KStore" >
+=======
+                                    <a onclick="toggleChatWindow()" href="#" <%--href="https://www.messenger.com/t/100005745948829"--%> class="widget-link" style="z-index:99999;"  title="Nhắn tin với KStore" >
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                                         <i class="fas fa-comment-alt"></i>
                                     </a>
                                 </div>
@@ -743,7 +747,11 @@ margin:0;
                         </div>
                         <div class="col-md-6">
                             <div class="small mb-1"></div>
+<<<<<<< HEAD
                             <h1 id="tenSPinFormV" class="display-5 fw-bolder" style="font-size:40px; margin-top:-2rem;"><%#:Item.TenSP%></h1>
+=======
+                            <h1 class="display-5 fw-bolder" style="font-size:40px; margin-top:-2rem;"><%#:Item.TenSP%></h1>
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 <%--                             <p class="lead fade-out"><a id="btnViewMore" href="#" onclick="toggleAdditionalContent(); return false;"><%#:Item.MoTa%></a></p>--%>
 
                             <div class="fs-5 mb-5 <%--fade-out--%>">
@@ -1200,6 +1208,7 @@ margin:0;
           selectStar(5);
 
       };
+<<<<<<< HEAD
     function executeBothFunctions() {
         toggleChatWindow();
         const chatWindow = document.getElementById('chat-window');
@@ -1209,6 +1218,8 @@ margin:0;
     }
 
     
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
     function selectStar(starNumber) {
         // Loại bỏ class 'selected' từ tất cả các ngôi sao
@@ -1349,7 +1360,11 @@ margin:0;
                  }
              }
          }
+<<<<<<< HEAD
 </script>
+=======
+     </script>
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 <script type="text/javascript">
          function toggleAdditionalContent() {
              var additionalContent = document.getElementById('divNoiDung');

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="QL_KPOPStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<<<<<<< HEAD
   <EntityType Name="C__MigrationHistory">
     <Key>
       <PropertyRef Name="MigrationId" />
@@ -15,6 +16,8 @@
     <Property Name="ClientChat" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="BotChat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
   <EntityType Name="ChiNhanh">
     <Key>
       <PropertyRef Name="MaCN" />
@@ -34,7 +37,11 @@
     <Property Name="MaSP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="SoLuong" Type="Int32" Nullable="false" />
     <Property Name="TenSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+<<<<<<< HEAD
     <Property Name="DuongDan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+=======
+    <Property Name="DuongDan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Property Name="Gia" Type="Double" Nullable="false" />
     <Property Name="TenPob" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ThanhTien" Type="Double" Nullable="false" />
@@ -49,7 +56,11 @@
     <Key>
       <PropertyRef Name="MaDG" />
     </Key>
+<<<<<<< HEAD
     <Property Name="AvatarUser" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+=======
+    <Property Name="AvatarUser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Property Name="MaDG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MaSP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -57,12 +68,21 @@
     <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="NgayDG" Type="DateTime" Precision="3" />
     <Property Name="RatingValue" Type="Int32" />
+<<<<<<< HEAD
     <Property Name="Anh1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Anh2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Anh3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Anh4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Anh5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Video" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+=======
+    <Property Name="Anh1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Anh2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Anh3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Anh4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Anh5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Video" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="LuotThich" Type="Int32" />
     <NavigationProperty Name="SanPham" Relationship="Self.FK_DanhGia_SanPham" FromRole="DanhGia" ToRole="SanPham" />
@@ -101,7 +121,11 @@
       <PropertyRef Name="MaKH" />
     </Key>
     <Property Name="MaTK" Type="Int32" />
+<<<<<<< HEAD
     <Property Name="AvatarUser" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+=======
+    <Property Name="AvatarUser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="HoTen" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="DienThoai" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
@@ -130,8 +154,13 @@
     </Key>
     <Property Name="MaNhom" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TenNhom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+<<<<<<< HEAD
     <Property Name="DuongDan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="AnhNhom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+=======
+    <Property Name="DuongDan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AnhNhom" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <NavigationProperty Name="SanPhams" Relationship="Self.FK_SanPham_Size" FromRole="Nhom" ToRole="SanPham" />
     <NavigationProperty Name="SanPhams1" Relationship="Self.FK_SP_Size" FromRole="Nhom" ToRole="SanPham" />
   </EntityType>
@@ -141,7 +170,11 @@
     </Key>
     <Property Name="MaSP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TenSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+<<<<<<< HEAD
     <Property Name="DuongDan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+=======
+    <Property Name="DuongDan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Property Name="Gia" Type="Double" Nullable="false" />
     <Property Name="MoTa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="MaLoai" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
@@ -195,8 +228,12 @@
       <PropertyRef Name="NgayDangBV" />
     </Key>
     <Property Name="MaBanner" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+<<<<<<< HEAD
     <Property Name="TieuDe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="DuongDan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+=======
+    <Property Name="DuongDan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Property Name="NgayDangBV" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
   <EntityType Name="POB">
@@ -214,12 +251,21 @@
       <PropertyRef Name="MaSP" />
     </Key>
     <Property Name="MaSP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+<<<<<<< HEAD
     <Property Name="DuongDan1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="DuongDan2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="DuongDan3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="DuongDan4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="DuongDan5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="AnhNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+=======
+    <Property Name="DuongDan1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DuongDan2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DuongDan3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DuongDan4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DuongDan5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AnhNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Property Name="Pob" Type="Boolean" />
     <Property Name="IsPreOrder" Type="Boolean" />
     <NavigationProperty Name="SanPham" Relationship="Self.FK_SanPhamData_SanPham" FromRole="SanPhamData" ToRole="SanPham" />
@@ -230,7 +276,11 @@
       <PropertyRef Name="NgayDangBV" />
     </Key>
     <Property Name="MaBV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+<<<<<<< HEAD
     <Property Name="HinhAnhBV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+=======
+    <Property Name="HinhAnhBV" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Property Name="DuongDanBV" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="TieuDe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="NoiDungBV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -242,7 +292,11 @@
       <PropertyRef Name="NgayDangBV" />
     </Key>
     <Property Name="MaV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+<<<<<<< HEAD
     <Property Name="DuongDanV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+=======
+    <Property Name="DuongDanV" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Property Name="NgayDangBV" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
   <Association Name="FK_DonHang_ChiNhanh">
@@ -446,8 +500,11 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="QL_KPOPStoreEntities" annotation:LazyLoadingEnabled="true">
+<<<<<<< HEAD
     <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
     <EntitySet Name="ChatBots" EntityType="Self.ChatBot" />
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <EntitySet Name="ChiNhanhs" EntityType="Self.ChiNhanh" />
     <EntitySet Name="ChiTietDonHangs" EntityType="Self.ChiTietDonHang" />
     <EntitySet Name="DanhGias" EntityType="Self.DanhGia" />

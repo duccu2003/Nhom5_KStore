@@ -60,6 +60,27 @@ namespace TH03_WebBanHang
         protected global::System.Web.UI.WebControls.Image imgHeaderAVTofUser;
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// PlaceHolderGioiThieu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolderGioiThieu;
+
+        /// <summary>
+        /// lvItemsSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView lvItemsSearch;
+
+        /// <summary>
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         /// MainContent control.
         /// </summary>
         /// <remarks>

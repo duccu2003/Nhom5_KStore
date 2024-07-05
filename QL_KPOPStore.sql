@@ -255,6 +255,7 @@ CREATE TABLE DoanhThu
 );
 go
 
+<<<<<<< HEAD
 --CREATE TABLE ChatBot
 --(
 --    KhachChat nvarchar(Max) NULL,
@@ -262,6 +263,8 @@ go
 --)
 --go
 
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 -- foreign key
 
 alter table SanPham 
@@ -368,8 +371,11 @@ VALUES
 
 go
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 INSERT INTO TinTuc (HinhAnhBV, DuongDanBV, TieuDe, NoiDungBV)
 VALUES ('https://images2.thanhnien.vn/528068263637045248/2024/4/8/boadongthaigiainghe3-1712617508236587635258.jpg', 'https://thanhnien.vn/dong-thai-cua-nu-hoang-kpop-boa-sau-khi-up-mo-giai-nghe-som-185240409061553758.htm', N'Động thái của "nữ hoàng Kpop" BoA sau khi úp mở giải nghệ sớm', N'Trên trang cá nhân, BoA trấn an người hâm mộ sau khi chia sẻ những trạng thái úp mở sắp rời khỏi showbiz.'),
 		('https://media-cdn-v2.laodong.vn/storage/newsportal/2024/3/4/1311231/Hanni-Chaumet-8.jpg?w=800&h=420&crop=auto&scale=both', 'https://laodong.vn/thoi-trang/hanni-newjeans-gay-an-tuong-voi-bo-anh-hoa-bao-cung-trang-suc-xa-xi-1311231.ldo', N'Hanni (NewJeans) gây ấn tượng với bộ ảnh hoạ báo cùng trang sức xa xỉ', N'Hanni chưng diện bộ sưu tập Joséphine của thương hiệu trang sức xa xỉ Chaumet, thể hiện thần thái tự tin, quyến rũ và trưởng thành.'),
@@ -383,7 +389,10 @@ VALUES	('https://www.youtube.com/embed/if0we38Hbyk?si=WNpzGXpbqMuT6kOH'),
 		('https://www.youtube.com/embed/VFm6ztzZ188?si=3V4l6e2bZX284Y9D');
 
 go
+<<<<<<< HEAD
 
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 INSERT INTO Banner(TieuDe,DuongDan)
 VALUES	('KStore','Content\image-banner\banner1.1.png'),
 		('Aespa Better Things','Content\image-banner\banner2.png'),
@@ -391,6 +400,7 @@ VALUES	('KStore','Content\image-banner\banner1.1.png'),
 		('2024 Christmas Sale','Content\image-banner\banner4.png');
 
 go
+<<<<<<< HEAD
 
 --INSERT INTO ChatBot(BotChat,KhachChat)
 --VALUES	(N'Xin chào bạn tôi là KS Bot, tôi có thể giúp gì cho bạn?', N'xinchao'),
@@ -444,6 +454,8 @@ go
 
 --go
 
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 CREATE PROCEDURE Product_Add 
     @MaSP varchar(50), 
     @TenSP nvarchar(50), 

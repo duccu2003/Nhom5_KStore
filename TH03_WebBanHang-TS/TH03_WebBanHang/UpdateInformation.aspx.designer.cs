@@ -24,6 +24,7 @@ namespace TH03_WebBanHang
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+<<<<<<< HEAD
         /// txtBannerTitle control.
         /// </summary>
         /// <remarks>
@@ -33,6 +34,8 @@ namespace TH03_WebBanHang
         protected global::System.Web.UI.WebControls.TextBox txtBannerTitle;
 
         /// <summary>
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         /// fileUploadBanner control.
         /// </summary>
         /// <remarks>

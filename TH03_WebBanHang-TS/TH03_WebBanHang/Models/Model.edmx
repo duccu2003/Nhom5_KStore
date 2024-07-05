@@ -5,6 +5,7 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="QL_KPOPStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<<<<<<< HEAD
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -13,6 +14,8 @@
           <Property Name="Model" Type="varbinary(max)" Nullable="false" />
           <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
         </EntityType>
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         <!--Errors Found During Generation:
 warning 6002: The table/view 'QL_KPOPStore.dbo.Banner' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Banner">
@@ -25,6 +28,7 @@ warning 6002: The table/view 'QL_KPOPStore.dbo.Banner' does not have a primary k
           <Property Name="DuongDan" Type="nvarchar(max)" />
           <Property Name="NgayDangBV" Type="datetime" Nullable="false" />
         </EntityType>
+<<<<<<< HEAD
         <!--Errors Found During Generation:
 warning 6013: The table/view 'QL_KPOPStore.dbo.ChatBot' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="ChatBot">
@@ -38,6 +42,8 @@ warning 6013: The table/view 'QL_KPOPStore.dbo.ChatBot' does not have a primary 
           <Property Name="ClientChat" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="BotChat" Type="nvarchar(max)" />
         </EntityType>
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         <EntityType Name="ChiNhanh">
           <Key>
             <PropertyRef Name="MaCN" />
@@ -435,8 +441,11 @@ warning 6002: The table/view 'QL_KPOPStore.dbo.VideoThongTin' does not have a pr
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="QL_KPOPStoreModelStoreContainer">
+<<<<<<< HEAD
           <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChatBots" EntityType="Self.ChatBots" Schema="dbo" store:Type="Tables" />
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
           <EntitySet Name="ChiNhanh" EntityType="Self.ChiNhanh" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChiTietDonHang" EntityType="Self.ChiTietDonHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DanhGia" EntityType="Self.DanhGia" Schema="dbo" store:Type="Tables" />
@@ -563,6 +572,7 @@ FROM [dbo].[VideoThongTin] AS [VideoThongTin]</DefiningQuery>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QL_KPOPStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<<<<<<< HEAD
         <EntityType Name="C__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -578,6 +588,8 @@ FROM [dbo].[VideoThongTin] AS [VideoThongTin]</DefiningQuery>
           <Property Name="ClientChat" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="BotChat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         <EntityType Name="ChiNhanh">
           <Key>
             <PropertyRef Name="MaCN" />
@@ -1009,8 +1021,11 @@ FROM [dbo].[VideoThongTin] AS [VideoThongTin]</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="QL_KPOPStoreEntities" annotation:LazyLoadingEnabled="true">
+<<<<<<< HEAD
           <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
           <EntitySet Name="ChatBots" EntityType="Self.ChatBot" />
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
           <EntitySet Name="ChiNhanhs" EntityType="Self.ChiNhanh" />
           <EntitySet Name="ChiTietDonHangs" EntityType="Self.ChiTietDonHang" />
           <EntitySet Name="DanhGias" EntityType="Self.DanhGia" />
@@ -1098,6 +1113,7 @@ FROM [dbo].[VideoThongTin] AS [VideoThongTin]</DefiningQuery>
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="QL_KPOPStoreModelStoreContainer" CdmEntityContainer="QL_KPOPStoreEntities">
+<<<<<<< HEAD
           <EntitySetMapping Name="C__MigrationHistory">
             <EntityTypeMapping TypeName="QL_KPOPStoreModel.C__MigrationHistory">
               <MappingFragment StoreEntitySet="__MigrationHistory">
@@ -1115,6 +1131,8 @@ FROM [dbo].[VideoThongTin] AS [VideoThongTin]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
           <EntitySetMapping Name="ChiNhanhs">
             <EntityTypeMapping TypeName="QL_KPOPStoreModel.ChiNhanh">
               <MappingFragment StoreEntitySet="ChiNhanh">

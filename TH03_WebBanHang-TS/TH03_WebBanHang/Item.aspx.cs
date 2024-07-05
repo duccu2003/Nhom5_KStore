@@ -1591,7 +1591,10 @@ namespace TH03_WebBanHang
             }
             return string.Empty;
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         public IQueryable<TH03_WebBanHang.Models.SanPhamData> GetImages([QueryString("sp")] String sp)
         {
             // Giả sử bạn muốn lấy tất cả các ảnh liên quan đến sản phẩm có MaSP tương ứng
@@ -2516,7 +2519,11 @@ namespace TH03_WebBanHang
                 inline.ContentId = Guid.NewGuid().ToString(); // Đặt ContentId để tham chiếu đến hình ảnh trong HTML
 
                 // Tạo nội dung HTML tùy chỉnh
+<<<<<<< HEAD
                 string htmlBody = $"<html><body style=\"padding: 10px; background:#000; color:#FFFF; height:max-content; \"><img style=\"max-width: 100%;  border-radius:20px; \" src='cid:{inline.ContentId}' alt='KStore' /><h1>Bài đánh giá sản phẩm</h1>" +
+=======
+                string htmlBody = $"<html><body><img style=\"max-width: 100%;  border-radius:20px; \" src='cid:{inline.ContentId}' alt='KStore' /><h1>Bài đánh giá sản phẩm</h1>" +
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                     //$"<div style='display:flex; gap:15px;'>" +
                     //$"<img style='object-fit:cover; background:#000; width:50px; height:50px; border-radius:50%; border:2px solid #9b51e0' src='{avatar}'/>" +
                     //$"<p style=\"\"><strong  style=\"color:#000; font-size:16px; \">{userName}</strong></p>    \r\n         " +

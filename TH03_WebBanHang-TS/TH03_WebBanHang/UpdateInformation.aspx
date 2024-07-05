@@ -183,10 +183,15 @@ $(function(){
          <img loading="lazy" style="filter: brightness(50%); height: 100%; width: 100%; position: fixed; z-index: 0;" src="Content/image-bg/bg-for-slide-gp.png" />
 
     <form id="form1" runat="server" style="position:relative !important;">
+<<<<<<< HEAD
         <div style="margin:20px 20px 20px 20px; position:fixed; display:grid; row-gap:30px; z-index:99;">
              <a title="Thoát" class="dropdown-item" href="Account.aspx" style="padding:5px; color:#000;  z-index:99; font-size:25px; text-align:center; border-radius:50%; border:1px solid #242426; width:35px; height:35px; align-items:center; align-content:center; justify-content:center; justify-items:center;  background:#FFF;"><i class="fa-solid fa-caret-left" style="margin-right: 5px; width: 35px;"></i></a>
              
         </div>
+=======
+               <a class="dropdown-item" href="Account.aspx" style="margin:20px;  z-index:99; font-size:25px; text-align:center; border-radius:50%; border:1px solid #242426; width:35px; height:35px; align-items:center; align-content:center; justify-content:center; justify-items:center; position:fixed; background:#FFF;"><i class="fa-solid fa-caret-left" style="margin-right: 5px; width: 35px;"></i></a>
+
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         <div class="container px-5 px-lg-5" style="text-align:center !important;  display:flex !important; padding:20px !important; margin:auto !important; gap:10px !important; width:max-content; ">
             <div class="col-sm-2 div-updateInformation" style="width:620px; display:grid; padding: 10px; background:#FFFF; height:max-content; overflow:auto;">
                  <table class="table" style="width:100%; margin:auto;">
@@ -207,11 +212,14 @@ $(function(){
                          </th></tr>
                      <tr>
                          <th scope="col">
+<<<<<<< HEAD
                              <asp:TextBox ID="txtBannerTitle" runat="server" placeholder="Tiêu đề Banner mới" style="width:100%; font-size:20px;"></asp:TextBox>
                          </th>
                      </tr>
                      <tr>
                          <th scope="col">
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                              <asp:FileUpload ID="fileUploadBanner" CssClass="div-add-input"  runat="server" onchange="previewImageBanner(event)" style=" /*border:1px solid #000;*/ outline:none;"/>
                                 <img id="preview" src="" alt="Banner" style="width:100%;"/>
                          </th>

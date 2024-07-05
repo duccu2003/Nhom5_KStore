@@ -271,6 +271,7 @@ namespace TH03_WebBanHang
             lbSDCTT.Text = unpaidOrderCount.ToString();
 
             var doanhso = dbcontext.DoanhThus.Any();
+<<<<<<< HEAD
             if (doanhso)
             {
                 lbVNPay.Text = "0";
@@ -353,6 +354,13 @@ namespace TH03_WebBanHang
 
             }
 
+=======
+            if(doanhso)
+                lbTotalRevenue.Text = dbcontext.DoanhThus.Sum(s => s.DoanhThuNgay).ToString("N0") + "đ";
+            //LabelTotalRevenue.Text = CalculateTotalRevenue(dt).ToString("N0") + "đ"; // Format as currency
+            else
+                lbTotalRevenue.Text =  "0đ";
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
         }
 

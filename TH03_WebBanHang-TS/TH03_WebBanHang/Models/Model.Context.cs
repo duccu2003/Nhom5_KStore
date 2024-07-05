@@ -25,8 +25,11 @@ namespace TH03_WebBanHang.Models
             throw new UnintentionalCodeFirstException();
         }
     
+<<<<<<< HEAD
         public DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public DbSet<ChatBot> ChatBots { get; set; }
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         public DbSet<ChiNhanh> ChiNhanhs { get; set; }
         public DbSet<ChiTietDonHang> ChiTietDonHangs { get; set; }
         public DbSet<DanhGia> DanhGias { get; set; }

@@ -173,10 +173,15 @@ $(function(){
         <img loading="lazy" style="filter: brightness(50%); height: 100%; width: 100%; position: fixed; z-index: 0;" src="Content/image-bg/bg-for-slide-gp.png" />
 
     <form id="form1" runat="server" style="position:relative; ">
+<<<<<<< HEAD
         <div style="margin:20px 20px 20px 20px; position:fixed; display:grid; row-gap:30px; z-index:99;">
      <a title="Thoát" class="dropdown-item" href="ManagerAccount.aspx" style="padding:5px; color:#000;  z-index:99; font-size:25px; text-align:center; border-radius:50%; border:1px solid #242426; width:35px; height:35px; align-items:center; align-content:center; justify-content:center; justify-items:center;  background:#FFF;"><i class="fa-solid fa-caret-left" style="margin-right: 5px; width: 35px;"></i></a>
      
 </div>
+=======
+                       <a class="dropdown-item" href="ManagerAccount.aspx" style="margin:20px;  z-index:99; font-size:25px; text-align:center; border-radius:50%; border:1px solid #242426; width:35px; height:35px; align-items:center; align-content:center; justify-content:center; justify-items:center; position:fixed; background:#FFF;"><i class="fa-solid fa-caret-left" style="margin-right: 5px; width: 35px;"></i></a>
+
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
             <style>
         .search-container{
             

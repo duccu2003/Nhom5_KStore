@@ -16,7 +16,10 @@ using System.Web.Services;
 using System.Data;
 using Microsoft.IdentityModel.Tokens;
 using System.Web.WebPages;
+<<<<<<< HEAD
 using Newtonsoft.Json;
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
 namespace TH03_WebBanHang
 {
@@ -38,7 +41,11 @@ namespace TH03_WebBanHang
         public static string logoForMail_BlackKS = "Content\\image-bg\\KS.png";
 
         public static string localhost = "http://localhost:52718/";
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -55,7 +62,11 @@ namespace TH03_WebBanHang
             
             if (Email != null)
             {
+<<<<<<< HEAD
                 var isKhachLog = dbcontext.KhachHangs.Any(s => s.Email == Email.Value && s.TrangThai==true);
+=======
+                var isKhachLog = dbcontext.KhachHangs.Any(s => s.Email == Email.Value);
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                 if (isKhachLog)
                 {
                     imgHeaderAVTofUser.Visible = true;
@@ -79,12 +90,20 @@ namespace TH03_WebBanHang
                     
                     searchinput.Focus();
                     //Response.Write("<script type=\"text/javascript\">\r\n    function setFocusToSearchInput() {\r\n        // Đặt focus vào TextBox sau mỗi postback\r\n        document.getElementsByClassName('searchinput').focus();\r\n    }\r\n\r\n    // Gọi hàm setFocusToSearchInput sau mỗi postback\r\n    window.onload = setFocusToSearchInput;\r\n</script>");
+<<<<<<< HEAD
                    //BindData();
+=======
+                    BindData();
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                     
                 }
                 LoadChiNhanh();
                 
+<<<<<<< HEAD
                //BindData();
+=======
+                BindData();
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
              
                 
             }
@@ -95,9 +114,15 @@ namespace TH03_WebBanHang
                     searchinput.Focus();
                     //Response.Write("<script type=\"text/javascript\">\r\n    function setFocusToSearchInput() {\r\n        // Đặt focus vào TextBox sau mỗi postback\r\n        document.getElementsByClassName('searchinput').focus();\r\n    }\r\n\r\n    // Gọi hàm setFocusToSearchInput sau mỗi postback\r\n    window.onload = setFocusToSearchInput;\r\n</script>");
 
+<<<<<<< HEAD
                    //BindData();
                 }
                //BindData();
+=======
+                    BindData();
+                }
+                BindData();
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                 
             }
             
@@ -189,9 +214,66 @@ namespace TH03_WebBanHang
 
 
 
+<<<<<<< HEAD
         
 
         
+=======
+        [System.Web.Services.WebMethod]
+        protected void BindData()
+        {
+            if (!string.IsNullOrEmpty(searchinput.Text))
+            {
+                lvItemsSearch.Visible = true;
+                Response.Write(" <style>\r\n                        #div-items-Search{\r\n                            display:block;\r\n                        }\r\n                    </style>");
+                string searchText = searchinput.Text;
+
+                int value;
+                int.TryParse(searchText, out value);
+                DateTime date;
+                DateTime.TryParse(searchText, out date);
+
+                var items = dbcontext.SanPhams
+                  .Where(p =>
+                        p.SoLuongKho > 0 
+                        && (p.TenSP == searchText || p.TenSP.Contains(searchText) || searchText.Contains(p.TenSP) 
+                        || p.MoTa == searchText || p.MoTa.Contains(searchText) || searchText.Contains(p.MoTa) 
+                        //|| p.Loai.TenLoai == searchText || p.Loai.TenLoai.Contains(searchText) || searchText.Contains(p.Loai.TenLoai) 
+                        //|| p.Nhom.TenNhom == searchText || p.Nhom.TenNhom.Contains(searchText) || searchText.Contains(p.Nhom.TenNhom) 
+                        //|| p.Gia == value || p.DoanhSo == value || p.NgaySX == date || p.NgayHH == date
+                        )).ToList();
+
+                if (items.Count > 0)
+                {
+                    PlaceHolderGioiThieu.Visible = true; // Ẩn dòng "Sản phẩm gợi ý."
+                    lvItemsSearch.DataSource = items;
+                    lvItemsSearch.DataBind();
+                }
+                else
+                {
+                    PlaceHolderGioiThieu.Visible = false; // Hiển thị dòng "Sản phẩm gợi ý."
+                    lvItemsSearch.DataSource = null; // Đặt DataSource null để không hiển thị sản phẩm
+                    lvItemsSearch.DataBind(); // Gọi DataBind để cập nhật UI
+                }
+            }
+            else
+            {
+                Response.Write(" <style>\r\n                        #div-items-Search{\r\n                            display:none;\r\n                        }\r\n                    </style>");
+
+                PlaceHolderGioiThieu.Visible = false; // Hiển thị dòng "Sản phẩm gợi ý."
+                lvItemsSearch.DataSource = null; // Đặt DataSource null để không hiển thị sản phẩm
+                lvItemsSearch.DataBind(); // Gọi DataBind để cập nhật UI
+                lvItemsSearch.Visible= false;
+            }
+
+        }
+
+        protected void searchinput_TextChanged(object sender, EventArgs e)
+        {
+            // Gọi phương thức để cập nhật dữ liệu khi người dùng nhập vào TextBox
+            BindData();
+        }
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         
     }
 }

@@ -1,14 +1,20 @@
 ﻿using log4net;
 using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
 using System.Data.Entity.Infrastructure;
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Net.Mime;
 using System.Security.Cryptography;
 using System.Text;
+<<<<<<< HEAD
 using System.Threading;
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -74,6 +80,7 @@ namespace TH03_WebBanHang.checkOutOrder
 
 
             //int makh = GetMaTKFromSomeSource();
+<<<<<<< HEAD
                 int makh;
                 if (int.TryParse(maKhach, out makh))
                 {
@@ -331,15 +338,112 @@ namespace TH03_WebBanHang.checkOutOrder
                         if (EmailKhach != null && user.Any(p => p.Email == EmailKhach))
                         {
                             // Tạo một đơn hàng mới
+=======
+            int makh;
+            if (int.TryParse(maKhach, out makh))
+            {
+                // Conversion successful, use 'makh' as an integer
+            }
+            else
+            {
+                // Handle the error, for example by setting 'makh' to a default value or throwing an exception
+                makh = GetMaTKFromSomeSource(); // Example of a default value
+                           // or throw new Exception("Invalid value for maKhach");
+            }
+            //int makh = Pay.IdClinedtoMomo; // Giả định rằng bạn đã có phương thức này để lấy giá trị MaTK
+
+            // Chuyển đổi giá trị MaTK thành chuỗi
+            string kh = makh.ToString();
+
+            ChiNhanh chiNhanh = new ChiNhanh();
+            // Tăng giá trị count
+
+
+            // Lưu giá trị count vào session
+            string url = HttpContext.Current.Request.Url.ToString();
+            List<ChiTietDonHang> lstGioHang = Session["GioHang"] as List<ChiTietDonHang>;
+            //DonHang donHang = new DonHang();
+
+            //string ma = Pay.MaDHXNGD;
+            string ma = maDH;
+
+            if (lstGioHang != null && lstGioHang.Any())
+            {
+                var user = from u in dbcontext.KhachHangs
+                           select u;
+
+                var tk = from u in dbcontext.TKs select u;
+
+                var hadUser = tk.Any(p => p.Email == Pay.emailKHnoSign && (p.MatKhau != null || p.MatKhau != ""));
+                var hadClient = user.Any(p => p.Email == Pay.emailKHnoSign && (p.MatKhau != null || p.MatKhau != ""));
+                var hadClientNonPass = user.Any(s => s.Email == Pay.emailKHnoSign && (s.MatKhau == null || s.MatKhau == ""));
+                HttpCookie Email = Request.Cookies["Email"];
+                string EmailKhach;
+                if (Email == null) EmailKhach = Sign.email;
+                else EmailKhach = Email.Value;
+
+
+                if (EmailKhach == null)
+                {
+                    using (var db = new QL_KPOPStoreEntities())
+                    {
+                        // Kiểm tra giá trị trước khi thêm vào cơ sở dữ liệu
+                        if ((!hadUser && !hadClient && !hadClientNonPass) /*&& !string.IsNullOrEmpty(Pay.emailKHnoSign) && !string.IsNullOrEmpty(Pay.DienThoaiKHnoSign) && !string.IsNullOrEmpty(Pay.DiaChiKHnoSign) && !string.IsNullOrEmpty(Pay.emailKHnoSign)*/)
+                        {
+                            var newUser = new TK
+                            {
+                                Email = Pay.emailKHnoSign,
+                                MatKhau = null,
+                                TrangThai = false,
+
+
+
+                            };
+                            var newClient = new KhachHang
+                            {
+                                AvatarUser = Shop.defaultAvatar_BlackKS,
+                                HoTen = Pay.HotenKHnoSign,
+                                DienThoai = Pay.DienThoaiKHnoSign,
+                                DiaChi = Pay.DiaChiNN,
+                                Email = Pay.emailKHnoSign,
+                                GioiTinh = null, // Kiểm tra và đặt giá trị hợp lệ
+                                MatKhau = null, // Kiểm tra và đặt giá trị hợp lệ
+                                TrangThai = false,
+                                Diem = 0,
+                            };
+                            //db.TKs.Add(newUser);
+
+                            //db.KhachHangs.Add(newClient);
+                            //db.SaveChanges();
+                            db.TKs.Add(newUser);
+
+                            db.KhachHangs.Add(newClient);
+                            db.SaveChanges();
+
+                            //db.TKs.Add(newUser);
+
+                            //db.KhachHangs.Add(newClient);
+                            //db.SaveChanges();
+                            // Tạo một đơn hàng mới
+                            string makhno;
+                            makhno = newClient.MaKH.ToString();
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                             DonHang donHang = new DonHang
                             {
                                 MaDH = ma,
                                 HoTenNN = Pay.HotenKHnoSign,
                                 DiaChiNN = Pay.DiaChiNN,
                                 DienThoaiNN = Pay.DienThoaiKHnoSign,
+<<<<<<< HEAD
                                 KH = makh,
                                 Ngay = DateTime.Now,
                                 PhuongThuc = phuongthucGD,
+=======
+
+                                PhuongThuc = phuongthucGD,
+                                KH = newClient.MaKH,
+                                Ngay = DateTime.Now,
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                                 MaCN = Shop.CH // Shop.CH là mã chi nhánh
                             };
                             //    donHang.MaDH = ma;
@@ -376,6 +480,12 @@ namespace TH03_WebBanHang.checkOutOrder
                                     Gia = item.Gia,
                                     ThanhTien = item.ThanhTien,
                                     TenPob = item.TenPob,
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                                 };
 
                                 //chiTietDon.KH = donHang.KH;
@@ -387,7 +497,10 @@ namespace TH03_WebBanHang.checkOutOrder
                                 //chiTietDon.SoLuong = item.SoLuong;
                                 //chiTietDon.Gia = item.Gia;
                                 //chiTietDon.ThanhTien = item.ThanhTien;
+<<<<<<< HEAD
 
+=======
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                                 var sanpham = dbcontext.SanPhams.FirstOrDefault(p => p.MaSP == chiTietDon.MaSP);
                                 sanpham.SoLuongKho -= chiTietDon.SoLuong; sanpham.DoanhSo += chiTietDon.SoLuong; var khachmua = dbcontext.KhachHangs.FirstOrDefault(p => p.MaKH == makh); double diem = chiTietDon.ThanhTien / 200000;
                                 if (khachmua != null)
@@ -411,12 +524,279 @@ namespace TH03_WebBanHang.checkOutOrder
 
                                 dbcontext.ChiTietDonHangs.Add(chiTietDon);
 
+<<<<<<< HEAD
+=======
+                            }
+                            // Thêm thông báo thành công hoặc xử lý kết quả khác
+
+                        }
+                        else
+                        {
+                            var khachmua = dbcontext.KhachHangs.FirstOrDefault(p => p.Email == Pay.emailKHnoSign);
+
+                            DonHang donHang = new DonHang
+                            {
+                                MaDH = ma,
+                                HoTenNN = Pay.HotenKHnoSign,
+                                DiaChiNN = Pay.DiaChiNN,
+                                DienThoaiNN = Pay.DienThoaiKHnoSign,
+                                KH = khachmua.MaKH,
+                                Ngay = DateTime.Now,
+                                PhuongThuc = phuongthucGD,
+                                MaCN = Shop.CH // Shop.CH là mã chi nhánh
+
+                            };
+
+
+                            dbcontext.DonHangs.Add(donHang);
+
+                            string maDonHang = donHang.MaDH;
+                            //MaDHXNGD = donHang.MaDH;
+                            int count = 1;
+                            foreach (var item in lstGioHang)
+                            {
+                                string mact = maDonHang + count.ToString();
+
+                                ChiTietDonHang chiTietDon = new ChiTietDonHang
+                                {
+                                    KH = donHang.KH,
+                                    MaDH = donHang.MaDH, // Sử dụng mã đơn hàng mới tạo
+                                    MaCTDH = mact,
+                                    MaSP = item.MaSP,
+                                    TenSP = item.TenSP,
+                                    DuongDan = item.DuongDan,
+                                    SoLuong = item.SoLuong,
+                                    Gia = item.Gia,
+                                    ThanhTien = item.ThanhTien,
+                                    TenPob = item.TenPob,
+
+                                };
+
+                                var sanpham = dbcontext.SanPhams.FirstOrDefault(p => p.MaSP == chiTietDon.MaSP);
+                                sanpham.SoLuongKho -= chiTietDon.SoLuong; sanpham.DoanhSo += chiTietDon.SoLuong;
+                                double diem = chiTietDon.ThanhTien / 200000;
+                                if (khachmua != null)
+                                {
+
+                                    khachmua.Diem = khachmua.Diem + (int)diem;
+                                }
+                                else
+                                {
+                                    var khachHad = dbcontext.KhachHangs.FirstOrDefault(p => p.Email == Pay.emailKHnoSign);
+                                    khachHad.Diem = khachHad.Diem + (int)diem;
+                                }
+                                chiTietDon.Ngay = donHang.Ngay;
+                                chiTietDon.GiaoDich = true;
+                                ThanhTien = chiTietDon.ThanhTien;
+                                MaDH = chiTietDon.MaDH;
+                                count++;
+                                mdh = donHang.MaDH;
+                                //maKH = donHang.KH.ToString();
+
+
+                                dbcontext.ChiTietDonHangs.Add(chiTietDon);
+
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
 
 
                             }
+<<<<<<< HEAD
                         }
                         else
+=======
+
+                        }
+                    }
+
+                }
+                else if (hadUser && hadClient && !hadClientNonPass)
+                {
+                    if (EmailKhach != null && user.Any(p => p.Email == EmailKhach))
+                    {
+                        // Tạo một đơn hàng mới
+                        DonHang donHang = new DonHang
+                        {
+                            MaDH = ma,
+                            HoTenNN = Pay.HotenKHnoSign,
+                            DiaChiNN = Pay.DiaChiNN,
+                            DienThoaiNN = Pay.DienThoaiKHnoSign,
+                            KH = makh,
+                            Ngay = DateTime.Now,
+                            PhuongThuc = phuongthucGD,
+                            MaCN = Shop.CH // Shop.CH là mã chi nhánh
+                        };
+                        //    donHang.MaDH = ma;
+                        ////donHang.MaKH = makh;
+
+                        //    // Gán giá trị MaTK cho trường KH của đối tượng DonHang
+                        //    donHang.KH = kh;
+
+                        //    // Tiếp tục xử lý khác ở đây...
+
+                        //donHang.Ngay = DateTime.Now;
+                        //donHang.MaCN = Shop.CH;
+                        //donHang.ChiTietDonHangs = lstGioHang;
+                        //donHang.MaKH = Account.makh;
+
+                        dbcontext.DonHangs.Add(donHang);
+
+                        string maDonHang = donHang.MaDH;
+                        //MaDHXNGD = donHang.MaDH;
+                        int count = 1;
+                        foreach (var item in lstGioHang)
+                        {
+                            string mact = maDonHang + count.ToString();
+
+                            ChiTietDonHang chiTietDon = new ChiTietDonHang
+                            {
+                                KH = donHang.KH,
+                                MaDH = donHang.MaDH, // Sử dụng mã đơn hàng mới tạo
+                                MaCTDH = mact,
+                                MaSP = item.MaSP,
+                                TenSP = item.TenSP,
+                                DuongDan = item.DuongDan,
+                                SoLuong = item.SoLuong,
+                                Gia = item.Gia,
+                                ThanhTien = item.ThanhTien,
+                                TenPob = item.TenPob,
+                            };
+
+                            //chiTietDon.KH = donHang.KH;
+                            //chiTietDon.MaDH = donHang.MaDH;
+                            //chiTietDon.MaCTDH = mact;
+                            //chiTietDon.MaSP = item.MaSP;
+                            //chiTietDon.TenSP = item.TenSP;
+                            //chiTietDon.DuongDan = item.DuongDan;
+                            //chiTietDon.SoLuong = item.SoLuong;
+                            //chiTietDon.Gia = item.Gia;
+                            //chiTietDon.ThanhTien = item.ThanhTien;
+
+                            var sanpham = dbcontext.SanPhams.FirstOrDefault(p => p.MaSP == chiTietDon.MaSP);
+                            sanpham.SoLuongKho -= chiTietDon.SoLuong; sanpham.DoanhSo += chiTietDon.SoLuong; var khachmua = dbcontext.KhachHangs.FirstOrDefault(p => p.MaKH == makh); double diem = chiTietDon.ThanhTien / 200000;
+                            if (khachmua != null)
+                            {
+
+                                khachmua.Diem = khachmua.Diem + (int)diem;
+                            }
+                            else
+                            {
+                                var khachHad = dbcontext.KhachHangs.FirstOrDefault(p => p.Email == Pay.emailKHnoSign);
+                                khachHad.Diem = khachHad.Diem + (int)diem;
+                            }
+                            chiTietDon.Ngay = donHang.Ngay;
+                            chiTietDon.GiaoDich = true;
+                            ThanhTien = chiTietDon.ThanhTien;
+                            MaDH = chiTietDon.MaDH;
+                            count++;
+                            mdh = donHang.MaDH;
+                            //maKH = donHang.KH.ToString();
+
+
+                            dbcontext.ChiTietDonHangs.Add(chiTietDon);
+
+
+
+
+                        }
+                    }
+                    else
+                    {
+                        var khHad = dbcontext.KhachHangs.FirstOrDefault(p => p.Email == Pay.emailKHnoSign);
+                        string khHadMaKH = khHad.MaKH.ToString();
+                        // Tạo một đơn hàng mới
+                        DonHang donHang = new DonHang
+                        {
+                            MaDH = ma,
+                            HoTenNN = Pay.HotenKHnoSign,
+                            DiaChiNN = Pay.DiaChiNN,
+                            DienThoaiNN = Pay.DienThoaiKHnoSign,
+                            KH = khHad.MaKH,
+                            Ngay = DateTime.Now,
+                            PhuongThuc = phuongthucGD,
+                            MaCN = Shop.CH // Shop.CH là mã chi nhánh
+                        };
+                        //    donHang.MaDH = ma;
+                        ////donHang.MaKH = makh;
+
+                        //    // Gán giá trị MaTK cho trường KH của đối tượng DonHang
+                        //    donHang.KH = kh;
+
+                        //    // Tiếp tục xử lý khác ở đây...
+
+                        //donHang.Ngay = DateTime.Now;
+                        //donHang.MaCN = Shop.CH;
+                        //donHang.ChiTietDonHangs = lstGioHang;
+                        //donHang.MaKH = Account.makh;
+
+                        dbcontext.DonHangs.Add(donHang);
+
+                        string maDonHang = donHang.MaDH;
+                        //MaDHXNGD = donHang.MaDH;
+                        int count = 1;
+                        foreach (var item in lstGioHang)
+                        {
+                            string mact = maDonHang + count.ToString();
+
+                            ChiTietDonHang chiTietDon = new ChiTietDonHang
+                            {
+                                KH = donHang.KH,
+                                MaDH = donHang.MaDH, // Sử dụng mã đơn hàng mới tạo
+                                MaCTDH = mact,
+                                MaSP = item.MaSP,
+                                TenSP = item.TenSP,
+                                DuongDan = item.DuongDan,
+                                SoLuong = item.SoLuong,
+                                Gia = item.Gia,
+                                ThanhTien = item.ThanhTien,
+                                TenPob = item.TenPob,
+                            };
+
+                            //chiTietDon.KH = donHang.KH;
+                            //chiTietDon.MaDH = donHang.MaDH;
+                            //chiTietDon.MaCTDH = mact;
+                            //chiTietDon.MaSP = item.MaSP;
+                            //chiTietDon.TenSP = item.TenSP;
+                            //chiTietDon.DuongDan = item.DuongDan;
+                            //chiTietDon.SoLuong = item.SoLuong;
+                            //chiTietDon.Gia = item.Gia;
+                            //chiTietDon.ThanhTien = item.ThanhTien;
+                            var sanpham = dbcontext.SanPhams.FirstOrDefault(p => p.MaSP == chiTietDon.MaSP);
+                            sanpham.SoLuongKho -= chiTietDon.SoLuong; sanpham.DoanhSo += chiTietDon.SoLuong;
+                            var khachmua = dbcontext.KhachHangs.FirstOrDefault(p => p.MaKH == makh);
+                            double diem = chiTietDon.ThanhTien / 200000;
+
+
+                            if (khHad.Diem != null)
+                                khHad.Diem = khHad.Diem + (int)diem;
+                            else
+                            {
+                                khHad.Diem = 0;
+                                khHad.Diem = khHad.Diem + (int)diem;
+
+                            }
+
+
+
+
+                            chiTietDon.Ngay = donHang.Ngay;
+                            chiTietDon.GiaoDich = true;
+                            ThanhTien = chiTietDon.ThanhTien;
+                            MaDH = chiTietDon.MaDH;
+                            count++;
+                            mdh = donHang.MaDH;
+                            //maKH = donHang.KH.ToString();
+                            dbcontext.ChiTietDonHangs.Add(chiTietDon);
+
+                        }
+                    }
+                }
+                else
+                {
+                    using (var db = new QL_KPOPStoreEntities())
+                    {
+                        if (hadClientNonPass)
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                         {
                             var khHad = dbcontext.KhachHangs.FirstOrDefault(p => p.Email == Pay.emailKHnoSign);
                             string khHadMaKH = khHad.MaKH.ToString();
@@ -506,6 +886,7 @@ namespace TH03_WebBanHang.checkOutOrder
 
                             }
                         }
+<<<<<<< HEAD
                     }
                     else
                     {
@@ -609,10 +990,99 @@ namespace TH03_WebBanHang.checkOutOrder
                                     Email = Pay.emailKHnoSign,
                                     MatKhau = null,
                                     TrangThai = false,
+=======
+
+                        else
+                        {
+                            var newUser = new TK
+                            {
+                                Email = Pay.emailKHnoSign,
+                                MatKhau = null,
+                                TrangThai = false,
+
+
+
+                            };
+                            var newClient = new KhachHang
+                            {
+                                AvatarUser = Shop.defaultAvatar_BlackKS,
+                                HoTen = Pay.HotenKHnoSign,
+                                DienThoai = Pay.DienThoaiKHnoSign,
+                                DiaChi = Pay.DiaChiNN,
+                                Email = Pay.emailKHnoSign,
+                                GioiTinh = null, // Kiểm tra và đặt giá trị hợp lệ
+                                MatKhau = null, // Kiểm tra và đặt giá trị hợp lệ
+                                TrangThai = false,
+                                Diem = 0,
+                            };
+                            //db.TKs.Add(newUser);
+
+                            //db.KhachHangs.Add(newClient);
+                            //db.SaveChanges();
+                            db.TKs.Add(newUser);
+
+                            db.KhachHangs.Add(newClient);
+                            db.SaveChanges();
+
+                            //db.TKs.Add(newUser);
+
+                            //db.KhachHangs.Add(newClient);
+                            //db.SaveChanges();
+                            // Tạo một đơn hàng mới
+                            string makhno;
+                            makhno = newClient.MaKH.ToString();
+                            DonHang donHang = new DonHang
+                            {
+                                MaDH = ma,
+                                HoTenNN = Pay.HotenKHnoSign,
+                                DiaChiNN = Pay.DiaChiNN,
+                                DienThoaiNN = Pay.DienThoaiKHnoSign,
+
+
+                                KH = newClient.MaKH,
+                                Ngay = DateTime.Now,
+                                PhuongThuc = phuongthucGD,
+                                MaCN = Shop.CH // Shop.CH là mã chi nhánh
+                            };
+                            //    donHang.MaDH = ma;
+                            ////donHang.MaKH = makh;
+
+                            //    // Gán giá trị MaTK cho trường KH của đối tượng DonHang
+                            //    donHang.KH = kh;
+
+                            //    // Tiếp tục xử lý khác ở đây...
+
+                            //donHang.Ngay = DateTime.Now;
+                            //donHang.MaCN = Shop.CH;
+                            //donHang.ChiTietDonHangs = lstGioHang;
+                            //donHang.MaKH = Account.makh;
+
+                            dbcontext.DonHangs.Add(donHang);
+
+                            string maDonHang = donHang.MaDH;
+                            int count = 1;
+                            foreach (var item in lstGioHang)
+                            {
+                                string mact = maDonHang + count.ToString();
+
+                                ChiTietDonHang chiTietDon = new ChiTietDonHang
+                                {
+                                    KH = donHang.KH,
+                                    MaDH = donHang.MaDH, // Sử dụng mã đơn hàng mới tạo
+                                    MaCTDH = mact,
+                                    MaSP = item.MaSP,
+                                    TenSP = item.TenSP,
+                                    DuongDan = item.DuongDan,
+                                    SoLuong = item.SoLuong,
+                                    Gia = item.Gia,
+                                    ThanhTien = item.ThanhTien,
+                                    TenPob = item.TenPob,
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
 
 
                                 };
+<<<<<<< HEAD
                                 var newClient = new KhachHang
                                 {
                                     AvatarUser = Shop.defaultAvatar_BlackKS,
@@ -781,6 +1251,80 @@ namespace TH03_WebBanHang.checkOutOrder
 
                     Response.Redirect("Error/PaymentFailed");
                 }
+=======
+
+                                //chiTietDon.KH = donHang.KH;
+                                //chiTietDon.MaDH = donHang.MaDH;
+                                //chiTietDon.MaCTDH = mact;
+                                //chiTietDon.MaSP = item.MaSP;
+                                //chiTietDon.TenSP = item.TenSP;
+                                //chiTietDon.DuongDan = item.DuongDan;
+                                //chiTietDon.SoLuong = item.SoLuong;
+                                //chiTietDon.Gia = item.Gia;
+                                //chiTietDon.ThanhTien = item.ThanhTien;
+                                var sanpham = dbcontext.SanPhams.FirstOrDefault(p => p.MaSP == chiTietDon.MaSP);
+                                sanpham.SoLuongKho -= chiTietDon.SoLuong; sanpham.DoanhSo += chiTietDon.SoLuong; var khachmua = dbcontext.KhachHangs.FirstOrDefault(p => p.MaKH == makh); double diem = chiTietDon.ThanhTien / 200000;
+                                if (khachmua != null)
+                                {
+
+                                    khachmua.Diem = khachmua.Diem + (int)diem;
+                                }
+                                else
+                                {
+                                    var khachHad = dbcontext.KhachHangs.FirstOrDefault(p => p.Email == Pay.emailKHnoSign);
+                                    khachHad.Diem = khachHad.Diem + (int)diem;
+                                }
+                                chiTietDon.Ngay = donHang.Ngay;
+                                chiTietDon.GiaoDich = true;
+                                ThanhTien = chiTietDon.ThanhTien;
+                                MaDH = chiTietDon.MaDH;
+                                mdh = donHang.MaDH;
+                                count++;
+
+
+
+                                dbcontext.ChiTietDonHangs.Add(chiTietDon);
+
+                            }
+                        }
+                    }
+
+                }
+
+
+
+
+                dbcontext.SaveChanges();
+                DoanhThu doanhThu;
+                if (dbcontext.DoanhThus.Any(s => s.Nam == DateTime.Now.Year && s.Thang == DateTime.Now.Month && s.Ngay == DateTime.Now.Day))
+                {
+                    doanhThu = dbcontext.DoanhThus.FirstOrDefault(s => s.Nam == DateTime.Now.Year && s.Thang == DateTime.Now.Month && s.Ngay == DateTime.Now.Day);
+                    doanhThu.DoanhThuNgay += ThanhTien;
+
+                }
+                else
+                {
+                    doanhThu = new DoanhThu
+                    {
+
+
+                        Ngay = DateTime.Now.Day,
+                        Nam = DateTime.Now.Year,
+                        Thang = DateTime.Now.Month,
+                        DoanhThuNgay = ThanhTien,
+                    };
+                    dbcontext.DoanhThus.Add(doanhThu);
+
+                }
+
+                dbcontext.SaveChanges();
+
+               
+
+
+
+            }
+>>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
             }
 
