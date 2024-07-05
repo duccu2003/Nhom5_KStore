@@ -1,0 +1,407 @@
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Data.Entity;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using TH03_WebBanHang.Models;
+
+
+namespace TH03_WebBanHang
+{
+    public partial class Manager : System.Web.UI.Page
+    {
+        public int Year { get; set; }
+        private QL_KPOPStoreEntities dbcontext = new QL_KPOPStoreEntities();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            var user = from u in dbcontext.TKs
+                       select u;
+            var khachhang = from u in dbcontext.KhachHangs
+                            select u;
+            var db = new QL_KPOPStoreEntities();
+            if (user.Any(p => (p.Email == "Admin" && p.TrangThai == true && p.Email == SignIn.email && SignIn.email == "Admin") || ((p.Quyen == "Admin" || p.Quyen == "Manager") && p.TrangThai == true && p.Email == SignIn.email)))
+            {
+
+            }
+            // Otherwise, display an error message
+
+            else
+            {
+                //Response.Write("<script>alert('Bạn không có quyền truy cập');</script>");
+                Response.Write("<div class=\"alert alert-danger\" role=\"alert\">Bạn không có quyền truy cập!</div>");
+                Response.Write("<script type=\"text/javascript\">");
+                Response.Write("setTimeout(function() {");
+                Response.Write("var elements = document.getElementsByClassName('alert');");
+                Response.Write("for (var i = 0; i < elements.length; i++) {");
+                Response.Write("elements[i].style.display = 'none';");
+                Response.Write("}");
+                Response.Write("}, 3000);"); // 1000 mili giây = 1 giây
+                Response.Write("</script>");
+                Response.Redirect("Error.aspx");
+
+            }
+            if (!IsPostBack)
+            {
+
+
+                var CN1 = dbcontext.DonHangs.Where(p => p.MaCN == "1").Count();
+                var CN2 = dbcontext.DonHangs.Where(p => p.MaCN == "2").Count();
+                var CN3 = dbcontext.DonHangs.Where(p => p.MaCN == "3").Count();
+                Year = DateTime.Now.Year; // Sử dụng năm hiện tại làm mặc định
+                BindData();
+
+
+            }
+        }
+
+
+
+        //Revenue
+        protected void BindData()
+        {
+            DataTable dt = new DataTable();
+            //string dataSource = "DUC-LAPTOP\\NGUYENHOANGDUC";
+            //string initialCatalog = "QL_KPOPStore";
+            //string sqlTK = "sa";
+            //string sqlMK = "1";
+            //string dataSource = Shop.SQL_dataSource /*"DUC-LAPTOP\\NGUYENHOANGDUC"*/;
+            //string initialCatalog = Shop.SQL_initialCatalog /*"QL_KPOPStore"*/;
+            //string sqlTK = Shop.SQL_sqlTK /*"sa"*/;
+            //string sqlMK = Shop.SQL_sqlMK  /*"1"*/;
+            //string connectionString = "Data Source=" + dataSource + ";Initial Catalog=" + initialCatalog + ";User ID=" + sqlTK + ";Password=" + sqlMK + ";";
+
+            using (SqlConnection con = new SqlConnection(Shop.SQL_connectionString))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT MONTH(ChiTietDonHang.Ngay) AS Month, SUM(ChiTietDonHang.ThanhTien) AS Revenue FROM ChiTietDonHang INNER JOIN SanPham ON ChiTietDonHang.MaSP = SanPham.MaSP WHERE YEAR(Ngay) = @Year GROUP BY MONTH(Ngay)", con);
+                cmd.Parameters.AddWithValue("@Year", Year);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+
+            GridViewMonthlyRevenue.DataSource = dt;
+            GridViewMonthlyRevenue.DataBind();
+
+            LabelTotalRevenue.Text = CalculateTotalRevenue(dt).ToString("N0") + "đ"; // Format as currency
+        }
+
+        protected decimal CalculateTotalRevenue(DataTable dt)
+        {
+            decimal totalRevenue = 0;
+            foreach (DataRow row in dt.Rows)
+            {
+                totalRevenue += Convert.ToDecimal(row["Revenue"]);
+            }
+            return totalRevenue;
+        }
+        protected void ListView1Revenue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private int startRowIndex, maximumRows;
+
+        protected void SearchButtonRevenue_Click(object sender, EventArgs e)
+        {
+            ListViewRevenueList.DataSource = null;
+            ListViewRevenueList.DataSourceID = null;
+            ListViewRevenueList.DataBind();
+            GetDeparmentsRevenue();
+
+
+
+        }
+        public IQueryable<ChiTietDonHang> GetDeparmentsRevenue()
+        {
+            IQueryable<ChiTietDonHang> order = dbcontext.ChiTietDonHangs;
+
+            return order.OrderBy(e => e.Ngay);
+        }
+        public IQueryable<DoanhThu> GetRevernue()
+        {
+            // Lấy dữ liệu doanh thu từ tháng hiện tại cho năm hiện tại
+            var doanhThu = dbcontext.DoanhThus
+              /*.Where(d => d.Nam == DateTime.Now.Year && d.Ngay <= DateTime.Now.Day)*/.AsQueryable();
+
+            return doanhThu;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        //Product
+        public string url = HttpContext.Current.Request.Url.ToString();
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            // Get the button that raised the event
+            Button btnUpdate = (Button)sender;
+            // Get the CommandArgument, which should be the ID of the item to update
+            string itemId = btnUpdate.CommandArgument;
+            // Find the input field associated with the button
+            var txtSoLuongKho = (HtmlInputText)btnUpdate.NamingContainer.FindControl("txtSoLuongKho");
+            // Parse the new SoLuongKho value from the input field
+            int newSoLuongKho = int.Parse(txtSoLuongKho.Value);
+
+            // Retrieve the item from the database
+            var sp = dbcontext.SanPhams.FirstOrDefault(p => p.MaSP == itemId);
+            if (sp != null)
+            {
+                // Update the SoLuongKho value
+                sp.SoLuongKho = newSoLuongKho;
+                // Optionally, update other fields if necessary
+                sp.NgayNhap = DateTime.Now;
+
+                // Save changes to the database
+                dbcontext.SaveChanges();
+                // Refresh the ListView to reflect the changes
+                ListViewProductList.DataBind();
+            }
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            // Get the button that raised the event
+            ImageButton btnDelete = (ImageButton)sender;
+            // Get the CommandArgument, which should be the ID of the item to delete
+            string itemId = btnDelete.CommandArgument;
+            var sp = dbcontext.SanPhams.FirstOrDefault(p => p.MaSP == itemId);
+            sp.SoLuongKho--;
+
+            dbcontext.SaveChanges();
+            ListViewProductList.DataBind();
+
+            Response.Redirect(url);
+        }
+
+
+        protected void btnChange_Click(object sender, EventArgs e)
+        {
+            ImageButton btnChange = (ImageButton)sender;
+            // Get the CommandArgument, which should be the ID of the item to delete
+            string itemId = btnChange.CommandArgument;
+            var sp = dbcontext.SanPhams.FirstOrDefault(p => p.MaSP == itemId);
+            sp.SoLuongKho++;
+            sp.NgayNhap = DateTime.Now;
+            dbcontext.SaveChanges();
+            // Optionally, refresh the ListView to reflect the changes
+            ListViewProductList.DataBind();
+            // Update the total price label
+
+            Response.Redirect(url);
+
+        }
+
+        protected void ListView1Product_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void SearchButtonProduct_Click(object sender, EventArgs e)
+        {
+            ListViewProductList.DataSource = null;
+            ListViewProductList.DataSourceID = null;
+            ListViewProductList.DataBind();
+            GetDeparmentsProduct();
+
+
+
+        }
+        public IQueryable<SanPham> GetDeparmentsProduct()
+        {
+            string searchText = searchinputProduct.Text;
+
+            //IQueryable<SanPham> sanPham = dbcontext.SanPhams.Where(p => p.MaLoai != "6");
+            var departments = dbcontext.SanPhams.OrderBy(s => s.MaLoai);
+
+            IQueryable<SanPham> product = departments.OrderBy(s => s.MaLoai);
+            IQueryable<SanPham> sanPhamsSearch = product.Where(p => p.MoTa.Contains(searchText) || p.MaSP.Contains(searchText) || p.Loai.TenLoai.Contains(searchText) || p.Nhom.TenNhom.Contains(searchText) || p.TenSP.Contains(searchText));
+
+            if (string.IsNullOrEmpty(searchText))
+            {
+                return product;
+            }
+            else
+            {
+                return sanPhamsSearch;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        //Order
+        protected void ListView1Order_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void SearchButtonOrder_Click(object sender, EventArgs e)
+        {
+            ListViewOrderList.DataSource = null;
+            ListViewOrderList.DataSourceID = null;
+            ListViewOrderList.DataBind();
+            GetDeparmentsOrder();
+
+
+
+
+
+        }
+        public IQueryable<ChiTietDonHang> GetDeparments2()
+        {
+            string searchTextA = searchinputOrder.Text;
+            //IQueryable<SanPham> sanPham = dbcontext.SanPhams.Where(p => p.MaLoai != "6");
+            string searchText = Request.QueryString["searchText"];
+
+            var departments = dbcontext.ChiTietDonHangs.OrderBy(s => s.MaDH);
+            int maK;
+            int.TryParse(searchTextA, out maK);
+            IQueryable<ChiTietDonHang> chiTiets = departments.Where(p => p.TenSP.Contains(searchTextA) || p.MaCTDH.Contains(searchTextA) || p.KH == maK || p.MaDH.Contains(searchTextA) || p.MaSP.Contains(searchTextA));
+
+            if (!string.IsNullOrEmpty(searchTextA))
+            {
+                DateTime searchDate;
+                if (DateTime.TryParse(searchTextA, out searchDate))
+                {
+                    // Nếu chuyển đổi thành công, tìm kiếm ngày
+                    IQueryable<ChiTietDonHang> dateorder = departments.Where(p => p.Ngay.ToString().Contains(searchTextA));
+                    return dateorder;
+                }
+                else return chiTiets;
+
+            }
+            else if (!string.IsNullOrEmpty(searchText))
+            {
+                return departments.Where(p => p.MaCTDH == searchText || p.MaDH == searchText);
+            }
+
+            else return departments;
+
+
+
+
+        }
+        public IQueryable<DonHang> GetDeparmentsOrder()
+        {
+            string searchTextA = searchinputOrder.Text;
+            string searchText = Request.QueryString["searchText"];
+
+            var don = dbcontext.DonHangs.OrderBy(s1 => s1.MaDH);
+            int maK;
+            int.TryParse(searchTextA, out maK);
+
+            if (!string.IsNullOrEmpty(searchTextA))
+            {
+                DateTime searchDate;
+                if (DateTime.TryParse(searchTextA, out searchDate))
+                {
+                    // Assuming you want to filter by date
+                    return don.Where(p => p.Ngay == searchDate);
+                }
+                else
+                {
+                    // Filter by text
+                    return don.Where(p => p.MaDH.Contains(searchTextA) || p.KH == maK);
+                }
+            }
+            else if (!string.IsNullOrEmpty(searchText))
+            {
+                return don.Where(p => p.MaDH == searchText);
+            }
+
+            return don;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Branch
+        protected void ListView1Branch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        public IQueryable<ChiNhanh> GetDeparmentsBranch()
+        {
+            IQueryable<ChiNhanh> branch = dbcontext.ChiNhanhs;
+
+            return branch;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        //Account
+        protected void SearchButtonAccount_Click(object sender, EventArgs e)
+        {
+            ListViewAccountList.DataSource = null;
+            ListViewAccountList.DataSourceID = null;
+            ListViewAccountList.DataBind();
+            GetDeparmentsAccount();
+
+
+
+        }
+
+        protected void ListView1Account_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        public IQueryable<KhachHang> GetDeparmentsAccount()
+        {
+            string searchText = searchinputAccount.Text;
+            var client = dbcontext.KhachHangs;
+
+            // Sử dụng Contains() thay vì == để tìm kiếm chuỗi tìm kiếm trong các trường
+            IQueryable<KhachHang> khachhang = client.Where(p => p.GioiTinh.Contains(searchText) || p.DiaChi.Contains(searchText) || p.DienThoai.Contains(searchText) || p.HoTen.Contains(searchText) || p.Email.Contains(searchText) || p.TK.Email.Contains(searchText) || p.TK.Quyen.Contains(searchText));
+
+            // Nếu không có chuỗi tìm kiếm nào được nhập, trả về toàn bộ danh sách khách hàng
+            if (string.IsNullOrEmpty(searchText))
+            {
+                return client.OrderBy(e => e.MaTK); // Replace 'e.SomeProperty' with the property you want to sort by
+
+            }
+            else
+            {
+                return khachhang.OrderBy(e => e.MaTK);// Replace 'e.SomeProperty' with the property you want to sort by
+
+            }
+        }
+
+
+    }
+}

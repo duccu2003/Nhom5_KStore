@@ -1,0 +1,210 @@
+ <h3 id="TS" class="tenSP-ls-h3">
+     <p class="tenSP-ls-p">Album</p>
+ </h3>
+ <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-left">
+     <asp:ListView ID="ListView1" runat="server" ItemType="TH03_WebBanHang.Models.SanPham" SelectMethod="GetTraSua">
+         <EmptyDataTemplate>
+             <table>
+                 <tr>
+                     <td>No data was returned.</td>
+                 </tr>
+             </table>
+         </EmptyDataTemplate>
+         <EmptyItemTemplate>
+
+             <td />
+         </EmptyItemTemplate>
+         <GroupTemplate>
+             <tr id="itemPlaceholderContainer" runat="server">
+                 <td id="itemPlaceholder" runat="server"></td>
+             </tr>
+         </GroupTemplate>
+         <ItemTemplate>
+             <div class="col mb-5">
+                 <%--<div class="card h-100">  --%>                      <a class="btn btn-outline-dark mt-auto btn-mua card h-100" href="item.aspx?sp=<%#:Item.MaSP%>">
+
+                     <!-- Product image-->
+                     <img class="card-img-top img-with-hover" src="<%#:Item.DuongDan%>" alt="..." style="padding: 20px; height: max-content;" />
+                     <style>
+                         .img-with-hover {
+                             transition: transform 0.3s;
+                             border-radius: 1.8rem;
+                         }
+
+                         .btn-mua:hover .img-with-hover {
+                             transform: scale(1.05);
+                         }
+
+                         .btn-outline-dark {
+                             --bs-btn-active-bg: #CCBEB1;
+                             --bs-btn-disabled-color: #CCBEB1;
+                         }
+                     </style>
+                     <!-- Product details-->
+                     <div class="card-body p-4">
+                         <div class="text-center">
+                             <!-- Product name-->
+                             <h5 class="fw-bolder"><%#:Item.TenSP%></h5>
+
+                         </div>
+                     </div>
+                     <!-- Product actions-->
+                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                         <!-- Product price-->
+                         <p class="text-center"><%# string.Format("{0:N0}", Item.Gia) %>đ</p>
+                         <%--                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto btn-mua" href="item.aspx?sp=<%#:Item.MaSP%>">Mua</a></div>--%>
+                     </div>
+                 </a><%--</div>     --%>
+             </div>
+         </ItemTemplate>
+     </asp:ListView>
+
+
+ </div>
+ <h3 id="HT" class="tenSP-ls-h3">
+     <p class="tenSP-ls-p">Photobook</p>
+ </h3>
+ <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-left">
+
+     <asp:ListView ID="ListView2" runat="server" ItemType="TH03_WebBanHang.Models.SanPham" SelectMethod="GetTea">
+
+         <EmptyDataTemplate>
+             <table>
+                 <tr>
+                     <td>No data was returned.</td>
+                 </tr>
+             </table>
+         </EmptyDataTemplate>
+         <EmptyItemTemplate>
+
+             <td />
+         </EmptyItemTemplate>
+         <GroupTemplate>
+             <tr id="itemPlaceholderContainer" runat="server">
+                 <td id="itemPlaceholder" runat="server"></td>
+             </tr>
+         </GroupTemplate>
+         <ItemTemplate>
+             <div class="col mb-5">
+                 <%--<div class="card h-100">  --%>                      <a class="btn btn-outline-dark mt-auto btn-mua card h-100" href="item.aspx?sp=<%#:Item.MaSP%>">
+
+                     <!-- Product image-->
+                     <img class="card-img-top img-with-hover" src="<%#:Item.DuongDan%>" alt="..." style="padding: 20px; height: max-content;" />
+
+                     <!-- Product details-->
+                     <div class="card-body p-4">
+                         <div class="text-center">
+                             <!-- Product name-->
+                             <h5 class="fw-bolder"><%#:Item.TenSP%></h5>
+
+                         </div>
+                     </div>
+                     <!-- Product actions-->
+                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                         <!-- Product price-->
+                         <p class="text-center"><%# string.Format("{0:N0}", Item.Gia) %>đ</p>
+                         <%--                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto btn-mua" href="item.aspx?sp=<%#:Item.MaSP%>">Mua</a></div>--%>
+                     </div>
+                     <%--                            </div>--%></a>
+             </div>
+         </ItemTemplate>
+     </asp:ListView>
+ </div>
+ <h3 id="CP" class="tenSP-ls-h3">
+     <p class="tenSP-ls-p">Seasion Greeting</p>
+ </h3>
+ <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-left">
+
+     <asp:ListView ID="ListView4" runat="server" ItemType="TH03_WebBanHang.Models.SanPham" SelectMethod="GetCoffee">
+
+         <EmptyDataTemplate>
+             <table>
+                 <tr>
+                     <td>No data was returned.</td>
+                 </tr>
+             </table>
+         </EmptyDataTemplate>
+         <EmptyItemTemplate>
+
+             <td />
+         </EmptyItemTemplate>
+         <GroupTemplate>
+             <tr id="itemPlaceholderContainer" runat="server">
+                 <td id="itemPlaceholder" runat="server"></td>
+             </tr>
+         </GroupTemplate>
+         <ItemTemplate>
+             <div class="col mb-5">
+                 <%--<div class="card h-100">  --%>                      <a class="btn btn-outline-dark mt-auto btn-mua card h-100" href="item.aspx?sp=<%#:Item.MaSP%>">
+
+                     <!-- Product image-->
+                     <img class="card-img-top img-with-hover" src="<%#:Item.DuongDan%>" alt="..." style="padding: 20px; height: max-content;" />
+
+                     <!-- Product details-->
+                     <div class="card-body p-4">
+                         <div class="text-center">
+                             <!-- Product name-->
+                             <h5 class="fw-bolder"><%#:Item.TenSP%></h5>
+
+                         </div>
+                     </div>
+                     <!-- Product actions-->
+                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                         <!-- Product price-->
+                         <p class="text-center"><%# string.Format("{0:N0}", Item.Gia) %>đ</p>
+                         <%--                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto btn-mua" href="item.aspx?sp=<%#:Item.MaSP%>">Mua</a></div>--%>
+                     </div>
+                     <%--                            </div>--%></a>
+             </div>
+         </ItemTemplate>
+     </asp:ListView>
+ </div>
+ <h3 id="KT" class="tenSP-ls-h3">
+     <p class="tenSP-ls-p">CD & Bluray</p>
+ </h3>
+ <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-left">
+
+     <asp:ListView ID="ListView3" runat="server" ItemType="TH03_WebBanHang.Models.SanPham" SelectMethod="GetIceCream">
+
+         <EmptyDataTemplate>
+             <table>
+                 <tr>
+                     <td>No data was returned.</td>
+                 </tr>
+             </table>
+         </EmptyDataTemplate>
+         <EmptyItemTemplate>
+
+             <td />
+         </EmptyItemTemplate>
+         <GroupTemplate>
+             <tr id="itemPlaceholderContainer" runat="server">
+                 <td id="itemPlaceholder" runat="server"></td>
+             </tr>
+         </GroupTemplate>
+         <ItemTemplate>
+             <div class="col mb-5">
+                 <%--<div class="card h-100">  --%>                      <a class="btn btn-outline-dark mt-auto btn-mua card h-100" href="item.aspx?sp=<%#:Item.MaSP%>">
+
+                     <!-- Product image-->
+                     <img class="card-img-top img-with-hover" src="<%#:Item.DuongDan%>" alt="..." style="padding: 20px; height: max-content;" />
+
+                     <!-- Product details-->
+                     <div class="card-body p-4">
+                         <div class="text-center">
+                             <!-- Product name-->
+                             <h5 class="fw-bolder"><%#:Item.TenSP%></h5>
+
+                         </div>
+                     </div>
+                     <!-- Product actions-->
+                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                         <!-- Product price-->
+                         <p class="text-center"><%# string.Format("{0:N0}", Item.Gia) %>đ</p>
+                         <%--                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto btn-mua" href="item.aspx?sp=<%#:Item.MaSP%>">Mua</a></div>--%>
+                     </div>
+                     <%--                            </div>--%></a>
+             </div>
+         </ItemTemplate>
+     </asp:ListView>
+ </div>
