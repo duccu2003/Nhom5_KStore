@@ -14,6 +14,8 @@ using System.ComponentModel.DataAnnotations;
 using System.EnterpriseServices;
 using TH03_WebBanHang.Controllers;
 using System.Text.RegularExpressions;
+using System.Net.Http.Headers;
+using System.Net.Http;
 
 
 namespace TH03_WebBanHang.Controllers
@@ -80,19 +82,273 @@ namespace TH03_WebBanHang.Controllers
             // Kiểm tra xem có dữ liệu trong db.SanPhams hay không
             string imgSP = null;
             string linkTo = null;
-            var message = db.SanPhams.FirstOrDefault(s => (s.MaSP == chat || s.MaSP.Contains(chat) || chat.Contains(s.MaSP) || chat.Contains(s.TenSP) || s.TenSP.Contains(chat)) && s.SoLuongKho>0);
-                    
-                    // Kiểm tra xem message có giá trị hay không trước khi chuyển đổi sang JSON
-            if (message != null)
+            var group = db.Nhoms.Any(s => (chat.Contains(s.TenNhom) || s.TenNhom.Contains(chat)));
+            var mess = db.SanPhams.Any(s => (s.MaSP == chat || s.MaSP.Contains(chat) || chat.Contains(s.MaSP) || chat.Contains(s.TenSP) || s.TenSP.Contains(chat)) && s.SoLuongKho > 0);
+
+
+
+            string noAccentString = RemoveAccents(chat);
+            string lowerCaseNoAccentString = noAccentString.ToLower();
+            string text = lowerCaseNoAccentString.Trim();
+            string pattern = @"[\p{P}\s]";
+
+            // Thay thế tất cả các dấu câu bằng chuỗi rỗng
+            string textChat = Regex.Replace(text, pattern, "");
+
+            // Kiểm tra xem message có giá trị hay không trước khi chuyển đổi sang JSON
+            if ((mess ||  group) &&(textChat.Contains("conko") || textChat.Contains("conkhong") || textChat.Contains("cokhong")) || (textChat.Contains("sanpham") || textChat.Contains("sp") && textChat.Contains("mon") || textChat.Contains("mathang") || textChat.Contains("hang")) || (chat.Contains("sanpham") || chat.Contains("sp") && chat.Contains("mon") || chat.Contains("mathang") || chat.Contains("hang")) ||
+                    (textChat == "wiki" || textChat.Contains("wiki") || textChat == "timhieu" || textChat.Contains("timhieu") || textChat.Contains("thongtin") || textChat.Contains("profile") || textChat.Contains("timkiemve") || textChat.Contains("thongtin") || textChat.Contains("profile")))
             {
-                imgSP = message.DuongDan;
-                linkTo = "item?sp=" + message.MaSP;    
-                        // Sử dụng JsonResult với JsonRequestBehavior.AllowGet để cho phép trả về dữ liệu từ yêu cầu GET
+                var message = db.SanPhams.FirstOrDefault(s => (s.MaSP == chat || s.MaSP.Contains(chat) || chat.Contains(s.MaSP) || chat.Contains(s.TenSP) || s.TenSP.Contains(chat)) && s.SoLuongKho > 0);
+                var gp = db.Nhoms.FirstOrDefault(s => (s.MaNhom == chat || s.MaNhom.Contains(chat) || chat.Contains(s.MaNhom) || chat.Contains(s.TenNhom) || s.TenNhom.Contains(chat)));
+
+                if (group && mess)
+                {
+
+                    linkTo = "item?gp=" + gp + "&sp=" + message.MaSP;
+                    imgSP = message.DuongDan;
+                    return new JsonResult
+                    {
+                        Data = new { message = "Sản phẩm " + message.TenSP + " của nhóm " + gp.TenNhom + " vẫn đang còn hàng.", imgsrc = imgSP, alink = linkTo },
+                        JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                    };
+                }
+
+                // Sử dụng JsonResult với JsonRequestBehavior.AllowGet để cho phép trả về dữ liệu từ yêu cầu GET
+                else if (group && !mess && (textChat.Contains("sanpham") || textChat.Contains("sp") && textChat.Contains("mon") || textChat.Contains("mathang") || textChat.Contains("hang")) || (chat.Contains("sanpham") || chat.Contains("sp") && chat.Contains("mon") || chat.Contains("mathang") || chat.Contains("hang")) ||
+                    (textChat == "wiki" || textChat.Contains("wiki") || textChat == "timhieu" || textChat.Contains("timhieu") || textChat.Contains("thongtin") || textChat.Contains("profile") || textChat.Contains("timkiemve") || textChat.Contains("thongtin") || textChat.Contains("profile")))
+                       
+                {
+                    if (textChat == "wiki"
+                        //|| "wiki".Contains(chat)
+                        || textChat.Contains("wiki")                        
+                        //|| "wiki".Contains(textChat)
+                        //|| "wiki" == textChat
+                        //|| "wiki" == chat
+
+                        || textChat == "timhieu"
+                        //|| "timhieu".Contains(chat)
+                        || textChat.Contains("timhieu")
+                        //|| "timhieu".Contains(textChat)
+                        //|| "timhieu" == textChat
+                        //|| "timhieu" == chat
+
+                        //|| "thongtin" == textChat
+                        //|| "thongtin".Contains(chat)
+                        || textChat.Contains("thongtin")
+                        //|| "thongtin".Contains(textChat)
+                        //|| "thongtin" == textChat
+                        //|| "thongtin" == chat
+
+
+                        //|| "profile" == chat
+                        //|| "profile".Contains(chat)
+                        || textChat.Contains("profile")
+                        //|| "profile".Contains(textChat)
+                        //|| "profile" == textChat
+                        //|| "profile" == chat
+
+                        //|| "timkiemve".Contains(textChat)
+                        //|| "timkiemve".Contains(chat)
+                        || textChat.Contains("timkiemve")
+                        //|| "timkiemve".Contains(textChat)
+                        //|| "timkiemve" == textChat
+                        //|| "timkiemve" == chat
+
+                        //|| "thongtin" == chat
+                        //|| "thongtin".Contains(chat)
+                        || textChat.Contains("thongtin")
+                        //|| "thongtin".Contains(textChat)
+                        //|| "thongtin" == textChat
+                        //|| "thongtin" == chat
+
+                        //|| "profile".Contains(chat)
+                        //|| "profile".Contains(chat)
+                        || textChat.Contains("profile")
+                        //|| "profile".Contains(textChat)
+                        //|| "profile" == textChat
+                        //|| "profile" == chat
+
+                        )
+                    {
+                        if (gp != null)
+                        {
+                            imgSP = gp.AnhNhom;
+                            linkTo = "https://vi.wikipedia.org/w/index.php?search=" + gp.TenNhom;
+                            return new JsonResult
+                            {
+                                Data = new { message = "Dưới đây là thông tin của " + gp.TenNhom + " trên trang wikipedia.", imgsrc = imgSP, alink = linkTo },
+                                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                            };
+                        }
+                        else
+                        {
+                            imgSP = null;
+                            linkTo = null;
+                            return new JsonResult
+                            {
+                                Data = new { message = "Không tìm thấy nhóm/nghệ sĩ " + gp.TenNhom + " đang có trong cửa hàng.", imgsrc = imgSP, alink = linkTo },
+                                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                            };
+                        }
+                    }
+                    else
+                    {
+                        if (gp != null)
+                        {
+                            imgSP = gp.AnhNhom;
+                            linkTo = "item?gp=" + gp.MaNhom;
+                            return new JsonResult
+                            {
+                                Data = new { message = "Dưới đây là những sản phẩm của " + gp.TenNhom + " đang có trong cửa hàng.", imgsrc = imgSP, alink = linkTo },
+                                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                            };
+                        }
+                        else
+                        {
+                            imgSP = null;
+                            linkTo = null;
+                            return new JsonResult
+                            {
+                                Data = new { message = "Không tìm thấy nhóm/nghệ sĩ " + gp.TenNhom + " đang có trong cửa hàng.", imgsrc = imgSP, alink = linkTo },
+                                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                            };
+                        }
+                        
+                    }
+                    
+                }
+                else if(!group && mess)
+                {   linkTo = "item?sp=" + message.MaSP;
+                    imgSP = message.DuongDan;
+                    return new JsonResult
+                    {
+                        Data = new { message = "Sản phẩm " + message.TenSP + " vẫn đang còn hàng.", imgsrc = imgSP, alink = linkTo },
+                        JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                    };
+                }
+                
+                else
+                {
+                    linkTo = null;
+                    imgSP = null;
+                    return new JsonResult
+                    {
+                        Data = new { message = "Sản phẩm không có trong cửa hàng.", imgsrc = imgSP, alink = linkTo },
+                        JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                    };
+                }
+
+
+            }
+            else if(textChat.Contains("sanpham") || textChat.Contains("sp") && textChat.Contains("mon") || textChat.Contains("mathang") || textChat.Contains("hang") || chat.Contains("sanpham") || chat.Contains("sp") && chat.Contains("mon") || chat.Contains("mathang") || chat.Contains("hang"))
+            {
+                if((textChat.Contains("moi") || textChat.Contains("new")|| (chat.Contains("moi") || chat.Contains("new")))){
+                    var message = db.SanPhams.OrderBy(s=>s.NgayNhap).FirstOrDefault(s => (s.MaSP == chat || s.MaSP.Contains(chat) || chat.Contains(s.MaSP) || chat.Contains(s.TenSP) || s.TenSP.Contains(chat)) && s.SoLuongKho > 0);
+
+                    if (message != null)
+                    {
+                        linkTo = "item?sp=" + message.MaSP;
+                        imgSP = message.DuongDan;
+                        return new JsonResult
+                        {
+                            Data = new { message = "Sản phẩm " + message.TenSP + " vẫn đang còn hàng.", imgsrc = imgSP, alink = linkTo },
+                            JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                        };
+                    }
+                    else
+                    {
+                        linkTo = null;
+                        imgSP = null;
+                        return new JsonResult
+                        {
+                            Data = new { message = "Chưa có sản phẩm mới trong cửa hàng.", imgsrc = imgSP, alink = linkTo },
+                            JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                        };
+                    }
+                }
+                if ((textChat.Contains("hot") || textChat.Contains("noibat") || textChat.Contains("noi") || chat.Contains("hot") || chat.Contains("noibat") || chat.Contains("noi"))){
+                    var message = db.SanPhams.OrderBy(s => s.DoanhSo.Value).FirstOrDefault(s => (s.MaSP == chat || s.MaSP.Contains(chat) || chat.Contains(s.MaSP) || chat.Contains(s.TenSP) || s.TenSP.Contains(chat)) && s.SoLuongKho > 0);
+                    if (message != null)
+                    {
+                        linkTo = "item?sp=" + message.MaSP;
+                        imgSP = message.DuongDan;
+                        return new JsonResult
+                        {
+                            Data = new { message = "Sản phẩm " + message.TenSP + " vẫn đang còn hàng.", imgsrc = imgSP, alink = linkTo },
+                            JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                        };
+                    }
+                    else
+                    {
+                        linkTo = null;
+                        imgSP = null;
+                        return new JsonResult
+                        {
+                            Data = new { message = "Chưa có sản phẩm nào nổi bật.", imgsrc = imgSP, alink = linkTo },
+                            JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                        };
+                    }
+                    
+                }
+                if ((textChat.Contains("danhgiacao") || textChat.Contains("danhgia")  || chat.Contains("danhgiacao") || chat.Contains("danhgia")))
+                {
+                    var message = db.SanPhams.OrderBy(s => s.DanhGias.Count).FirstOrDefault(s => (s.MaSP == chat || s.MaSP.Contains(chat) || chat.Contains(s.MaSP) || chat.Contains(s.TenSP) || s.TenSP.Contains(chat)) && s.SoLuongKho > 0);
+
+                    if (message != null)
+                    {
+                        linkTo = "item?sp=" + message.MaSP;
+                        imgSP = message.DuongDan;
+                        return new JsonResult
+                        {
+                            Data = new { message = "Sản phẩm " + message.TenSP + " vẫn đang còn hàng.", imgsrc = imgSP, alink = linkTo },
+                            JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                        };
+                    }
+                    else
+                    {
+                        linkTo = null;
+                        imgSP = null;
+                        return new JsonResult
+                        {
+                            Data = new { message = "Chưa có sản phẩm nào được đánh giá cao.", imgsrc = imgSP, alink = linkTo },
+                            JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                        };
+                    }
+                }
+                if ((textChat.Contains("yeuthich") || textChat.Contains("thich") || (textChat.Contains("yeuthik") || textChat.Contains("thik") || chat.Contains("yeuthich") || chat.Contains("yeuthik") || chat.Contains("thich") || chat.Contains("thik")))){
+                    var message = db.SanPhams.OrderBy(s => s.ThichSPs.Count).FirstOrDefault(s => (s.MaSP == chat || s.MaSP.Contains(chat) || chat.Contains(s.MaSP) || chat.Contains(s.TenSP) || s.TenSP.Contains(chat)) && s.SoLuongKho > 0);
+
+                    if (message != null)
+                    {
+                        linkTo = "item?sp=" + message.MaSP;
+                        imgSP = message.DuongDan;
+                        return new JsonResult
+                        {
+                            Data = new { message = "Sản phẩm " + message.TenSP + " vẫn đang còn hàng.", imgsrc = imgSP, alink = linkTo },
+                            JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                        };
+                    }
+                    else
+                    {
+                        linkTo = null;
+                        imgSP = null;
+                        return new JsonResult
+                        {
+                            Data = new { message = "Chưa có sản phẩm nào được yêu thích.", imgsrc = imgSP, alink = linkTo },
+                            JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                        };
+                    }
+                }
+                linkTo = null;
+                imgSP = null;
                 return new JsonResult
                 {
-                    Data = new { message = "Sản phẩm " + message.TenSP + " vẫn đang còn hàng." , imgsrc = imgSP, alink = linkTo },
+                    Data = new { message = "Sản phẩm không có trong cửa hàng.", imgsrc = imgSP, alink = linkTo },
                     JsonRequestBehavior = JsonRequestBehavior.AllowGet
                 };
+
+
             }
             else
             {
@@ -104,13 +360,7 @@ namespace TH03_WebBanHang.Controllers
                         //return Redirect("default");
                 if (!string.IsNullOrEmpty(chat))
                 {
-                    string noAccentString = RemoveAccents(chat);
-                    string lowerCaseNoAccentString = noAccentString.ToLower();
-                    string text = lowerCaseNoAccentString.Trim();
-                    string pattern = @"[\p{P}\s]";
-
-                    // Thay thế tất cả các dấu câu bằng chuỗi rỗng
-                    string textChat = Regex.Replace(text, pattern, "");
+                    
                     ////return new JsonResult
                     ////{
                     ////    Data = new { message = "Chào bạn" },
@@ -231,6 +481,28 @@ namespace TH03_WebBanHang.Controllers
                         
                         
                     }
+                    //else if (textChat == "xoachat" || textChat == "xoahet"
+                    //    || textChat == "xoadoanchat" || "xoahetdonchat" == textChat || textChat == "clearchat"
+                    //    || textChat == "clearhetchat" || textChat == "xoabaichat"
+                    //    || textChat.Contains("xoachat") || textChat.Contains("xoahet")
+                    //    || textChat.Contains("xoadoanchat") || textChat.Contains("xoahetdonchat") || textChat.Contains("clearchat")
+                    //    || textChat.Contains("clearhetchat") || textChat.Contains("xoabaichat")
+                    //    || chat == "xoachat" || chat == "xoahet"
+                    //    || chat == "xoadoanchat" || chat == "xoahetdonchat"  || chat == "clearchat"
+                    //    || chat == "clearhetchat" || chat == "xoabaichat"
+                    //    || chat.Contains("xoachat") || chat.Contains("xoahet")
+                    //    || chat.Contains("xoadoanchat") || chat.Contains("xoahetdonchat") || chat.Contains("clearchat")
+                    //    || chat.Contains("clearhetchat") || chat.Contains("xoabaichat")
+                    //)
+                    //{
+                    //    //return new JsonResult
+                    //    //{
+                    //    //    Data = new { message = "clearthechattrue", imgsrc = imgSP, alink = linkTo },
+                    //    //    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                    //    //};
+                    //    return JavaScript("while (chatMessages.firstChild) {\r\n                    chatMessages.removeChild(chatMessages.firstChild);\r\n                }\r\n\r\n                // Xóa dữ liệu trong localStorage\r\n                localStorage.removeItem('chatMessages');\r\n\r\n                // Reset scroll position\r\n                chatMessages.scrollTop = 0;");
+                    //}
+
                     else if (textChat == "donhangcuatoidau" || textChat == "donhang"
                     || textChat == "doncuatoi" 
                     || textChat == "donhangcuatoidau" || "donhangcuatoidau" == textChat || "donhangcuatoidau" == chat
@@ -295,44 +567,44 @@ namespace TH03_WebBanHang.Controllers
                             JsonRequestBehavior = JsonRequestBehavior.AllowGet
                         };
                     }
-                    else if (textChat == "maygio" || textChat == "baygio"
-                        || textChat == "thoigian" || textChat == "gio"
-                        || textChat == "dongho" 
-                        || textChat.Contains("maygio") || textChat.Contains("baygio")
-                        || textChat.Contains("thoigian") || textChat.Contains("gio")
-                        || textChat.Contains("dongho")
-                        || chat == "maygio" || chat == "baygio"
-                        || chat == "thoigian" || chat == "gio"
-                        || chat == "dongho"
-                        || chat.Contains("maygio") || chat.Contains("baygio")
-                        || chat.Contains("thoigian") || chat.Contains("gio")
-                        || chat.Contains("dongho"))
-                    {
-                        return new JsonResult
-                        {
-                            Data = new { message = "Bây giờ là " + DateTime.Now.Hour + " giờ " + DateTime.Now.Minute + " phút " + DateTime.Now.Second + " giây.", imgsrc = imgSP, alink = linkTo },
-                            JsonRequestBehavior = JsonRequestBehavior.AllowGet
-                        };
-                    }
-                    else if (textChat == "homnayla" || textChat == "nayla"
-                        || textChat == "homnay" || textChat == "ngay"
-                        || textChat == "langay" || textChat == "homnaylangay"
-                        || textChat.Contains("homnayla") || textChat.Contains("nayla")
-                        || textChat.Contains("homnay") || textChat.Contains("ngay")
-                        || textChat.Contains("langay") || textChat.Contains("homnaylangay")
-                        || chat == "homnayla" || chat == "nayla"
-                        || chat == "homnay" || chat == "ngay"
-                        || chat == "langay" || chat == "homnaylangay"
-                        || chat.Contains("homnayla") || chat.Contains("nayla")
-                        || chat.Contains("homnay") || chat.Contains("ngay")
-                        || chat.Contains("langay") || chat.Contains("homnaylangay"))
-                    {
-                        return new JsonResult
-                        {
-                            Data = new { message = "Hôm nay là ngày " + DateTime.Now.Day + " tháng " + DateTime.Now.Month + " năm " + DateTime.Now.Year + ".", imgsrc = imgSP, alink = linkTo },
-                            JsonRequestBehavior = JsonRequestBehavior.AllowGet
-                        };
-                    }
+                    //else if (textChat == "maygio" || textChat == "baygio"
+                    //    || textChat == "thoigian" || textChat == "gio"
+                    //    || textChat == "dongho" 
+                    //    || textChat.Contains("maygio") || textChat.Contains("baygio")
+                    //    || textChat.Contains("thoigian") || textChat.Contains("gio")
+                    //    || textChat.Contains("dongho")
+                    //    || chat == "maygio" || chat == "baygio"
+                    //    || chat == "thoigian" || chat == "gio"
+                    //    || chat == "dongho"
+                    //    || chat.Contains("maygio") || chat.Contains("baygio")
+                    //    || chat.Contains("thoigian") || chat.Contains("gio")
+                    //    || chat.Contains("dongho"))
+                    //{
+                    //    return new JsonResult
+                    //    {
+                    //        Data = new { message = "Bây giờ là " + DateTime.Now.Hour + " giờ " + DateTime.Now.Minute + " phút " + DateTime.Now.Second + " giây.", imgsrc = imgSP, alink = linkTo },
+                    //        JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                    //    };
+                    //}
+                    //else if (textChat == "homnayla" || textChat == "nayla"
+                    //    || textChat == "homnay" || textChat == "ngay"
+                    //    || textChat == "langay" || textChat == "homnaylangay"
+                    //    || textChat.Contains("homnayla") || textChat.Contains("nayla")
+                    //    || textChat.Contains("homnay") || textChat.Contains("ngay")
+                    //    || textChat.Contains("langay") || textChat.Contains("homnaylangay")
+                    //    || chat == "homnayla" || chat == "nayla"
+                    //    || chat == "homnay" || chat == "ngay"
+                    //    || chat == "langay" || chat == "homnaylangay"
+                    //    || chat.Contains("homnayla") || chat.Contains("nayla")
+                    //    || chat.Contains("homnay") || chat.Contains("ngay")
+                    //    || chat.Contains("langay") || chat.Contains("homnaylangay"))
+                    //{
+                    //    return new JsonResult
+                    //    {
+                    //        Data = new { message = "Hôm nay là ngày " + DateTime.Now.Day + " tháng " + DateTime.Now.Month + " năm " + DateTime.Now.Year + ".", imgsrc = imgSP, alink = linkTo },
+                    //        JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                    //    };
+                    //}
                     else if (textChat == "cuahangmocuamaygio" || textChat == "giomocua"
                         || textChat == "mocua" || textChat == "cuahangmo"
                         || textChat == "mocya"
@@ -372,9 +644,7 @@ namespace TH03_WebBanHang.Controllers
                         || chat.Contains("xincheo") || chat.Contains("xincha")
                         || chat.Contains("xinacho") || chat.Contains("xinchaof")
                         || chat.Contains("xinfchai")
-                        ||
-
-                        textChat == "xchao" || textChat == "chao"
+                        || textChat == "xchao" || textChat == "chao"
                         || textChat == "xcheo" || textChat == "cheo"
                         || textChat == "choo" 
                         || textChat.Contains("xchao") || textChat.Contains("chao")
@@ -385,7 +655,11 @@ namespace TH03_WebBanHang.Controllers
                         || chat == "choo" 
                         || chat.Contains("xchao") || chat.Contains("chao")
                         || chat.Contains("xcheo") || chat.Contains("cheo")
-                        || chat.Contains("choo"))
+                        || chat.Contains("choo")                                               
+                        || textChat == "hello" || textChat == "helo"                       
+                        || textChat.Contains("hello") || textChat.Contains("helo")                        
+                        || chat == "hello" || chat == "helo"
+                        || chat.Contains("hello") || chat.Contains("helo"))
                     {
                         return new JsonResult
                         {
@@ -511,11 +785,106 @@ namespace TH03_WebBanHang.Controllers
                     }
                     else
                     {
-                        return new JsonResult
+
+                        var searchParams = new
                         {
-                            Data = new { message = "Xin lỗi tôi không hiểu rõ ý muộn của bạn, bạn có thể nói lại lần nữa không? 🥺", imgsrc = imgSP, alink = linkTo },
-                            JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                            model = "gpt-3.5-turbo",
+                            messages = new[] {
+                                //new { role = "system", content = chat },
+                                new { role = "user", content = chat }
+                            },
+                            //messages = new[] { chat },
+                            //role = "user",
+                            max_tokens = 1500,
+                            temperature = 0.7
                         };
+
+                        // Converting the object to a JSON string
+                        string json = JsonConvert.SerializeObject(searchParams);
+
+                        // Setup the body of the request
+                        StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
+
+                        //var url = "https://api.openai.com/v1/completions";
+                        var url = "https://api.openai.com/v1/chat/completions";
+
+                        var request = new HttpRequestMessage(HttpMethod.Post, url);
+
+                        // Add the JSON content to the request
+                        request.Content = data;
+
+                        var client = new HttpClient();
+                        
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "API Key của ChatGPT năm ở đây");
+
+
+                        try
+                        {
+                            // Send the HTTP request and get the response
+                            HttpResponseMessage response = client.SendAsync(request).GetAwaiter().GetResult();
+                            response.EnsureSuccessStatusCode();
+                            string result = null;
+                            string responseBody = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                            var responseObject = JsonConvert.DeserializeObject<ResponseObject>(responseBody);
+
+                            if (responseObject != null && responseObject.Choices != null && responseObject.Choices.Length > 0)
+                            {
+                                result = responseObject.Choices[0].Message.ToString();
+                                Console.WriteLine("Result: " + result);
+                                return new JsonResult
+                                {
+                                    Data = new { message = result, imgsrc = imgSP, alink = linkTo },
+                                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                                };
+                            }
+                            else
+                            {
+                                Console.WriteLine("No valid response from the API.");
+                                result = "No valid response from the API.";
+                                //return new JsonResult
+                                //{
+                                //    Data = new { message = result, imgsrc = imgSP, alink = linkTo },
+                                //    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                                //};
+                                return new JsonResult
+                                {
+                                    Data = new { message = "Xin lỗi tôi không hiểu rõ ý muộn của bạn, bạn có thể nói lại lần nữa không? 🥺", imgsrc = imgSP, alink = linkTo },
+                                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                                };
+                            }
+                        }
+                        catch (HttpRequestException e)
+                        {
+                            Console.WriteLine("\nException Caught!");
+                            Console.WriteLine("Message :{0} ", e.Message);
+
+                            //return new JsonResult
+                            //{
+                            //    Data = new { message = "\nException Caught! Message :"+ e.Message + " " , imgsrc = imgSP, alink = linkTo },
+                            //    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                            //};
+                            return new JsonResult
+                            {
+                                Data = new { message = "Xin lỗi tôi không hiểu rõ ý muộn của bạn, bạn có thể nói lại lần nữa không? 🥺", imgsrc = imgSP, alink = linkTo },
+                                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                            };
+
+                        }
+
+                        //string result = responseObject.Choices[0].Message.ToString();
+                        //return new JsonResult
+                        //{
+                        //    Data = new { message = result, imgsrc = imgSP, alink = linkTo },
+                        //    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                        //};
+
+                        //return new JsonResult
+                        //{
+                        //    Data = new { message = "Xin lỗi tôi không hiểu rõ ý muộn của bạn, bạn có thể nói lại lần nữa không? 🥺", imgsrc = imgSP, alink = linkTo },
+                        //    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                        //};
+
+
                     }
                    
                     
@@ -525,11 +894,38 @@ namespace TH03_WebBanHang.Controllers
 
                 else
                 {
-                    return Redirect("default");
+                    string isnull = null;
+                    //return Redirect("default");
+                    return new JsonResult
+                    {
+                        Data = new { message = isnull, imgsrc = imgSP, alink = linkTo },
+                        JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                    };
                 }
             }
 
         }
+        public class ResponseObject
+        {
+            public Choice[] Choices { get; set; }
+        }
+
+        public class Choice
+        {
+            public Message Message { get; set; }
+        }
+
+        public class Message
+        {
+            public string Role { get; set; }
+            public string Content { get; set; }
+
+            public override string ToString()
+            {
+                return Content;
+            }
+        }
+
     }
 
 }
