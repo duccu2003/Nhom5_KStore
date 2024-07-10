@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 ﻿using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-=======
-﻿using System;
-using System.Collections.Generic;
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 using System.Linq;
 using System.Net.Mail;
 using System.Net.Mime;
@@ -33,15 +28,11 @@ namespace TH03_WebBanHang.checkOutOrder
             return lsItems;
 
         }
-<<<<<<< HEAD
 
         
 
        
         public void SendEmail(string to, string subject, string body, string link , string imagePath)
-=======
-        public void SendEmail(string to, string subject, string body, string imagePath)
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         {
             string maDHang = HttpContext.Current.Request.QueryString.Get("MaDH");
             ChiTietDonHang maDH = dbcontext.ChiTietDonHangs.FirstOrDefault(p => p.MaDH == checkOut.mdh || p.MaDH== maDHang);
@@ -60,7 +51,6 @@ namespace TH03_WebBanHang.checkOutOrder
                 MailMessage mailMessage = new MailMessage();
                 mailMessage.From = new MailAddress(Shop.gmailAccount);
                 mailMessage.To.Add(new MailAddress(to));
-<<<<<<< HEAD
 
                 mailMessage.Subject = subject;
 
@@ -76,20 +66,12 @@ namespace TH03_WebBanHang.checkOutOrder
                 inline.ContentId = Guid.NewGuid().ToString(); // Đặt ContentId để tham chiếu đến hình ảnh trong HTML
                 
 
-=======
-                mailMessage.Subject = subject;
-
-                // Thêm hình ảnh vào email
-                LinkedResource inline = new LinkedResource(imagePath, MediaTypeNames.Image.Jpeg);
-                inline.ContentId = Guid.NewGuid().ToString(); // Đặt ContentId để tham chiếu đến hình ảnh trong HTML
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                 string styleColor;
                 if (maDH.GiaoDich == true)
                 {
                     styleColor = "<p>Giao dịch: <span style=\"color: green;\">Đã Thanh Toán</span></p>";
                 }
                 else styleColor = "<p>Giao dịch: <span style=\"color: red;\">Đợi Thanh Toán</span></p>";
-<<<<<<< HEAD
 
                
                 
@@ -101,7 +83,7 @@ namespace TH03_WebBanHang.checkOutOrder
                 // Tạo URL dữ liệu cho hình ảnh
 
                 // Tạo nội dung HTML tùy chỉnh
-                string htmlBody = $"<html><body style=\"padding: 10px; background:#000; color:#FFFF; height:max-content; \"><img style=\"max-width: 100%; border-radius:20px;\" src='cid:{inline.ContentId}' alt='KStore' /><h1>Thông báo đơn hàng!</h1><p>Xin chào bạn đây là thông báo về đơn hàng với giá trị là {Pay.TongForMail}<p>Đơn hàng có mã <a style=\"text-decoration: underline;\" href='{link}'><strong>{body}</strong></a> đã được chúng tôi xác nhận.{styleColor}<p>Bạn có thể xem hóa đơn <a style=\"text-decoration: underline;\" href='{link}'>tại đây</a>.</p><p>Vào lúc: {maDH.Ngay}</p></p><p>Cảm ơn vì bạn đã mua hàng.</p></body></html>";
+                string htmlBody = $"<html><body style=\"padding: 10px;  border-radius:10px; background:#000; color:#FFFF; height:max-content; \"><img style=\"max-width: 100%; border-radius:20px;\" src='cid:{inline.ContentId}' alt='KStore' /><h1>Thông báo đơn hàng!</h1><p>Xin chào bạn đây là thông báo về đơn hàng với giá trị là {Pay.TongForMail}<p>Đơn hàng có mã <a style=\"text-decoration: underline;\" href='{link}'><strong>{body}</strong></a> đã được chúng tôi xác nhận.{styleColor}<p>Bạn có thể xem hóa đơn <a style=\"text-decoration: underline;\" href='{link}'>tại đây</a>.</p><p>Vào lúc: {maDH.Ngay}</p></p><p>Cảm ơn vì bạn đã mua hàng.</p></body></html>";
 
                 AlternateView avHtml = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
 
@@ -112,15 +94,6 @@ namespace TH03_WebBanHang.checkOutOrder
                 mailMessage.AlternateViews.Add(avHtml);
 
 
-=======
-                // Tạo nội dung HTML tùy chỉnh
-                string htmlBody = $"<html><body><img style=\"max-width: 100%; border-radius:20px;\" src='cid:{inline.ContentId}' alt='KStore' /><h1>Thông báo đơn hàng!</h1><p>Xin chào bạn đây là thông báo về đơn hàng với giá trị là {Pay.TongForMail}<p>Đơn hàng có mã <strong>{body}</strong> đã được chúng tôi xác nhận.{styleColor}<p>Vào lúc: {maDH.Ngay}</p></p><p>Cảm ơn vì bạn đã mua hàng.</p></body></html>";
-
-                AlternateView avHtml = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
-                avHtml.LinkedResources.Add(inline);
-                mailMessage.AlternateViews.Add(avHtml);
-
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                 // Gửi email
                 smtpClient.Send(mailMessage);
                 Console.WriteLine("Đã gửi email.");
@@ -210,11 +183,7 @@ namespace TH03_WebBanHang.checkOutOrder
                 var db = new QL_KPOPStoreEntities();
                 var user = db.TKs.FirstOrDefault(u => u.Email == checkOut.mail || u.Email == email || u.Email==Pay.emailKHnoSign);
                 string imagePath = Server.MapPath("../" + Shop.logoForMail_BlackKS);
-<<<<<<< HEAD
                 string link = Shop.localhost + "DetailOrder?MaDH=" + don.MaDH;
-=======
-
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
 
 
@@ -227,11 +196,7 @@ namespace TH03_WebBanHang.checkOutOrder
 
                 try
                 {
-<<<<<<< HEAD
                     SendEmail(user.Email, "KStore", don.MaDH, link, imagePath);
-=======
-                    SendEmail(user.Email, "KStore", don.MaDH, imagePath);
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
                 }
                 catch (Exception ex)

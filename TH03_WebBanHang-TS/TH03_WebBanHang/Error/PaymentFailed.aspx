@@ -47,11 +47,7 @@
                 <div class="message-box _success _failed">
                      <i class="fa fa-times-circle" aria-hidden="true"></i>
                     <h2> Đơn hàng của bạn bị từ chối </h2>
-<<<<<<< HEAD
              <a href="../Cart">  Thử lại lần nữa </a> 
-=======
-             <a href="../Pay">  Thử lại lần nữa </a> 
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
          
             </div> 
         </div> 
