@@ -255,7 +255,6 @@ CREATE TABLE DoanhThu
 );
 go
 
-<<<<<<< HEAD
 --CREATE TABLE ChatBot
 --(
 --    KhachChat nvarchar(Max) NULL,
@@ -263,8 +262,6 @@ go
 --)
 --go
 
-=======
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 -- foreign key
 
 alter table SanPham 
@@ -341,7 +338,24 @@ values
 ('IUALBLP',N'IU Album Love Poem','Content/items/iu/album/albLovePoem.png',200000,N'Album Love Poem','1','IU','13/04/2004',null,'13/04/2004',0,50,'IUALBLP',null,'Ktown4u'),
 ('IU29Doc',N'IU Documentary Pieces','Content/items/iu/dvdbluraylp/29th.png',1600000,N'Winter of 29th Year Old','6','IU','13/04/2004',null,'13/04/2004',0,50,'IU29Doc',null,'Ktown4u'),
 ('BTSALBprf',N'BTS Album Proof','Content/items/bts/album/proof.png',1200000,N'Album Proof','1','BTS','13/04/2004',null,'13/04/2004',0,50,'BTSALBprf',null,'Ktown4u'),
-('ILITReal1',N'ILLIT Album Super Real','Content/items/illit/album/spReal.png',420000,N'Album Super Real','1','ILLIT','13/04/2004',null,'13/04/2004',0,50,'ILITReal1',null,'Ktown4u')
+('ILITReal1',N'ILLIT Album Super Real','Content/items/illit/album/spReal.png',420000,N'Album Super Real','1','ILLIT','13/04/2004',null,'13/04/2004',0,50,'ILITReal1',null,'Ktown4u'),
+
+
+('AESPASYNKHYPERLINE',N'Aespa Synk Hyper Line Photobook Concert','Content/items/aespa/merch/aespa_1stcon_photobook.jpg',600000,N'Aespa Synk Hyper Line, Concert Photobook','2','AESPA','13/04/2023',null,'13/04/2023',0,50,'AESPASYNKHYPERLINE',null,'Ktown4u'),
+('AESPASSG2023',N'Aespa 2023 Seasons Greetings','Content/items/aespa/seasonsgreetings/sg-11134201-23010-24z0jaxwe9lva9.jpg',1200000,N'Aespa 2023 Seasons Greetings','5','AESPA','13/08/2023',null,'13/08/2023',0,50,'AESPASSG2023',null,'Ktown4u'),
+('IUSBMOONSetPTC',N'IU Set Photocards Strawberry Moon','Content/items/iu/merch/1000001827_detail_084.jpg',300000,N'IU Set Card Strawberry Moon','2','IU','13/04/2022',null,'13/04/2022',0,50,'IUSBMOONSetPTC',null,'Ktown4u'),
+('IU2023ConcertSetPTC',N'IU Set Photocards Concert 2023','Content/items/iu/merch/sl1600.jpg',300000,N'IU Set Photocards Concert 2023','2','IU','13/04/2023',null,'13/04/2023',0,50,'IU2023ConcertSetPTC',null,'Ktown4u'),
+('NMIXXLSV1',N'NMIXX Light Stick','Content/items/nmixx/lightstick/KakaoTalk_20230215_112742981_01.png',840000,N'NMIXX Light Stick','4','NMX','13/08/2023',null,'13/08/2023',0,50,'NMIXXLSV1',null,'Ktown4u'),
+('TPSTLSV1',N'TEMPEST Light Stick','Content/items/tempest/lightstick/c58d0174659b392771177eb321c73d35.png',800000,N'TEMPEST Light Stick','4','TPST','13/08/2023',null,'13/08/2023',0,50,'TPSTLSV1',null,'Ktown4u'),
+
+('AESPALSV1',N'Aespa Light Stick','Content/items/aespa/lightstick/51f0mbqTlmL.SS456.jpg',900000,N'Aespa Light Stick','4','AESPA','13/08/2023',null,'13/08/2023',0,50,'AESPALSV1',null,'Ktown4u'),
+('BPLSV2',N'BLACKPINK Light Stick Ver 2','Content/items/blackpink/lightstick/61hAPd2xeDL.jpg',900000,N'BLACKPINK Light Stick Ver 2','4','BP','13/08/2023',null,'13/08/2023',0,50,'BPLSV2',null,'Ktown4u'),
+('BTSLSV3',N'BTS Light Stick Ver 3','Content/items/bts/lightstick/6da1a89867f8856378e6f44386c32859.jpeg',950000,N'BTS Light Stick','4','BTS','13/08/2023',null,'13/08/2023',0,50,'BTSLSV3',null,'Ktown4u'),
+('IULSV3',N'IU Light Stick Ver 3','Content/items/iu/lightstick/iu-official-light-stick-ver3-813087.png',950000,N'IU Light Stick Ver 3','4','IU','13/08/2023',null,'13/08/2023',0,50,'IULSV3',null,'Ktown4u'),
+('IVELSV1',N'IVE Light Stick','Content/items/ive/lightstick/41e5UjBmzNL.jpg',950000,N'IVE Light Stick','4','IVE','13/08/2023',null,'13/08/2023',0,50,'IVELSV1',null,'Ktown4u'),
+('LSERLSV1',N'LE SSERAFIM Light Stick','Content/items/lesserafim/lightstick/th-11134201-7qukw-leqlk3doae665c.jpeg',950000,N'LE SSERAFIM Light Stick','4','LSER','13/08/2023',null,'13/08/2023',0,50,'LSERLSV1',null,'Ktown4u'),
+('NJLSV1',N'NEWJEANS Light Stick','Content/items/newjeans/lightstick/image_e4cd70f8-43ff-493f-9c63-d7774655ade0_900x.png',900000,N'NEWJEANS Light Stick','4','NJ','13/08/2023',null,'13/08/2023',0,50,'NJLSV1',null,'Ktown4u')
+
 
 go
 
@@ -355,7 +369,23 @@ values
 ('IUALBLP','Content/items/iu/album/albLovePoem.png','Content/items/iu/album/albLovePoem1.png','','','','Content/items/iu/album/AnhALBLovePoem.png',0,0),
 ('IU29Doc','Content/items/iu/dvdbluraylp/29th.png','Content/items/iu/dvdbluraylp/29th1.png','Content/items/iu/dvdbluraylp/29th2.png','Content/items/iu/dvdbluraylp/29th3.png','','',0,0),
 ('BTSALBprf','Content/items/bts/album/proof.png','Content/items/bts/album/proof1.png','','','','Content/items/bts/album/AnhALBProofNote.jpg',0,0),
-('ILITReal1','Content/items/illit/album/spReal.png','Content/items/illit/album/spReal1.png','','','','',0,0)
+('ILITReal1','Content/items/illit/album/spReal.png','Content/items/illit/album/spReal1.png','','','','',0,0),
+
+('AESPASYNKHYPERLINE','Content/items/aespa/merch/aespa_1stcon_photobook.jpg','','','','','',0,0),
+('AESPASSG2023','Content/items/aespa/seasonsgreetings/sg-11134201-23010-24z0jaxwe9lva9.jpg','','','','','',0,0),
+('IUSBMOONSetPTC','Content/items/iu/merch/1000001827_detail_084.jpg','','','','','',0,0),
+('IU2023ConcertSetPTC','Content/items/iu/merch/sl1600.jpg','','','','','',0,0),
+('NMIXXLSV1','Content/items/nmixx/lightstick/KakaoTalk_20230215_112742981_01.png','','','','','',0,0),
+('TPSTLSV1','Content/items/tempest/lightstick/c58d0174659b392771177eb321c73d35.png','','','','','',0,0),
+
+('IULSV3','Content/items/iu/lightstick/iu-official-light-stick-ver3-813087.png','Content/items/iu/lightstick/Sc3513f617f08462f8e95ed8663c0524cH.png','','','','',0,0),
+('AESPALSV1','Content/items/aespa/lightstick/51f0mbqTlmL.SS456.jpg','Content/items/aespa/lightstick/61Ig6IBNnL.SS456.jpg','Content/items/aespa/lightstick/61sHF3Fyz1L.SS456.jpg','Content/items/aespa/lightstick/61TT5C9t9HLSS456.jpg','Content/items/aespa/lightstick/617GZGERxALSS456.jpg','',0,0),
+('BPLSV2','Content/items/blackpink/lightstick/61hAPd2xeDL.jpg','Content/items/blackpink/lightstick/712PeD86K1L.jpg','Content/items/blackpink/lightstick/71PKOjgFzaL.jpg','Content/items/blackpink/lightstick/5186nzUtdJL.jpg','','',0,0),
+('BTSLSV3','Content/items/bts/lightstick/6da1a89867f8856378e6f44386c32859.jpeg','Content/items/bts/lightstick/ea0c2a42dd2921c7e27143fe8634dd40.jpeg','Content/items/bts/lightstick/e8dd87543df237760a973f814b24ad4b.jpeg','Content/items/bts/lightstick/9afc7123b775fb1f00a8549b808aef3f.jpeg','Content/items/bts/lightstick/a380d9e70590f8056ebc08b07fcea7ca.jpeg','',0,0),
+('IVELSV1','Content/items/ive/lightstick/41e5UjBmzNL.jpg','Content/items/ive/lightstick/51uim0X1yTL.jpg','Content/items/ive/lightstick/51ltPBLoxnL.jpg','Content/items/ive/lightstick/41V4ehLG-yL.jpg','Content/items/ive/lightstick/41ch-qBvCsL.jpg','Content/items/ive/lightstick/61eBPPb74oL.jpg',0,0),
+('LSERLSV1','Content/items/lesserafim/lightstick/th-11134201-7qukw-leqlk3doae665c.jpeg','Content/items/lesserafim/lightstick/th-11134201-7qukw-leqlk7ohztpfcb.jpeg','Content/items/lesserafim/lightstick/th-11134201-7qukw-leqlk7oi189vd6.jpeg','Content/items/lesserafim/lightstick/th-11134201-7qukw-leqlk7o808cee1.jpeg','','',0,0),
+('NJLSV1','Content/items/newjeans/lightstick/image_e4cd70f8-43ff-493f-9c63-d7774655ade0_900x.png','Content/items/newjeans/lightstick/image_33c0a770-f1ae-4d30-8228-31f3388b5d27_900x.png','','','','',0,0)
+
 
 go
 INSERT INTO ChiNhanh (MaCN, TenCN, DiaChiCN) 
@@ -371,11 +401,8 @@ VALUES
 
 go
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 INSERT INTO TinTuc (HinhAnhBV, DuongDanBV, TieuDe, NoiDungBV)
 VALUES ('https://images2.thanhnien.vn/528068263637045248/2024/4/8/boadongthaigiainghe3-1712617508236587635258.jpg', 'https://thanhnien.vn/dong-thai-cua-nu-hoang-kpop-boa-sau-khi-up-mo-giai-nghe-som-185240409061553758.htm', N'Động thái của "nữ hoàng Kpop" BoA sau khi úp mở giải nghệ sớm', N'Trên trang cá nhân, BoA trấn an người hâm mộ sau khi chia sẻ những trạng thái úp mở sắp rời khỏi showbiz.'),
 		('https://media-cdn-v2.laodong.vn/storage/newsportal/2024/3/4/1311231/Hanni-Chaumet-8.jpg?w=800&h=420&crop=auto&scale=both', 'https://laodong.vn/thoi-trang/hanni-newjeans-gay-an-tuong-voi-bo-anh-hoa-bao-cung-trang-suc-xa-xi-1311231.ldo', N'Hanni (NewJeans) gây ấn tượng với bộ ảnh hoạ báo cùng trang sức xa xỉ', N'Hanni chưng diện bộ sưu tập Joséphine của thương hiệu trang sức xa xỉ Chaumet, thể hiện thần thái tự tin, quyến rũ và trưởng thành.'),
@@ -389,10 +416,7 @@ VALUES	('https://www.youtube.com/embed/if0we38Hbyk?si=WNpzGXpbqMuT6kOH'),
 		('https://www.youtube.com/embed/VFm6ztzZ188?si=3V4l6e2bZX284Y9D');
 
 go
-<<<<<<< HEAD
 
-=======
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 INSERT INTO Banner(TieuDe,DuongDan)
 VALUES	('KStore','Content\image-banner\banner1.1.png'),
 		('Aespa Better Things','Content\image-banner\banner2.png'),
@@ -400,7 +424,6 @@ VALUES	('KStore','Content\image-banner\banner1.1.png'),
 		('2024 Christmas Sale','Content\image-banner\banner4.png');
 
 go
-<<<<<<< HEAD
 
 --INSERT INTO ChatBot(BotChat,KhachChat)
 --VALUES	(N'Xin chào bạn tôi là KS Bot, tôi có thể giúp gì cho bạn?', N'xinchao'),
@@ -454,8 +477,6 @@ go
 
 --go
 
-=======
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 CREATE PROCEDURE Product_Add 
     @MaSP varchar(50), 
     @TenSP nvarchar(50), 

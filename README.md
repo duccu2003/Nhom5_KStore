@@ -105,8 +105,7 @@ If you have any questions or suggestions, feel free to contact us via one of the
 - **Facebook**: [Duc Nguyen](https://www.facebook.com/ducnguyenhoang2003)
 - **Zalo**: [0389800308](zalo://talk/?number=0389800308)
 - **Phone Number**: +84389800308 (0389800308)
-<<<<<<< HEAD
-- **Github**: [duccu2003](https://github.com/duccu2003), [Kumetiqn](https://github.com/Kumetiqn), [anhhhtrannnhat](https://github.com/anhhhtrannnhat)
+- **Github**: [duccu2003](https://github.com/duccu2003), [Kumetiqn](https://github.com/Kumetiqn), [trnhatanh1211@gmail.com](https://github.com/trnhatanh1211@gmail.com)
 
 *Our team is always ready to support and listen to your feedback!*
 
