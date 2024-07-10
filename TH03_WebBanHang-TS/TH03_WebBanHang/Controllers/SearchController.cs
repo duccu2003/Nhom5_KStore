@@ -97,7 +97,8 @@ namespace TH03_WebBanHang.Controllers
 
                     htmlContent.AppendLine("<a style='display:flex; margin:7.5px auto; gap:15px;' href=\"item.aspx?sp=" + product.MaSP + "\">");
                     htmlContent.AppendLine("<img style=\"height:80px; border-radius:5px; \" src=\"" + product.DuongDan + "\" alt=\"" + product.TenSP + "\" />");
-                    htmlContent.AppendLine("<div style='display:grid;'>" + product.TenSP + " - " + string.Format("{0:N0}", product.Gia) + "đ</div>");
+                    htmlContent.AppendLine("<div style='display:grid;'>" + product.TenSP);
+                    htmlContent.AppendLine("<p>" + string.Format("{0:N0}", product.Gia) + "đ</p></div>");
                     htmlContent.AppendLine("</a>");
                 }
 
