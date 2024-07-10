@@ -9,10 +9,6 @@
             }
 
 
-            /*.carousel-item img{
-                max-width:1221px;
-            }
-    */
             .notification {
                 display: none;
                 position: fixed;
@@ -106,6 +102,9 @@
                  /*.divBanner1{
                      max-width: 80%;
                  }*/
+                 .rotateulMap{
+                         left:10px; transform: rotate(-32.5deg);position:relative;
+                    }
             }
             @media only screen and (max-width: 450px) {
                   .divACheader p{
@@ -120,21 +119,9 @@
                        padding-top:10px;
     
                   }
+
             }
-            /*@media only screen and (max-height: 1400px) and  (max-wight: 1200px) {
-                  .divACheader p{
-                          display:none !important;
-    
-                    }
-                  .divACheader h6{
-                       align-content:center;
-                       align-items:center;
-                       justify-content:center;
-                       justify-items:center;
-                       padding-top:10px;
-    
-                  }
-            }*/
+           
             @media only screen and  (max-width: 768px) {
                  .divACheader{
                      display:flex;
@@ -185,10 +172,24 @@
                  .divBanner1{
                      max-width: 100%;
                  }
+                  #carouselExampleIndicators{
+                         /*height:450px !important;*/
+                        /* overflow:hidden;*/
+                     }
+                     .rotateulMap{
+                         left:-80px; transform: rotate(-57.5deg);
+                         margin-right:1rem;
+                         bottom:-150px;
+                         width:80%;
+                         display:block;
+                         font-size:x-small;
+                         position:relative;
+
+                    }
             }
         </style>
         <div class="divHeader" style="display: flex; background: #000; ">
-            <div class=" <%--bg-dark--%> px-0 px-lg-0 my-0 position-relative <%--fade-out--%> divBanner1" style="border: 4px solid #000; width:100%; border-right: none;">
+            <div class="px-0 px-lg-0 my-0 position-relative  divBanner1" style="border: 4px solid #000; width:100%; border-right: none;">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <a id="scrollPreviousBanner1" class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" style="margin:auto; background:#636363; width:max-content; height:max-content; padding:30px 10px 30px 5px; border-bottom-right-radius:10rem;  border-top-right-radius:10rem;">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -244,40 +245,7 @@
                          </asp:ListView>
                     
                     </div>
-                    <%--<style>
-                        .div-cap-banner *{
-                            color:#fff;
-                            font-size:16px;
-                            text-align:center;
-                            align-content:center;
-                            align-items:center;
-                            justify-content:center;
-                            justify-items:center;
-                            margin:5px;
-                        }
-                        .div-cap-banner{
-                            height:max-content;
-                            width:300px;
-                            
-                            padding:0 5px;
-                            border-radius:5px;
-                            background:#000;
-                            text-align:center;
-                            align-content:center;
-                            align-items:center;
-                            justify-content:center;
-                            justify-items:center;
-                            
-                        }
-                    </style>
-                    <div class="d-flex" style="position:absolute; bottom:0; width:100%;">
-                        <div style="margin: 10px auto 26px auto;gap:100px;  text-align:center; display:flex; justify-content:center; justify-items:center; align-content:center;align-items:center;">
-                        <div class="text-white div-cap-banner"><p>Website: https://www.kstore.com.vn</p></div>
-                        <div class="text-white div-cap-banner"><p>Số điện thoại: <a href="tel:+84389800308">0389800308</a></p></div>
-                        <div class="text-white div-cap-banner"><p>Email: kstore@gmail.com</p></div>
-                        </div>
-                        
-                    </div>--%>
+                   
                 </div>
 
 
@@ -376,6 +344,12 @@
 
     </header>
     <style>
+        .itemMap{
+            background:linear-gradient(to right, #522A77, #804cdeff, #1c60bc);
+           height:460px;
+           
+           border-radius:10px;
+        }
         .ul-l-type p {
             border: 2px solid #21222937;
             width: 7rem;
@@ -636,369 +610,7 @@
             padding-bottom: 0.5rem;
         }
     </style>
-    <%--   <section class="py-5">
-        <style>
-            #list-type {
-                width: max-content;
-                padding-top: 1rem;
-                align-content: center;
-                justify-content: center;
-                padding-bottom: 1rem;
-                padding-right: 1.5rem;
-                padding-left: 0;
-                max-height: 440px;
-            }
-
-            .ul-l-type {
-                width: max-content;
-            }
-
-                .ul-l-type li {
-                    background-color: #FBF4F1;
-                    padding: 1rem 0.8rem 0.2px 0.8rem;
-                    font-size: large;
-                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                    width: 12rem;
-                    margin-top: 1rem;
-                    border-radius: 10px;
-                    border: 1px solid #808080;
-                }
-
-                    .ul-l-type li:active {
-                        background-color: #9b51e0;
-                    }
-
-                .ul-l-type a:hover {
-                    color: #808080;
-                    text-decoration: none;
-                }
-
-                .ul-l-type a {
-                    text-decoration: none;
-                    display: flex;
-                    gap: 1rem;
-                }
-
-                    .ul-l-type a p {
-                        padding-top: 0.5rem
-                    }
-
-
-            .carousel-item-boder img {
-                /* border-top-right-radius: 10px;
-                border-top-right-radius: 10px;*/
-            }
-
-            .carousel-item img {
-                width: 100% !important;
-                height: auto;
-            }
-
-            .carousel {
-                position: relative
-            }
-
-                .carousel.pointer-event {
-                    -ms-touch-action: pan-y;
-                    touch-action: pan-y
-                }
-
-            .carousel-inner {
-                position: relative;
-                width: 100%;
-                overflow: hidden
-            }
-
-                .carousel-inner::after {
-                    display: block;
-                    clear: both;
-                    content: ""
-                }
-
-            .carousel-item {
-                position: relative;
-                display: none;
-                float: left;
-                width: 100%;
-                margin-right: -100%;
-                -webkit-backface-visibility: hidden;
-                backface-visibility: hidden;
-                transition: -webkit-transform .6s ease-in-out;
-                transition: transform .6s ease-in-out;
-                transition: transform .6s ease-in-out,-webkit-transform .6s ease-in-out
-            }
-
-            @media (prefers-reduced-motion:reduce) {
-                .carousel-item {
-                    transition: none
-                }
-            }
-
-            .carousel-item-next, .carousel-item-prev, .carousel-item.active {
-                display: block
-            }
-
-                .active.carousel-item-right, .carousel-item-next:not(.carousel-item-left) {
-                    -webkit-transform: translateX(100%);
-                    transform: translateX(100%)
-                }
-
-                .active.carousel-item-left, .carousel-item-prev:not(.carousel-item-right) {
-                    -webkit-transform: translateX(-100%);
-                    transform: translateX(-100%)
-                }
-
-            .carousel-fade .carousel-item {
-                opacity: 0;
-                transition-property: opacity;
-                -webkit-transform: none;
-                transform: none
-            }
-
-                .carousel-fade .carousel-item-next.carousel-item-left, .carousel-fade .carousel-item-prev.carousel-item-right, .carousel-fade .carousel-item.active {
-                    z-index: 1;
-                    opacity: 1
-                }
-
-            .carousel-fade .active.carousel-item-left, .carousel-fade .active.carousel-item-right {
-                z-index: 0;
-                opacity: 0;
-                transition: opacity 0s .6s
-            }
-
-            @media (prefers-reduced-motion:reduce) {
-                .carousel-fade .active.carousel-item-left, .carousel-fade .active.carousel-item-right {
-                    transition: none
-                }
-            }
-
-            .carousel-control-next, .carousel-control-prev {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                z-index: 1;
-                display: -ms-flexbox;
-                display: flex;
-                -ms-flex-align: center;
-                align-items: center;
-                -ms-flex-pack: center;
-                justify-content: center;
-                width: 15%;
-                color: #fff;
-                text-align: center;
-                opacity: .5;
-                transition: opacity .15s ease
-            }
-
-            @media (prefers-reduced-motion:reduce) {
-                .carousel-control-next, .carousel-control-prev {
-                    transition: none
-                }
-            }
-
-            .carousel-control-next:focus, .carousel-control-next:hover, .carousel-control-prev:focus, .carousel-control-prev:hover {
-                color: #fff;
-                text-decoration: none;
-                outline: 0;
-                opacity: .9
-            }
-
-            .carousel-control-prev {
-                left: 0
-            }
-
-            .carousel-control-next {
-                right: 0
-            }
-
-            .carousel-control-next-icon, .carousel-control-prev-icon {
-                display: inline-block;
-                width: 20px;
-                height: 20px;
-                background: no-repeat 50%/100% 100%
-            }
-
-            .carousel-control-prev-icon {
-                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z'/%3e%3c/svg%3e")
-            }
-
-            .carousel-control-next-icon {
-                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e")
-            }
-
-            .carousel-indicators {
-                position: absolute;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                z-index: 15;
-                display: -ms-flexbox;
-                display: flex;
-                -ms-flex-pack: center;
-                justify-content: center;
-                padding-left: 0;
-                margin-right: 15%;
-                margin-left: 15%;
-                list-style: none
-            }
-
-                .carousel-indicators li {
-                    box-sizing: content-box;
-                    -ms-flex: 0 1 auto;
-                    flex: 0 1 auto;
-                    width: 30px;
-                    height: 3px;
-                    margin-right: 3px;
-                    margin-left: 3px;
-                    text-indent: -999px;
-                    cursor: pointer;
-                    background-color: #fff;
-                    background-clip: padding-box;
-                    border-top: 10px solid transparent;
-                    border-bottom: 10px solid transparent;
-                    opacity: .5;
-                    transition: opacity .6s ease
-                }
-
-            @media (prefers-reduced-motion:reduce) {
-                .carousel-indicators li {
-                    transition: none
-                }
-            }
-
-            .carousel-indicators .active {
-                opacity: 1
-            }
-
-            .carousel-caption {
-                position: absolute;
-                right: 15%;
-                bottom: 20px;
-                left: 15%;
-                z-index: 10;
-                padding-top: 20px;
-                padding-bottom: 20px;
-                color: #fff;
-                text-align: center
-            }
-
-            .sr-only {
-                position: absolute;
-                width: 1px;
-                height: 1px;
-                padding: 0;
-                margin: -1px;
-                overflow: hidden;
-                clip: rect(0,0,0,0);
-                white-space: nowrap;
-                border: 0
-            }
-
-            .sr-only-focusable:active, .sr-only-focusable:focus {
-                position: static;
-                width: auto;
-                height: auto;
-                overflow: visible;
-                clip: auto;
-                white-space: normal
-            }
-
-            .img-dm {
-                max-width: 60px !important;
-                border-radius: 10px;
-                padding-bottom: 0.5rem;
-            }
-        </style>
-
-        <div class="container px-4 px-lg-0 mt-2" style="overflow: hidden; border: 5px solid #9b51e0; background-color: #9b51e0; border-radius: 10px; overflow-y: scroll; overflow: auto;">
-            <div class="d-flex justify-content-between align-items-center">
-
-                <div id="list-type">
-                    <style>
-                        .tenSP-ls-h3-dm {
-                            padding-bottom: 1.5rem;
-                            text-align: center;
-                            font-weight: bolder;
-                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                            color: #000;
-                            width: 100%;
-                            padding-top: 2.5rem;
-                        }
-
-                        .tenSP-ls-p-dm {
-                            width: max-content;
-                            padding: 8px;
-                            margin: auto;
-                            border-bottom-color: #000;
-                            border: 1px solid;
-                            border-top-style: none;
-                            border-left-style: none;
-                            border-right: none;
-                        }
-                    </style>
-                    <ul id="ul-l-type">
-                        <h4 class="tenSP-ls-h3-dm">
-                            <p class="tenSP-ls-p-dm">Danh Mục</p>
-                        </h4>
-                        <li><a href="#TS">
-                            <img loading="lazy" class="img-dm" src="Content/img/TS.jpg" />
-                            <p>Trà Sữa</p>
-                        </a></li>
-                        <li><a href="#HT">
-                            <img loading="lazy" class="img-dm" src="Content/img/DTKPM.jpg" />
-                            <p>Hồng Trà</p>
-                        </a></li>
-                        <li><a href="#CP">
-                            <img loading="lazy" class="img-dm" src="Content/img/CPDD.jpg" />
-
-                            <p>Cà Phê</p>
-                        </a></li>
-                        <li><a href="#KT">
-                            <img loading="lazy" class="img-dm" src="Content/img/KTCHK.jpg" />
-
-                            <p>Kem Tươi</p>
-                        </a></li>
-                    </ul>
-
-                </div>
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner carousel-item-boder">
-                        <div class="carousel-item active">
-                            <a href="ChildForm.aspx?page=KStoreReal">
-                                <img loading="lazy" style="object-fit: cover;" class="d-block w-100" src="Content\\image-banner\\www.KStore.com-1.png" alt="First slide">
-                            </a>
-                        </div>
-                        <div class="carousel-item carousel-item-boder">
-                            <a href="ChildForm.aspx?page=KStoreNew">
-                                <img loading="lazy" style="object-fit: cover;" class="d-block w-100" src="Content\\image-banner\\www.KStore.com-4.png" alt="Second slide">
-                            </a>
-                        </div>
-                        <div class="carousel-item carousel-item-boder">
-                            <a href="ChildForm.aspx?page=KStoreWhite">
-                                <img loading="lazy" style="object-fit: cover;" class="d-block w-100" src="Content\\image-banner\\www.KStore.com-3.png" alt="Third slide">
-                            </a>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-
-
-    </section>--%>
+   
 
     <!-- Section-->
 
@@ -1157,7 +769,7 @@
 
     <section loading="lazy" id="content-group-idols" style="max-width:1531px; margin:auto; background:linear-gradient(to bottom, #000, #242426);   /*background-image:url('Content/image-bg/bg-for-slide-gp.png');*/ " class="py-5">
         <div loading="lazy" class="container px-4 px-lg-5 mt-0 fade-in" style="background: linear-gradient(to bottom, #1111117f, #242426); border-radius: 10px 10px 30px 30px !important;  padding:2.5rem 0 1rem 0;">
-           <h3 id="SP" class=" text-left lnr-text-size" style="position:absolute; top:-20px;">
+           <h3 id="NS" class=" text-left lnr-text-size" style="position:absolute; top:-20px;">
                  <p class="">Danh mục nhóm, nghệ sĩ</p>
              </h3>
             <div loading="lazy" id="divlistidols" class="gx-4 gx-lg-5 single-row <%--fade-out--%> smooth-scroll divGP filtering" style="/*background-color: #EADEFF; */ scroll-behavior: smooth; overflow-y:hidden; /*box-shadow:0px 0px 50px #522A77;*/  background: linear-gradient(to right, #EADEFF, #C4A1FE); border-radius: 10px; border: 3px solid #9b51e0; padding-top: 6px; padding-bottom:-2px;">
@@ -1516,17 +1128,18 @@
 
 
             </div>
+            <style>
+               .tenSP-ls-h6 {
+                   font-size: 1.5rem;
+                   font-family: Roboto;             
+                            
+               }                      
+
+            </style>
             <a href="Item.aspx">
                 <h6 id="more" class="tenSP-ls-h6">
 
-                    <style>
-                        .tenSP-ls-h6 {
-                            font-size: 1.5rem;
-                            font-family: Roboto;
-                            
-                        }
-
-                    </style>
+                    
 
                     <p class="tenSP-ls-p" style="border-bottom-color: #0000;color:#fff;">
                         Xem thêm
@@ -1747,7 +1360,7 @@
                     }
             </style>
             <div id="carouselExampleControlsSPChoice" class="carousel slide  px-4 px-lg-5  mt-0 container" data-bs-ride="carousel" style="background: linear-gradient(to bottom, #1111117f, #242426); border-radius:10px;">
-                <h3 id="SP" class=" text-left lnr-text-size" style="position:absolute; top:-20px;">
+                <h3 id="SPLQ" class=" text-left lnr-text-size" style="position:absolute; top:-20px;">
                      <p class="">Danh mục sản phẩm liên quan</p>
                  </h3>
                 <a id="scrollPreviousBodyImgHomme2" class="carousel-control-prev" href="#carouselExampleControlsSPChoice" role="button" data-bs-slide="prev" style="margin:auto; background:#636363; width:max-content; height:max-content; padding:30px 10px 30px 5px; border-bottom-right-radius:10rem; border-top-right-radius:10rem;">
@@ -1802,7 +1415,10 @@
         </section>
 
     <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-0 fade-left" style="background: linear-gradient(to bottom, #1111117f, #242426); border-radius: 10px; /*box-shadow:0 0 20px #9b51e0; */ padding:2rem">
+        <div id="carouselExampleControlsRoom" data-bs-ride="carousel" class="carousel slide container px-4 px-lg-5 mt-0 fade-left" style="background: linear-gradient(to bottom, #1111117f, #242426); border-radius: 10px; /*box-shadow:0 0 20px #9b51e0; */ padding:0 2rem">
+            <h3 id="MAP" class=" text-left lnr-text-size" style="position:absolute; top:-20px;">
+                  <p class="">Danh mục địa chỉ cửa hàng</p>
+              </h3>
             <style>
                 #scrollNextBodyImgHomme1,#scrollPreviousBodyImgHomme1{
                     display:none;
@@ -1812,7 +1428,6 @@
                 }
             </style>
 
-            <div id="carouselExampleControlsRoom" class="carousel slide" data-bs-ride="carousel"> 
                 <a id="scrollPreviousBodyImgHomme1" class="carousel-control-prev" href="#carouselExampleControlsRoom" role="button" data-slide="prev" style="margin:auto; background:#636363; width:max-content; height:max-content; padding:30px 10px 30px 5px; border-bottom-right-radius:10rem;  border-top-right-radius:10rem;">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
@@ -1830,7 +1445,7 @@
                     <%--<li data-target="#carouselExampleControlsBranch" data-slide-to="5"></li>
         <li data-target="#carouselExampleControlsBranch" data-slide-to="6"></li>--%>
                 </ol>
-                <div class="carousel-inner  fade-in" style="padding:10px 0; /*box-shadow:0 0 20px #636363;*/">
+                <div class="carousel-inner  fade-in" style="padding:20px 0 0 0;  /*box-shadow:0 0 20px #636363;*/">
                     <div class="carousel-item active border-cs-item">
                         <style>
                             .border-cs-item img{
@@ -1857,17 +1472,31 @@
                                     font-size: 3.25rem;
                                 }
                         </style>
-                        <img loading="lazy" src="Content\image-branch\1.png" class="d-block w-100" alt="Background Image 1">
+                        <div class="itemMap">
+                        <%--<img loading="lazy" src="Content\image-branch\1.png" class="d-block w-100" alt="Background Image 1">--%>
+                           <ul class="rotateulMap" style="">
+                               <li><h3>Chi nhánh Hà Nội</h3></li>
+                               <li><p>Địa chỉ: Số 4B Phố Hàng Bài, P. Tràng Tiền, Q. Hoàn Kiếm, Hà Nội</p></li>
+
+                           </ul>
+                        <iframe class="col-sm-4 " style="height:400px; width:100%;  padding:0 10px; justify-content:center; justify-items:center; clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%);" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.206404441712!2d105.85310919999999!3d21.024425699999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abeca85765eb%3A0x182717ff5916baf7!2zNEIgUC4gSMOgbmcgQsOgaSwgVHLDoG5nIFRp4buBbiwgSG_DoG4gS2nhur9tLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1720275140863!5m2!1svi!2s" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                     <div class="carousel-item border-cs-item">
+                        <div class="itemMap">
+                         <ul class="rotateulMap" style="">
+                           <li><h3>Chi nhánh Hồ Chí Minh</h3></li>
+                           <li><p>Địa chỉ: Số 172 Đường Số 1 Q.Bình Tân</p></li>
 
-                        <img loading="lazy" src="Content\image-branch\2.png" class="d-block w-100" alt="Background Image 2">
+                       </ul>
+                    <iframe class="col-sm-4 " style="height:400px; width:100%;  padding:0 10px; justify-content:center; justify-items:center; clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%);" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.8166319136185!2d106.61648179999997!3d10.748611300000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752dcd68c5a1a3%3A0xef240e1eb6bb8965!2zMTcyIMSQLiBT4buRIDEsIELDrG5oIFRy4buLIMSQw7RuZyBCLCBCw6xuaCBUw6JuLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1720275296910!5m2!1svi!2s" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                     </div>
 
                     <!-- Thêm các ảnh khác vào đây -->
                 </div>
             </div>
-        </div>
+        
     </section>
     <%--<section class="py-5">
         <div class="container px-4 px-lg-5 mt-0">
@@ -1962,7 +1591,7 @@
 
     <section id="scInformation" class="py-5 d-flex content-itens" style="background: linear-gradient(to bottom, #242426, #000);">
         <div class="container px-4 px-lg-5 mt-0 fade-in divInfo" style="padding:2.5rem 0 1rem 0; background: linear-gradient(to bottom, #1111117f, #24242600); border-radius: 10px; /*box-shadow:0 0 20px #9b51e0; */">
-            <h3 id="SP" class=" text-left lnr-text-size" style="position:absolute; top:-20px;">
+            <h3 id="INFO" class=" text-left lnr-text-size" style="position:absolute; top:-20px;">
                 <p class="">Danh mục thông tin và nội dung</p>
             </h3>
             <%--<h3 id="TS" class="tenSP-ls-h3">

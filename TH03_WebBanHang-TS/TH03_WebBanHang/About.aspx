@@ -10,6 +10,10 @@
 <%--     <h1 class="fw-bolder mb-4 tenSP-ls-h3"><p class="tenSP-ls-p">Thành Viên Thành Lập KStore</p></h1>--%>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <style>
+        body{
+            overflow-x:hidden;
+        }
+
         .tenSP-ls-h3 {
             text-align: center;
             font-weight: bolder;
@@ -50,7 +54,7 @@
     <section class="" style="color:#fff; overflow-x:hidden; margin-top:10rem; background:linear-gradient(to bottom, #000, #242426);">
         <div class="container px-5 px-lg-5" style="/*background:#0000007f;*/ border-radius:10px;">
             <div class="divAboutContent " style="">
-                <div class="col-sm-6 fade-in">
+                <div id="divLogo" class="col-sm-6 fade-in">
                 <img style="width:80%; margin-top:2rem; border-radius:10px; transform:rotate(-6deg)"  src="Content/logo/K-Photoroom.png"/>
             </div>
                  <div class="col-sm-6" style=""> 
@@ -137,9 +141,32 @@
                 
                  height:400px;
              }
-
+              #KNKSTORE{
+                  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+              }
+              #LDNCKSTORE{
+                  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 75%, 25% 100%, 25% 75%, 0% 75%);
+              }
+              .rotateulMap{
+                   left:10px; transform: rotate(-32.5deg);position:relative;
+              }
         }
          @media only screen and (max-width:768px){
+             #carouselExampleIndicators{
+                 height:450px !important;
+                 overflow:hidden;
+             }
+             .rotateulMap{
+                 left:-120px; transform: rotate(-60.75deg);
+                 margin-right:1rem;
+                 bottom:-150px;
+                 width:80%;
+                 display:block;
+                 font-size:x-small;
+                 position:relative;
+
+            }
+
              .divAboutContent{
                  
              }
@@ -176,6 +203,29 @@
                   margin:auto;
               }
          }
+         @keyframes imgCAP {
+          0% {
+            transform:rotate(-10deg);
+         
+
+            opacity: 0;
+          }
+          60% {
+             transform:rotate(10deg);
+          
+
+            opacity: 1;
+          }
+          100% {
+            transform: scale(1);
+             transform:rotate(-6deg);
+
+          }
+        }
+         #divLogo img{
+             animation-duration: 2s;
+             animation-name: imgCAP;
+         }
     </style>
     <section class="" style="color:#fff; background:#242426;">
         <div class="container px-5 px-lg-5 divAboutContent" style="/*background:#0000007f;*/ border-radius:10px; gap:10px; justify-content:center; align-content:center; align-items:center; justify-items:center;">
@@ -202,32 +252,82 @@
               </div>
             </div>
     </section>
-    <section class="" style="color:#fff; background:linear-gradient(to bottom, #242426, #000);">
-    <div class="container px-5 px-lg-5 divAboutContent" style="/*background:#0000007f;*/ border-radius:10px; gap:10px; justify-content:center; align-content:center; align-items:center; justify-items:center;">
-           
-           
-             
-        <div class="col-sm-6 d-grid fade-left">
+   <section class="" style="color:#fff; background:#242426;">
+   
+  <h1 class="fade-in" style="color:#FFF; position:absolute; padding-top:20px; margin:auto; width:100%; text-align:center; z-index:999;">ĐỊA CHỈ CỬA HÀNG</h1>
+<div id="carouselExampleIndicators" class="fade-in carousel slide container px-5 px-lg-5 divAboutContent" style="background: linear-gradient(to right, #562386, #232592); border-radius:10px; /*background:#0000007f;*/   justify-content:center; align-content:center; align-items:center; justify-items:center;">
+          
+  
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+               <ul class="rotateulMap" style="">
+                   <li><h3>Chi nhánh Hà Nội</h3></li>
+                   <li><p>Địa chỉ: Số 4B Phố Hàng Bài, P. Tràng Tiền, Q. Hoàn Kiếm, Hà Nội</p></li>
+
+               </ul>
+            <iframe class="col-sm-4 " style="height:400px; width:100%;  padding:20px 10px; justify-content:center; justify-items:center; clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%);" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.206404441712!2d105.85310919999999!3d21.024425699999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abeca85765eb%3A0x182717ff5916baf7!2zNEIgUC4gSMOgbmcgQsOgaSwgVHLDoG5nIFRp4buBbiwgSG_DoG4gS2nhur9tLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1720275140863!5m2!1svi!2s" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+            </div>
+            <div class="carousel-item">
+                 <ul class="rotateulMap" style="">
+                       <li><h3>Chi nhánh Hồ Chí Minh</h3></li>
+                       <li><p>Địa chỉ: Số 172 Đường Số 1 Q.Bình Tân</p></li>
+
+                   </ul>
+                <iframe class="col-sm-4 " style="height:400px; width:100%;  padding:20px 10px; justify-content:center; justify-items:center; clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%);" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.8166319136185!2d106.61648179999997!3d10.748611300000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752dcd68c5a1a3%3A0xef240e1eb6bb8965!2zMTcyIMSQLiBT4buRIDEsIELDrG5oIFRy4buLIMSQw7RuZyBCLCBCw6xuaCBUw6JuLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1720275296910!5m2!1svi!2s" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+            </div>
+            
+          </div>
+          <button style="background:#000; border-radius:20px; border-bottom-left-radius:0; border-top-left-radius:0; padding:10px; height:max-content; width:max-content; justify-content:center; align-content:center; margin:auto;" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button style="background:#000; border-radius:20px;  border-bottom-right-radius:0; border-top-right-radius:0; padding:10px; height:max-content; width:max-content; justify-content:center; align-content:center; margin:auto;" class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+   
+
+</section>
                 
-                <h3 class="fade-in" style=""><strong>LÝ DO NÊN CHỌN KSTORE</strong></h3>
-                  
+             
+    <section class="" style="color:#fff; background:linear-gradient(to bottom, #242426, #000);">
+    
+    <div class="container px-5 px-lg-5 divAboutContent" style="/*background:#0000007f;*/ border-radius:10px; gap:60px; justify-content:center; align-content:center; align-items:center; justify-items:center;">
+           
+           <div id="LDNCKSTORE" class="col-sm-6 d-grid fade-left fate-in" style="margin:4rem  auto;
+ background: linear-gradient(to right, #562386, #232592); padding:20px 10px; justify-content:center; justify-items:center;">
+        
+                <h3 class="" style=""><strong>LÝ DO NÊN CHỌN KSTORE</strong></h3>
+          
                         <ol class="ul-ab-div-lydo" style="">
-                            <li class="fade-in">
+                            <li class="">
                                 <span class="highlight">Chất Lượng Chính Hãng:</span> Cam kết tất cả các sản phẩm đều là hàng chính hãng, được nhập khẩu trực tiếp từ Hàn Quốc.
                             </li>
-                            <li class="fade-in"> 
+                            <li class=""> 
                                 <span class="highlight">Giá Cả Cạnh Tranh:</span> Giá thành hợp lý, nhiều chương trình khuyến mãi hấp dẫn dành cho khách hàng thân thiết.
                             </li>
-                            <li class="fade-in">
+                            <li class="">
                                 <span class="highlight">Dịch Vụ Khách Hàng Tận Tâm:</span> Đội ngũ nhân viên nhiệt tình, am hiểu về Kpop, luôn sẵn sàng tư vấn và hỗ trợ bạn.
                             </li>
-                            <li class="fade-in">
+                            <li class="">
                                 <span class="highlight">Mua Sắm Tiện Lợi:</span> Hệ thống cửa hàng online và offline thuận tiện, giao hàng nhanh chóng trên toàn quốc.
                             </li>
                         </ol>
             </div>
+             
+        
        
-        <div class="col-sm-3 d-grid fade-in">
+        <div id="KNKSTORE" class="col-sm-6 d-grid fade-right fate-in" style="margin:4rem  auto;
+background: linear-gradient(to left, #562386, #232592); padding:20px 10px; justify-content:center; justify-items:center;">
             <h3  class="" style=""><strong>KẾT NỐI VỚI KSTORE</strong></h3>
 
             <ul>
@@ -249,26 +349,12 @@
 
            
         </div>
-        <div class="col-sm-3 d-grid fade-right">
-            <h3  class="fade-in" style=""><strong>ĐỊA CHỈ CỦA KSTORE</strong></h3>
-
-            <ul>
-                 <li  class="fade-in"><p><strong>Địa Chỉ Chi Nhánh 1:</strong> [Địa chỉ cửa hàng cụ thể]</p></li>
-                <li  class="fade-in"><p>
-                <strong>Thời gian làm việc:</strong>
-                <a href="#">https://www.kstore.com.vn</a>
-            </p></li>
-                
-                 <li  class="fade-in"><p><strong>Địa Chỉ Chi Nhánh 2:</strong> [Địa chỉ cửa hàng cụ thể]</p></li>
-                <li  class="fade-in"><p>
-                <strong>Thời gian làm việc:</strong>
-            </ul>
-
-   
-        </div>
+       
     </div>
       
 </section>
+              
+    
     <section class="" style="color:#fff; background:linear-gradient(to bottom, #242426, #000);">
 <div class="container-fuild  divAboutContent" style="/*background:#0000007f;*/ border-radius:10px; gap:10px; justify-content:center; align-content:center; align-items:center; justify-items:center;">
 <%--       <img class="fade-out" style="width:100%;" src="Content/image-data/member-nhom5.png"/>--%>

@@ -1378,21 +1378,57 @@ namespace TH03_WebBanHang
                 if (mylike != null && myrating == null)
                 {
                     var khach = dbcontext.KhachHangs.FirstOrDefault(s => s.Email == EmailKhach && s.Email == mylike);
-                    var liked = dbcontext.ThichSPs.FirstOrDefault(s => (s.Email == EmailKhach && s.MaKH == khach.MaKH) || (s.Email == EmailKhach && s.Email==mylike));
-                    var hadliked = dbcontext.ThichSPs.Any(s => (s.Email == EmailKhach && s.MaKH == khach.MaKH) || (s.Email == EmailKhach && s.Email == mylike));
+                    var liked = dbcontext.ThichSPs.Where(s => (s.Email == EmailKhach && s.MaKH == khach.MaKH) || (s.Email == EmailKhach && s.Email == mylike));
+                       
+                    var hadliked = dbcontext.ThichSPs.Any(s => (s.Email == EmailKhach && s.MaKH == khach.MaKH) || (s.Email == EmailKhach && s.Email == mylike)); ;
                     if (hadliked && ls == null)
-                        return dbcontext.SanPhams.Where(s => s.MaSP == liked.MaSP);
-                    else if(hadliked && ls != null) return dbcontext.SanPhams.Where(s => s.MaSP == liked.MaSP && s.MaLoai == ls);
+                    {
+
+
+
+                        var maSPList = liked.Select(p => p.MaSP).ToList();
+                        var sanpham = dbcontext.SanPhams
+                                              .Where(p => maSPList.Contains(p.MaSP))
+                                              .OrderByDescending(p => p.DoanhSo)
+                                              .Take(8);
+                        return sanpham;
+                    }
+
+                    else if (hadliked && ls != null)
+                    {
+                        var maSPList = liked.Select(p => p.MaSP).ToList();
+                        var sanpham = dbcontext.SanPhams
+                                              .Where(p => maSPList.Contains(p.MaSP) && p.MaLoai == ls);
+                        return sanpham;
+                    }
                     else return null;
+                
                 }
                 else if (myrating != null && mylike == null)
                 {
                     var khach = dbcontext.KhachHangs.FirstOrDefault(s => s.Email == EmailKhach && s.Email == myrating);
-                    var rated = dbcontext.DanhGias.FirstOrDefault(s => (s.Email == EmailKhach && s.Email == khach.Email) || (s.Email == myrating && s.Email == EmailKhach));
-                    var hadrated = dbcontext.DanhGias.Any(s => (s.Email == EmailKhach && s.Email == khach.Email) || (s.Email == myrating && s.Email==EmailKhach));
-                    if(hadrated && ls==null)
-                        return dbcontext.SanPhams.Where(s => s.MaSP == rated.MaSP);
-                    else if (hadrated && ls !=null) return dbcontext.SanPhams.Where(s => s.MaSP == rated.MaSP && s.MaLoai == ls);
+                    var rated = dbcontext.DanhGias.Where(s => (s.Email == EmailKhach && s.Email == khach.Email) || (s.Email == myrating && s.Email == EmailKhach));
+                    var hadrated = dbcontext.DanhGias.Any(s => (s.Email == EmailKhach && s.Email == khach.Email) || (s.Email == myrating && s.Email == EmailKhach));
+                    if (hadrated && ls == null)
+                    {
+
+
+
+                        var maSPList = rated.Select(p => p.MaSP).ToList();
+                        var sanpham = dbcontext.SanPhams
+                                              .Where(p => maSPList.Contains(p.MaSP))
+                                              .OrderByDescending(p => p.DoanhSo)
+                                              .Take(8);
+                        return sanpham;
+                    }
+
+                    else if (hadrated && ls != null)
+                    {
+                        var maSPList = rated.Select(p => p.MaSP).ToList();
+                        var sanpham = dbcontext.SanPhams
+                                              .Where(p => maSPList.Contains(p.MaSP) && p.MaLoai == ls);
+                        return sanpham;
+                    }
                     else return null;
                 }
                 else return null;
@@ -1591,10 +1627,7 @@ namespace TH03_WebBanHang
             }
             return string.Empty;
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         public IQueryable<TH03_WebBanHang.Models.SanPhamData> GetImages([QueryString("sp")] String sp)
         {
             // Giả sử bạn muốn lấy tất cả các ảnh liên quan đến sản phẩm có MaSP tương ứng
@@ -2519,11 +2552,7 @@ namespace TH03_WebBanHang
                 inline.ContentId = Guid.NewGuid().ToString(); // Đặt ContentId để tham chiếu đến hình ảnh trong HTML
 
                 // Tạo nội dung HTML tùy chỉnh
-<<<<<<< HEAD
-                string htmlBody = $"<html><body style=\"padding: 10px; background:#000; color:#FFFF; height:max-content; \"><img style=\"max-width: 100%;  border-radius:20px; \" src='cid:{inline.ContentId}' alt='KStore' /><h1>Bài đánh giá sản phẩm</h1>" +
-=======
-                string htmlBody = $"<html><body><img style=\"max-width: 100%;  border-radius:20px; \" src='cid:{inline.ContentId}' alt='KStore' /><h1>Bài đánh giá sản phẩm</h1>" +
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
+                string htmlBody = $"<html><body style=\"padding: 10px;  border-radius:10px; background:#000; color:#FFFF; height:max-content; \"><img style=\"max-width: 100%;  border-radius:20px; \" src='cid:{inline.ContentId}' alt='KStore' /><h1>Bài đánh giá sản phẩm</h1>" +
                     //$"<div style='display:flex; gap:15px;'>" +
                     //$"<img style='object-fit:cover; background:#000; width:50px; height:50px; border-radius:50%; border:2px solid #9b51e0' src='{avatar}'/>" +
                     //$"<p style=\"\"><strong  style=\"color:#000; font-size:16px; \">{userName}</strong></p>    \r\n         " +

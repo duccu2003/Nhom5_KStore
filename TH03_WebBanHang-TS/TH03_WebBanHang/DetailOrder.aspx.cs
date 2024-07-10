@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 ﻿using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-=======
-﻿using System;
-using System.Collections.Generic;
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 using System.Linq;
 using System.Net.Mail;
 using System.Net.Mime;
@@ -17,10 +12,7 @@ using System.Web.UI.WebControls;
 using TH03_WebBanHang.checkOutOrder;
 using TH03_WebBanHang.Help;
 using TH03_WebBanHang.Models;
-<<<<<<< HEAD
 using static System.Runtime.CompilerServices.RuntimeHelpers;
-=======
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
 namespace TH03_WebBanHang
 {
@@ -38,7 +30,6 @@ namespace TH03_WebBanHang
             return lsItems;
 
         }
-<<<<<<< HEAD
         protected System.Web.UI.WebControls.Image imgBarCode;
 
         protected void CreateQRCode(string Link)
@@ -62,10 +53,6 @@ namespace TH03_WebBanHang
             }
             imgQRCodeLink.Src = imgBarCode.ImageUrl;
         }
-=======
-
-
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         protected void Page_Load(object sender, EventArgs e)
         {
             string maDH = HttpContext.Current.Request.QueryString.Get("MaDH");
@@ -78,16 +65,10 @@ namespace TH03_WebBanHang
             string EmailKhach;
             if (Email == null) EmailKhach = Sign.email;
             else EmailKhach = Email.Value;
-<<<<<<< HEAD
 
             var user = from u in dbcontext.TKs
                        select u;
             if (user.Any(p => (p.Email == EmailKhach && EmailKhach == "Admin") || ((p.Quyen == "Admin" || p.Quyen == "Manager") && p.TrangThai == true && p.Email == EmailKhach)))
-=======
-            var user = from u in dbcontext.TKs
-                       select u;
-            if (user.Any(p => (p.Email == "Admin" && p.TrangThai == true && p.Email == EmailKhach && EmailKhach == "Admin") || ((p.Quyen == "Admin" || p.Quyen == "Manager") && p.TrangThai == true && p.Email == EmailKhach)))
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
             {
                 btnDel.Visible = true;
                 if(don.GiaoDich !=true)
@@ -110,7 +91,6 @@ namespace TH03_WebBanHang
 
             List<ChiTietDonHang> lstGioHang = Session["GioHang"] as List<ChiTietDonHang>;
             Hepler hepler = new Hepler();
-<<<<<<< HEAD
             string link = Shop.localhost + "DetailOrder?MaDH=" + don.MaDH;
             CreateQRCode(link);
 
@@ -118,13 +98,6 @@ namespace TH03_WebBanHang
             //displayMsg.InnerText = "Giao dịch được thực hiện thành công. Cảm ơn quý khách đã sử dụng dịch vụ";
 
             
-=======
-
-            displayOrderCode.InnerText = don.MaDH;
-            displayMsg.InnerText = "Giao dịch được thực hiện thành công. Cảm ơn quý khách đã sử dụng dịch vụ";
-
-
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
 
             //Thanh toan khong thanh cong. Ma loi: vnp_ResponseCode
@@ -136,13 +109,8 @@ namespace TH03_WebBanHang
             displayAmount.InnerText = string.Format("{0:N0}", list.Sum(s => s.ThanhTien)) + "đ";
             //displayBankCode.InnerText = bankCode;
             displayOrderCode.InnerText = don.MaDH;
-<<<<<<< HEAD
             displayDateCreate.InnerText = "Ngày tạo đơn: " + don.Ngay.ToString();
             displayBranhLocate.InnerText = "Chi nhánh cung cấp: " + don.DonHang.ChiNhanh.TenCN;
-=======
-            displayDateCreate.InnerText = don.Ngay.ToString();
-            displayBranhLocate.InnerText = don.DonHang.ChiNhanh.TenCN;
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
             displayClientLocate.InnerText = don.DonHang.DiaChiNN;
             displayClientName.InnerText = don.DonHang.HoTenNN;
             displayClientPhone.InnerText = don.DonHang.DienThoaiNN;
@@ -295,14 +263,10 @@ namespace TH03_WebBanHang
 
             dbcontext.SaveChanges();
             db.SaveChanges();
-<<<<<<< HEAD
 
             string link = Shop.localhost + "DetailOrder?MaDH=" + str;
             
             SendEmail(deparments.Email, "KStore", str, link, imagePath);
-=======
-            SendEmail(deparments.Email, "KStore", str, imagePath);
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
 
             Response.Redirect(Request.RawUrl);
@@ -317,11 +281,7 @@ namespace TH03_WebBanHang
             Response.Write("</script>");
 
         }
-<<<<<<< HEAD
         public void SendEmail(string to, string subject, string body, string link, string imagePath)
-=======
-        public void SendEmail(string to, string subject, string body, string imagePath)
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         {
             var str = Request.QueryString["MaDH"].ToString();
 
@@ -352,11 +312,7 @@ namespace TH03_WebBanHang
                 }
                 else styleColor = "<p>Giao dịch: <span style=\"color: red;\">Đợi Thanh Toán</span></p>";
                 // Tạo nội dung HTML tùy chỉnh
-<<<<<<< HEAD
-                string htmlBody = $"<html><body style=\"padding: 10px; background:#000; color:#FFFF; height:max-content; \"><img style=\"max-width: 100%; border-radius:20px;\" src='cid:{inline.ContentId}' alt='KStore' /><h1>Thông báo đơn hàng!</h1><p>Xin chào bạn đây là thông báo về đơn hàng với giá trị là {Pay.TongForMail}<p>Đơn hàng có mã <a style=\"text-decoration: underline;\" href='{link}'><strong>{body}</strong></a> đã được chúng tôi xác nhận.{styleColor}<p>Bạn có thể xem hóa đơn <a style=\"text-decoration: underline;\" href='{link}'>tại đây</a>.</p><p>Vào lúc: {maDH.Ngay}</p></p><p>Cảm ơn vì bạn đã mua hàng.</p></body></html>";
-=======
-                string htmlBody = $"<html><body><img style=\"max-width: 100%; border-radius:20px;\" src='cid:{inline.ContentId}' alt='KStore' /><h1>Thông báo đơn hàng!</h1><p>Xin chào bạn đây là thông báo về đơn hàng với mã là <strong>{maDH.MaDH}</strong> đã được chúng tôi xác nhận.{styleColor}<p>Vào lúc: {maDH.Ngay}</p></p><p>Cảm ơn vì bạn đã mua hàng.</p></body></html>";
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
+                string htmlBody = $"<html><body style=\"padding: 10px; border-radius:10px; background:#000; color:#FFFF; height:max-content; \"><img style=\"max-width: 100%; border-radius:20px;\" src='cid:{inline.ContentId}' alt='KStore' /><h1>Thông báo đơn hàng!</h1><p>Xin chào bạn đây là thông báo về đơn hàng với giá trị là {Pay.TongForMail}<p>Đơn hàng có mã <a style=\"text-decoration: underline;\" href='{link}'><strong>{body}</strong></a> đã được chúng tôi xác nhận.{styleColor}<p>Bạn có thể xem hóa đơn <a style=\"text-decoration: underline;\" href='{link}'>tại đây</a>.</p><p>Vào lúc: {maDH.Ngay}</p></p><p>Cảm ơn vì bạn đã mua hàng.</p></body></html>";
 
                 AlternateView avHtml = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
                 avHtml.LinkedResources.Add(inline);

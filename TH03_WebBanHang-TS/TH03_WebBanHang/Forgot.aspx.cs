@@ -167,11 +167,7 @@ namespace TH03_WebBanHang
                 inline.ContentId = Guid.NewGuid().ToString(); // Đặt ContentId để tham chiếu đến hình ảnh trong HTML
 
                 // Tạo nội dung HTML tùy chỉnh
-<<<<<<< HEAD
-                string htmlBody = $"<html><body style=\"padding: 10px; background:#000; color:#FFFF; height:max-content; \"><img style=\"max-width: 100%;  border-radius:20px; \" src='cid:{inline.ContentId}' alt='KStore' /><h1>Verify OTP</h1><p>Đây là mã OTP của bạn: <strong>{body}</strong>. Vui lòng không cung cấp mã này với bất kỳ ai!</p></body></html>";
-=======
-                string htmlBody = $"<html><body><img style=\"max-width: 100%;  border-radius:20px; \" src='cid:{inline.ContentId}' alt='KStore' /><h1>Verify OTP</h1><p>Đây là mã OTP của bạn: <strong>{body}</strong>. Vui lòng không cung cấp mã này với bất kỳ ai!</p></body></html>";
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
+                string htmlBody = $"<html><body style=\"padding: 10px;  border-radius:10px; background:#000; color:#FFFF; height:max-content; \"><img style=\"max-width: 100%;  border-radius:20px; \" src='cid:{inline.ContentId}' alt='KStore' /><h1>Verify OTP</h1><p>Đây là mã OTP của bạn: <strong>{body}</strong>. Vui lòng không cung cấp mã này với bất kỳ ai!</p></body></html>";
 
                 AlternateView avHtml = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
                 avHtml.LinkedResources.Add(inline);

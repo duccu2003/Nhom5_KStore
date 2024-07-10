@@ -6,7 +6,6 @@
         <title>BILL</title>
         <link href="Content/logo/K.png" rel="shortcut icon" type="image/x-icon" />
         <link href="Styles/bootstrap.min.css" rel="stylesheet" />
-<<<<<<< HEAD
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
          <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
@@ -21,20 +20,6 @@
             <style>
                
 
-=======
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-         <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Basic&display=swap" rel="stylesheet">
-     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-
-            <style>
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         #loader {
     position: fixed;
     top: 0;
@@ -125,16 +110,11 @@ $(function(){
                      <img loading="lazy" style="filter: brightness(50%); height: 100%; width: 100%; position: fixed; z-index: 0;" src="Content/image-bg/bg-for-slide-gp.png" />
 
         <form id="form1" runat="server" class="container" style="position:relative; padding-top:20px;">
-<<<<<<< HEAD
             <div style="margin:0px 20px 20px 20px; position:fixed; display:grid; row-gap:30px; z-index:99;">
                  <a title="Thoát" class="dropdown-item" href="Account.aspx" style="padding:5px; color:#000;  z-index:99; font-size:25px; text-align:center; border-radius:50%; border:1px solid #242426; width:35px; height:35px; align-items:center; align-content:center; justify-content:center; justify-items:center;  background:#FFF;"><i class="fa-solid fa-caret-left" style="margin-right: 5px; width: 35px;"></i></a>
                  <a title="In hóa đơn này" href="javascript:void(0);" onclick="printDiv('TheBill')" style="padding:5px; color:#000; cursor:pointer; z-index:99; font-size:25px; text-align:center; border-radius:50%; border:1px solid #242426; width:35px; height:35px; align-items:center; align-content:center; justify-content:center; justify-items:center;  background:#FFF;"><i class="fa-solid fa-print" style="margin-right: 5px; width: 35px;"></i></a>
                  <a  title="Tải hóa đơn này" href="javascript:void(0);" onclick="CreatePDFfromHTML()" style="padding:5px; color:#000; cursor:pointer; z-index:99; font-size:25px; text-align:center; border-radius:50%; border:1px solid #242426; width:35px; height:35px; align-items:center; align-content:center; justify-content:center; justify-items:center;  background:#FFF;"><i class="fa-solid fa-download" style="margin-right: 5px; width: 35px;"></i></a>
             </div>
-=======
-         <a class="dropdown-item" href="Account.aspx" style="margin:0px 20px 20px 20px;  z-index:99; font-size:25px; text-align:center; border-radius:50%; border:1px solid #242426; width:35px; height:35px; align-items:center; align-content:center; justify-content:center; justify-items:center; position:fixed; background:#FFF;"><i class="fa-solid fa-caret-left" style="margin-right: 5px; width: 35px;"></i></a>
-
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
             <style> 
                 *{
                     padding:0;
@@ -243,7 +223,6 @@ $(function(){
                    background:#F7F7F7;
                }
             </style>
-<<<<<<< HEAD
             <div id="TheBill" style="width:max-content; height:max-content; margin: auto; border-radius:5px; padding: 5px;  box-shadow:0 0 20px #636363; background:#FFFF;  box-shadow: 0 15px 25px #00000019; border:1px solid #000;">
             <table id="tableHoaDon" style="">
                 <tr style="max-height:125px;">
@@ -273,23 +252,12 @@ $(function(){
                 </tr>
                 <tr style="">
                    <td rowspan="12" style="border:2px double #636363 !important; height:500px; overflow:auto;  margin:0;padding: 0 10px; overflow:auto; font-size:12px; text-align:left;">
-=======
-            <div style="width:max-content; height:max-content; margin: auto; border-radius:5px; padding: 5px;  box-shadow:0 0 20px #636363; background:#FFFF;  box-shadow: 0 15px 25px #00000019;">
-            <table id="tableHoaDon" style="">
-                <tr>
-                    <th colspan="3" style="text-align:center;">
-                        <h3 class="text-muted">KẾT QUẢ THANH TOÁN</h3>
-                    </th>
-                </tr>
-                <tr style="">
-                   <td rowspan="12" style="height:500px; overflow:auto;  margin:0;padding: 0 10px; overflow:auto; font-size:12px; text-align:left;">
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                         <asp:ListView ID="ListView1" runat="server" ItemType="TH03_WebBanHang.Models.ChiTietDonHang" SelectMethod="GetListItemsInOrder">
                             <ItemTemplate>
                                 <a title="<%#:Item.TenSP %>" class="align-top" href="../Item.aspx?sp=<%#:Item.MaSP %>" style="border-bottom:1px dashed #636363; text-decoration:none; color:#000; display:flex">
                                     <table class="a-itemsInOrder">
                                         <tr>
-                                            <td  rowspan="2"><img style=" object-fit:cover;" width="60" src="../<%#:Item.DuongDan %>"/></td>
+                                            <td id="tdIMG"  rowspan="2"><img style=" object-fit:cover;" width="60" src="../<%#:Item.DuongDan %>"/></td>
                                             <th rowspan="2"><p>x<%#:Item.SoLuong %></p></th>
                                             <th><p><%#:Item.TenSP %></p></th>
                                             <th><p><%#: string.IsNullOrEmpty(Item.TenPob)?"": "Pob: " + Item.TenPob%></p></th>
@@ -307,49 +275,32 @@ $(function(){
                         </asp:ListView>
                     </td>
 
-<<<<<<< HEAD
                    <%-- <th><p>Thông báo: </p></th>
                      <th><div runat="server" id="displayMsg"></div></th>--%>
                     <th style="border:2px double #636363 !important;"><p>Mã đơn hàng: </p></th>
                     <th style="border:2px double #636363 !important;"><div runat="server" id="displayOrderCode"></div></th>
                 </tr>
 
-=======
-                    <th><p>Thông báo: </p></th>
-                     <th><div runat="server" id="displayMsg"></div></th>
-                </tr>
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                 <%--<tr>
                     <th><p>Mã Website (Terminal ID): </p></th>
                     <th><div runat="server" id="displayTmnCode"></div></th>
                 </tr>--%>
                 <tr>
-<<<<<<< HEAD
                     <th style="border:2px double #636363 !important;"><p>Mã giao dịch thanh toán: </p></th>
                      <th style="border:2px double #636363 !important;"><div runat="server" id="displayTxnRef"></div></th>
-=======
-                    <th><p>Mã giao dịch thanh toán: </p></th>
-                     <th><div runat="server" id="displayTxnRef"></div></th>
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                 </tr>
                <%-- <tr>
                     <th><p>Mã giao dịch tại Momo: </p></th>
                      <th><div runat="server" id="displayVnpayTranNo"></div></th>
                 </tr>--%>
                  <tr>
-<<<<<<< HEAD
                      <th style="border:2px double #636363 !important;"><p>Số tiền thanh toán (VND): </p></th>
                       <th style="border:2px double #636363 !important;"><div runat="server" id="displayAmount"></div></th>
-=======
-                     <th><p>Số tiền thanh toán (VND): </p></th>
-                      <th><div runat="server" id="displayAmount"></div></th>
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                  </tr>
                 <%--<tr>
                     <th><p>Ngân hàng thanh toán: </p></th>
                      <th><div runat="server" id="displayBankCode"></div></th>
                 </tr>--%>
-<<<<<<< HEAD
                 
                 <%--<tr>
                     <th><p>Ngày tạo đơn: </p></th>
@@ -418,47 +369,6 @@ $(function(){
             </div>
             </div>
 
-=======
-                <tr>
-                    <th><p>Đơn hàng có mã: </p></th>
-                     <th><div runat="server" id="displayOrderCode"></div></th>
-                </tr>
-                <tr>
-                    <th><p>Ngày tạo đơn: </p></th>
-                     <th><div runat="server" id="displayDateCreate"></div></th>
-                </tr>
-                <tr>
-                    <th><p>Họ tên người nhận: </p></th>
-                     <th><div runat="server" id="displayClientName"></div></th>
-                </tr>
-                 <tr>
-                     <th><p>Email người nhận: </p></th>
-                      <th><div runat="server" id="txtEmailNN"></div></th>
-                 </tr>
-                 <tr>
-                     <th><p>Số điện thoại người nhận: </p></th>
-                      <th><div runat="server" id="displayClientPhone"></div></th>
-                 </tr>
-                 <tr>
-                     <th><p>Địa chỉ người nhận: </p></th>
-                      <th><div runat="server" id="displayClientLocate"></div></th>
-                 </tr>
-                <tr>
-                    <th><p>Chi nhánh tạo đơn: </p></th>
-                     <th><div runat="server" id="displayBranhLocate"></div></th>
-                </tr>
-                <tr>
-                    <th><p>Phương thức giao dịch: </p></th>
-                     <th><div runat="server" id="txtPTGD"></div></th>
-                </tr>
-                <tr>
-                    <th><p>Giao dịch: </p></th>
-                     <th><div runat="server" id="txtGiaoDich"></div></th>
-                </tr>
-            </table>
-
-            </div>
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
             <style>
                 .btn-done{
                     width:200px;
@@ -496,7 +406,6 @@ $(function(){
                  <div runat="server" id="displayOrderCode"></div>
             </div> --%>
                 </div>
-<<<<<<< HEAD
             <div id="editor"></div>
 
         </form>
@@ -504,6 +413,9 @@ $(function(){
         <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
         <script>
             function printDiv(divId) {
+
+                //if (document.getElementById('tdIMG').style.display != "none") document.getElementById('tdIMG').style.display = "none";
+
                 var printContents = document.getElementById(divId).innerHTML;
                 var originalContents = document.body.innerHTML;
 
@@ -517,6 +429,9 @@ $(function(){
         </script>
         <script>
             function CreatePDFfromHTML() {
+
+                //if (document.getElementById('tdIMG').style.display != "none") document.getElementById('tdIMG').style.display = "none";
+
                 var HTML_Width = $("#TheBill").width();
                 var HTML_Height = $("#TheBill").height();
                 var top_left_margin = 15;
@@ -542,9 +457,5 @@ $(function(){
         </script>
     </body>
     
-=======
-        </form>
-    </body>
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 </html>
 

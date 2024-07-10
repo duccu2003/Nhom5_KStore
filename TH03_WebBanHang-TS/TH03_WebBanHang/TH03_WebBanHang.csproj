@@ -245,13 +245,8 @@
     <Reference Include="Prism.Wpf, Version=8.1.97.5141, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.Wpf.8.1.97\lib\net47\Prism.Wpf.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
     <Reference Include="QRCoder, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
       <HintPath>..\packages\QRCoder.1.6.0\lib\net40\QRCoder.dll</HintPath>
-=======
-    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
-      <HintPath>..\packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     </Reference>
     <Reference Include="Std.UriTemplate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c118b0afb4598f9a, processorArchitecture=MSIL">
       <HintPath>..\packages\Std.UriTemplate.0.0.55\lib\netstandard2.0\Std.UriTemplate.dll</HintPath>
@@ -411,6 +406,7 @@
     <Content Include="Account.aspx" />
     <Content Include="AccountOrder.aspx" />
     <Content Include="AddAccount.aspx" />
+    <Content Include="AddGroup.aspx" />
     <Content Include="AddProduct.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="ChangePassword.aspx" />
@@ -438,6 +434,9 @@
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\hamburgers.min.css" />
     <Content Include="Content\css\icon-font.min.css" />
+    <Content Include="Content\css\magiczoomplus.css" />
+    <Content Include="NewInformationPage.aspx" />
+    <Content Include="Scripts\js\magiczoomplus.js" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\css\select2.min.css" />
     <Content Include="Content\css\style.css" />
@@ -487,10 +486,7 @@
     <Content Include="Content\icon\add-cart.png" />
     <Content Include="Content\icon\add-to-cart.png" />
     <Content Include="Content\icon\ag.gif" />
-<<<<<<< HEAD
     <Content Include="Content\icon\atm-card.png" />
-=======
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Content Include="Content\icon\back.png" />
     <Content Include="Content\icon\bo_cong_thuong_grande.png" />
     <Content Include="Content\icon\branch.png" />
@@ -498,10 +494,7 @@
     <Content Include="Content\icon\cart.png" />
     <Content Include="Content\icon\close-g.png" />
     <Content Include="Content\icon\close.png" />
-<<<<<<< HEAD
     <Content Include="Content\icon\cod.png" />
-=======
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Content Include="Content\icon\dontLike.png" />
     <Content Include="Content\icon\erro.png" />
     <Content Include="Content\icon\eye.png" />
@@ -520,11 +513,8 @@
     <Content Include="Content\icon\mail.png" />
     <Content Include="Content\icon\messenger.png" />
     <Content Include="Content\icon\minus.png" />
-<<<<<<< HEAD
     <Content Include="Content\icon\Momo.png" />
     <Content Include="Content\icon\momo1.png" />
-=======
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Content Include="Content\icon\money.png" />
     <Content Include="Content\icon\more.png" />
     <Content Include="Content\icon\Mproduct-3.png" />
@@ -554,17 +544,11 @@
     <Content Include="Content\icon\Success.gif" />
     <Content Include="Content\icon\sz-add-cart.png" />
     <Content Include="Content\icon\user.png" />
-<<<<<<< HEAD
     <Content Include="Content\icon\VNPAY.png" />
     <Content Include="Content\icon\w-location.png" />
     <Content Include="Content\icon\w-mail.png" />
     <Content Include="Content\icon\w-phone-call.png" />
     <Content Include="Content\icon\warning.png" />
-=======
-    <Content Include="Content\icon\w-location.png" />
-    <Content Include="Content\icon\w-mail.png" />
-    <Content Include="Content\icon\w-phone-call.png" />
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Content Include="Content\icon\whiteLike.png" />
     <Content Include="Content\image-banner\banner1.1.png" />
     <Content Include="Content\image-banner\banner2.png" />
@@ -748,13 +732,10 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\icon-show\3.png" />
     <Content Include="log4net.config" />
-<<<<<<< HEAD
-=======
     <EntityDeploy Include="Models\VNLocal.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>VNLocal.Designer.cs</LastGenOutput>
     </EntityDeploy>
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -765,12 +746,9 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-<<<<<<< HEAD
-=======
     <Content Include="Models\VNLocal.edmx.diagram">
       <DependentUpon>VNLocal.edmx</DependentUpon>
     </Content>
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <EntityDeploy Include="Models\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
@@ -778,16 +756,6 @@
     <Content Include="Models\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
-<<<<<<< HEAD
-    <EntityDeploy Include="Models\VNLocal.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>VNLocal.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\VNLocal.edmx.diagram">
-      <DependentUpon>VNLocal.edmx</DependentUpon>
-    </Content>
-=======
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <None Include="Properties\PublishProfiles\beduc102-001-site1 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\beduc102-001-site1 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
@@ -885,6 +853,13 @@
     <Compile Include="AddAccount.aspx.designer.cs">
       <DependentUpon>AddAccount.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AddGroup.aspx.cs">
+      <DependentUpon>AddGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddGroup.aspx.designer.cs">
+      <DependentUpon>AddGroup.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddProduct.aspx.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -943,11 +918,9 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Controllers\ChatBotController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
-=======
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1095,24 +1068,12 @@
     <Compile Include="Models\Banner.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Models\ChatBot.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-=======
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Compile Include="Models\ChiNhanh.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiTietDonHang.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Models\C__MigrationHistory.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-=======
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
     <Compile Include="Models\DanhGia.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -1204,6 +1165,13 @@
       <DependentUpon>Momo_return.aspx</DependentUpon>
     </Compile>
     <Compile Include="Momo\PaymentRequest.cs" />
+    <Compile Include="NewInformationPage.aspx.cs">
+      <DependentUpon>NewInformationPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewInformationPage.aspx.designer.cs">
+      <DependentUpon>NewInformationPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pay.aspx.cs">
       <DependentUpon>Pay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1313,14 +1281,11 @@
     <Folder Include="Content\items\nmixx\" />
     <Folder Include="Content\rating-data\" />
     <Folder Include="Content\Tomping\" />
-<<<<<<< HEAD
     <Folder Include="Views\ChatBot\" />
+    <Folder Include="Views\Default\" />
     <Folder Include="Views\QLKPOP\" />
     <Folder Include="Views\Search\" />
     <Folder Include="Views\Shared\" />
-=======
-    <Folder Include="Controllers\" />
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

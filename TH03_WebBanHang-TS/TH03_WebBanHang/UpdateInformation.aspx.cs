@@ -167,12 +167,8 @@ namespace TH03_WebBanHang
         {
             using (SqlConnection connection = new SqlConnection(Shop.SQL_connectionString))
             {
-<<<<<<< HEAD
                 string temTieuDe = txtBannerTitle.Text;
                 string insertBVQuery = "INSERT INTO Banner (DuongDan, TieuDe) VALUES (@DuongDan, @TieuDe)";
-=======
-                string insertBVQuery = "INSERT INTO Banner (DuongDan) VALUES (@DuongDan)";
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
                 string fileNameBanner = null;
                 string filePathBanner = null;
                 string fileimgBanner =null;
@@ -196,11 +192,7 @@ namespace TH03_WebBanHang
 
 
                         insertPopCommand.Parameters.AddWithValue("@DuongDan", fileimgBanner);
-<<<<<<< HEAD
                         insertPopCommand.Parameters.AddWithValue("@TieuDe", temTieuDe);
-=======
-
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
                         connection.Open();
                         insertPopCommand.ExecuteNonQuery();

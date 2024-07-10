@@ -60,33 +60,21 @@ namespace TH03_WebBanHang
         protected global::System.Web.UI.WebControls.ListView ListView2;
 
         /// <summary>
-<<<<<<< HEAD
         /// lbTotalAll control.
-=======
-        /// lbTotalRevenue control.
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.Label lbTotalAll;
 
         /// <summary>
         /// dauphantram control.
-=======
-        protected global::System.Web.UI.WebControls.Label lbTotalRevenue;
-
-        /// <summary>
-        /// Label1 control.
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-<<<<<<< HEAD
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl dauphantram;
 
         /// <summary>
@@ -97,9 +85,6 @@ namespace TH03_WebBanHang
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl phantram;
-=======
-        protected global::System.Web.UI.WebControls.Label Label1;
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
         /// <summary>
         /// lbSDDTT control.
@@ -120,7 +105,6 @@ namespace TH03_WebBanHang
         protected global::System.Web.UI.WebControls.Label lbSDCTT;
 
         /// <summary>
-<<<<<<< HEAD
         /// lbCod control.
         /// </summary>
         /// <remarks>
@@ -175,8 +159,6 @@ namespace TH03_WebBanHang
         protected global::System.Web.UI.WebControls.Label lbVNPayBill;
 
         /// <summary>
-=======
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         /// ListView1Branch control.
         /// </summary>
         /// <remarks>

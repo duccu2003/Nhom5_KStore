@@ -24,7 +24,6 @@ namespace TH03_WebBanHang
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-<<<<<<< HEAD
         /// displayDateCreate control.
         /// </summary>
         /// <remarks>
@@ -52,8 +51,6 @@ namespace TH03_WebBanHang
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayBranhLocate;
 
         /// <summary>
-=======
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         /// ListView1 control.
         /// </summary>
         /// <remarks>
@@ -63,21 +60,13 @@ namespace TH03_WebBanHang
         protected global::System.Web.UI.WebControls.ListView ListView1;
 
         /// <summary>
-<<<<<<< HEAD
         /// displayOrderCode control.
-=======
-        /// displayMsg control.
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-<<<<<<< HEAD
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayOrderCode;
-=======
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayMsg;
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
 
         /// <summary>
         /// displayTxnRef control.
@@ -98,27 +87,6 @@ namespace TH03_WebBanHang
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayAmount;
 
         /// <summary>
-<<<<<<< HEAD
-=======
-        /// displayOrderCode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayOrderCode;
-
-        /// <summary>
-        /// displayDateCreate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayDateCreate;
-
-        /// <summary>
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         /// displayClientName control.
         /// </summary>
         /// <remarks>
@@ -155,18 +123,6 @@ namespace TH03_WebBanHang
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayClientLocate;
 
         /// <summary>
-<<<<<<< HEAD
-=======
-        /// displayBranhLocate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayBranhLocate;
-
-        /// <summary>
->>>>>>> e3ec5bf4e729124a365c85464cae3c7eb1532498
         /// txtPTGD control.
         /// </summary>
         /// <remarks>

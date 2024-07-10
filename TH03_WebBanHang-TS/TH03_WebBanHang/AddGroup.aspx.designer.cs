@@ -11,61 +11,61 @@ namespace TH03_WebBanHang
 {
 
 
-    public partial class Shop
+    public partial class AddGroup
     {
 
         /// <summary>
-        /// searchinput control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox searchinput;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// btnSearch control.
+        /// fileUploadimgLogoiDol control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
+        protected global::System.Web.UI.WebControls.FileUpload fileUploadimgLogoiDol;
 
         /// <summary>
-        /// ddlBranches control.
+        /// fileUploadimgMemberiDol control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlBranches;
+        protected global::System.Web.UI.WebControls.FileUpload fileUploadimgMemberiDol;
 
         /// <summary>
-        /// lbCart control.
+        /// txtMaiDol control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbCart;
+        protected global::System.Web.UI.WebControls.TextBox txtMaiDol;
 
         /// <summary>
-        /// imgHeaderAVTofUser control.
+        /// txtNameiDol control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgHeaderAVTofUser;
+        protected global::System.Web.UI.WebControls.TextBox txtNameiDol;
 
         /// <summary>
-        /// MainContent control.
+        /// btnAddIDOL control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Button btnAddIDOL;
     }
 }
