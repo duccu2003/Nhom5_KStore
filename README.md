@@ -1,5 +1,5 @@
 ---
-# KSTORE - Trang Web Buôn Bán Album K-Pop
+# KSTORE - Trang Web Bán Album K-Pop
 
 ## Giới thiệu
 
