@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a58c20c653ab430ab5b339d4121fcb35" Name="Diagram1">
+        <EntityTypeShape EntityType="QL_KPOPStoreModel.ChiNhanh" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KPOPStoreModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KPOPStoreModel.DanhGia" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KPOPStoreModel.DoanhThu" Width="1.5" PointX="5.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KPOPStoreModel.DonHang" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KPOPStoreModel.KhachHang" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KPOPStoreModel.Loai" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KPOPStoreModel.Nhom" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KPOPStoreModel.SanPham" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KPOPStoreModel.ThichSP" Width="1.5" PointX="8.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KPOPStoreModel.TK" Width="1.5" PointX="1.5" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KPOPStoreModel.Banner" Width="1.5" PointX="7.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KPOPStoreModel.POB" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KPOPStoreModel.SanPhamData" Width="1.5" PointX="5.25" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KPOPStoreModel.TinTuc" Width="1.5" PointX="9.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KPOPStoreModel.VideoThongTin" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="QL_KPOPStoreModel.FK_DonHang_ChiNhanh" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KPOPStoreModel.FK__ChiTietDon__MaDH__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KPOPStoreModel.FK__ChiTietDon__MaSP__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KPOPStoreModel.FK_CTDH_DH" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KPOPStoreModel.FK_GH_SP" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KPOPStoreModel.FK_DanhGia_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KPOPStoreModel.FK__DonHang__KH__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KPOPStoreModel.FK_DonHang_TK" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KPOPStoreModel.FK_KhachHang_TK" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KPOPStoreModel.FK_Thich_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KPOPStoreModel.FK_SanPham_Loai" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KPOPStoreModel.FK_SP_Loai" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KPOPStoreModel.FK_SanPham_Size" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KPOPStoreModel.FK_SP_Size" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KPOPStoreModel.FK_SanPhamData_SanPham" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KPOPStoreModel.FK_Thich_SanPham" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
