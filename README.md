@@ -1,5 +1,4 @@
 ---
-# *Vietnamese*
 # KSTORE - Trang Web Buôn Bán Album K-Pop
 
 ## Giới thiệu
