@@ -72,11 +72,11 @@
     
         }
         .row3-items .imgdiv{
-            border-radius:50%;
-            padding:10px;
+            border-radius:12px;
+            
             width:100px;
             height:100px;
-            border:2px solid green;
+            border:2px solid white;
            
             justify-content:center;
             align-content:center;
@@ -87,8 +87,8 @@
         }
         .row3-items:hover .imgdiv{
             transform:scale(1.1);
-            border:none;
-            padding:0px;
+            border:2px solid green;
+            padding:5px;
              
         }
         .row3-items .imgdiv img{
@@ -100,6 +100,7 @@
             align-content:center;
             align-items:center;
             justify-items:center;
+            border-radius:10px;
             
         }
         @media only screen and  (max-width: 768px) 
@@ -608,13 +609,23 @@
                             <div class="col-lg-6 col-sm-6" style="text-align: center; padding:0; padding-right:10px;">
                                 <div class="card d-flex text-left justify-content-center align-content-center text-white bg-primary" style="gap:10px; text-shadow:0 0 1px #000; height:265px; border:3px solid white;  padding:10px; border-radius: var(--bs-card-border-radius); background:#FFFFFF;">
                                    
-                                        <h1>Doanh thu</h1>
-                                        <h1><asp:Label ID="lbTotalAll" runat="server" CssClass="LabelTotalRevenue extra-bold count" Text="" Style="font-weight: bold;"></asp:Label></h1>
+                                        <h1 id="h1DTThang" runat="server">Doanh thu của tháng </h1>
+                                        <h1><asp:Label ID="lbTotalAllMonth" runat="server" CssClass="LabelTotalRevenue extra-bold count" Text="" Style="font-weight: bold;"></asp:Label></h1>
                                        
                                         <p style="border-radius: var(--bs-card-border-radius); background:#000; width:max-content; padding:0 10px; margin:0 auto;"><strong id="dauphantram" class="textphantram" runat="server"></strong><strong id="phantram" class="textphantram countNum" runat="server"></strong><strong class="textphantram">% </strong><strong class="textphantram" style="color:#FFF;">so với tháng trước</strong></p>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-sm-6 d-grid" style="text-align: center; row-gap:24px; padding:0; padding-left:10px; ">
+                             <div class="col-lg-3 col-sm-3 d-grid" style="text-align: center; padding:0 10px;">
+                                 <div class="card d-flex text-left justify-content-center align-content-center text-white" style="gap:10px; background-color:#6c38ef; text-shadow:0 0 1px #000; height:265px; border:3px solid white;  padding:10px; border-radius: var(--bs-card-border-radius);">
+                                    <h6>Tổng doanh thu cửa hàng</h6>
+                                     <h6 style="border-radius: var(--bs-card-border-radius); background:#000; width:50%; padding:0 10px; margin:0 auto;"><asp:Label ID="lbTotalAllStore" runat="server" CssClass="LabelTotalRevenue extra-bold count" Text="" Style="font-weight: bold;"></asp:Label></h6>
+                             
+                                     <h6>Tổng giá trị kho hàng</h6>
+                                    <h6 style="border-radius: var(--bs-card-border-radius); background:#000; width:50%; padding:0 10px; margin:0 auto;"><asp:Label ID="lbTotalAllProductValue" runat="server" CssClass="LabelTotalRevenue extra-bold count" Text="" Style="font-weight: bold;"></asp:Label></h6>
+
+                                 </div>
+                             </div>
+                            <div class="col-lg-3 col-sm-3 d-grid" style="text-align: center; row-gap:24px; padding:0; padding-left:10px; ">
                                 <div class="card d-flex text-left justify-content-center align-content-center text-white bg-success" style="text-shadow:0 0 1px #000; border:3px solid white;  height:120px; padding:10px; border-radius: var(--bs-card-border-radius); background:#FFFFFF;">
         
                                             <h5>Đã thanh toán</h5>
@@ -639,14 +650,14 @@
                                  <div class="col-lg-4 col-sm-4" style="text-align: center; padding:0 10px 0 0;">
                                    <div class="card d-grid text-left justify-content-center align-content-center text-dark row3-items" style="border:3px solid white; width:100%; padding:10px; background:#D7FFC2; border-radius: var(--bs-card-border-radius);">
                                                <div class="imgdiv">
-                                               <img style="" src="Content/icon/cod.png"/>   </div>        
+                                               <img style="" src="Content/icon/iconCOD.png"/>   </div>        
                                               <p>Phương thức COD: <asp:Label ID="lbCod" runat="server" CssClass="LabelTotalRevenue  extra-bold count" Text="" Style="font-weight: bold;"></asp:Label></p>
                                                <p>Số đơn: <asp:Label ID="lbCodBill" runat="server"></asp:Label></p>
                                    </div>
                                 </div>
                                  <div class="col-lg-4 col-sm-4" style="text-align: center; padding:0 10px;">
                                        <div class="card d-grid text-left justify-content-center align-content-center text-dark row3-items" style="border:3px solid white; width:100%; padding:10px; background:#FFD6E7;  border-radius: var(--bs-card-border-radius);">
-                                                <div class="imgdiv"><img style="" src="Content/icon/momo1.png"/>  
+                                                <div class="imgdiv"><img style="" src="Content/icon/Momo.png"/>  
                                                         </div>
                                                 
                                                   <p>Phương thức Momo: <asp:Label ID="lbMomo" runat="server" CssClass="LabelTotalRevenue  extra-bold count" Text="" Style="font-weight: bold;"></asp:Label></p>
@@ -655,7 +666,7 @@
                                </div>
                                  <div class="col-lg-4 col-sm-4 " style="text-align: center; padding:0 0 0 10px;">
                                      <div class="card d-grid text-left justify-content-center align-content-center text-dark row3-items" style="border:3px solid white; width:100%; padding:10px; background:#DBEEFF; border-radius: var(--bs-card-border-radius);">
-                                                <div class="imgdiv"><img style="" src="Content/icon/VNPay.png"/> 
+                                                <div class="imgdiv"><img style="" src="Content/icon/iconVNPAY.jpg"/> 
                                       </div>
                                                  <p>Phương thức VNPay: <asp:Label ID="lbVNPay" runat="server" CssClass="LabelTotalRevenue  extra-bold count" Text="" Style="font-weight: bold;"></asp:Label></p>
                                                 <p>Số đơn: <asp:Label ID="lbVNPayBill" runat="server"></asp:Label></p>
@@ -831,9 +842,20 @@
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <div class="col-md-3 col-sm-3">
-                                <div class="card mb-4" style="width:1180px; height:auto;">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="card mb-4" style="width:100%; height:auto;">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-pie me-1"></i>DOANH SỐ THEO SẢN PHẨM
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="myPieChartSanPham" style=""></canvas>
+                                    </div>
+                                    <div class="card-footer small  text-dark">Updated yesterday at 11:59 PM</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="card mb-4" style="width:100%; height:auto;">
                                     <div class="card-header">
                                         <i class="fas fa-chart-pie me-1"></i>DOANH SỐ THEO ALBUM
                                     </div>

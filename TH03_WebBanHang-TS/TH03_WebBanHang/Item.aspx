@@ -4,7 +4,11 @@
     <link href="Content/css/magiczoomplus.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>           
+    <style>   
+        pre{
+            white-space:pre-wrap;
+            font-family:Roboto;
+        }
         .btn-send-rating{
             color:#FFFF !important;
             transition:0.5s all;
@@ -13,6 +17,11 @@
             box-shadow:0 0 20px #636363;
             transform:scale(1.05);
         }
+
+        .showRating{
+            z-index:1;
+        }
+
         .btn-item {
             background-color: #fff !important;
         }
@@ -337,45 +346,45 @@
         }
                         
                            
-*{
-scroll-behavior: smooth;
-}
-.div-DG::-webkit-scrollbar-thumb {
-border-radius: 30px;
-}
-.div-DG::-webkit-scrollbar-track {
-border-radius: 10px;                             
-background:#00000040;
-}
-.div-DG::-webkit-scrollbar {
-}
+    *{
+    scroll-behavior: smooth;
+    }
+    .div-DG::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    }
+    .div-DG::-webkit-scrollbar-track {
+    border-radius: 10px;                             
+    background:#00000040;
+    }
+    .div-DG::-webkit-scrollbar {
+    }
                       
-@media only screen and (max-width: 768px) {
-#idRating{
-width:100%;
-}
-#lbNoiDung,#anhNote{
-width:100%;
-}
-#DGshow{
+    @media only screen and (max-width: 768px) {
+    #idRating{
+    width:100%;
+    }
+    #lbNoiDung,#anhNote{
+    width:100%;
+    }
+    #DGshow{
 
-}
-#listImageDetailt{
-position:absolute;
-bottom:1.75rem;
-max-width:428.5px;
-overflow:hidden;
-flex-wrap:wrap;
-gap:0.585rem !important;
-padding:0;
-margin:0;
-}
-#DGshow{
-    max-height:100vh;  
-    min-height:0;  
-    padding:30px 15px  0px 15px;
-    min-height:0vh;
-}
+    }
+    #listImageDetailt{
+    position:absolute;
+    bottom:0.75rem;
+    max-width:428.5px;
+    overflow:hidden;
+    flex-wrap:wrap;
+    gap:0.585rem !important;
+    padding:0;
+    margin:0;
+    }
+    #DGshow{
+        max-height:100vh;  
+        min-height:0;  
+        padding:30px 15px  0px 15px;
+        min-height:0vh;
+    }
                             #divVer{
                                 margin:16rem 0 18rem 0 !important;
                             }
@@ -396,7 +405,7 @@ margin:0;
     
 }
     .showRating{
-        bottom:5.5rem; left:-15rem; border-top-right-radius:20px; border-top-left-radius:20px;font-size:20px;
+        bottom:5.5rem; left:-15rem; border-radius:20px; font-size:20px;
     }
     .cmtProfile-Non-Login{
         display:flex;
@@ -472,6 +481,14 @@ margin:0;
                          }
 
                          @media only screen and (max-width:768px){
+                              #divNoteContentText{
+                                  width:100%;
+                              }
+
+                             #listImageDetailt{
+
+                             }
+
                              .divItem-In-ListItems{
                                 width:50%;
                             }
@@ -531,7 +548,9 @@ margin:0;
                                                      }
 
                                                     #divNoteContentText{
-                                                        padding-left:11.5rem !important;
+                                                       /* padding-left:11.5rem !important;*/
+                                                       width:584.5px;
+                                                       
                                                     }
                                                     #idRating{
                                                         width:1223px;
@@ -569,7 +588,11 @@ margin:0;
                                                     }
    
     .showRating{
-        top:10rem; left:-10rem;   border-top-left-radius:20px; border-top-right-radius:20px;height:max-content;font-size:24px;
+        top:10rem; 
+        left:-10rem;   
+        border-radius:20px; 
+        height:max-content;
+        font-size:24px;
     }
     .cmtProfile-Non-Login{
         display:flex;
@@ -755,7 +778,22 @@ margin:0;
         box-shadow:0 0 50px #636363;
        
     }
-</style>
+
+      #navLSMenu .nav-link{
+          border:none;
+          border-bottom:2px solid #FFFF;
+          border-left:2px  solid #0000;
+          transition:all 0.5s;
+      }
+      #navLSMenu .nav-link:hover{
+          
+          border-left:2px  solid;
+          color:#9b51e0;
+          border-color:#9b51e0;
+          transform:scale(1.2);
+
+      }
+  </style>
     <div id="notification" class="notification">
         <img class="imgNotification"  loading="lazy"  src="Content/icon/p-Success.gif" alt="">
         <p class="lbNotification">Thêm thành công!</p>
@@ -793,14 +831,14 @@ margin:0;
                     </div>
                     <div class="col-md-6">
                         <div class="small mb-1"></div>
-                        <h1 id="tenSPinFormV" class="display-5 fw-bolder" style="font-size:40px; margin-top:-2rem;"><%#:Item.TenSP%></h1>
+                        <h1 id="tenSPinFormV" class="display-5 fw-bolder" style="font-size:36px; margin-top:-2rem;"><%#:Item.TenSP%></h1>
                         <%--<p class="lead fade-out"><a id="btnViewMore" href="#" onclick="toggleAdditionalContent(); return false;"><%#:Item.MoTa%></a></p>--%>
                         <div class="fs-5 mb-5 <%--fade-out--%>">
                             <span title="Giá sản phẩm <%#string.Format("{0:N0}", Item.Gia)%>đ" style="font-size:24px; font-weight:bold; color:#F7C1D8;" loading="lazy" class="<%--text-decoration-line-through--%>"><%# string.Format("{0:N0}", Item.Gia) %>đ</span><p style="font-size:12px;"><i>&#x2a;Giá niêm yết không thay đổi</i></p>
                             <%--<asp:Label ID="lbPrice" runat="server" Text='<%# string.Format("{0:N0}", Item.Gia) %>đ' />--%>
                             <%--<span>$40.00</span>--%>
                         </div>
-                        <div class="d-grid" id="divButtonMuaGioDG" style="gap: 1rem;">                               
+                        <div class="d-grid" id="divButtonMuaGioDG" style="gap: 0.85rem;">                               
                             <div class="d-flex" style="gap: 1rem;">
                                 <asp:Button ID="BuyNow" runat="server" title="Mua sản phẩm ngay"  Style="height:45px;"  Text="MUA NGAY" OnClick="BuyNow_Click" class="btn btn-outline-dark flex-shrink-0 btn-mua-ngay btn-item btn-at-sp-hover btn-at-sp btn-bold" />
                                 <asp:Button ID="Button1" runat="server" title="Thêm sản phẩm này vào giỏ hàng"  Style="height:45px;" OnClick="AddToCart_Click" class="btn btn-outline-dark flex-shrink-0 btn-item btn-gio btn-at-sp-hover btn-at-sp btn-bold" Text="THÊM VÀO GIỎ"/>                               
@@ -849,7 +887,7 @@ margin:0;
                 <div class=" d-flex" id="divSLandBtnShowRadting" style="width:8rem; position:absolute; left:51%; top:76%;">							
                     <div class="divSLandbtnDGShow">                        
                         <div class="d-flex" id="divBtnShowDG" style=" text-align:center; gap:1rem; ">                                                                     
-                            <asp:Label ID="lblMostRatedStar" Visible="false" runat="server" CssClass="showRating justify-content-center align-content-center" style="width:100px;  font-weight:bolder; background:#6d3e99;  color:#FFD43B; position:absolute;border-bottom-right-radius:5px; border-bottom-left-radius:5px;   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  padding: 10px;letter-spacing: 3px;   "></asp:Label>
+                            <asp:Label ID="lblMostRatedStar" Visible="false" runat="server" CssClass="showRating justify-content-center align-content-center" style="width:100px;  font-weight:bolder; background:#6d3e99;  color:#FFD43B; position:absolute;box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);  padding: 10px;letter-spacing: 3px;   "></asp:Label>
                         </div>                               
                     </div>							    
                 </div>                               
@@ -870,12 +908,13 @@ margin:0;
                                   <%# IfNotNullOrEmpty(Item.DuongDan5, $"<a data-zoom-id='imgProduct' href='" + Item.DuongDan5 + "' data-image='" + Item.DuongDan5 + "'><img src='" + Item.DuongDan5 + "' class='product-image' /></a>") %>                          
                                 </div>
                                 <div class="" id="divNoiDung" style=" margin-top:-6.2rem; padding-right:16px;">
-                                    <div id="divNoteContentText" style="justify-content:center; text-align:center; justify-items:center; font-size:14px">
-                                        <p>Nguồn hàng: <%# Item.SanPham.NguonHang %></p>
-                                        <p>Nội dung: <%# Item.SanPham.MoTa %></p>
-                                    </div>
+                                    
                                     <div  style="justify-content:right; text-align:right; justify-items:right; display:grid;">
-                                        <p id="lbNoiDung" style=" text-align:center; justify-content:right;float:right; justify-items:right;">Nội dung bên trong sản phẩm</p>
+                                        <div id="divNoteContentText" style="justify-content:left; text-align:left; justify-items:left; font-size:14px">
+                                            <pre style="font-size:16px; ">Nguồn hàng: <%# Item.SanPham.NguonHang %></pre>
+                                            <pre style="font-size:16px; "><%# Item.SanPham.MoTa %></pre>
+                                        </div>
+                                        <pre id="lbNoiDung" style="font-size:16px; text-align:center; justify-content:right;float:right; justify-items:right;">Nội dung bên trong sản phẩm</pre>
                                         <%# IfNotNullOrEmpty(Item.AnhNote, "<style>@media only screen and  (min-width: 768px) {\r\n    #divSL{\r\n        \r\n        top:25.35rem !important;\r\n        \r\n    }} @media only screen and  (max-width: 768px) { #divSL{\r\n     \r\n     bottom:19.438rem !important;\r\n     height:43px !important;\r\n     \r\n\r\n }}  #btnViewMore{display:block;}</style> <img title=\"Ảnh minh họa\" loading='lazy' id='anhNote'  src=\'"+Item.AnhNote+"' style=' height:auto; border-radius:10px;' class='fade-in' onclick='changeMainImage(this.src)' />") %>
                                     </div>
                                 </div>
@@ -916,7 +955,7 @@ margin:0;
                                                 <p style=""><strong  style="color:#000; font-size:16px; "><%# Eval("TenKH") %></strong></p>    
                                                 <p><strong style="color:#000;">(</strong><strong style="width:16px; font-family:Verdana, Geneva, Tahoma, sans-serif; font-weight:bolder; color:#ffc107;"><%# Eval("RatingValue").ToString() %></strong><span  ClientIDMode="Static" style="width:16px; font-family:Baloo; color:#ffc107;"><i class="fa-solid fa-star" style="color: #ffc107;"></i></span><strong style="color:#000;">)</strong></p>
                                             </div>
-                                            <p  style="color:#000; flex-wrap:wrap; overflow:hidden; overflow-wrap: break-word; width:100%; max-width:1080px !important; height:max-content; font-size:16px; display:block"><%# Eval("NoiDung") %></p>                
+                                            <pre  style="color:#000; flex-wrap:wrap; overflow:hidden; overflow-wrap: break-word; width:100%; max-width:1080px !important; height:max-content; font-size:16px; display:block"><%# Eval("NoiDung") %></pre>                
                                         </div>                      
                                     </div>     
                                     <div class="d-flex" style="width:100%; flex-wrap:wrap; gap:10px; padding:5px 0px 10px 10px; margin-top:5px; overflow-wrap: break-word; ">
@@ -985,7 +1024,7 @@ margin:0;
             <div class="divListItemFlex">
         <nav id="navLSMenu" class="divListItemGrid col-sm-3 navbar navbar-expand-lg  navbar-dark mb-5 align-items-center" style="padding-top:0;">
  
-  <div class="collapse navbar-collapse divListItemGrid" id="navbarNav" style="width:252px; margin-top:0; padding:10px; background:linear-gradient(to right, #522A77, #2a2e77); height:max-content; border-radius:6px;">
+  <div class="collapse navbar-collapse divListItemGrid" id="navbarNav" style="width:252px; margin-top:0; padding:10px 0; background:linear-gradient(to right, #522A77, #2a2e77); height:max-content; border-radius:6px;">
     <ul class="navbar-nav divListItemGrid" style="gap:0.5rem; margin:auto;">
         
       <li class="nav-item-inItem nav-item nav-loai-menu active">
@@ -1005,7 +1044,7 @@ margin:0;
 </nav>
              
             
-            
+          
             
             
 
@@ -1151,50 +1190,21 @@ margin:0;
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <script>
-          window.onload = function () {
-              selectStar(5);
-
-          };
+         
         function executeBothFunctions() {
             toggleChatWindow();
             const chatWindow = document.getElementById('chat-window');
-            if (chatWindow.style.display != 'flex')
-                sendMessage(document.getElementById('tenSPinFormV').textContent + " còn không?");
+            if (chatWindow.style.display != 'flex') {
+                setTimeout(function () {
+                    sendMessage(document.getElementById('tenSPinFormV').textContent + " còn không?");
+                }, 1000);
+            }
             
         }
 
     
 
-        function selectStar(starNumber) {
-            // Loại bỏ class 'selected' từ tất cả các ngôi sao
-            var stars = document.getElementsByClassName('star');
-            for (var i = 0; i < stars.length; i++) {
-                stars[i].classList.remove('selected');
-            }
-
-            // Thêm class 'selected' vào tất cả các ngôi sao trước đó
-            for (var i = 1; i <= starNumber; i++) {
-                document.getElementById('star' + i).classList.add('selected');
-            }
-
-
-            // Lưu giá trị đánh giá được chọn vào một hidden field để lấy từ code-behind
-            document.getElementById('<%= ratingValue.ClientID %>').value = starNumber;
-            switch (starNumber) {
-                case 1:
-                    document.getElementById('pRatingSelect').innerHTML = 'Sản phẩm rất tệ 😠'; break;
-                case 2:
-                    document.getElementById('pRatingSelect').innerHTML = 'Sản phẩm tệ 😞'; break;
-                case 3:
-                    document.getElementById('pRatingSelect').innerHTML = 'Sản phẩm bình thường 😐'; break;
-                case 4:
-                    document.getElementById('pRatingSelect').innerHTML = 'Sản phẩm tuyệt vời 🥰'; break;
-                case 5:
-                    document.getElementById('pRatingSelect').innerHTML = 'Sản phẩm rất tuyệt vời 😍'; break;
-
-            }
-
-        }
+       
 
             document.addEventListener("DOMContentLoaded", function () {
 
@@ -1417,7 +1427,10 @@ margin:0;
                     window.location.href = url;
                 });
             });
-        </script>
+        $(document).ready(function () {
+            selectStar(5);
+        });
+    </script>
     <script>
             // Lắng nghe sự kiện click trên các liên kết
             document.querySelectorAll('.ds-loai-sp').forEach(function (link) {
@@ -1486,5 +1499,40 @@ margin:0;
                 stars[i].classList.remove('hover');
             }
         }
+        window.onload = function () {
+            selectStar(5);
+
+        };
+        function selectStar(starNumber) {
+            // Loại bỏ class 'selected' từ tất cả các ngôi sao
+            var stars = document.getElementsByClassName('star');
+            for (var i = 0; i < stars.length; i++) {
+                stars[i].classList.remove('selected');
+            }
+
+            // Thêm class 'selected' vào tất cả các ngôi sao trước đó
+            for (var i = 1; i <= starNumber; i++) {
+                document.getElementById('star' + i).classList.add('selected');
+            }
+
+
+            // Lưu giá trị đánh giá được chọn vào một hidden field để lấy từ code-behind
+            document.getElementById('<%= ratingValue.ClientID %>').value = starNumber;
+             switch (starNumber) {
+                 case 1:
+                     document.getElementById('pRatingSelect').innerHTML = 'Sản phẩm rất tệ 😠'; break;
+                 case 2:
+                     document.getElementById('pRatingSelect').innerHTML = 'Sản phẩm tệ 😞'; break;
+                 case 3:
+                     document.getElementById('pRatingSelect').innerHTML = 'Sản phẩm bình thường 😐'; break;
+                 case 4:
+                     document.getElementById('pRatingSelect').innerHTML = 'Sản phẩm tuyệt vời 🥰'; break;
+                 case 5:
+                     document.getElementById('pRatingSelect').innerHTML = 'Sản phẩm rất tuyệt vời 😍'; break;
+
+             }
+
+         }
     </script>
+
 </asp:Content>

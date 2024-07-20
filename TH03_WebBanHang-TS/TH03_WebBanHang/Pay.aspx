@@ -129,41 +129,43 @@
                 }.input-field{
                      color:#000 !important;
                      margin:0.4rem 0;
-                     border-radius:10px;
+                     border-radius:2.5px;
                      padding:5px 8px;
-                     width:14rem;
-                     height:38px;
-                              border:none;
-
+                     width:18rem;
+                     height:58px;
+                     border:none;
+                     min-width:18rem;
                  }
                  .input-field-DiaChi{
                      color:#000 !important;
                      margin:0.4rem 0;
-                     border-radius:10px;
+                     border-radius:2.5px;
                      padding:0 8px;
                      border:none;
-                    height:38px;
+                    height:58px;
                     width:100% !important;
-                    min-width:14rem
+                    min-width:18rem;
+
+                    
        
                  }
                   .input-field-Phone{
                  color:#000 !important;
                  margin:0.4rem 0 0 0;
-                 border-radius:10px;
+                 border-radius:2.5px;
                  padding:0 10px;
                  border:none;
-                height:38px;
-                 width:12rem;
+                height:58px;
+                 width:16rem;
                  /*text-align:center;*/
              }
                   section{
-                      background:#242426 !important;
+                      background:linear-gradient(to top, black, #242426, black);
                   }
         </style>
   
    <section class="py-5">
-       <div class="d-flex container" style="margin-top:6rem; border-radius:10px; background:#000; box-shadow:0 0 20px #636363; /*background:linear-gradient(to left,#9b51e0, black);*/ width:max-content; box-shadow:0 0 5px #636363; /*border:1px solid #636363;*/">        
+       <div class="d-flex container" style="margin-top:3rem; border-radius:2.5px; background:#000; box-shadow:0 0 20px #636363; /*background:linear-gradient(to left,#9b51e0, black);*/ width:max-content; box-shadow:0 0 5px #636363; /*border:1px solid #636363;*/">        
 <div class="d-grid" style="height:max-content; max-height:70vh; overflow:auto; color:#fff;">
             <asp:ListView ID="ListViewGioHang" runat="server">
     <ItemTemplate>
@@ -247,7 +249,7 @@
         <div class=" d-grid p-5 text-center justify-content-center align-content-center" style="background:#0000007c; width:max-content; ">
             <div class=" d-flex" style="gap:10px">
                     <asp:TextBox ID="txtEmailSignUp" type="email" runat="server" placeholder="Email" CssClass="input-field"></asp:TextBox>
-<asp:TextBox ID="txtName" runat="server" type="text" placeholder="Họ Và Tên" CssClass="input-field"></asp:TextBox>
+<asp:TextBox ID="txtName" runat="server" type="text" placeholder="Họ và tên" CssClass="input-field"></asp:TextBox>
 <%--<asp:DropDownList ID="ddlGT" runat="server" CssClass="input-field" OnSelectedIndexChanged="ddlGT_SelectedIndexChanged" AutoPostBack="True" style="width:max-content;padding:5px;" Font-Size="small">
     <asp:ListItem ID="txtGTNam" Text="Nam" Value="Nam"></asp:ListItem>
     <asp:ListItem ID="txtGTNu" Text="Nữ" Value="Nữ"></asp:ListItem>
@@ -267,22 +269,25 @@
             </style>
            </div>
 <div class=" d-flex" style="gap:10px">
-                <asp:DropDownList ID="ddlCity" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCity_SelectedIndexChanged" CssClass="input-field" style="padding:  8px 5px;width:14rem; color:#000;">
+                <asp:DropDownList ID="ddlCity" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCity_SelectedIndexChanged" CssClass="input-field" style="padding:  8px 5px;width:18rem; color:#000;">
 </asp:DropDownList>
-    <asp:DropDownList ID="ddlDistrict" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlDistrict_SelectedIndexChanged" CssClass="input-field" style="padding: 8px 5px; width:14rem;margin-top:0.4rem ;float:left; color:#000;">
+    <asp:DropDownList ID="ddlDistrict" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlDistrict_SelectedIndexChanged" CssClass="input-field" style="padding: 8px 5px; width:18rem;margin-top:0.4rem ;float:left; color:#000;">
 </asp:DropDownList>
 
      
 
 </div>
             <div class=" d-flex" style="gap:10px">
-            <asp:DropDownList ID="ddlW" runat="server" AutoPostBack="True" CssClass="input-field" style="padding: 8px 5px;width:14rem; margin-top:0.4rem; float:right; color:#000;" >
+            <asp:DropDownList ID="ddlW" runat="server" AutoPostBack="True" CssClass="input-field" style="padding: 8px 5px;width:18rem; margin-top:0.4rem;color:#000;" >
 </asp:DropDownList>      
-             <asp:TextBox ID="txtDiachi" type="text" runat="server" style="" placeholder="Địa Chỉ" CssClass="input-field-DiaChi"></asp:TextBox>
+             <asp:TextBox ID="txtDiachi" type="text" runat="server" style="" placeholder="Địa chỉ" CssClass="input-field-DiaChi"></asp:TextBox>
                 </div>
-            <div class="d-flex" style="gap:10px">         <asp:TextBox ID="TextPhone"  runat="server" placeholder="Số Điện Thoại" CssClass="input-field-Phone" style="width:14rem;"></asp:TextBox>
+            <div class="d-flex" style="gap:10px">         <asp:TextBox ID="TextPhone"  runat="server" placeholder="Số điện thoại" CssClass="input-field-Phone" style="width:18rem;"></asp:TextBox>
+                <div style="height:58px; margin:0.4rem auto; display:flex; align-content:center; align-items:center; padding:2.5px; gap:5px; background:#fff;" class="input-field">
+                            
+                           <asp:Image ID="imgPaymentMethod" ImageUrl="~/Content/icon/iconCOD.png" style="width:54px; border-radius:4px; height:54px; align-content:center; align-items:center;" runat="server" />
 
-                            <asp:DropDownList ID="ddlPay" runat="server" CssClass="input-field" OnSelectedIndexChanged="ddlPay_SelectedIndexChanged" AutoPostBack="True" style="width:14rem;padding:5px; color:#000;" >
+                            <asp:DropDownList ID="ddlPay" runat="server" OnSelectedIndexChanged="ddlPay_SelectedIndexChanged" AutoPostBack="True" style="width:14rem !important; height:100%; min-width:14rem !important; color:#000;" >
                                 <asp:ListItem ID="txtTM" Text="Thanh toán khi nhận hàng" Value="TM" style="color:#000;"></asp:ListItem> 
                                 <asp:ListItem ID="MOMO" Text="Thanh toán bằng Mono" Value="MOMO" style="color:#000;"></asp:ListItem>
                                <%-- <asp:ListItem ID="bankcode_Default" Text="Thanh toán bằng VNPay" Value="postVNPAYQR" style="color:#000;"></asp:ListItem>--%>
@@ -292,20 +297,22 @@
                                  <asp:ListItem ID="bankcode_Default" Text="Thanh toán bằng VNPay" Value="VNPAY" style="color:#000;"></asp:ListItem>
 
 
-    <%--<asp:ListItem ID="txtPayCard" Text="Chuyển khoản" Value="PAY" style="color:#000;"></asp:ListItem>--%>
-<%--    <asp:ListItem ID="txtQR" Text="Quét mã (QR) 📲" Value="QR" style="color:#000;"></asp:ListItem>--%>
+                                <%--<asp:ListItem ID="txtPayCard" Text="Chuyển khoản" Value="PAY" style="color:#000;"></asp:ListItem>--%>
+                                <%--<asp:ListItem ID="txtQR" Text="Quét mã (QR) 📲" Value="QR" style="color:#000;"></asp:ListItem>--%>
  
-</asp:DropDownList>
-               
-                        
+                            </asp:DropDownList>
+                            
+                            </div>
 
             </div>
-             <asp:Label runat="server" ID="lbTong" style="font-size:x-large; padding-left:1rem; color:#fff; font-weight:bolder; margin:0.5rem 0"></asp:Label>
+             <asp:Label runat="server" ID="lbTong" style="font-size:xx-large; padding-left:1rem; color:#fff; font-weight:bolder; margin:0.5rem 0"></asp:Label>
+
+            
 
             <div class="d-flex" style="gap:10px;">
-        <asp:Button ID="btnConfirm" runat="server" title="Xác nhận giao dịch này và tiến hành thanh toán" Text="XÁC NHẬN GIAO DỊCH" OnClick="btnConfirm_Click" CssClass="btn-confirm" style="background:#9b51e0; border:none; border-radius:10px; padding:5px 0; height:38px; color:#fff; width:14rem;"/>
-        <asp:Button ID="btnCancel" runat="server" title="Hủy giao dịch này" Text="HỦY GIAO DỊCH" OnClick="btnCancel_Click" CssClass="btn-cancel" style="background:#9b51e0; border:none; border-radius:10px; padding:5px 0; height:38px; color:#fff; width:14rem;" />
-  
+        <asp:Button ID="btnCancel" runat="server" title="Hủy giao dịch này" Text="HỦY GIAO DỊCH" OnClick="btnCancel_Click" CssClass="btn-cancel" style="background:#9b51e0; border:none; border-radius:2.5px; padding:5px 0; height:58px; color:#fff; width:18rem;" />
+          <asp:Button ID="btnConfirm" runat="server" title="Xác nhận giao dịch này và tiến hành thanh toán" Text="XÁC NHẬN GIAO DỊCH" OnClick="btnConfirm_Click" CssClass="btn-confirm" style="background:#9b51e0; border:none; border-radius:2.5px; padding:5px 0; height:58px; color:#fff; width:18rem;"/>
+
         </div>
 </div>
 

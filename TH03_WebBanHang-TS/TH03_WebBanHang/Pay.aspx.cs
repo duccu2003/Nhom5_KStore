@@ -214,7 +214,7 @@ namespace TH03_WebBanHang
                 ListViewGioHang.DataBind();
                 Hepler hepler = new Hepler();
 
-                lbTong.Text ="Tổng tiền: "+ hepler.TongThanhTien(lstGioHang).ToString();
+                lbTong.Text ="Tổng cộng: "+ hepler.TongThanhTien(lstGioHang).ToString();
                 TongForMail = hepler.TongThanhTien(lstGioHang).ToString();
                 
                 TongThanhTien = hepler.longTongThanhTien(lstGioHang);
@@ -549,6 +549,8 @@ namespace TH03_WebBanHang
             Session["GioHang"] = lstGioHang;
             ListViewGioHang.DataSource = lstGioHang;
             ListViewGioHang.DataBind();
+            UpdateTotalPrice();
+            Response.Redirect(url);
         }
 
         // Phương thức giả định để lấy giá trị MaTK từ một nguồn nào đó
@@ -577,20 +579,25 @@ namespace TH03_WebBanHang
 
         protected void ddlPay_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //string txtTT;
+           
+            string selectedValue = ((DropDownList)sender).SelectedValue;
 
-            //if (ddlPay.SelectedValue == "TM")
-            //{
-            //    txtTT = "TM";
-            //}
-            //else if (ddlPay.SelectedValue == "PAY")
-            //{
-            //    txtTT = "PAY";
-            //}
-            //else if (ddlPay.SelectedValue == "QR")
-            //{
-            //    txtTT = "QR";
-            //}
+           
+            switch (selectedValue)
+            {
+                case "TM":
+                    imgPaymentMethod.ImageUrl = "~/Content/icon/iconCOD.png"; 
+                    break;
+                case "MOMO":
+                    imgPaymentMethod.ImageUrl = "~/Content/icon/Momo.png"; 
+                    break;
+                case "VNPAY":
+                    imgPaymentMethod.ImageUrl = "~/Content/icon/iconVNPAY.jpg"; 
+                    break;
+                default:
+                    imgPaymentMethod.ImageUrl = "~/Content/icon/iconCOD.png"; 
+                    break;
+            }
         }
 
         public byte[] ImageToByte(System.Drawing.Image img)

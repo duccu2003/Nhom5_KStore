@@ -75,6 +75,8 @@ namespace TH03_WebBanHang
 
 
             }
+            lbTotalAllProductValue.Text = dbcontext.SanPhams.Sum(s => s.Gia * s.SoLuongKho).ToString();
+
         }
         private DataTable GetData(string query)
         {
@@ -194,19 +196,43 @@ namespace TH03_WebBanHang
 
         protected void BindDataBieuDoTron()
         {
-            DataTable dtLoai = GetData("SELECT Loai.TenLoai, SUM(ChiTietDonHang.ThanhTien) AS Revenue FROM ChiTietDonHang INNER JOIN SanPham ON ChiTietDonHang.MaSP = SanPham.MaSP INNER JOIN Loai ON SanPham.MaLoai = Loai.MaLoai WHERE YEAR(ChiTietDonHang.Ngay) = @Year GROUP BY Loai.TenLoai");
+            int thisYear = DateTime.Now.Year;
+            int thisMonth = DateTime.Now.Month;
 
-            DataTable dtNhom = GetData("SELECT Nhom.TenNhom, SUM(ChiTietDonHang.ThanhTien) AS Revenue FROM ChiTietDonHang INNER JOIN SanPham ON ChiTietDonHang.MaSP = SanPham.MaSP INNER JOIN Nhom ON SanPham.MaNhom = Nhom.MaNhom WHERE YEAR(ChiTietDonHang.Ngay) = @Year GROUP BY Nhom.TenNhom");
+            DataTable dtLoai = GetData("SELECT Loai.TenLoai, SUM(ChiTietDonHang.ThanhTien) AS Revenue FROM ChiTietDonHang INNER JOIN SanPham ON ChiTietDonHang.MaSP = SanPham.MaSP INNER JOIN Loai ON SanPham.MaLoai = Loai.MaLoai WHERE YEAR(ChiTietDonHang.Ngay) = " + thisYear + "AND MONTH(ChiTietDonHang.Ngay) = " + thisMonth + " GROUP BY Loai.TenLoai");
 
-            DataTable dtAlbum = GetData("SELECT SanPham.TenSP, SUM(ChiTietDonHang.ThanhTien) AS Revenue FROM ChiTietDonHang INNER JOIN SanPham ON ChiTietDonHang.MaSP = SanPham.MaSP INNER JOIN Loai ON SanPham.MaLoai = Loai.MaLoai WHERE Loai.TenLoai LIKE '%album%' AND YEAR(ChiTietDonHang.Ngay) = @Year GROUP BY SanPham.TenSP ORDER BY Revenue DESC");
+            DataTable dtNhom = GetData("SELECT Nhom.TenNhom, SUM(ChiTietDonHang.ThanhTien) AS Revenue FROM ChiTietDonHang INNER JOIN SanPham ON ChiTietDonHang.MaSP = SanPham.MaSP INNER JOIN Nhom ON SanPham.MaNhom = Nhom.MaNhom WHERE YEAR(ChiTietDonHang.Ngay) = " + thisYear + "AND MONTH(ChiTietDonHang.Ngay) = " + thisMonth + " GROUP BY Nhom.TenNhom");
 
-            DataTable dtChiNhanh = GetData("SELECT ChiNhanh.TenCN, SUM(ChiTietDonHang.ThanhTien) AS Revenue FROM ChiTietDonHang INNER JOIN DonHang ON ChiTietDonHang.MaDH = DonHang.MaDH INNER JOIN ChiNhanh ON DonHang.MaCN = ChiNhanh.MaCN WHERE YEAR(ChiTietDonHang.Ngay) = @Year GROUP BY ChiNhanh.TenCN");
+            DataTable dtSanPham = GetData("SELECT SanPham.MaSP, SUM(ChiTietDonHang.ThanhTien) AS Revenue FROM ChiTietDonHang INNER JOIN SanPham ON ChiTietDonHang.MaSP = SanPham.MaSP INNER JOIN Loai ON SanPham.MaLoai = Loai.MaLoai AND YEAR(ChiTietDonHang.Ngay) = " + thisYear + "AND MONTH(ChiTietDonHang.Ngay) = " + thisMonth + " GROUP BY SanPham.MaSP ORDER BY Revenue DESC");
+
+            DataTable dtChiNhanh = GetData("SELECT ChiNhanh.TenCN, SUM(ChiTietDonHang.ThanhTien) AS Revenue FROM ChiTietDonHang INNER JOIN DonHang ON ChiTietDonHang.MaDH = DonHang.MaDH INNER JOIN ChiNhanh ON DonHang.MaCN = ChiNhanh.MaCN WHERE YEAR(ChiTietDonHang.Ngay) = " + thisYear + "AND MONTH(ChiTietDonHang.Ngay) = " + thisMonth + " GROUP BY ChiNhanh.TenCN");
+
+            DataTable dtAlbum = GetData("SELECT SanPham.MaSP, SUM(ChiTietDonHang.ThanhTien) AS Revenue FROM ChiTietDonHang INNER JOIN SanPham ON ChiTietDonHang.MaSP = SanPham.MaSP INNER JOIN Loai ON SanPham.MaLoai = Loai.MaLoai WHERE Loai.TenLoai LIKE '%album%' AND YEAR(ChiTietDonHang.Ngay) = @Year GROUP BY SanPham.MaSP ORDER BY Revenue DESC");
 
             RegisterScript("Loai", dtLoai);
             RegisterScript("Nhom", dtNhom);
             RegisterScript("Album", dtAlbum);
+            RegisterScript("SanPham", dtSanPham);
+
             RegisterScript("ChiNhanh", dtChiNhanh);
         }
+
+
+        //protected void BindDataBieuDoTron()
+        //{
+        //    DataTable dtLoai = GetData("SELECT Loai.TenLoai, SUM(ChiTietDonHang.ThanhTien) AS Revenue FROM ChiTietDonHang INNER JOIN SanPham ON ChiTietDonHang.MaSP = SanPham.MaSP INNER JOIN Loai ON SanPham.MaLoai = Loai.MaLoai WHERE YEAR(ChiTietDonHang.Ngay) = @Year GROUP BY Loai.TenLoai");
+
+        //    DataTable dtNhom = GetData("SELECT Nhom.TenNhom, SUM(ChiTietDonHang.ThanhTien) AS Revenue FROM ChiTietDonHang INNER JOIN SanPham ON ChiTietDonHang.MaSP = SanPham.MaSP INNER JOIN Nhom ON SanPham.MaNhom = Nhom.MaNhom WHERE YEAR(ChiTietDonHang.Ngay) = @Year GROUP BY Nhom.TenNhom");
+
+        //    DataTable dtAlbum = GetData("SELECT SanPham.MaSP, SUM(ChiTietDonHang.ThanhTien) AS Revenue FROM ChiTietDonHang INNER JOIN SanPham ON ChiTietDonHang.MaSP = SanPham.MaSP INNER JOIN Loai ON SanPham.MaLoai = Loai.MaLoai WHERE Loai.TenLoai LIKE '%album%' AND YEAR(ChiTietDonHang.Ngay) = @Year GROUP BY SanPham.MaSP ORDER BY Revenue DESC");
+
+        //    DataTable dtChiNhanh = GetData("SELECT ChiNhanh.TenCN, SUM(ChiTietDonHang.ThanhTien) AS Revenue FROM ChiTietDonHang INNER JOIN DonHang ON ChiTietDonHang.MaDH = DonHang.MaDH INNER JOIN ChiNhanh ON DonHang.MaCN = ChiNhanh.MaCN WHERE YEAR(ChiTietDonHang.Ngay) = @Year GROUP BY ChiNhanh.TenCN");
+
+        //    RegisterScript("Loai", dtLoai);
+        //    RegisterScript("Nhom", dtNhom);
+        //    RegisterScript("Album", dtAlbum);
+        //    RegisterScript("ChiNhanh", dtChiNhanh);
+        //}
 
         protected void BindData()
         {
@@ -265,14 +291,16 @@ namespace TH03_WebBanHang
                     Response.Redirect("Error/401");
                 }
             }
-
+                
             // Update the labels with the counts
             lbSDDTT.Text = paidOrderCount.ToString();
             lbSDCTT.Text = unpaidOrderCount.ToString();
+            lbTotalAllProductValue.Text = dbcontext.SanPhams.Sum(s=>s.Gia * s.SoLuongKho).ToString();
 
             var doanhso = dbcontext.DoanhThus.Any();
             if (doanhso)
             {
+                phantram.InnerText = "0";
                 lbVNPay.Text = "0";
                 lbMomo.Text = "0";
                 lbCod.Text = "0";
@@ -280,10 +308,18 @@ namespace TH03_WebBanHang
                 lbMomoBill.Text = "0";
                 lbCodBill.Text = "0";
                 dauphantram.InnerText = "+";
-                phantram.InnerText = "0";
-                lbTotalAll.Text = dbcontext.DoanhThus.Sum(s => s.DoanhThuNgay).ToString();
-                //LabelTotalRevenue.Text = CalculateTotalRevenue(dt).ToString("N0") + "đ"; // Format as currency
                 
+                int month = DateTime.Now.Month;
+                int year = DateTime.Now.Year;
+                //lbTotalAll.Text = dbcontext.DoanhThus.Sum(s => s.DoanhThuNgay).ToString();
+
+                lbTotalAllStore.Text = dbcontext.DoanhThus.Sum(s => s.DoanhThuNgay).ToString();
+
+                lbTotalAllMonth.Text = dbcontext.DoanhThus.Where(s=>s.Nam == year && s.Thang == month).Sum(s => s.DoanhThuNgay).ToString();
+                h1DTThang.InnerText += month.ToString();
+
+                //LabelTotalRevenue.Text = CalculateTotalRevenue(dt).ToString("N0") + "đ"; // Format as currency
+
                 var hadMomo = dbcontext.ChiTietDonHangs.Any(s => s.DonHang.PhuongThuc == "Momo");
 
                 var hadVNPAY = dbcontext.ChiTietDonHangs.Any(s => s.DonHang.PhuongThuc == "VNPay");
@@ -305,14 +341,21 @@ namespace TH03_WebBanHang
                     lbCod.Text = dbcontext.ChiTietDonHangs.Where(s => s.DonHang.PhuongThuc == "COD").Sum(s => s.ThanhTien).ToString();
                     lbCodBill.Text = dbcontext.DonHangs.Where(s => s.PhuongThuc == "COD").Count().ToString();
                 }
-                int month = DateTime.Now.Month;
+                
                 decimal doanhThuThangTruoc = 0;
                 var haddoanhThuThangTruoc = dbcontext.DoanhThus.Any(s => s.Thang == month - 1);
                 if (haddoanhThuThangTruoc)
                 {
                     doanhThuThangTruoc = (decimal)dbcontext.DoanhThus.Where(s => s.Thang == month - 1).Sum(s => s.DoanhThuNgay);
                 }
-                decimal doanhThuThangNay = (decimal)dbcontext.DoanhThus.Where(s => s.Thang == month).Sum(s => s.DoanhThuNgay);
+                decimal doanhThuThangNay = 0;
+                var haddoanhThuThangNay = dbcontext.DoanhThus.Any(s => s.Thang == month);
+
+                if (haddoanhThuThangNay)
+                {
+                     doanhThuThangNay = (decimal)dbcontext.DoanhThus.Where(s => s.Thang == month).Sum(s => s.DoanhThuNgay);
+
+                }
                 decimal tichDoanhThu = 0;
 
                 if (doanhThuThangTruoc == 0)
@@ -332,7 +375,7 @@ namespace TH03_WebBanHang
                 }
                 else
                 {
-                    dauphantram.InnerText = "-";
+                    dauphantram.InnerText = null;
                     string sophantram = tichDoanhThu.ToString("F2");
                     phantram.InnerText = sophantram;
                     Response.Write("<style>.textphantram{color:#ff3232;}</style>");
@@ -343,7 +386,9 @@ namespace TH03_WebBanHang
 
             else
             {
-                lbTotalAll.Text =  "0";
+                lbTotalAllStore.Text = "0";
+                lbTotalAllProductValue.Text = "0";
+                lbTotalAllMonth.Text =  "0";
                 lbCod.Text = "0";
                 lbVNPay.Text = "0";
                 lbMomo.Text = "0";

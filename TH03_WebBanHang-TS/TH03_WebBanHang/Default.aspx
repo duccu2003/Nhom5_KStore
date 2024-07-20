@@ -345,9 +345,9 @@
     </header>
     <style>
         .itemMap{
-            background:linear-gradient(to right, #522A77, #804cdeff, #1c60bc);
+            background-image:linear-gradient(to right, #522A77, #804cdeff, #1c60bc);
            height:460px;
-           
+           background-size: 200% auto; animation: backgroundMapping 5s ease infinite;
            border-radius:10px;
         }
         .ul-l-type p {
@@ -697,6 +697,13 @@
                 color:#0000;
 
             }
+
+            @keyframes backgroundGroupSelectColor {
+                0% {background-position: left;}
+                50% {background-position: right;}
+                100% {background-position: left;}
+            }
+
     </style>
     <%--<script>
         function changeBackgroundImage() {
@@ -772,7 +779,9 @@
            <h3 id="NS" class=" text-left lnr-text-size" style="position:absolute; top:-20px;">
                  <p class="">Danh mục nhóm, nghệ sĩ</p>
              </h3>
-            <div loading="lazy" id="divlistidols" class="gx-4 gx-lg-5 single-row <%--fade-out--%> smooth-scroll divGP filtering" style="/*background-color: #EADEFF; */ scroll-behavior: smooth; overflow-y:hidden; /*box-shadow:0px 0px 50px #522A77;*/  background: linear-gradient(to right, #EADEFF, #C4A1FE); border-radius: 10px; border: 3px solid #9b51e0; padding-top: 6px; padding-bottom:-2px;">
+            <div loading="lazy" id="divlistidols" class="gx-4 gx-lg-5 single-row <%--fade-out--%> smooth-scroll divGP filtering" style="/*background-color: #EADEFF; */ scroll-behavior: smooth; overflow-y:hidden; /*box-shadow:0px 0px 50px #522A77;*/  
+background-image: linear-gradient(to right , #a27ac7, /*#EADEFF*/ #fff, #C4A1FE, #a678d1);  background-size: 200% auto;     animation: backgroundGroupSelectColor 5s ease infinite;
+ border-radius: 10px; border: 3px solid #9b51e0; padding-top: 6px; padding-bottom:-2px;">
                 <asp:ListView ID="ListView1" runat="server" ItemType="TH03_WebBanHang.Models.Nhom" SelectMethod="GetGroup">
                     <EmptyDataTemplate>
                         <table>
@@ -888,7 +897,8 @@
                 // Function to scroll left
                 function scrollLeft() {
                     /*container.scrollLeft -= itemWidth + 13.5;*/
-                    container.scrollLeft -= itemWidth * 4;
+                    /*container.scrollLeft -= itemWidth * 4;*/
+                    container.scrollLeft -= itemWidth * itemWidth;
                 }
 
                 // Function to scroll right
@@ -898,7 +908,8 @@
                         container.scrollLeft = 0;
                     } else {
                         /*container.scrollLeft += itemWidth +13.5;*/
-                        container.scrollLeft += itemWidth * 4;
+                        /*container.scrollLeft += itemWidth * 4;*/
+                        container.scrollLeft += itemWidth * itemWidth;
                     }
                 }
 
@@ -1275,18 +1286,33 @@
                 }
 
                 
+                @keyframes backgroundDMSPLQ {
+                    0% {background-position: left;}
+                    50% {background-position: right;}
+                    100% {background-position: left;}
+                }
+
+                #spHot, #spLike, #spNew, #spRating{
+   
+                     background-size: 200% auto;
+                     animation: backgroundDMSPLQ 5s ease infinite;
+                }
+
+
+
+
 
                 #spHot{
                     background-color:orangered; 
-                    background:linear-gradient(to left, #e81717, #d5c03e);
+                    background-image:linear-gradient(to left, #d5c03e, #e81717, #d5c03e);
                 }
                 #spLike{
                     background-color:hotpink; 
-                    background:linear-gradient(to left, #d338d7, #804cdeff);
+                    background-image:linear-gradient(to left, #d338d7, #804cdeff, #d338d7);
                 }
                 #spNew{
                     background-color:orange;
-                    background:linear-gradient(to left, orange, #d53e3e);
+                    background-image:linear-gradient(to left, orange, #d53e3e, orange);
 
                 }
                  #spNew{
@@ -1295,7 +1321,7 @@
                  }
                 #spRating{
                     background-color:black;
-                    background:linear-gradient(to left, #804cdeff, #e23939);
+                    background-image:linear-gradient(to left, #804cdeff, #e23939, #804cdeff);
 
                 }
                 #spRating *{
@@ -1415,7 +1441,8 @@
         </section>
 
     <section class="py-5">
-        <div id="carouselExampleControlsRoom" data-bs-ride="carousel" class="carousel slide container px-4 px-lg-5 mt-0 fade-left" style="background: linear-gradient(to bottom, #1111117f, #242426); border-radius: 10px; /*box-shadow:0 0 20px #9b51e0; */ padding:0 2rem">
+        <div id="carouselExampleControlsRoom" data-bs-ride="carousel" class="carousel slide container px-4 px-lg-5 mt-0 fade-left" style="background: linear-gradient(to bottom, #1111117f, #242426); border-radius: 10px; 
+/*box-shadow:0 0 20px #9b51e0; */ padding:0 2rem">
             <h3 id="MAP" class=" text-left lnr-text-size" style="position:absolute; top:-20px;">
                   <p class="">Danh mục địa chỉ cửa hàng</p>
               </h3>
@@ -1841,16 +1868,16 @@
                 <style>
                   
                     #aFacebook:hover{
-                        background: linear-gradient(to bottom, #000 , #4641c3ff) ;
+                        background: linear-gradient(to bottom, #000 , #4641c3ff, #4641c3ff , #000) ;
                     }
                     #aInstagram:hover{
-                        background: linear-gradient(to bottom, #000 , #c255a0ff);
+                        background: linear-gradient(to bottom, #000 , #e26e13ff, #e26e13ff, #000);
                     }
                     #aTiktok:hover{
-                        background: linear-gradient(to bottom, #000 , #431c4dff) ;
+                        background: linear-gradient(to bottom, #000 , #431c4dff, #431c4dff, #000) ;
                     }
                     #aYoutube:hover{
-                        background: linear-gradient(to bottom, #000 , #b53535ff);
+                        background: linear-gradient(to bottom, #000 , #b53535ff, #b53535ff, #000);
                     }
                     .aP{
                         width:25%;

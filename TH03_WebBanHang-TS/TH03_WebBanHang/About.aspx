@@ -255,7 +255,7 @@
    <section class="" style="color:#fff; background:#242426;">
    
   <h1 class="fade-in" style="color:#FFF; position:absolute; padding-top:20px; margin:auto; width:100%; text-align:center; z-index:999;">ĐỊA CHỈ CỬA HÀNG</h1>
-<div id="carouselExampleIndicators" class="fade-in carousel slide container px-5 px-lg-5 divAboutContent" style="background: linear-gradient(to right, #562386, #232592); border-radius:10px; /*background:#0000007f;*/   justify-content:center; align-content:center; align-items:center; justify-items:center;">
+<div id="carouselExampleIndicators" class="fade-in carousel slide container px-5 px-lg-5 divAboutContent" style="background-image: linear-gradient(to right, #562386,#735292, #232592); background-size: 200% auto; animation: backgroundMapping 5s ease infinite; border-radius:10px; /*background:#0000007f;*/   justify-content:center; align-content:center; align-items:center; justify-items:center;">
           
   
           <div class="carousel-indicators">
@@ -331,7 +331,7 @@ background: linear-gradient(to left, #562386, #232592); padding:20px 10px; justi
             <h3  class="" style=""><strong>KẾT NỐI VỚI KSTORE</strong></h3>
 
             <ul>
-                 <li  class=""><p><strong>Địa Chỉ:</strong> [Địa chỉ cửa hàng cụ thể]</p></li>
+                 <li  class=""><p><strong>Địa Chỉ:</strong> KSTown 736, Nguyễn Trãi, Quận 5, TP.HCM</p></li>
                 <li  class=""><p>
                 <strong>Website:</strong>
                 <a href="#">https://www.kstore.com.vn</a>

@@ -667,6 +667,10 @@
         .chat-icon:hover{
              /*box-shadow: 0 0 20px #636363;*/
         }
+        .chat-window, .chat-messages {
+            transition: all 0.5s ease-in-out; /* Tùy chỉnh thời gian và phương thức chuyển đổi theo ý muốn */
+        }
+
         .chat-window {
             position: fixed;
             bottom: 20px;
@@ -675,7 +679,7 @@
             max-width: 100%;
            /* border: 1px solid #f2f2f2;*/
            /* border-radius: 5px;*/
-            background-color: #969696d4;
+            background-color: #2c2c2cd4;
             /*box-shadow: 0 0 20px #636363;*/
             display: none;
             flex-direction: column;
@@ -683,6 +687,7 @@
             /*border:1px solid #B197FC;*/
             box-shadow:0 0 5px #B197FC;
             border-radius:10px;
+            
    
         }
         /*.chat-window textarea:focus {
@@ -890,6 +895,17 @@
             
             
         }
+        @keyframes backgroundMapping {
+            0% {background-position: left;}
+            50% {background-position: right;}
+            100% {background-position: left;}
+        }
+
+         @keyframes backgroundShift {
+             0% {background-position: left;}
+             50% {background-position: right;}
+             100% {background-position: left;}
+         }
     </style>
 </head>
 <body>
@@ -915,14 +931,17 @@
 
     </a>
     </div>
-   
+    
     <div class="chat-window" id="chat-window">
         <div class="chat-header">
-            <p style="background: linear-gradient(to right, #7c21f3, #3008ff,#cf23cf, #cc44ee);
+            <p style="
+                 background-size: 200% auto;
+                background-image: linear-gradient(to right, #7c21f3, #3008ff, #cf23cf, #cc44ee);
+                animation: backgroundShift 5s ease infinite;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text; font-size:20px; font-weight:bold;">KSBot x ChatGPT</p>
            
-
+            <a id="toggle-btn-chatBot" style="font-weight:normal; justify-content:center; align-content:center; cursor:pointer; color:#FFF; position:absolute; right:10px; top:10px;"><i class="fa-solid fa-maximize"></i></a>
         </div>
         <a id="clearChatButton" style="position:absolute; text-align:center; width:100%;  text-decoration:none;
 margin:auto; padding: 2px 0; top:50px; justify-content:center; align-content:center;"><p id="pClearChatBotMess" style="padding:4px 10px;  border-radius:10px; color:white; position:center; margin:auto; justify-content:center; width:max-content; background:#636363;">Xóa đoạn chat hiện tại</p></a>
@@ -938,6 +957,40 @@ margin:auto; padding: 2px 0; top:50px; justify-content:center; align-content:cen
         </div>
     </div>
 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var toggleBtn = document.getElementById('toggle-btn-chatBot');
+            var chatWindow = document.querySelector('.chat-window');
+            var chatMessages = document.querySelector('.chat-messages');
+
+            toggleBtn.addEventListener('click', function () {
+                // Toggle the width and height of the chat window and messages
+                
+                if (chatWindow.style.width === '300px') {
+                    //if (window.width<768) {
+                    //    chatWindow.style.width = '72.25%';
+                    //    chatMessages.style.height = '300px';
+                    //}
+                    //else {
+
+                    //    chatWindow.style.width = '1331px';
+                    //    chatMessages.style.height = '400px';
+                    //}
+                    chatWindow.style.width = '72.25%';
+                    chatMessages.style.height = '400px';
+                    toggleBtn.innerHTML = '<i class="fa-solid fa-minimize"></i>';
+                }
+                else {
+                    chatWindow.style.width = '300px';
+                    chatMessages.style.height = '300px';
+                    toggleBtn.innerHTML = '<i class="fa-solid fa-maximize"></i>';
+                }
+
+            });
+        });
+
+    </script>
     <%--------------------------------------%>
 
 
@@ -992,7 +1045,7 @@ margin:auto; padding: 2px 0; top:50px; justify-content:center; align-content:cen
                         <div title="Tìm kiếm" class="justify-content-center align-content-center search-container container mt-2" style="border: 2px solid #9b51e0; width:18.75rem; font-size:18px; height:40px;">
     
                             
-                            <asp:TextBox ID="searchinput" ClientIDMode="Static" AutoPostBack="false" placeholder="Tìm kiếm" type="search" Text="" runat="server" Style="border: 0.1px solid #fff0; touch-action: none; " CssClass="search-textbox searchinput" onkeyup="searchProducts(this.value)"></asp:TextBox>
+                            <asp:TextBox ID="searchinput" ClientIDMode="Static" AutoPostBack="false" placeholder="Tìm kiếm" type="search" Text="" runat="server" Style="border: 0.1px solid #fff0; touch-action: none; " CssClass="search-textbox searchinput" onmousemove="searchProducts(this.value)" onclick="searchProducts(this.value)"  onmouseover="searchProducts(this.value)" onmouseout="searchProducts(this.value)"  onkeyout="searchProducts(this.value)" onkeyup="searchProducts(this.value)" onchange="searchProducts(this.value)"  onfocus="searchProducts(this.value)"></asp:TextBox>
              
             
                             
@@ -1372,6 +1425,13 @@ margin:auto; padding: 2px 0; top:50px; justify-content:center; align-content:cen
                     
                     iconchat.src = "data:image/png;base64,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";
                     loadStoredMessages();
+                    const message = document.querySelectorAll('.message');
+                    if (message.length === null || !(message.length>0)) {
+                        getBotHello();
+                    }
+                    if (message.length != null) {
+                        document.getElementById('clearChatButton').style.display = 'block';
+                    }
                 }
                 else {
                     
@@ -1395,7 +1455,9 @@ margin:auto; padding: 2px 0; top:50px; justify-content:center; align-content:cen
         //}
 
         function addMessage(message, sender) {
-            const messageDiv = document.createElement('div');
+            const messageDiv = document.createElement('pre');
+            messageDiv.style.whiteSpace = 'pre-wrap';
+            messageDiv.style.fontFamily = 'Roboto';
             messageDiv.classList.add('message', sender);
             messageDiv.textContent = message;
             removeLoadingChatBot();
@@ -1634,28 +1696,55 @@ margin:auto; padding: 2px 0; top:50px; justify-content:center; align-content:cen
             
         }
 
-        function getBotResponse(userMessage) {
-            let botMessage = 'Xin lỗi, tôi không hiểu yêu cầu của bạn.';
+        function getBotHello() {
+            const unicodePoint = parseInt('1F60A', 16);
 
-            if (userMessage.toLowerCase().includes('xin chào')) {
-                botMessage = 'Chào bạn! Tôi có thể giúp gì cho bạn hôm nay?';
-            }
-            else if (userMessage.toLowerCase().includes('giá')) {
-                botMessage = 'Giá cả của chúng tôi thay đổi tùy thuộc vào sản phẩm. Vui lòng cho biết sản phẩm bạn quan tâm.';
-            }
-            else if (userMessage.toLowerCase().includes('giờ làm việc')) {
-                botMessage = 'Chúng tôi làm việc từ 9h sáng đến 6h chiều, từ thứ Hai đến thứ Sáu.';
-            }
-            else if (userMessage.toLowerCase().includes('liên hệ')) {
-                botMessage = 'Bạn có thể liên hệ với chúng tôi qua email support@example.com hoặc gọi điện thoại tới số (123) 456-7890.';
-            }
-            else if (userMessage.toLowerCase().includes('sản phẩm này còn không')) {
-                botMessage = 'Sản phẩm này vẫn còn hàng.';
-            }
-               
+            // Chuyển đổi mã Unicode thành biểu tượng cảm xúc
+            const emoji = String.fromCodePoint(unicodePoint);
+            let botMessage = 'Xin chào, tôi là KSBot tôi có thể giúp gì cho bạn? ' + emoji;
+
+            //if (userMessage.toLowerCase().includes('xin chào')) {
+            //    botMessage = 'Chào bạn! Tôi có thể giúp gì cho bạn hôm nay?';
+            //}
+            //else if (userMessage.toLowerCase().includes('giá')) {
+            //    botMessage = 'Giá cả của chúng tôi thay đổi tùy thuộc vào sản phẩm. Vui lòng cho biết sản phẩm bạn quan tâm.';
+            //}
+            //else if (userMessage.toLowerCase().includes('giờ làm việc')) {
+            //    botMessage = 'Chúng tôi làm việc từ 9h sáng đến 6h chiều, từ thứ Hai đến thứ Sáu.';
+            //}
+            //else if (userMessage.toLowerCase().includes('liên hệ')) {
+            //    botMessage = 'Bạn có thể liên hệ với chúng tôi qua email support@example.com hoặc gọi điện thoại tới số (123) 456-7890.';
+            //}
+            //else if (userMessage.toLowerCase().includes('sản phẩm này còn không')) {
+            //    botMessage = 'Sản phẩm này vẫn còn hàng.';
+            //}
+
 
             addMessage(botMessage, 'bot');
         }
+
+        //function getBotResponse(userMessage) {
+        //    let botMessage = 'Xin lỗi, tôi không hiểu yêu cầu của bạn.';
+
+        //    if (userMessage.toLowerCase().includes('xin chào')) {
+        //        botMessage = 'Chào bạn! Tôi có thể giúp gì cho bạn hôm nay?';
+        //    }
+        //    else if (userMessage.toLowerCase().includes('giá')) {
+        //        botMessage = 'Giá cả của chúng tôi thay đổi tùy thuộc vào sản phẩm. Vui lòng cho biết sản phẩm bạn quan tâm.';
+        //    }
+        //    else if (userMessage.toLowerCase().includes('giờ làm việc')) {
+        //        botMessage = 'Chúng tôi làm việc từ 9h sáng đến 6h chiều, từ thứ Hai đến thứ Sáu.';
+        //    }
+        //    else if (userMessage.toLowerCase().includes('liên hệ')) {
+        //        botMessage = 'Bạn có thể liên hệ với chúng tôi qua email support@example.com hoặc gọi điện thoại tới số (123) 456-7890.';
+        //    }
+        //    else if (userMessage.toLowerCase().includes('sản phẩm này còn không')) {
+        //        botMessage = 'Sản phẩm này vẫn còn hàng.';
+        //    }
+               
+
+        //    addMessage(botMessage, 'bot');
+        //}
 
         userInput.addEventListener('keypress', function (e) {
             if (e.key === 'Enter' && !e.shiftKey) {

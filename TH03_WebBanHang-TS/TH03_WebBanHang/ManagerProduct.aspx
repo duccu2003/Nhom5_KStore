@@ -473,8 +473,8 @@ text-align:center;
             <td class="justify-content-center align-content-center d-grid" style="display:grid !important; height:100% !important; row-gap:1rem;">
                
                     <asp:Button ID="btnUpdate" CssClass="btn btn-default btn-color btn-w" runat="server" style='' CommandArgument='<%# Eval("MaSP") %>' OnClick="btnUpdate_Click" Text="Cập nhật"  />
-                    <a class="btn btn-default btn-color btn-w" href='UpdateProduct.aspx?Deptid=<%#:Item.MaSP%>'>Chỉnh sửa</a>
-                    <a class="btn btn-default btn-color btn-w" href='DeleteProduct.aspx?Deptid=<%#:Item.MaSP%>'>Xóa</a>
+                    <a class="btn btn-default btn-color btn-w" href='EditProduct?Deptid=<%#:Item.MaSP%>'>Chỉnh sửa</a>
+                    <a class="btn btn-default btn-color btn-w" href='DeleteProduct?Deptid=<%#:Item.MaSP%>'>Xóa</a>
                
             </td>
         </ItemTemplate>

@@ -354,7 +354,7 @@ text-align:center;
             </div>
 
          <div class="form-container fade-out" style="padding:10px 20px; width:max-content; display: grid; border-radius:5px; overflow:auto;">
-            <h1 style="margin:1rem auto 2rem auto; ">Thêm Nhóm nhạc/Nghệ sĩ</h1>
+            <h1 style="margin:1rem auto 2rem auto; ">Thêm Nhóm/Nghệ sĩ</h1>
             <table>
                 <tr>
                     <td>

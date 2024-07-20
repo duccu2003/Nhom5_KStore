@@ -166,7 +166,7 @@
      class="fade-in card-img-top mb-5 mb-md-0 zoom-hover justify-content-center align-content-center img-avt" 
      src="<%#: Item.AvatarUser %>" 
      alt="..." />
-                 <label for="<%= fileUploadImages.ClientID %>" id="btnChangeIMG" style="display:none; color:#fff; width:max-content;  margin-top:1rem;" class="custom-file-label"><i class="fa-solid fa-camera"></i> Thay đổi ảnh đại diện!</label>
+                 <label for="<%= fileUploadImages.ClientID %>" id="btnChangeIMG"  onclick="ChangeAVT();" style="display:none; color:#fff; width:max-content;  margin-top:1rem;" class="custom-file-label"><i class="fa-solid fa-camera"></i> Thay đổi ảnh đại diện!</label>
                 </div>
                 </ItemTemplate>  
         </asp:FormView>
@@ -254,21 +254,21 @@ object-fit:cover;*/
             }
         </style>
       <script type="text/javascript">
-    window.onload = function() {
-        var fileUploadImages = document.getElementById('<%= fileUploadImages.ClientID %>');
-        var userAvatar = document.getElementById('userAvatar');
+          function ChangeAVT() {
+                var fileUploadImages = document.getElementById('<%= fileUploadImages.ClientID %>');
+                var userAvatar = document.getElementById('userAvatar');
 
-        fileUploadImages.addEventListener('change', function() {
-            var file = this.files[0];
-            if (file) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    userAvatar.src = e.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    };
+                fileUploadImages.addEventListener('change', function() {
+                    var file = this.files[0];
+                    if (file) {
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            userAvatar.src = e.target.result;
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            };
       </script>
 
          <div class="div-small-content textlabel"style="display:grid;"><asp:FileUpload ID="fileUploadImages" runat="server" AllowMultiple="true" CssClass="custom-file-upload" ClientIDMode="Static" />
@@ -319,7 +319,7 @@ object-fit:cover;*/
                                 </div>
              <div class="d-flex" style="margin:auto; margin-left:1.18rem; gap:0.8rem; padding-top:4rem;">
 
-             <a id="btnBack" href="Account.aspx" class="profile-image btn-upload justify-content-center align-content-center" style="position: relative; text-align:center; z-index: 0; color:#fff; background: #000 ; border:1px solid #000; width:40px; height:40px; border-radius:20px; margin: 1rem auto auto auto; padding: 8px 10px;" ><i class="fa-solid fa-arrow-left"></i></a>
+             <a id="btnBack" href="ManagerAccount.aspx" class="profile-image btn-upload justify-content-center align-content-center" style="position: relative; text-align:center; z-index: 0; color:#fff; background: #000 ; border:1px solid #000; width:40px; height:40px; border-radius:20px; margin: 1rem auto auto auto; padding: 8px 10px;" ><i class="fa-solid fa-arrow-left"></i></a>
             <a id="btPer" class="profile-image btn-upload" style="position: relative; z-index: 0; color:#fff; background: #000 ; border:1px solid #000; width:max-content; height:40px; border-radius:20px; margin: 1rem auto auto auto; padding: 8px 10px;"  href="#!">Quyền</a>
 
                  <asp:Button ID="btnCPass" runat="server" Text="Đổi mật khẩu" OnClick="btnCPass_Click" CssClass="profile-image btn-upload"  Style="position: relative; z-index: 0; color:#fff; background: #000 ; border:1px solid #000; width:max-content; height:40px; border-radius:20px; margin: 1rem auto auto auto; padding: 8px 10px;" />

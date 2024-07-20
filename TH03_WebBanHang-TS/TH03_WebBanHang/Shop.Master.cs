@@ -24,14 +24,24 @@ namespace TH03_WebBanHang
     {
         private QL_KPOPStoreEntities dbcontext = new QL_KPOPStoreEntities();
         public static string CH;
-        public static string SQL_dataSource = "DUC-LAPTOP\\NGUYENHOANGDUC";
+
+        //thông tin connectionstring nằm ở đây
+        public static string SQL_dataSource = "Sever_Name_Của_SQL_Sever_Nằm_Ở_Đây";
         public static string SQL_initialCatalog = "QL_KPOPStore";
-        public static string SQL_sqlTK = "sa";
-        public static string SQL_sqlMK = "1";
+        public static string SQL_sqlTK = "Tài_Khoản_SQL_Sever";
+        public static string SQL_sqlMK = "Mật_Khẩu_SQL_Sever";
         public static string SQL_connectionString = $"Data Source={SQL_dataSource};Initial Catalog={SQL_initialCatalog};User ID={SQL_sqlTK};Password={SQL_sqlMK};";
 
-        public static string gmailAccount = "2105ct0098@dhv.edu.vn";
-        public static string gmailPass = "beduc102";
+        //tài khoản gmail để gửi mail cho khách nằm ở đây
+        public static string gmailAccount = "Gmail_Nằm_Ở_Đây";
+        public static string gmailPass = "Mật_Khẩu_Gmail_Ở_Đây";
+
+        //api openai nằm ở đây
+        public static string apiChatGPT = "API_Của_ChatGPT_Nằm_Ở_Đây";
+        public static string modelChatGPT = "gpt-3.5-turbo";
+
+        //Token để thực hiện cuộc gọi otp nằm ở đây
+        public static string tokenStringee30day = "Bearer eyJjdHkiOiJzdHJpbmdlZS1hcGk7dj0xIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJqdGkiOiJTSy4wLlNMU1hSRlpYNzY3bVNSQ29vZTlUamMwaWtRM3E4Rmo3LTE3MjEzMjQ4ODkiLCJpc3MiOiJTSy4wLlNMU1hSRlpYNzY3bVNSQ29vZTlUamMwaWtRM3E4Rmo3IiwiZXhwIjoxNzIzOTE2ODg5LCJyZXN0X2FwaSI6dHJ1ZX0.9RqxklzusVCJaCPp5skT_LdSMuqTq4AuAmwvoidIjEs";
 
 
         public static string defaultAvatar_BlackKS = "Content\\account-img\\KS.png";

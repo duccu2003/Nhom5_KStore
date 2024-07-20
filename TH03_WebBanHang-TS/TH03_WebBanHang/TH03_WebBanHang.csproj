@@ -435,6 +435,10 @@
     <Content Include="Content\css\hamburgers.min.css" />
     <Content Include="Content\css\icon-font.min.css" />
     <Content Include="Content\css\magiczoomplus.css" />
+    <Content Include="Content\icon\iconCOD.png" />
+    <Content Include="Content\icon\iconVNPAY.jpg" />
+    <Content Include="Content\icon\VNPAY.jpg" />
+    <Content Include="EditProduct.aspx" />
     <Content Include="NewInformationPage.aspx" />
     <Content Include="Scripts\js\magiczoomplus.js" />
     <Content Include="Content\css\main.css" />
@@ -948,6 +952,13 @@
     </Compile>
     <Compile Include="EditAccount.aspx.designer.cs">
       <DependentUpon>EditAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditProduct.aspx.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProduct.aspx.designer.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditProfileAccount.aspx.cs">
       <DependentUpon>EditProfileAccount.aspx</DependentUpon>

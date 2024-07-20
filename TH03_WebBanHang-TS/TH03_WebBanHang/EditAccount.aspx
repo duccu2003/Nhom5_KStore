@@ -8,7 +8,7 @@
      class="fade-in card-img-top mb-5 mb-md-0 zoom-hover justify-content-center align-content-center img-avt" 
      src="<%#: Item.AvatarUser %>" 
      alt="..." />
-                 <label for="<%= fileUploadImages.ClientID %>" id="btnChangeIMG" style="display:none; color:#fff; width:max-content;  margin-top:-2rem;" class="custom-file-label"><i class="fa-solid fa-camera"></i> Thay đổi ảnh đại diện!</label>
+                 <label for="<%= fileUploadImages.ClientID %>" onclick="ChangeAVT();"  id="btnChangeIMG" style="display:none; color:#fff; width:max-content;  margin-top:-2rem;" class="custom-file-label"><i class="fa-solid fa-camera"></i> Thay đổi ảnh đại diện!</label>
                 </div>
                 </ItemTemplate>  
         </asp:FormView>
@@ -120,21 +120,21 @@
             }
         </style>
       <script type="text/javascript">
-    window.onload = function() {
-        var fileUploadImages = document.getElementById('<%= fileUploadImages.ClientID %>');
-        var userAvatar = document.getElementById('userAvatar');
+        function ChangeAVT() {
+            var fileUploadImages = document.getElementById('<%= fileUploadImages.ClientID %>');
+            var userAvatar = document.getElementById('userAvatar');
 
-        fileUploadImages.addEventListener('change', function() {
-            var file = this.files[0];
-            if (file) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    userAvatar.src = e.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    };
+            fileUploadImages.addEventListener('change', function() {
+                var file = this.files[0];
+                if (file) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        userAvatar.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        };
       </script>
 
          <div class="div-small-content textlabel"style="display:grid;"><asp:FileUpload ID="fileUploadImages" runat="server" AllowMultiple="true" CssClass="custom-file-upload" ClientIDMode="Static" />

@@ -190,7 +190,7 @@ namespace TH03_WebBanHang
             catch (Exception ex)
             {
                 Console.WriteLine("Lỗi khi gửi email: " + ex.Message);
-                Response.Write("<div class=\"alert alert-danger\" role=\"alert\">Đã xãy ra ỗi khi gửi mã OTP mã lỗi là: '" + ex.Message + "'.</div>");
+                Response.Write("<div class=\"alert alert-danger\" role=\"alert\">Đã xãy ra lỗi khi gửi mã OTP mã lỗi là: '" + ex.Message + "'.</div>");
                 Response.Write("<script type=\"text/javascript\">");
                 Response.Write("setTimeout(function() {");
                 Response.Write("var elements = document.getElementsByClassName('alert');");
@@ -201,7 +201,27 @@ namespace TH03_WebBanHang
                 Response.Write("</script>");
             }
         }
-
+        static string GetValuePhone(string phoneNumber)
+        {
+            // Kiểm tra xem số điện thoại có phải là chuỗi không
+            if (phoneNumber != null && phoneNumber.Length > 0)
+            {
+                // Nếu số điện thoại bắt đầu bằng '0', giữ nguyên
+                if (phoneNumber.StartsWith("0"))
+                {
+                    return phoneNumber.Substring(1);
+                }
+                else
+                {
+                    // Ngược lại, thêm '8' vào đầu và cắt bỏ ký tự đầu tiên
+                    return  phoneNumber/*.Substring(1)*/;
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
         public async void CallPhone(string phone, string otp)
         {
             try
@@ -221,18 +241,32 @@ namespace TH03_WebBanHang
                 //);
 
 
+                //var client = new HttpClient();
+                //var request = new HttpRequestMessage(HttpMethod.Post, "https://api.stringee.com/v1/call2/callout");
+                //request.Headers.Add("Cookie", "SRVNAME=SF");
+                //var content = new StringContent("{\r\n    \"from\": {\r\n        \"type\": \"external\",\r\n        \"number\": \"842871026036\",\r\n        \"alias\": \"STRINGEE_NUMBER\"\r\n    },\r\n    \"to\": [{\r\n        \"type\": \"external\",\r\n        \"number\": \"'" + phone + "'\",\r\n        \"alias\": \"TO_NUMBER\"\r\n    }],\r\n    \"answer_url\": \"https://example.com/answerurl\",\r\n    \"actions\": [{\r\n        \"action\": \"talk\",\r\n        \"text\": \"Xin chào đây là cuộc gọi từ KStore, bạn vừa yêu cầu mã OTP vui lòng không cấp mã này với bất kỳ ai, mã của bạn là '" + otp + "'\"\r\n    }]\r\n}", null, "application/json");
+                //request.Content = content;
+                //var response = await client.SendAsync(request);
+                //response.EnsureSuccessStatusCode();
+                //Console.WriteLine(await response.Content.ReadAsStringAsync());
+
+                string soDienThoai = phone.Substring(0, phone.Length - 1);
+
                 var client = new HttpClient();
                 var request = new HttpRequestMessage(HttpMethod.Post, "https://api.stringee.com/v1/call2/callout");
-                request.Headers.Add("Cookie", "SRVNAME=SF");
-                var content = new StringContent("{\r\n    \"from\": {\r\n        \"type\": \"external\",\r\n        \"number\": \"842871026036\",\r\n        \"alias\": \"STRINGEE_NUMBER\"\r\n    },\r\n    \"to\": [{\r\n        \"type\": \"external\",\r\n        \"number\": \"'" + phone + "'\",\r\n        \"alias\": \"TO_NUMBER\"\r\n    }],\r\n    \"answer_url\": \"https://example.com/answerurl\",\r\n    \"actions\": [{\r\n        \"action\": \"talk\",\r\n        \"text\": \"Xin chào đây là cuộc gọi từ KStore, bạn vừa yêu cầu mã OTP vui lòng không cấp mã này với bất kỳ ai, mã của bạn là '" + otp + "'\"\r\n    }]\r\n}", null, "application/json");
+                //request.Headers.Add("Authorization", "Bearer eyJjdHkiOiJzdHJpbmdlZS1hcGk7dj0xIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJqdGkiOiJTSy4wLlNMU1hSRlpYNzY3bVNSQ29vZTlUamMwaWtRM3E4Rmo3LTE3MjEzMjQ4ODkiLCJpc3MiOiJTSy4wLlNMU1hSRlpYNzY3bVNSQ29vZTlUamMwaWtRM3E4Rmo3IiwiZXhwIjoxNzIzOTE2ODg5LCJyZXN0X2FwaSI6dHJ1ZX0.9RqxklzusVCJaCPp5skT_LdSMuqTq4AuAmwvoidIjEs");
+                request.Headers.Add("Authorization", Shop.tokenStringee30day);
+
+                request.Headers.Add("Cookie", "SRVNAME=SD");
+                var content = new StringContent("{\r\n    \"from\": {\r\n        \"type\": \"external\",\r\n        \"number\": \"842871020574\",\r\n        \"alias\": \"STRINGEE_NUMBER\"\r\n    },\r\n    \"to\": [{\r\n        \"type\": \"external\",\r\n        \"number\": \"84"+ GetValuePhone(phone).ToString() + "\",\r\n        \"alias\": \"TO_NUMBER\"\r\n    }],\r\n    \"answer_url\": \"https://developer.stringee.com/scco_helper/simple_project_answer_url?record=false&appToPhone=auto&recordFormat=mp3\",\r\n    \"actions\": [{\r\n        \"action\": \"talk\",\r\n        \"text\": \"Xin chào đây là cuộc gọi từ KStore, bạn vừa yêu cầu mã OTP vui lòng không cấp mã này với bất kỳ ai, mã của bạn là " + string.Join(" ", otp.Select(c => c.ToString())) + ", xin nhắc lại mã OTP của bạn là " + string.Join(" ", otp.Select(c => c.ToString())) + "\"\r\n    }]\r\n}", null, "application/json");
                 request.Content = content;
                 var response = await client.SendAsync(request);
                 response.EnsureSuccessStatusCode();
                 Console.WriteLine(await response.Content.ReadAsStringAsync());
+                
 
 
-
-                Console.WriteLine("Đã gửi email.");
+                Console.WriteLine("Đã gọi cuộc gọi OTP.");
                 Response.Write("<div class=\"alert alert-success\" role=\"alert\">Mã OTP đã được gửi thành công, vui lòng kiểm tra!</div>");
                 Response.Write("<script type=\"text/javascript\">");
                 Response.Write("setTimeout(function() {");
@@ -246,8 +280,8 @@ namespace TH03_WebBanHang
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Lỗi khi gửi email: " + ex.Message);
-                Response.Write("<div class=\"alert alert-danger\" role=\"alert\">Đã xãy ra ỗi khi gửi mã OTP mã lỗi là: '" + ex.Message + "'.</div>");
+                Console.WriteLine("Lỗi khi thực hiện cuộc gọi: " + ex.Message);
+                Response.Write("<div class=\"alert alert-danger\" role=\"alert\">Đã xãy ra lỗi khi gửi mã OTP mã lỗi là: '" + ex.Message + "'.</div>");
                 Response.Write("<script type=\"text/javascript\">");
                 Response.Write("setTimeout(function() {");
                 Response.Write("var elements = document.getElementsByClassName('alert');");

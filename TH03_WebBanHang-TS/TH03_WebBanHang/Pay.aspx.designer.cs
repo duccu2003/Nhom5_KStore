@@ -87,6 +87,15 @@ namespace TH03_WebBanHang
         protected global::System.Web.UI.WebControls.TextBox TextPhone;
 
         /// <summary>
+        /// imgPaymentMethod control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgPaymentMethod;
+
+        /// <summary>
         /// ddlPay control.
         /// </summary>
         /// <remarks>
@@ -132,15 +141,6 @@ namespace TH03_WebBanHang
         protected global::System.Web.UI.WebControls.Label lbTong;
 
         /// <summary>
-        /// btnConfirm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConfirm;
-
-        /// <summary>
         /// btnCancel control.
         /// </summary>
         /// <remarks>
@@ -148,6 +148,15 @@ namespace TH03_WebBanHang
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancel;
+
+        /// <summary>
+        /// btnConfirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnConfirm;
 
         /// <summary>
         /// imgMomoQRCode control.

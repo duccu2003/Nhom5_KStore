@@ -60,13 +60,22 @@ namespace TH03_WebBanHang
         protected global::System.Web.UI.WebControls.ListView ListView2;
 
         /// <summary>
-        /// lbTotalAll control.
+        /// h1DTThang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbTotalAll;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl h1DTThang;
+
+        /// <summary>
+        /// lbTotalAllMonth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbTotalAllMonth;
 
         /// <summary>
         /// dauphantram control.
@@ -85,6 +94,24 @@ namespace TH03_WebBanHang
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl phantram;
+
+        /// <summary>
+        /// lbTotalAllStore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbTotalAllStore;
+
+        /// <summary>
+        /// lbTotalAllProductValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbTotalAllProductValue;
 
         /// <summary>
         /// lbSDDTT control.
