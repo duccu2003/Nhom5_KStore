@@ -96,7 +96,7 @@ namespace TH03_WebBanHang.Controllers
             string textChat = Regex.Replace(text, pattern, "");
 
             // Kiểm tra xem message có giá trị hay không trước khi chuyển đổi sang JSON
-            if ((mess ||  group) &&(textChat.Contains("conko") || textChat.Contains("conkhong") || textChat.Contains("cokhong")) || (textChat.Contains("sanpham") || textChat.Contains("sp") && textChat.Contains("mon") || textChat.Contains("mathang") || textChat.Contains("hang")) || (chat.Contains("sanpham") || chat.Contains("sp") && chat.Contains("mon") || chat.Contains("mathang") || chat.Contains("hang")) ||
+            if ((mess ||  group) &&(textChat.Contains("conko") || textChat.Contains("conkhong") || textChat.Contains("cokhong")) || (textChat.Contains("sanpham") || textChat.Contains("sp")  || textChat.Contains("mathang")) || (chat.Contains("sanpham") || chat.Contains("sp") || chat.Contains("mathang")) ||
                     (textChat == "wiki" || textChat.Contains("wiki") || textChat == "timhieu" || textChat.Contains("timhieu") || textChat.Contains("thongtin") || textChat.Contains("profile") || textChat.Contains("timkiemve") || textChat.Contains("thongtin") || textChat.Contains("profile")))
             {
                 var message = db.SanPhams.FirstOrDefault(s => (s.MaSP == chat || s.MaSP.Contains(chat) || chat.Contains(s.MaSP) || chat.Contains(s.TenSP) || s.TenSP.Contains(chat)) && s.SoLuongKho > 0);
@@ -241,7 +241,7 @@ namespace TH03_WebBanHang.Controllers
 
 
             }
-            else if(textChat.Contains("sanpham") || textChat.Contains("sp") && textChat.Contains("mon") || textChat.Contains("mathang") || textChat.Contains("hang") || chat.Contains("sanpham") || chat.Contains("sp") && chat.Contains("mon") || chat.Contains("mathang") || chat.Contains("hang"))
+            else if(textChat.Contains("sanpham") || textChat.Contains("sp") || textChat.Contains("mathang") || chat.Contains("sanpham") || chat.Contains("sp")  || chat.Contains("mathang"))
             {
                 if((textChat.Contains("moi") || textChat.Contains("new")|| (chat.Contains("moi") || chat.Contains("new")))){
                     var message = db.SanPhams.OrderBy(s=>s.NgayNhap).FirstOrDefault(s => (s.MaSP == chat || s.MaSP.Contains(chat) || chat.Contains(s.MaSP) || chat.Contains(s.TenSP) || s.TenSP.Contains(chat)) && s.SoLuongKho > 0);
@@ -788,7 +788,7 @@ namespace TH03_WebBanHang.Controllers
 
                         var searchParams = new
                         {
-                            model = "gpt-3.5-turbo",
+                            model = Shop.modelChatGPT,
                             messages = new[] {
                                 //new { role = "system", content = chat },
                                 new { role = "user", content = chat }
@@ -814,8 +814,8 @@ namespace TH03_WebBanHang.Controllers
                         request.Content = data;
 
                         var client = new HttpClient();
-                        
-                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "API Key của ChatGPT năm ở đây");
+                       
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Shop.apiChatGPT);
 
 
                         try

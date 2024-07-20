@@ -60,6 +60,16 @@ namespace TH03_WebBanHang.Controllers
                     //lvItemsSearch.DataSource = items;
                     //lvItemsSearch.DataBind();
                     showList = true;
+                    foreach (var product in items)
+                    {
+                        htmlContent.AppendLine("<style>\\r\\n                        #div-items-Search{\\r\\n                            display:block;\\r\\n                        }\\r\\n                    </style>");
+
+                        htmlContent.AppendLine("<a style='display:flex; margin:7.5px auto; gap:15px;' href=\"item.aspx?sp=" + product.MaSP + "\">");
+                        htmlContent.AppendLine("<img style=\"height:80px; border-radius:5px; \" src=\"" + product.DuongDan + "\" alt=\"" + product.TenSP + "\" />");
+                        htmlContent.AppendLine("<div style='display:grid;'>" + product.TenSP);
+                        htmlContent.AppendLine("<p>" + string.Format("{0:N0}", product.Gia) + "đ</p></div>");
+                        htmlContent.AppendLine("</a>");
+                    }
                 }
                 else
                 {
@@ -68,6 +78,7 @@ namespace TH03_WebBanHang.Controllers
                     //lvItemsSearch.DataSource = null; // Đặt DataSource null để không hiển thị sản phẩm
                     //lvItemsSearch.DataBind(); // Gọi DataBind để cập nhật UI
                     showList = true;
+                    htmlContent.AppendLine("<p>Không tìm thấy nội dung liên quan.</p>");
                 }
 
                 var cookieValueshowPlaceHolder = JsonConvert.SerializeObject(showPlaceHolder); // Sử dụng Newtonsoft.Json để serialize object thành JSON nếu cần
@@ -91,16 +102,7 @@ namespace TH03_WebBanHang.Controllers
                 Response.Cookies.Add(cookieList);
                 //return Json(items, JsonRequestBehavior.AllowGet);
 
-                foreach (var product in items)
-                {
-                    htmlContent.AppendLine("<style>\\r\\n                        #div-items-Search{\\r\\n                            display:block;\\r\\n                        }\\r\\n                    </style>");
-
-                    htmlContent.AppendLine("<a style='display:flex; margin:7.5px auto; gap:15px;' href=\"item.aspx?sp=" + product.MaSP + "\">");
-                    htmlContent.AppendLine("<img style=\"height:80px; border-radius:5px; \" src=\"" + product.DuongDan + "\" alt=\"" + product.TenSP + "\" />");
-                    htmlContent.AppendLine("<div style='display:grid;'>" + product.TenSP);
-                    htmlContent.AppendLine("<p>" + string.Format("{0:N0}", product.Gia) + "đ</p></div>");
-                    htmlContent.AppendLine("</a>");
-                }
+               
 
                 return Content(htmlContent.ToString());
 
