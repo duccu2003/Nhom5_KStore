@@ -1,28 +1,55 @@
 ---
 # KSTORE - Trang Web Bán Album K-Pop
 
-## Giới thiệu
+## 1. Giới thiệu
 
 KSTORE là một nền tảng trực tuyến chuyên về buôn bán album K-pop. Dự án này nhằm mục đích kết nối người yêu thích âm nhạc Hàn Quốc với các sản phẩm độc đáo và hiếm có từ nền văn hóa K-Pop.
 
-## Công nghệ
+## 2. Công nghệ
 
 - Ngôn ngữ Lập Trình: ASP.NET
 - Cơ sở Dữ Liệu: SQL Server
 
-## Mục tiêu
+## 3. Mục tiêu
 
 - Tạo một nền tảng dễ dàng sử dụng cho người mua và người bán.
 - Cung cấp một môi trường uy tín để trao đổi album K-pop.
 - Tạo cơ hội cho người bán có thể tiếp cận rộng rãi hơn đối tượng khách hàng tiềm năng.
 
-## Yêu cầu
+## 4. Yêu cầu
 
 - Có máy tính với hệ điều hành Windows (do ASP.NET và SQL Server chủ yếu hỗ trợ Windows).
 - Có Git và.NET Core SDK (phiên bản 3.1 trở lên) đã được cài đặt.
 - Có SQL Server Management Studio (SSMS) hoặc một công cụ quản lý SQL Server khác để quản lý cơ sở dữ liệu.
 
-## Cài đặt
+## 5. Cách cài đặt Dự án
+
+1. Clone kho lưu trữ dự án từ GitHub:
+
+   ```bash
+   git clone https://github.com/duccu2003/Nhom5_KStore.git
+   ```
+
+2. Navigated vào thư mục dự án:
+
+   ```bash
+   cd KSTORE
+   ```
+
+3. Cài đặt các gói phụ thuộc bằng npm:
+
+   ```bash
+   npm install
+   ```
+
+4. Khởi chạy ứng dụng:
+
+   ```bash
+   npm start
+   ```
+*Nếu không thể bằng những cách thức trên thì bạn có thể tải thủ công hoặc liên hệ đến nhóm chúng tôi.*
+
+## 6. Cài đặt
 
 ### Sửa lại ConnectionString
 1. Chạy hai file SQL sau để thiết lập cơ sở dữ liệu:
@@ -34,7 +61,8 @@ KSTORE là một nền tảng trực tuyến chuyên về buôn bán album K-pop
    ![222](https://github.com/duccu2003/Nhom5_KStore/assets/130604232/50f61455-3490-4aa2-8bb6-2809b9dfd635)
 
 ### Nếu đổi rồi mà không nhận hoặc có lỗi thì tiến hành chạy và cài lại
-#### Cài đặt Cơ sở Dữ liệu
+### Nếu sau khi đổi ConnectionString mà vẫn không chạy thì mới áp dụng cách này
+#### Cài đặt lại Cơ sở Dữ liệu
 
 Trước tiên, bạn cần khởi tạo cơ sở dữ liệu:
 1. Cài đặt SQL Server và SQL Server Management Studio (SSMS) từ trang web chính thức của Microsoft.
@@ -72,7 +100,7 @@ Trước tiên, bạn cần khởi tạo cơ sở dữ liệu:
 3. SanPham.cs trong Model
    ![Screenshot 2024-06-25 114156](https://github.com/duccu2003/Nhom5_KStore/assets/130604232/5223e26e-3e88-446e-ab99-6faeb8090dba)
 
-## Cách chạy dự án
+## 7. Cách chạy dự án
 
 ### Sửa lại những phần sau trước khi chạy
 
@@ -81,45 +109,15 @@ Trước tiên, bạn cần khởi tạo cơ sở dữ liệu:
 
 ### Và tiến hành chạy dự án
 
-## Cách cài đặt Dự án
-
-1. Clone kho lưu trữ dự án từ GitHub:
-
-   ```bash
-   git clone https://github.com/duccu2003/Nhom5_KStore.git
-   ```
-
-2. Navigated vào thư mục dự án:
-
-   ```bash
-   cd KSTORE
-   ```
-
-3. Cài đặt các gói phụ thuộc bằng npm:
-
-   ```bash
-   npm install
-   ```
-
-4. Khởi chạy ứng dụng:
-
-   ```bash
-   npm start
-   ```
-*Nếu không thể bằng những cách thức trên thì bạn có thể tải thủ công hoặc liên hệ đến nhóm chúng tôi.*
-
-## Sử dụng
+## 8. Sử dụng
 
 Sau khi khởi chạy ứng dụng, bạn có thể truy cập vào `http://localhost:<port>` (thay `<port>` bằng cổng được hiển thị trong console) để bắt đầu sử dụng KSTORE.
 
-## Liên Hệ
+## 9. Liên Hệ
 
 Nếu bạn có bất kỳ câu hỏi hoặc góp ý, đừng ngần ngại liên hệ với chúng tôi qua một trong các kênh sau:
 - **Email**: `vippro11011@gmail.com`
 - **Zalo**: [0389800308](zalo://talk/?number=0389800308)
 - **Số Điện Thoại**: +84389800308 (0389800308)
 - **Github**: [duccu2003](https://github.com/duccu2003), [Kumetiqn](https://github.com/Kumetiqn), [trnhatanh1211@gmail.com](https://github.com/trnhatanh1211@gmail.com)
-
-*Nhóm chúng tôi luôn sẵn lòng hỗ trợ và lắng nghe ý kiến từ các bạn!*
-
 ---
