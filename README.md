@@ -56,10 +56,6 @@ KSTORE là một nền tảng trực tuyến chuyên về buôn bán album K-pop
 
    - `QL_KPOPStore.sql`
    - `newLocalVN.sql`
-2. Sửa ConnectionString được khoanh
-   ![Untitled](https://github.com/duccu2003/Nhom5_KStore/assets/130604232/204d22b0-0951-4f69-8187-6defd9bf458f)
-   ![222](https://github.com/duccu2003/Nhom5_KStore/assets/130604232/50f61455-3490-4aa2-8bb6-2809b9dfd635)
-
 ### Nếu đổi rồi mà không nhận hoặc có lỗi thì tiến hành chạy và cài lại
 ### Nếu sau khi đổi ConnectionString mà vẫn không chạy thì mới áp dụng cách này
 #### Cài đặt lại Cơ sở Dữ liệu
@@ -82,10 +78,6 @@ Trước tiên, bạn cần khởi tạo cơ sở dữ liệu:
    ![Screenshot 2024-06-25 113743](https://github.com/duccu2003/Nhom5_KStore/assets/130604232/ee5f12e0-ae81-407f-ac30-3954e384deb7)
 
 3. Bước 3
-
-   ![Screenshot 2024-06-25 113852](https://github.com/duccu2003/Nhom5_KStore/assets/130604232/e2b6f438-bf5d-4538-80ec-f9791db3152c)
-
-4. Bước 4
 
    ![Screenshot 2024-06-25 113927](https://github.com/duccu2003/Nhom5_KStore/assets/130604232/3a928cbc-18db-4ae1-aab7-a157fc83fc31)
 
