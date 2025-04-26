@@ -105,11 +105,4 @@ Trước tiên, bạn cần khởi tạo cơ sở dữ liệu:
 
 Sau khi khởi chạy ứng dụng, bạn có thể truy cập vào `http://localhost:<port>` (thay `<port>` bằng cổng được hiển thị trong console) để bắt đầu sử dụng KSTORE.
 
-## 9. Liên Hệ
-
-Nếu bạn có bất kỳ câu hỏi hoặc góp ý, đừng ngần ngại liên hệ với chúng tôi qua một trong các kênh sau:
-- **Email**: `vippro11011@gmail.com`
-- **Zalo**: [0389800308](zalo://talk/?number=0389800308)
-- **Số Điện Thoại**: +84389800308 (0389800308)
-- **Github**: [duccu2003](https://github.com/duccu2003), [Kumetiqn](https://github.com/Kumetiqn), [trnhatanh1211@gmail.com](https://github.com/trnhatanh1211@gmail.com)
 ---
